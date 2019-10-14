@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Isaiah</title>
+  
+  <subtitle>Just Jump!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.lsuniue.com/"/>
+  <updated>2019-10-14T13:58:31.179Z</updated>
+  <id>http://www.lsuniue.com/</id>
+  
+  <author>
+    <name>Isaiah</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.lsuniue.com/posts/4a17b156/"/>
+    <id>http://www.lsuniue.com/posts/4a17b156/</id>
+    <published>2017-03-20T03:37:06.000Z</published>
+    <updated>2019-10-14T13:58:31.179Z</updated>
+    
+    <content type="html"><![CDATA[<p>你好！这是我的第一篇文章。</p><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/Life-Essay/3-time-sun-plot-003.JPG?x-oss-process=style/moon" width="1024" height="576" "图2：用rstudio环境打开项目文件" align="center"><br><font face="黑体"><strong>图2：用RStudio环境打开项目文件</strong></font><br></div><a id="more"></a><ul><li>立下flag</li><li>业余爱好</li><li>随便写写</li><li>读书笔记</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你好！这是我的第一篇文章。&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/Life-Essay/3-time-sun-plot-003.JPG?x-oss-process=style/moon&quot; width=&quot;1024&quot; height=&quot;576&quot; &quot;图2：用rstudio环境打开项目文件&quot; align=&quot;center&quot;&gt;&lt;br&gt;&lt;font face=&quot;黑体&quot;&gt;&lt;strong&gt;图2：用RStudio环境打开项目文件&lt;/strong&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="Hello" scheme="http://www.lsuniue.com/categories/Hello/"/>
+    
+    
+      <category term="Hello" scheme="http://www.lsuniue.com/tags/Hello/"/>
+    
+  </entry>
+  
+</feed>
