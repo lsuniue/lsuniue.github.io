@@ -140,17 +140,16 @@
 <meta name="keywords" content="Spatial Analysis,RStudio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Introduction to Spatial Analysis in R">
-<meta property="og:url" content="http://www.lsuniue.com/posts/c7753c6c/index.html">
+<meta property="og:url" content="http://langiue.cn/posts/c7753c6c/index.html">
 <meta property="og:site_name" content="Isaiah">
 <meta property="og:description" content="前言 R语言简介 入门介绍 软件安装 安装包介绍 帮助">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/pro-photo-574073.jpeg?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/1-basic-plot-001.jpg title:'Figure1-Basic plot of x and y'?x-oss-process=style/moon">
-<meta property="og:updated_time" content="2019-10-14T15:55:40.004Z">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/1-basic-plot-001.jpg?x-oss-process=style/moon">
+<meta property="og:updated_time" content="2019-10-15T02:55:00.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Introduction to Spatial Analysis in R">
 <meta name="twitter:description" content="前言 R语言简介 入门介绍 软件安装 安装包介绍 帮助">
-<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/pro-photo-574073.jpeg?x-oss-process=style/moon">
+<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/1-basic-plot-001.jpg?x-oss-process=style/moon">
 
 
 
@@ -180,7 +179,7 @@
 
 
 
-  <link rel="canonical" href="http://www.lsuniue.com/posts/c7753c6c/">
+  <link rel="canonical" href="http://langiue.cn/posts/c7753c6c/">
 
 
 
@@ -390,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.lsuniue.com/posts/c7753c6c/">
+    <link itemprop="mainEntityOfPage" href="http://langiue.cn/posts/c7753c6c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Isaiah">
@@ -534,8 +533,6 @@
 </ul>
 </li>
 </ul>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/pro-photo-574073.jpeg?x-oss-process=style/moon" width="1024" height="576" "name" align="center"><br></div>
-
 <a id="more"></a>
 <hr>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程是分析R中空间数据的一个简介，特别是通过使用R进行地图制作<strong>base</strong>图形和R的各种专用地图制作包，如<strong>tmap</strong>和<strong>leftlet</strong>。它介绍使用R作为快速，用户友好和非常强大的命令行<abbr title="Geographic Information System">GIS</abbr> 的基础知识。</p>
@@ -578,7 +575,7 @@
 <h2 id="代码注释"><a href="#代码注释" class="headerlink" title="代码注释"></a>代码注释</h2><p>养成用英文注释代码的习惯，注释方法： <kbd>#</kbd> + <kbd>space</kbd> + <code>注释说明</code>,注释位于<strong>命令行上方一行</strong>或<strong>命令行</strong>之后，如下:</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Genarate data</span></span><br><span class="line">x &lt;- <span class="number">1</span>:<span class="number">400</span> </span><br><span class="line">y &lt;- <span class="built_in">sin</span>(x/<span class="number">10</span>) * <span class="built_in">exp</span>(x * <span class="number">-0.01</span>) </span><br><span class="line">plot(x,y) <span class="comment"># plot the result</span></span><br></pre></td></tr></table></figure>
 <p>结果如图1所示：</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/1-basic-plot-001.jpg title:'Figure1-Basic plot of x and y'?x-oss-process=style/moon" width="1024" height="576" "figure1-basic plot of x and y" align="center"><br><font face="黑体"><strong>Figure1-Basic plot of x and y</strong></font><br></div>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/1-basic-plot-001.jpg?x-oss-process=style/moon" width="1024" height="576" "figure1-basic plot of x and y" align="center"><font face="Times New Roman"><strong>Figure1-Basic plot of x and y</strong></font><br></div>
 
 <h2 id="安装包使用"><a href="#安装包使用" class="headerlink" title="安装包使用"></a>安装包使用</h2><p>安装包的使用需要注册并加载，注册过的安装包（以<strong>ggplot2</strong>为例）可以通过<strong>library(ggplot2)</strong>直接加载。</p>
 <ul>
@@ -653,7 +650,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.lsuniue.com/posts/c7753c6c/" title="Introduction to Spatial Analysis in R">http://www.lsuniue.com/posts/c7753c6c/</a>
+    <a href="http://langiue.cn/posts/c7753c6c/" title="Introduction to Spatial Analysis in R">http://langiue.cn/posts/c7753c6c/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -696,6 +693,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/3b068d95/" rel="prev" title="Spatial data in R">
+                <i class="fa fa-chevron-left"></i> Spatial data in R
+              </a>
             
           </div>
 
@@ -820,7 +821,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -831,7 +832,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -842,7 +843,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+    <script>
+      (function(){
+          if(''){
+              if (prompt('请输入文章密码') !== ''){
+                  alert('密码错误！');
+                  history.back();
+              }
+          }
+      })();
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/safari-pinned-tab.svg?v=5.1.4" color="#fff">
+
+
+  <link rel="manifest" href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/manifest.json">
+
+
+  <meta name="msapplication-config" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/favicon/xiaomai/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="Spatial Analysis,RStudio,readOGR,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Isaiah" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结/剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
+<meta name="keywords" content="Spatial Analysis,RStudio,readOGR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating and Manipulating Spatial Data">
+<meta property="og:url" content="http://langiue.cn/posts/365c6061/index.html">
+<meta property="og:site_name" content="Isaiah">
+<meta property="og:description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结/剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon">
+<meta property="og:updated_time" content="2019-10-15T02:49:25.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Creating and Manipulating Spatial Data">
+<meta name="twitter:description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结/剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
+<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"display":"always","scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"perspectiveLeftIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: 'aacf912c216d0fb90674cf91ce759b71',
+      author: '博主大人'
+    },
+    algolia: {
+      applicationID: 'WTDIMV3YGV',
+      apiKey: 'ba861ea5c4d982731bc8ed92b3bec5c3',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://langiue.cn/posts/365c6061/">
+
+
+
+
+
+  <title>Creating and Manipulating Spatial Data | Isaiah</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-94034341-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/iue05"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="top-scroll-bar"></div>
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Isaiah</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Just Jump!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-top">
+          <a href="/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br>
+            
+            TopR
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://langiue.cn/posts/365c6061/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Isaiah">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Isaiah">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Creating and Manipulating Spatial Data</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T11:09:02+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spatial-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Spatial Analysis</span>
+                  </a>
+                </span>
+
+                
+                
+                  >
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spatial-Analysis/RStudio/" itemprop="url" rel="index">
+                    <span itemprop="name">RStudio</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/365c6061/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="posts/365c6061/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/posts/365c6061/" class="leancloud_visitors" data-flag-title="Creating and Manipulating Spatial Data">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">已浏览&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。<br>复制、联结/剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。<br>首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。</p>
+<ul>
+<li>创建空间数据</li>
+<li>设置空间参考系</li>
+<li>属性连接</li>
+<li>剪切和空间连接</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h1 id="创建空间数据"><a href="#创建空间数据" class="headerlink" title="创建空间数据"></a>创建空间数据</h1><h2 id="创建矢量对象"><a href="#创建矢量对象" class="headerlink" title="创建矢量对象"></a>创建矢量对象</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vec</span> &lt;- vector(<span class="string">"numeric"</span>, <span class="number">3</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span>(<span class="title">vec</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.第一个参数：数据类型；第二个参数：数据长度<br>2.返回数据类型</p>
+</blockquote>
+<h2 id="创建数据帧对象"><a href="#创建数据帧对象" class="headerlink" title="创建数据帧对象"></a>创建数据帧对象</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">df</span> &lt;- <span class="class"><span class="keyword">data</span>.frame(<span class="title">x</span> = 1:3, <span class="title">y</span> = <span class="title">c</span>(1/2, 2/3, 3/4))</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>(<span class="title">df</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Data Frame: 相当于R中的Excel表<br>以上均为非空间数据</p>
+</blockquote>
+<h2 id="创建空间点对象"><a href="#创建空间点对象" class="headerlink" title="创建空间点对象"></a>创建空间点对象</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sp1</span> &lt;- <span class="type">SpatialPoints</span>(coords = df) # input：a numeric matrix or <span class="class"><span class="keyword">data</span>.frame</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>(<span class="title">sp1</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>SpatialPoints():来自SP安装包，输入必须为<code>数值矩阵</code>或<code>数据帧</code>。</p>
+</blockquote>
+<h2 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">spdf</span> &lt;- <span class="type">SpatialPointsDataFrame</span>(sp1, <span class="class"><span class="keyword">data</span> = df)  # adding <span class="keyword">data</span> from df</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>(<span class="title">spdf</span>)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.将<code>非空间数据</code>(df)增加到<code>空间点对象</code>(sp1)中，并命名为spdf</p>
+</blockquote>
+<p>在现实情况下，与上面创建的空间对象不同，您的空间数据将从外部创建的文件读取，例如，使用readOGR()。大多数空间数据都带有关联的CRS。</p>
+<h1 id="投影：设置和转换空间参考系"><a href="#投影：设置和转换空间参考系" class="headerlink" title="投影：设置和转换空间参考系"></a>投影：设置和转换空间参考系</h1><p>每个空间对象都应有一个坐标参考系<abbr title="Coordinate Reference System">CRS</abbr>。<br>比较常见的：<abbr title="World Geodetic System 1984">WGS84</abbr>，是为GPS全球定位系统使用而建立的坐标系统。</p>
+<h2 id="设置CRS"><a href="#设置CRS" class="headerlink" title="设置CRS"></a>设置CRS</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proj4string(lnd) &lt;- <span class="literal">NA_character_</span> <span class="comment"># remove CRS information from lnd</span></span><br><span class="line">proj4string(lnd) &lt;- CRS(<span class="string">"+init=epsg:27700"</span>) <span class="comment"># assign a new CRS</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从lnd中移除坐标系<br>设置新的坐标系（此坐标系为已知坐标系）</p>
+</blockquote>
+<h2 id="转换坐标系"><a href="#转换坐标系" class="headerlink" title="转换坐标系"></a>转换坐标系</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)</span><br><span class="line">EPSG &lt;- make_EPSG() # create data frame <span class="keyword">of</span> available EPSG codes</span><br><span class="line">EPSG[grepl(<span class="string">"WGS 84$"</span>, EPSG$note), ] # search for WGS <span class="number">84</span> <span class="keyword">code</span></span><br><span class="line">lnd84 &lt;- spTransform(lnd, CRS(<span class="string">"+init=epsg:4326"</span>)) # reproject</span><br></pre></td></tr></table></figure>
+<h2 id="保存坐标系"><a href="#保存坐标系" class="headerlink" title="保存坐标系"></a>保存坐标系</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">saveRDS</span><span class="params">(object = lnd84, file = <span class="string">"data/lnd84.Rds"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>saveRDS():第一个参数：对象名称；第二个参数：对象存储位置。</p>
+</blockquote>
+<h2 id="移除中间对象"><a href="#移除中间对象" class="headerlink" title="移除中间对象"></a>移除中间对象</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm(lnd84) # remove the lnd object</span><br><span class="line"># we will load it back <span class="keyword">in</span> later <span class="keyword">with</span> readRDS(file = <span class="string">"data/lnd84.Rds"</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="属性连接"><a href="#属性连接" class="headerlink" title="属性连接"></a>属性连接</h1><h2 id="读取矢量数据"><a href="#读取矢量数据" class="headerlink" title="读取矢量数据"></a>读取矢量数据</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">rgdal</span>) # ensure rgdal is loaded</span><br><span class="line"># Create new object called <span class="string">"lnd"</span> from <span class="string">"london_sport"</span> shapefile</span><br><span class="line">lnd &lt;- readOGR(<span class="name">dsn</span> = <span class="string">"data"</span>, <span class="string">"london_sport"</span>)</span><br><span class="line">plot(<span class="name">lnd</span>) # plot the lnd object (<span class="name">not</span> shown)</span><br><span class="line">nrow(<span class="name">lnd</span>) # return the number of rows (<span class="name">not</span> shown)</span><br></pre></td></tr></table></figure>
+<h2 id="select-theft"><a href="#select-theft" class="headerlink" title="select theft"></a>select theft</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crime_data &lt;- read.csv(<span class="string">"data/mps-recordedcrime-borough.csv"</span>,stringsAsFactors = FALSE)</span><br><span class="line"><span class="function"><span class="title">head</span><span class="params">(crime_data<span class="variable">$CrimeType</span>)</span></span></span><br><span class="line">crime_theft &lt;- crime_data[crime_data<span class="variable">$CrimeType</span> == <span class="string">"Theft &amp; Handling"</span>, ]</span><br><span class="line"><span class="function"><span class="title">head</span><span class="params">(crime_theft, <span class="number">2</span>)</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>.CSV</code>格式的数据在R中读取后是数据帧格式</p>
+</blockquote>
+<h2 id="aggregate"><a href="#aggregate" class="headerlink" title="aggregate"></a>aggregate</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crime_ag &lt;- aggregate(<span class="name">CrimeCount</span> ~ Borough, data = crime_theft, sum)</span><br><span class="line">head(<span class="name">crime_ag</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>aggregate()三个参数:汇总规则，数据帧名称，函数<br>The <code>~</code> symbol means “by”: 按区名(Borough)汇总CrimeCount变量</p>
+</blockquote>
+<h2 id="高级查询-in"><a href="#高级查询-in" class="headerlink" title="高级查询 %in%"></a>高级查询 %in%</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lnd$name %<span class="keyword">in</span>% crime_ag$Borough</span><br><span class="line">lnd$name[!lnd$name %<span class="keyword">in</span>% crime_ag$Borough]</span><br><span class="line">crime_ag$Borough[!crime_ag$Borough%<span class="keyword">in</span>% lnd$name]</span><br><span class="line">crime_ag[crime_ag$Borough == <span class="string">"NULL"</span>,]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>a %in% b</code>: 返回一串逻辑布尔值：若a1在b1中，返回TRUE；反之，返回False。以此类推…<br><code>a[!a %in% b]</code>: 返回属于a但不属于b的具体值。</p>
+</blockquote>
+<h2 id="连接空间数据和非空间数据"><a href="#连接空间数据和非空间数据" class="headerlink" title="连接空间数据和非空间数据"></a>连接空间数据和非空间数据</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(dplyr)</span><br><span class="line"><span class="symbol">lnd@</span><span class="keyword">data</span> &lt;- left_join(<span class="symbol">lnd@</span><span class="keyword">data</span>, crime_ag, <span class="keyword">by</span> = c(<span class="string">'name'</span> = <span class="string">'Borough'</span>))</span><br><span class="line">lnd$CrimeCount</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>left_join():返回x中的所有行和x与y的所有列<br>属于x不属于y的行 返回NA</p>
+</blockquote>
+<h2 id="快速专题地图"><a href="#快速专题地图" class="headerlink" title="快速专题地图"></a>快速专题地图</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(tmap)</span><br><span class="line">qtm(lnd, <span class="string">"CrimeCount"</span>) <span class="comment"># input:shape object</span></span><br><span class="line">lnd$Thefts  &lt;- lnd$CrimeCount / <span class="number">10000</span></span><br><span class="line">qtm(lnd, <span class="string">"Thefts"</span>,style = <span class="string">"bw"</span>)</span><br><span class="line">qtm(lnd, <span class="string">"Thefts"</span>,<span class="keyword">format</span> = <span class="string">"World"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>qtm():</code>第一个参数输入为shape object, 包括：<br>SpatialPolygons(DataFrame)<br>SpatialPoints(DataFrame)<br>SpatialLines(DataFrame)<br>SpatialGrid(DataFrame)<br>SpatialPixels(DataFrame)<br>RasterLayer, RasterStack, or RasterBrick<br>第二个参数输入为：填充颜色<br>结果如图7所示。</p>
+</blockquote>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon" width="1024" height="576" "figure7-number of thefts per borough" align="center"><font face="Times New Roman"><strong>Figure7-Number of thefts per borough</strong></font><br></div>
+
+<h2 id="tmap"><a href="#tmap" class="headerlink" title="tmap"></a>tmap</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">library</span><span class="params">(tmap)</span></span></span><br><span class="line">lnd_wgs = spTransform(lnd, CRS(<span class="string">"+init=epsg:4326"</span>))</span><br><span class="line">osm_tiles = tmaptools::read_osm(bbox(lnd_wgs))</span><br><span class="line">lnd_wgs<span class="variable">$Thefts</span> &lt;- lnd<span class="variable">$CrimeCount</span> / <span class="number">10000</span> </span><br><span class="line"><span class="function"><span class="title">tm_shape</span><span class="params">(osm_tiles)</span></span> +</span><br><span class="line">  tm_raster() +</span><br><span class="line">  tm_shape(lnd_wgs) +</span><br><span class="line">  tm_fill(<span class="string">"Thefts"</span>, fill<span class="selector-class">.title</span> = <span class="string">"Thefts\n(10000)"</span>, scale = <span class="number">0.8</span>, alpha = <span class="number">0.5</span>) +</span><br><span class="line">  tm_layout(<span class="selector-tag">legend</span><span class="selector-class">.position</span> = c(<span class="number">0.89</span>,<span class="number">0.02</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><abbr title="Read Open Street Map data"><strong>read_osm()</strong></abbr>读取开放的街道地图数据。1.读取OSM文件返回栅格数据。2.查询矢量化的OSM数据返回为空间多边形、线或点。</p>
+</blockquote>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon" width="1024" height="576" "figure8-london’s thefts in 2001" align="center"><font face="Times New Roman"><strong>Figure8-London’s thefts in 2001</strong></font><br></div>
+
+<h1 id="剪切和空间连接"><a href="#剪切和空间连接" class="headerlink" title="剪切和空间连接"></a>剪切和空间连接</h1><p>除了属性（例如通过自治市镇名称）连接，还可以在R中进行空间连接，以伦敦自治市交通基础设施点为例。</p>
+<h2 id="bbox"><a href="#bbox" class="headerlink" title="bbox()"></a>bbox()</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line">y &lt;- c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">xy &lt;- cbind(x,y)</span><br><span class="line">S &lt;- SpatialPoints(xy)</span><br><span class="line">S@coords</span><br><span class="line">bbox(S)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>bbox():从空间数据中检索空间边界框</p>
+</blockquote>
+<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)</span><br><span class="line">stations &lt;- readOGR(<span class="attr">dsn</span> = <span class="string">"data"</span>, <span class="attr">layer</span> = <span class="string">"lnd-stns"</span>)</span><br><span class="line"><span class="comment"># stations = read_shape("data/lnd-stns.shp") # from tmap</span></span><br><span class="line">proj4string(stations) <span class="comment"># this is the full geographical detail.</span></span><br><span class="line">proj4string(lnd) <span class="comment"># what's the coordinate reference system (CRS)</span></span><br><span class="line">bbox(stations)</span><br><span class="line">bbox(lnd)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.读取车站数据<br>4.5. proj4string()的结果表明：车站的坐标参考系与lnd不同，因此需要转换坐标系。<br>6.7. bbox():返回空间数据的空间边界框，即经纬度的最大值与最小值。</p>
+</blockquote>
+<h2 id="重新投影"><a href="#重新投影" class="headerlink" title="重新投影"></a>重新投影</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stations &lt;- spTransform(<span class="name">stations</span>, CRS(<span class="name">proj4string</span>(<span class="name">lnd</span>)))</span><br><span class="line">plot(<span class="name">lnd</span>) # plot London </span><br><span class="line">points(<span class="name">stations</span>) # overlay the station points</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>车站的空间范围大于lnd，因此需要剪切。</p>
+</blockquote>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon" width="1024" height="576" "figure9-sampling and plotting stations" align="center"><font face="Times New Roman"><strong>Figure9-Sampling and plotting stations</strong></font><br></div>
+
+<h2 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stations11 &lt;- stations[lnd, ] </span><br><span class="line"><span class="keyword">plot</span>(lnd)</span><br><span class="line">points(stations11)</span><br><span class="line"># <span class="keyword">save</span>(lnd, <span class="keyword">file</span>=<span class="string">"data/lnd.RData"</span>)</span><br><span class="line"># <span class="keyword">save</span>(stations, <span class="keyword">file</span>=<span class="string">"data/stations.RData"</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.选取lnd内部的车站空间点数据<br>2.绘图<br>3.4.保存数据<br>除了<code>[]</code>方法外，还有sp:over和gIntersects方法实现剪切。</p>
+</blockquote>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon" width="1024" height="576" "figure10-the clipped stations dataset" align="center"><font face="Times New Roman"><strong>Figure10-The clipped stations dataset</strong></font><br></div>
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+      
+      <div>
+        
+          <div>
+    
+    	<div style="text-align:center;color:#555;font-size:15px;">---文章结束啦 ฅ●ω●ฅ 感谢您的阅读---</div>
+    
+</div>
+        
+      </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Isaiah
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://langiue.cn/posts/365c6061/" title="Creating and Manipulating Spatial Data">http://langiue.cn/posts/365c6061/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" rel="external nofollow" target="_blank"><font color="#32CD32">CC BY-SA 4.0</font></a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spatial-Analysis/" rel="tag"><i class="fa fa-tag"></i> Spatial Analysis</a>
+          
+            <a href="/tags/RStudio/" rel="tag"><i class="fa fa-tag"></i> RStudio</a>
+          
+            <a href="/tags/readOGR/" rel="tag"><i class="fa fa-tag"></i> readOGR</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;来评分吧&lt;)</div>
+  
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1fdf3f4a/" rel="prev" title="Spatial Visualization with tmap">
+                <i class="fa fa-chevron-left"></i> Spatial Visualization with tmap
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/3b068d95/" rel="next" title="Spatial data in R">
+                Spatial data in R <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+        <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui-button -mob-share-open">分 享</div>
+<div class="-mob-share-ui" -mob-share-ui-theme -mob-share-ui-theme-slide-bottom style="display: none">
+<ul class="-mob-share-list">
+  <li class="-mob-share-weixin"><p>微信</p></li>
+  <li class="-mob-share-qzone"><p>QQ空间</p></li>
+  <li class="-mob-share-qq"><p>QQ好友</p></li>
+  <li class="-mob-share-weibo"><p>新浪微博</p></li>
+  <li class="-mob-share-douban"><p>豆瓣</p></li>
+  <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+  <li class="-mob-share-facebook"><p>Facebook</p></li>
+  <li class="-mob-share-twitter"><p>Twitter</p></li>
+  <li class="-mob-share-pocket"><p>Pocket</p></li>
+  <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+  <li class="-mob-share-google"><p>Google+</p></li>
+  <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+  <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+  <li class="-mob-share-renren"><p>人人网</p></li>
+  <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+</ul>
+<div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=24b2b5b7ac03c"></script>
+<!--MOB SHARE END-->
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["sqq","mail","douban","evernotecn","fbook","twi","mshare","bdysc","tieba"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"8","bdPos":"left","bdTop":"98.45452880859375"},"image":{"viewList":["weixin","tsina","sqq","qzone","mail","douban","evernotecn","fbook","twi","mshare"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","sqq","qzone","mail","douban","evernotecn","fbook","twi","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+            <a href="/" class="site-author-image" rel="start" style="border:none">
+              <img class="site-author-image" itemprop="image" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png" alt="Isaiah">
+            </a>
+            
+              <p class="site-author-name" itemprop="name">Isaiah</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/lsun05" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ice05/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lsun@iue.ac.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/lsuniue" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+          
+          
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://music.163.com/#/user/home?id=560574858" title="😆 网易云音乐 😆" target="_blank">😆 网易云音乐 😆</a>
+                  </li>
+                
+              </ul>
+            <!-- <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/20/2017 11:37:06");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>  -->          
+            </div>
+          
+        </div>
+      </section>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建空间数据"><span class="nav-number">1.</span> <span class="nav-text">创建空间数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建矢量对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建矢量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据帧对象"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据帧对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建空间点对象"><span class="nav-number">1.3.</span> <span class="nav-text">创建空间点对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加数据"><span class="nav-number">1.4.</span> <span class="nav-text">增加数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影：设置和转换空间参考系"><span class="nav-number">2.</span> <span class="nav-text">投影：设置和转换空间参考系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CRS"><span class="nav-number">2.1.</span> <span class="nav-text">设置CRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换坐标系"><span class="nav-number">2.2.</span> <span class="nav-text">转换坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存坐标系"><span class="nav-number">2.3.</span> <span class="nav-text">保存坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除中间对象"><span class="nav-number">2.4.</span> <span class="nav-text">移除中间对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性连接"><span class="nav-number">3.</span> <span class="nav-text">属性连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取矢量数据"><span class="nav-number">3.1.</span> <span class="nav-text">读取矢量数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-theft"><span class="nav-number">3.2.</span> <span class="nav-text">select theft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregate"><span class="nav-number">3.3.</span> <span class="nav-text">aggregate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级查询-in"><span class="nav-number">3.4.</span> <span class="nav-text">高级查询 %in%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接空间数据和非空间数据"><span class="nav-number">3.5.</span> <span class="nav-text">连接空间数据和非空间数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速专题地图"><span class="nav-number">3.6.</span> <span class="nav-text">快速专题地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmap"><span class="nav-number">3.7.</span> <span class="nav-text">tmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪切和空间连接"><span class="nav-number">4.</span> <span class="nav-text">剪切和空间连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bbox"><span class="nav-number">4.1.</span> <span class="nav-text">bbox()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数据"><span class="nav-number">4.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新投影"><span class="nav-number">4.3.</span> <span class="nav-text">重新投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切"><span class="nav-number">4.4.</span> <span class="nav-text">剪切</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      <!--/noindex-->
+      
+      <div id="aplayer" class="aplayer"></div>
+<script src="/js/src/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>
+      
+    </div>
+  </aside>
+
+
+
+
+        
+      </div>
+
+    </main>
+
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Isaiah</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description"></div>
+    </div>
+  </div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500419570");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+        
+      </div>
+
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/custom/custom.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 102549, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 102549, xid: "posts/365c6061/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/102549/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("NT5kodF2o3O4C1LAJTGnQfHO-gzGzoHsz", "lSahmW4epq4wnpIvw5d0dqFW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0+" 次");
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text( time+" 次");
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0+" 次");;
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time')+" 次");;
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time')+" 次");
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 10209,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+
+</body>
+</html>
+
