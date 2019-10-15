@@ -1988,7 +1988,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ba81fe;
+  background: #2b4bc7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3662,7 +3662,7 @@ code.description {
 }
 @media (max-width: 1920px) {
   body {
-    background-image: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/space3.jpg");
+    background-image: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/tt/mmexport1570961359312.jpg?x-oss-process=style/moon2");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
@@ -3778,7 +3778,7 @@ code.description {
   transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 .jiathis_style_32x32 .jiathis_counter.jiathis_bubble_style {
-  background: url("../images/counter.gif") no-repeat 0 0;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/counter.gif") no-repeat 0 0;
   height: 32px;
   opacity: 0.7;
   width: 54px !important;
