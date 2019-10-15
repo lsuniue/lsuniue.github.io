@@ -1988,7 +1988,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fbe0ff;
+  background: #ba81fe;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3498,7 +3498,7 @@ a.fancybox {
   height: 24px;
   width: 24px;
   cursor: pointer;
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/wechat-logo.svg");
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/wechat-logo.svg");
   background-size: 24px 24px;
 }
 .weixin-hover {
@@ -3509,7 +3509,7 @@ a.fancybox {
   width: 0px;
   border-radius: 3px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/wechat-%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E4%B8%80%E6%89%AB.png");
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/wechat-%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%89%AB%E4%B8%80%E6%89%AB.png");
   background-color: #fff;
   background-repeat: no-repeat;
   background-size: 150px 150px;
@@ -3641,28 +3641,28 @@ code.description {
 ::-webkit-scrollbar-button:start {
   width: 10px;
   height: 10px;
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat 0 0;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat 0 0;
 }
 ::-webkit-scrollbar-button:start:hover {
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat -15px 0;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -15px 0;
 }
 ::-webkit-scrollbar-button:start:active {
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat -30px 0;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -30px 0;
 }
 ::-webkit-scrollbar-button:end {
   width: 10px;
   height: 10px;
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat 0 -18px;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat 0 -18px;
 }
 ::-webkit-scrollbar-button:end:hover {
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat -15px -18px;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -15px -18px;
 }
 ::-webkit-scrollbar-button:end:active {
-  background: url("http://p5tqakq50.bkt.clouddn.com/images/custom/scrollbar-arrow.png") no-repeat -30px -18px;
+  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -30px -18px;
 }
 @media (max-width: 1920px) {
   body {
-    background-image: url("http://p5tqakq50.bkt.clouddn.com/images/custom/space3.jpg");
+    background-image: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/space3.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
