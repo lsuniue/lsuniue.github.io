@@ -692,35 +692,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2017年京津冀地区AQI数据可视化</title>
-    <url>/posts/85b97837/</url>
-    <content><![CDATA[<ul>
-<li>Visualization</li>
-<li>ggplot</li>
-</ul>
-<a id="more"></a>
-<hr>
-<h2 id="1-折线图"><a href="#1-折线图" class="headerlink" title="1.折线图"></a>1.折线图</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z1.html"></iframe><br><br>图1 2017年京津冀地区AQI数据动态变化折线图<br></div>
-
-<h2 id="2-柱形图"><a href="#2-柱形图" class="headerlink" title="2.柱形图"></a>2.柱形图</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z2.html"></iframe><br><br>图2 2017年京津冀地区AQI数据动态变化柱形图<br></div>
-
-<h2 id="3-散点图"><a href="#3-散点图" class="headerlink" title="3.散点图"></a>3.散点图</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z3.html"></iframe><br><br>图3 2017年京津冀城市群AQI数据动态变化散点图<br></div>
-
-<h2 id="4-CART模型预测AQI"><a href="#4-CART模型预测AQI" class="headerlink" title="4.CART模型预测AQI"></a>4.CART模型预测AQI</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t11.html"></iframe><br><br>name<br></div>
-
-<h2 id="5-随机森林预测AQI"><a href="#5-随机森林预测AQI" class="headerlink" title="5.随机森林预测AQI"></a>5.随机森林预测AQI</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t12.html"></iframe><br><br>name<br></div>
-
-<h2 id="6-随机森林预测PM2-5"><a href="#6-随机森林预测PM2-5" class="headerlink" title="6.随机森林预测PM2.5"></a>6.随机森林预测PM2.5</h2><div align="center"><br><iframe width="821" height="531" seamless frameborder="0" scrolling="no" src="//isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t13.html"></iframe><br></div>]]></content>
-      <categories>
-        <category>Visualization</category>
-        <category>Interactive</category>
-      </categories>
-      <tags>
-        <tag>Visualization</tag>
-        <tag>ggplot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java Web Learning Notes</title>
     <url>/posts/1689a8fa/</url>
     <content><![CDATA[<ul>
