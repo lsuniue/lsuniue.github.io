@@ -921,52 +921,11 @@
                   </li>
                 
               </ul>
-          <div id="days"></div>
 
-<script language="javascript">
-function show_date_time(){
-window.setTimeout("show_date_time()", 1000);
-BirthDay=new Date("03/20/2017 11:37:06");
-today=new Date();
-timeold=(today.getTime()-BirthDay.getTime());
-sectimeold=timeold/1000
-secondsold=Math.floor(sectimeold);
-msPerDay=24*60*60*1000
-e_daysold=timeold/msPerDay
-daysold=Math.floor(e_daysold);
-e_hrsold=(e_daysold-daysold)*24;
-hrsold=setzero(Math.floor(e_hrsold));
-e_minsold=(e_hrsold-hrsold)*60;
-minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
-seconds=setzero(Math.floor((e_minsold-minsold)*60));
-document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
-}
-function setzero(i){
-if (i<10)
-{i="0" + i};
-return i;
-}
-show_date_time();
-</script>     
             </div>
           
         </div>
-      </section>
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建空间数据"><span class="nav-number">1.</span> <span class="nav-text">创建空间数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建矢量对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建矢量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据帧对象"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据帧对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建空间点对象"><span class="nav-number">1.3.</span> <span class="nav-text">创建空间点对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加数据"><span class="nav-number">1.4.</span> <span class="nav-text">增加数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影：设置和转换空间参考系"><span class="nav-number">2.</span> <span class="nav-text">投影：设置和转换空间参考系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CRS"><span class="nav-number">2.1.</span> <span class="nav-text">设置CRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换坐标系"><span class="nav-number">2.2.</span> <span class="nav-text">转换坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存坐标系"><span class="nav-number">2.3.</span> <span class="nav-text">保存坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除中间对象"><span class="nav-number">2.4.</span> <span class="nav-text">移除中间对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性连接"><span class="nav-number">3.</span> <span class="nav-text">属性连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取矢量数据"><span class="nav-number">3.1.</span> <span class="nav-text">读取矢量数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-theft"><span class="nav-number">3.2.</span> <span class="nav-text">select theft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregate"><span class="nav-number">3.3.</span> <span class="nav-text">aggregate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级查询-in"><span class="nav-number">3.4.</span> <span class="nav-text">高级查询 %in%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接空间数据和非空间数据"><span class="nav-number">3.5.</span> <span class="nav-text">连接空间数据和非空间数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速专题地图"><span class="nav-number">3.6.</span> <span class="nav-text">快速专题地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmap"><span class="nav-number">3.7.</span> <span class="nav-text">tmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪切和空间连接"><span class="nav-number">4.</span> <span class="nav-text">剪切和空间连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bbox"><span class="nav-number">4.1.</span> <span class="nav-text">bbox()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数据"><span class="nav-number">4.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新投影"><span class="nav-number">4.3.</span> <span class="nav-text">重新投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切"><span class="nav-number">4.4.</span> <span class="nav-text">剪切</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
-      <!--/noindex-->
-      
-      <div id="aplayer" class="aplayer"></div>
+        <div id="aplayer" class="aplayer"></div>
 <script src="/js/src/custom/APlayer.min.js"></script>
 <script type="text/javascript">
 var ap = new APlayer({
@@ -1007,6 +966,49 @@ var ap = new APlayer({
     }]
   });
 </script>
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/20/2017 11:37:06");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>  
+      </section>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建空间数据"><span class="nav-number">1.</span> <span class="nav-text">创建空间数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建矢量对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建矢量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据帧对象"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据帧对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建空间点对象"><span class="nav-number">1.3.</span> <span class="nav-text">创建空间点对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加数据"><span class="nav-number">1.4.</span> <span class="nav-text">增加数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影：设置和转换空间参考系"><span class="nav-number">2.</span> <span class="nav-text">投影：设置和转换空间参考系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CRS"><span class="nav-number">2.1.</span> <span class="nav-text">设置CRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换坐标系"><span class="nav-number">2.2.</span> <span class="nav-text">转换坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存坐标系"><span class="nav-number">2.3.</span> <span class="nav-text">保存坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除中间对象"><span class="nav-number">2.4.</span> <span class="nav-text">移除中间对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性连接"><span class="nav-number">3.</span> <span class="nav-text">属性连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取矢量数据"><span class="nav-number">3.1.</span> <span class="nav-text">读取矢量数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-theft"><span class="nav-number">3.2.</span> <span class="nav-text">select theft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregate"><span class="nav-number">3.3.</span> <span class="nav-text">aggregate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级查询-in"><span class="nav-number">3.4.</span> <span class="nav-text">高级查询 %in%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接空间数据和非空间数据"><span class="nav-number">3.5.</span> <span class="nav-text">连接空间数据和非空间数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速专题地图"><span class="nav-number">3.6.</span> <span class="nav-text">快速专题地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmap"><span class="nav-number">3.7.</span> <span class="nav-text">tmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪切和空间连接"><span class="nav-number">4.</span> <span class="nav-text">剪切和空间连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bbox"><span class="nav-number">4.1.</span> <span class="nav-text">bbox()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数据"><span class="nav-number">4.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新投影"><span class="nav-number">4.3.</span> <span class="nav-text">重新投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切"><span class="nav-number">4.4.</span> <span class="nav-text">剪切</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
       
     </div>
   </aside>

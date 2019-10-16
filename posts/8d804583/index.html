@@ -960,52 +960,11 @@
                   </li>
                 
               </ul>
-          <div id="days"></div>
 
-<script language="javascript">
-function show_date_time(){
-window.setTimeout("show_date_time()", 1000);
-BirthDay=new Date("03/20/2017 11:37:06");
-today=new Date();
-timeold=(today.getTime()-BirthDay.getTime());
-sectimeold=timeold/1000
-secondsold=Math.floor(sectimeold);
-msPerDay=24*60*60*1000
-e_daysold=timeold/msPerDay
-daysold=Math.floor(e_daysold);
-e_hrsold=(e_daysold-daysold)*24;
-hrsold=setzero(Math.floor(e_hrsold));
-e_minsold=(e_hrsold-hrsold)*60;
-minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
-seconds=setzero(Math.floor((e_minsold-minsold)*60));
-document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
-}
-function setzero(i){
-if (i<10)
-{i="0" + i};
-return i;
-}
-show_date_time();
-</script>     
             </div>
           
         </div>
-      </section>
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#科学计算常用工具和库"><span class="nav-number">1.</span> <span class="nav-text">科学计算常用工具和库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python基本概念与操作"><span class="nav-number">2.</span> <span class="nav-text">Python基本概念与操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数"><span class="nav-number">2.1.</span> <span class="nav-text">数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量赋值"><span class="nav-number">2.2.</span> <span class="nav-text">变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">2.3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#反斜杠"><span class="nav-number">2.3.1.</span> <span class="nav-text">反斜杠 \</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分片"><span class="nav-number">2.3.2.</span> <span class="nav-text">分片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化"><span class="nav-number">2.3.4.</span> <span class="nav-text">格式化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用函数"><span class="nav-number">2.4.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-字符串转化"><span class="nav-number">2.4.1.</span> <span class="nav-text">eval - 字符串转化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ord-chr"><span class="nav-number">2.4.2.</span> <span class="nav-text">ord, chr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range"><span class="nav-number">2.4.3.</span> <span class="nav-text">range</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模块"><span class="nav-number">2.5.</span> <span class="nav-text">内置模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Random"><span class="nav-number">2.5.1.</span> <span class="nav-text">Random</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">2.6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">2.6.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">2.6.2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-del-pop"><span class="nav-number">2.6.3.</span> <span class="nav-text">删除 del,pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update"><span class="nav-number">2.6.4.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帮助"><span class="nav-number">2.6.5.</span> <span class="nav-text">帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">2.7.</span> <span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句"><span class="nav-number">2.7.1.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#While语句"><span class="nav-number">2.7.2.</span> <span class="nav-text">While语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for语句"><span class="nav-number">2.7.3.</span> <span class="nav-text">for语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break-continue"><span class="nav-number">2.7.4.</span> <span class="nav-text">break/continue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structures"><span class="nav-number">3.</span> <span class="nav-text">Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Methods"><span class="nav-number">3.1.</span> <span class="nav-text">List Methods</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
-      <!--/noindex-->
-      
-      <div id="aplayer" class="aplayer"></div>
+        <div id="aplayer" class="aplayer"></div>
 <script src="/js/src/custom/APlayer.min.js"></script>
 <script type="text/javascript">
 var ap = new APlayer({
@@ -1046,6 +1005,49 @@ var ap = new APlayer({
     }]
   });
 </script>
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/20/2017 11:37:06");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>  
+      </section>
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#科学计算常用工具和库"><span class="nav-number">1.</span> <span class="nav-text">科学计算常用工具和库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python基本概念与操作"><span class="nav-number">2.</span> <span class="nav-text">Python基本概念与操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数"><span class="nav-number">2.1.</span> <span class="nav-text">数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量赋值"><span class="nav-number">2.2.</span> <span class="nav-text">变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">2.3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#反斜杠"><span class="nav-number">2.3.1.</span> <span class="nav-text">反斜杠 \</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分片"><span class="nav-number">2.3.2.</span> <span class="nav-text">分片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改"><span class="nav-number">2.3.3.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化"><span class="nav-number">2.3.4.</span> <span class="nav-text">格式化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用函数"><span class="nav-number">2.4.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-字符串转化"><span class="nav-number">2.4.1.</span> <span class="nav-text">eval - 字符串转化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ord-chr"><span class="nav-number">2.4.2.</span> <span class="nav-text">ord, chr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range"><span class="nav-number">2.4.3.</span> <span class="nav-text">range</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置模块"><span class="nav-number">2.5.</span> <span class="nav-text">内置模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Random"><span class="nav-number">2.5.1.</span> <span class="nav-text">Random</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">2.6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建"><span class="nav-number">2.6.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询"><span class="nav-number">2.6.2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-del-pop"><span class="nav-number">2.6.3.</span> <span class="nav-text">删除 del,pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update"><span class="nav-number">2.6.4.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#帮助"><span class="nav-number">2.6.5.</span> <span class="nav-text">帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制语句"><span class="nav-number">2.7.</span> <span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if语句"><span class="nav-number">2.7.1.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#While语句"><span class="nav-number">2.7.2.</span> <span class="nav-text">While语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for语句"><span class="nav-number">2.7.3.</span> <span class="nav-text">for语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break-continue"><span class="nav-number">2.7.4.</span> <span class="nav-text">break/continue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structures"><span class="nav-number">3.</span> <span class="nav-text">Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Methods"><span class="nav-number">3.1.</span> <span class="nav-text">List Methods</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
       
     </div>
   </aside>

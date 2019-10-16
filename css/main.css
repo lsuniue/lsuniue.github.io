@@ -1988,7 +1988,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #292677;
+  background: #061470;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3251,6 +3251,12 @@ links-of-author a::before {
   border-radius: 50%;
   background: #373737;
 }
+.links-of-blogroll-list {
+  margin-bottom: 20px;
+/* margin: 0; */
+  padding: 0;
+  list-style: none;
+}
 .links-of-blogroll-title {
   margin: 0;
   padding: 0;
@@ -3430,6 +3436,13 @@ h2.about-title {
   vertical-align: middle;
   overflow: auto;
 }
+#days {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  display: block;
+  color: #555;
+  font-size: 14px;
+}
 .aplayer .aplayer-list ol li,
 .aplayer-withlist.aplayer .aplayer-info {
   border: none !important;
@@ -3608,8 +3621,9 @@ code.description {
   background: rgba(0,0,0,0.4) !important;
 }
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(250,250,250,0.9);
 }
 ::-webkit-scrollbar-button {
   width: 0;
@@ -3623,42 +3637,8 @@ code.description {
   display: block;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: rgba(0,0,0,0.2);
-}
-::-webkit-scrollbar-thumb:hover {
-  border-radius: 8px;
-  background-color: rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-thumb {
-  border-right: 1px solid transparent;
-  border-left: 1px solid transparent;
-}
-::-webkit-scrollbar-track:hover {
-  background-color: rgba(0,0,0,0.15);
-}
-::-webkit-scrollbar-button:start {
-  width: 10px;
-  height: 10px;
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat 0 0;
-}
-::-webkit-scrollbar-button:start:hover {
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -15px 0;
-}
-::-webkit-scrollbar-button:start:active {
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -30px 0;
-}
-::-webkit-scrollbar-button:end {
-  width: 10px;
-  height: 10px;
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat 0 -18px;
-}
-::-webkit-scrollbar-button:end:hover {
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -15px -18px;
-}
-::-webkit-scrollbar-button:end:active {
-  background: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/custom/scrollbar-arrow.png") no-repeat -30px -18px;
+  border-radius: 6px;
+  background-color: rgba(255,155,155,0.7);
 }
 @media (max-width: 1920px) {
   body {
