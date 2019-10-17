@@ -546,9 +546,9 @@
     <url>/posts/8d804583/</url>
     <content><![CDATA[<ul>
 <li>常用工具和库简要介绍</li>
-<li>Python基本概念</li>
+<li>Python基本概念<br><a href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/code-2620118340.jpg?x-oss-process=style/moon" target="_blank" rel="noopener">https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/code-2620118340.jpg?x-oss-process=style/moon</a><a id="more"></a>
+</li>
 </ul>
-<a id="more"></a>
 <hr>
 <h2 id="科学计算常用工具和库"><a href="#科学计算常用工具和库" class="headerlink" title="科学计算常用工具和库"></a>科学计算常用工具和库</h2><ul>
 <li>NumPy-数学计算基础库：N维数组、线性代数计算、傅立叶变换、随机数等。</li>
@@ -670,7 +670,7 @@
 <li>例2</li>
 </ul>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">file</span> = <span class="keyword">open</span>(<span class="string">'E:/python/1.txt'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    data = <span class="keyword">file</span>.<span class="keyword">read</span>()</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="keyword">file</span>.<span class="keyword">close</span>()</span><br><span class="line"><span class="keyword">print</span> data</span><br></pre></td></tr></table></figure>
-<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'E:/python/1.txt'</span>) <span class="keyword">as</span> <span class="built_in">file</span>:</span><br><span class="line">    data = <span class="built_in">file</span>.<span class="built_in">read</span>()</span><br><span class="line">print data</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'E:/python/1.txt'</span>) <span class="keyword">as</span> <span class="built_in">file</span>:</span><br><span class="line">    data = <span class="built_in">file</span>.<span class="built_in">read</span>()</span><br><span class="line">print data</span><br></pre></td></tr></table></figure>
 <h4 id="break-continue"><a href="#break-continue" class="headerlink" title="break/continue"></a>break/continue</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    s = raw_input(<span class="symbol">'Enter</span> something : ')</span><br><span class="line">    <span class="keyword">if</span> s == <span class="symbol">'quit</span>':</span><br><span class="line">        break</span><br><span class="line">    <span class="keyword">if</span> len(s) &lt; <span class="number">3</span>:</span><br><span class="line">        print <span class="symbol">'Input</span> <span class="keyword">is</span> <span class="keyword">of</span> sufficient length'</span><br><span class="line">        continue</span><br><span class="line">    # <span class="keyword">Do</span> other kinds <span class="keyword">of</span> processing here...</span><br></pre></td></tr></table></figure>
 <h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="List-Methods"><a href="#List-Methods" class="headerlink" title="List Methods"></a>List Methods</h3><p>list.<strong>append(x)</strong><br>  Add an item to the end of the list; equivalent to a[len(a):] = [x].</p>
 <p>list.<strong>extend(L)</strong><br>  Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</p>
