@@ -1172,7 +1172,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7c7cff;
+  background: #7d58ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3250,7 +3250,10 @@ code.description {
 }
 @media (max-width: 1024px) {
   body {
-    background-image: none;
+    background-image: url("https://isaiah.oss-cn-hongkong.aliyuncs.com/images/tt/mmexport1570961359312.jpg?x-oss-process=style/moon2");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
   }
   .sidebar {
     border-top-left-radius: 5px;
