@@ -66,7 +66,7 @@
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/13-dobule.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/14-tm_facets.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/15-basemap.png?x-oss-process=style/moon">
-<meta property="og:updated_time" content="2019-10-15T02:45:22.002Z">
+<meta property="og:updated_time" content="2019-10-27T02:40:49.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spatial Visualization with tmap">
 <meta name="twitter:description" content="tmap的创建克服了基本图形和ggmap的一些限制。vignette函数可以访问tmap的简明介绍。  tmap简介 并排地图 构建底图 其他功能">
@@ -282,7 +282,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-15 10:45:22" itemprop="dateModified" datetime="2019-10-15T10:45:22+08:00">2019-10-15</time>
+                <time title="修改时间：2019-10-27 10:40:49" itemprop="dateModified" datetime="2019-10-27T10:40:49+08:00">2019-10-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,10 +355,8 @@
 </blockquote>
 <h1 id="并排地图"><a href="#并排地图" class="headerlink" title="并排地图"></a>并排地图</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">library</span><span class="params">(rgdal)</span></span></span><br><span class="line"><span class="function"><span class="title">readOGR</span><span class="params">(<span class="string">"data"</span>,<span class="string">"london_sport"</span>)</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="快速专题绘图"><a href="#快速专题绘图" class="headerlink" title="快速专题绘图"></a>快速专题绘图</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qtm(shp = lnd,<span class="built_in"> fill </span>= <span class="string">"Partic_Per"</span>, fill.palette = <span class="string">"-Blues"</span>)</span><br><span class="line">qtm(shp = lnd,<span class="built_in"> fill </span>= <span class="string">"Pop_2001"</span>, fill.palette = <span class="string">"-Blues"</span>)</span><br></pre></td></tr></table></figure>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/11-sport.png?x-oss-process=style/moon" width="1024" height="576" "figure11-sports participation" align="center"><font face="Times New Roman"><strong>Figure11-Sports Participation</strong></font><br></div>
-
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/12-population.png?x-oss-process=style/moon" width="1024" height="576" "figure12-population" align="center"><font face="Times New Roman"><strong>Figure12-population</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/11-sport.png?x-oss-process=style/moon" alt="Figure11-Sports Participation"></p>
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/12-population.png?x-oss-process=style/moon" alt="Figure12-population"></p>
 <blockquote>
 <p>1.第一个参数：矢量文件名称；fill：填充变量的名称；fill.palette：调色板颜色。<br>2.第二幅图不同的原因是，”Pop_2001”为因子型变量，只有数值型变量才有区间。</p>
 </blockquote>
@@ -370,14 +368,12 @@
 <blockquote>
 <p>fill：两个填充变量；对应ncol = 2<br>结果如图13所示</p>
 </blockquote>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/13-dobule.png?x-oss-process=style/moon" width="1024" height="576" "figure13" align="center"><font face="Times New Roman"><strong>Figure13</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/13-dobule.png?x-oss-process=style/moon" alt="Figure13"></p>
 <h1 id="tm-facets"><a href="#tm-facets" class="headerlink" title="tm_facets"></a>tm_facets</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">tm_shape</span><span class="params">(lnd)</span></span> +</span><br><span class="line">  tm_fill(<span class="string">"Pop_2001"</span>, thres<span class="selector-class">.poly</span> = <span class="number">0</span>) +</span><br><span class="line">  tm_facets(<span class="string">"name"</span>, free<span class="selector-class">.coords</span> = TRUE, drop<span class="selector-class">.units</span> = TRUE)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>所有 <strong>qtm</strong> 函数创建的地图均可以通过 <strong>tm_shape</strong> + <strong>tm_fill</strong>或别的 <strong>tm_</strong> 类型的函数创建。</p>
 </blockquote>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/14-tm_facets.png?x-oss-process=style/moon" width="1024" height="576" "figure14-make maps use tm_facets" align="center"><font face="Times New Roman"><strong>Figure14-Make maps use tm_facets</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/14-tm_facets.png?x-oss-process=style/moon" alt="Figure14-Make maps use tm_facets"></p>
 <h1 id="构建底图"><a href="#构建底图" class="headerlink" title="构建底图"></a>构建底图</h1><p>采用<strong>tmaptools</strong>安装包的<strong>read_osm</strong>函数</p>
 <h2 id="转换坐标系"><a href="#转换坐标系" class="headerlink" title="转换坐标系"></a>转换坐标系</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnd_wgs = spTransform(<span class="name">lnd</span>, CRS(<span class="string">"+init=epsg:4326"</span>))</span><br></pre></td></tr></table></figure>
 <h2 id="从-OSM下载图像"><a href="#从-OSM下载图像" class="headerlink" title="从 OSM下载图像"></a>从 <a href="http://www.openstreetmap.org" target="_blank" rel="noopener"><abbr title="Open Street Map">OSM</abbr></a>下载图像</h2><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">osm_tiles</span> = tmaptools::read_osm(bbox(lnd_wgs))</span><br></pre></td></tr></table></figure>
@@ -385,8 +381,7 @@
 <p><strong>tmaptools::read_osm</strong>省去了步骤 <strong>library(tmaptools)</strong><br>Warning: Current projection unknown. Long lat coordinates (wgs84) assumed.命令窗口的这一警告不碍事，忽略即可。</p>
 </blockquote>
 <h2 id="绘制底图"><a href="#绘制底图" class="headerlink" title="绘制底图"></a>绘制底图</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tm_shape(<span class="name">osm_tiles</span>) + tm_raster() + tm_shape(<span class="name">lnd_wgs</span>) +</span><br><span class="line">  tm_fill(<span class="string">"Pop_2001"</span>, fill.title = <span class="string">"Population, 2001"</span>, scale = <span class="number">0.8</span>, alpha = <span class="number">0.5</span>) +</span><br><span class="line">  tm_layout(<span class="name">legend</span>.position = c(<span class="number">0.82</span>,<span class="number">0.02</span>))</span><br></pre></td></tr></table></figure>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/15-basemap.png?x-oss-process=style/moon" width="1024" height="576" "figure15-london's population in 2001" align="center"><font face="Times New Roman"><strong>Figure15-London’s population in 2001</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/15-basemap.png?x-oss-process=style/moon" alt="Figure15-London's population in 2001"></p>
 <h1 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?tmap</span><br></pre></td></tr></table></figure>
 <p>在tmap中还有许多其他直观和强大的功能，可以通过 <strong>?tmap</strong> 自己探索。</p>
 

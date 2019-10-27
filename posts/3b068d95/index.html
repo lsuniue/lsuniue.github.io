@@ -66,7 +66,7 @@
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/4-set-10km-buffer-004.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/5-my-first-pull-005.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/6-quads-006.png?x-oss-process=style/moon">
-<meta property="og:updated_time" content="2019-10-15T02:54:09.219Z">
+<meta property="og:updated_time" content="2019-10-27T02:35:22.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spatial data in R">
 <meta name="twitter:description" content="数据结构 基础作图 构建缓冲区 象限分颜色表示">
@@ -282,7 +282,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-15 10:54:09" itemprop="dateModified" datetime="2019-10-15T10:54:09+08:00">2019-10-15</time>
+                <time title="修改时间：2019-10-27 10:35:22" itemprop="dateModified" datetime="2019-10-27T10:35:22+08:00">2019-10-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -351,8 +351,7 @@
 <h1 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h1><p>第一部分我们已经看了R的语法并安装了必要的包，我们可以开始查看一些真实的空间数据。</p>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>本教程的数据下载链接：<a href="https://github.com/Robinlovelace/Creating-maps-in-R" target="_blank" rel="noopener">Spatial data</a>，打开链接后，依次点击右手边的<kbd>Clone or download</kbd>、<kbd>Download ZIP</kbd>，下载完成后解压即可。</p>
 <h2 id="项目文件"><a href="#项目文件" class="headerlink" title="项目文件"></a>项目文件</h2><p>在RStudio中的所有操作建议在项目文件中进行，刚才下载的文件里已经包含了本教程的下载文件。打开步骤：<br>打开RStudio，依次点击左上角的File -&gt; Open File…，找到上一步下载并解压后的文件夹，双击打开Creating-maps-in-R.Rproj项目文件。如图2所示：</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/2-RStudio-project-002.jpg?x-oss-process=style/moon" width="1024" height="576" "图2-用rstudio环境打开项目文件" align="center"><font face="黑体"><strong>图2-用RStudio环境打开项目文件</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/2-RStudio-project-002.jpg?x-oss-process=style/moon" alt="图2-用RStudio环境打开项目文件"></p>
 <h2 id="数据加载"><a href="#数据加载" class="headerlink" title="数据加载"></a>数据加载</h2><p>数据加载之前最好通过其他软件如<a href="http://www.libreoffice.org/download/download/" target="_blank" rel="noopener">LibreOffice</a>(免费的办公软件)预览一下数据结构。然后在RStudio输入以下代码：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)  <span class="comment"># load package ：Geospatial Data Abstraction Library</span></span><br><span class="line">lnd &lt;- readOGR(<span class="attr">dsn</span> = <span class="string">"data"</span>, <span class="attr">layer</span> = <span class="string">"london_sport"</span>) <span class="comment"># read data</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p><strong>readOGR():</strong>读取shapfile文件,并在R中赋予它一个新的对象名：lnd<br>第一个参数，dsn = shapfile文件所在的文件夹名<br>第二个参数，layer = shapfile文件名，省略扩展名<br>文件名均用字符串形式表示(即:”文件名”)<br>R有一个默认参数执行顺序：readOGR(“data”, “london_sport”)效果同上<br>至于如何加载其他不同类型的空间数据，可以通过?readOGR查看帮助文档。</p>
@@ -376,8 +375,7 @@
 <blockquote>
 <p>col = “lightgrey”: 浅灰色<br>col = “turquoise”: 绿宝石色<br>add = TRUE: 在底图<strong><code>plot(lnd, col = &quot;lightgrey&quot;)</code></strong>上增加新的图层</p>
 </blockquote>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/3-areas-of-high-sports-participation-003.png?x-oss-process=style/moon" width="1024" height="576" "图3-伦敦市运动参与率较高区域" align="center"><font face="黑体"><strong>图3-伦敦市运动参与率较高区域</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/3-areas-of-high-sports-participation-003.png?x-oss-process=style/moon" alt="图3-伦敦市运动参与率较高区域"></p>
 <h1 id="构建缓冲区"><a href="#构建缓冲区" class="headerlink" title="构建缓冲区"></a>构建缓冲区</h1><p>选择地理中心位于伦敦内部地理中心10公里内的所有区域</p>
 <h2 id="质心和缓冲区"><a href="#质心和缓冲区" class="headerlink" title="质心和缓冲区"></a>质心和缓冲区</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(<span class="name">rgeos</span>)  # Geometry Engine - Open Source (<span class="name">GEOS</span>) </span><br><span class="line">plot(<span class="name">lnd</span>, col = <span class="string">"grey"</span>)</span><br><span class="line">cent_lnd &lt;- gCentroid(<span class="name">lnd</span>[lnd$name == <span class="string">"City of London"</span>,]) </span><br><span class="line">points(<span class="name">cent_lnd</span>, cex = <span class="number">3</span>)</span><br><span class="line">lnd_buffer &lt;- gBuffer(<span class="name">spgeom</span> = cent_lnd, width = <span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -395,14 +393,12 @@
 <blockquote>
 <p>结果如图4所示：</p>
 </blockquote>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/4-set-10km-buffer-004.png?x-oss-process=style/moon" width="1024" height="576" "图4-建立10km的缓冲区" align="center"><font face="黑体"><strong>图4-建立10km的缓冲区</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/4-set-10km-buffer-004.png?x-oss-process=style/moon" alt="图4-建立10km的缓冲区"></p>
 <h1 id="象限分颜色表示"><a href="#象限分颜色表示" class="headerlink" title="象限分颜色表示"></a>象限分颜色表示</h1><h2 id="获取经纬度"><a href="#获取经纬度" class="headerlink" title="获取经纬度"></a>获取经纬度</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lng &lt;- coordinates(gCentroid(lnd))<span class="string">[[1]]</span></span><br><span class="line">lat &lt;- coordinates(gCentroid(lnd))<span class="string">[[2]]</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>coordinates(lnd): 返回两列数：第一列<strong><code>经度</code></strong>，第二列<strong><code>纬度</code></strong>。<br>2.lng: 获取经度<br>3.lat: 获取纬度<br>这个教程来自github上的一个开源项目，原项目的经纬度写反了，我发现了这个错误。</p>
 </blockquote>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/5-my-first-pull-005.png?x-oss-process=style/moon" width="1024" height="576" "figure5-my first pull request" align="center"><font face="Times New Roman"><strong>Figure5-My first pull request</strong></font><br></div>
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/5-my-first-pull-005.png?x-oss-process=style/moon" alt="Figure5-My first pull request"></p>
 <h2 id="方向布尔值-TRUE-FALSE"><a href="#方向布尔值-TRUE-FALSE" class="headerlink" title="方向布尔值(TRUE/FALSE)"></a>方向布尔值(TRUE/FALSE)</h2><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">east &lt;- sapply(<span class="name">coordinates</span>(<span class="name">lnd</span>)[,<span class="number">1</span>], function(<span class="name">x</span>) x &gt; lng)</span><br><span class="line">west &lt;- sapply(<span class="name">coordinates</span>(<span class="name">lnd</span>)[,<span class="number">1</span>], function(<span class="name">x</span>) x &lt; lng)</span><br><span class="line">north &lt;- sapply(<span class="name">coordinates</span>(<span class="name">lnd</span>)[,<span class="number">2</span>], function(<span class="name">x</span>) x &gt; lat)</span><br><span class="line">south &lt;- sapply(<span class="name">coordinates</span>(<span class="name">lnd</span>)[,<span class="number">2</span>], function(<span class="name">x</span>) x &lt; lat)</span><br></pre></td></tr></table></figure>
 <h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><p><strong>1.以质心为标准，分颜色表示四个象限</strong></p>
 <ul>
@@ -415,15 +411,7 @@
 </ul>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">london = gUnaryUnion(<span class="name">lnd</span>) # rgeos</span><br><span class="line">plot(<span class="name">london</span>)</span><br></pre></td></tr></table></figure>
 <p>参考结果如图6所示：</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/6-quads-006.png?x-oss-process=style/moon" width="1024" height="576" "图6-参考结果图" align="center"><font face="黑体"><strong>图6-参考结果图</strong></font><br></div>
-
-
-
-
-
-
-
-
+<p><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/6-quads-006.png?x-oss-process=style/moon" alt="图6-参考结果图"></p>
 
     </div>
 
