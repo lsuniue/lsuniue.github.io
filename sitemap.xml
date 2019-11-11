@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://langiue.cn/about/index.html</loc>
+    
+    <lastmod>2019-11-11T05:11:50.257Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://langiue.cn/posts/fedb1f39/</loc>
     
     <lastmod>2019-11-07T15:21:43.814Z</lastmod>
@@ -166,13 +173,6 @@
     <loc>https://langiue.cn/top/index.html</loc>
     
     <lastmod>2019-10-14T15:14:07.094Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://langiue.cn/about/index.html</loc>
-    
-    <lastmod>2018-03-14T12:48:22.066Z</lastmod>
     
   </url>
   
