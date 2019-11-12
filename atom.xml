@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2019-11-12T09:19:57.832Z</updated>
+  <updated>2019-11-12T13:35:36.710Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>What kind of person do I want to be?</title>
+    <link href="https://langiue.cn/posts/40ad3823/"/>
+    <id>https://langiue.cn/posts/40ad3823/</id>
+    <published>2019-11-12T13:12:41.000Z</published>
+    <updated>2019-11-12T13:35:36.710Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Not lazy</li><li>Not ugly</li><li>Not fancy</li><li>Not bored</li><li>Not stingy</li><li>Not selfish</li><li>Not bad temper</li><li>Not hot and cold</li><li>No lack of responsibility</li></ul><a id="more"></a><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;Not lazy&lt;/li&gt;
+&lt;li&gt;Not ugly&lt;/li&gt;
+&lt;li&gt;Not fancy&lt;/li&gt;
+&lt;li&gt;Not bored&lt;/li&gt;
+&lt;li&gt;Not stingy&lt;/li&gt;
+&lt;li&gt;Not selfish&lt;/li&gt;
+&lt;li&gt;Not bad temper&lt;/li&gt;
+&lt;li&gt;Not hot and cold&lt;/li&gt;
+&lt;li&gt;No lack of responsibility&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/cool/doors-1587329_1920.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="life goals" scheme="https://langiue.cn/categories/life-goals/"/>
+    
+    
+      <category term="life goals" scheme="https://langiue.cn/tags/life-goals/"/>
+    
+  </entry>
   
   <entry>
     <title>Summary of Chinese bug in python</title>
