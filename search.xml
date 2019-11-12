@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Summary of Chinese bug in python</title>
+    <url>/posts/906db47e/</url>
+    <content><![CDATA[<ul>
+<li>python</li>
+<li>bug</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="1-matplotlib-pyplot-绘图显示中文："><a href="#1-matplotlib-pyplot-绘图显示中文：" class="headerlink" title="1. matplotlib pyplot 绘图显示中文："></a>1. matplotlib pyplot 绘图显示中文：</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">import matplotlib<span class="selector-class">.pyplot</span> as plt</span><br><span class="line">plt<span class="selector-class">.rcParams</span>[<span class="string">'font.sans-serif'</span>]=[<span class="string">'SimHei'</span>] #用来正常显示中文标签</span><br><span class="line">plt<span class="selector-class">.rcParams</span>[<span class="string">'axes.unicode_minus'</span>]=False #用来正常显示负号</span><br></pre></td></tr></table></figure>
+<h2 id="2-juypter-读取中文编码的文件乱码"><a href="#2-juypter-读取中文编码的文件乱码" class="headerlink" title="2. juypter 读取中文编码的文件乱码"></a>2. juypter 读取中文编码的文件乱码</h2><p>在读取中文文件时，出现错误<strong>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xc0 in position 0: invalid start byte</strong></p>
+<p>在读取函数中添加<code>encoding = &quot;GBK&quot;</code>,例：<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">pd</span><span class="selector-class">.read_csv</span>(<span class="string">"your_file_path"</span>, encoding = <span class="string">"GBK"</span>)</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>bug</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to install theme of NexT</title>
     <url>/posts/aaad910/</url>
     <content><![CDATA[<ul>
