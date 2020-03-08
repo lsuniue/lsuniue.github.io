@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2019-11-12T09:19:57.832Z</updated>
+  <updated>2020-03-08T13:36:48.670Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Impact Factors of Academic Journals in Remote Sensing</title>
+    <link href="https://langiue.cn/posts/455d75bb/"/>
+    <id>https://langiue.cn/posts/455d75bb/</id>
+    <published>2020-03-08T12:00:52.000Z</published>
+    <updated>2020-03-08T13:36:48.670Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Impact Factors</li><li>Journals in Remote Sensing</li></ul><a id="more"></a><hr><p>IEEE GEOSCIENCE AND REMOTE SENSING MAGAZINE 9.659<br>remote sensing of environment 8.2<br>isprs journal of photogrammetry and remote sensing 6.9<br>ieee transactions on geoscience and remote sensing 5.63<br>Remote Sensing 4.118</p><p>一个计算即时影响因子的<a href="https://zhuanlan.zhihu.com/p/64822653" target="_blank" rel="noopener">参考网址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;Impact Factors&lt;/li&gt;
+&lt;li&gt;Journals in Remote Sensing&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/Paper/IF_physics-1024x768.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="Paper" scheme="https://langiue.cn/categories/Paper/"/>
+    
+      <category term="Remote Sensing" scheme="https://langiue.cn/categories/Paper/Remote-Sensing/"/>
+    
+    
+      <category term="Remote Sensing" scheme="https://langiue.cn/tags/Remote-Sensing/"/>
+    
+      <category term="Impact Factors" scheme="https://langiue.cn/tags/Impact-Factors/"/>
+    
+  </entry>
   
   <entry>
     <title>Summary of Chinese bug in python</title>
