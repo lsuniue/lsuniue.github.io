@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>中科院城环所毕业论文Latex模板</title>
+    <url>/posts/58f43728/</url>
+    <content><![CDATA[<ul>
+<li>2020 IUE毕业学位论文Latex模板下载地址：<a href="https://github.com/FirstPotato/IUE-Thesis" target="_blank" rel="noopener">IUE-thesis</a></li>
+<li>参考<a href="https://github.com/mohuangrui/ucasthesis" target="_blank" rel="noopener">ucasthesis</a> 国科大学位论文 LaTeX 模板最新样式</li>
+<li>调整后适应了中科院城市环境研究所学位论文格式要求</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p>已调整格式：</p>
+<ul>
+<li>英文封面中的“By”改为小写“by”</li>
+<li>图目录 / 表目录名称修改</li>
+<li>添加目录部分图表标题前的“图”字与“表”字</li>
+<li><p>增加了经费支持页面及使用说明</p>
+</li>
+<li><p>删去了参考文献中作者名字之间的空格</p>
+</li>
+</ul>
+<p>可手动调整格式：</p>
+<p>标题默认分级从1开始，让小标题从(1)开始：</p>
+<p>在\begin{enumerate}下方加入一行 <code>\renewcommand{\labelenumi}{(\theenumi)}</code>：</p>
+<p>原标题使用：(标题从1, 2, 3开始)</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> your text</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>修改标题后：(标题从(1)，(2)，(3)开始)</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">renewcommand</span><span class="string">&#123;\labelenumi&#125;</span><span class="string">&#123;(\theenumi)&#125;</span></span><span class="comment">%- 给标题添加括号</span></span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> your text</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>IUE</category>
+        <category>Latex</category>
+      </categories>
+      <tags>
+        <tag>IUE</tag>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 latex 制作个人简历</title>
+    <url>/posts/35c4a57b/</url>
+    <content><![CDATA[<ul>
+<li><a href="http://www.overleaf.com" target="_blank" rel="noopener">www.overleaf.com</a></li>
+<li>个人简历</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@?x-oss-process=style/moon" width="821" height="531" "name" align="center"><font face="Times New Roman"><strong>name</strong></font><br></div><br>访问网址 <a href="https://www.overleaf.com/" target="_blank" rel="noopener">https://www.overleaf.com/</a></p>
+<p>注册账号并登录</p>
+<p>在 Templates 输入 resume 并搜索</p>
+<p>下载喜欢的模板</p>
+<h4 id="网站模板"><a href="#网站模板" class="headerlink" title="网站模板"></a>网站模板</h4><p><a href="https://www.sharelatex.com/templates" target="_blank" rel="noopener">sharelatex</a></p>
+<p><a href="https://www.overleaf.com/latex/templates/tagged/cv" target="_blank" rel="noopener">overleaf模板</a></p>
+<h4 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h4><p><a href="https://www.jianshu.com/p/d3a8c6d020e3" target="_blank" rel="noopener"> 简单latex 模板</a></p>
+<h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h4><p><a href="https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex" target="_blank" rel="noopener">英文酷炫简历</a></p>
+<p><a href="https://github.com/HowinLoo/ResumePhoto" target="_blank" rel="noopener">中文单栏</a></p>
+<h4 id="Latex英文模板变中文"><a href="#Latex英文模板变中文" class="headerlink" title="Latex英文模板变中文"></a>Latex英文模板变中文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\usepackage[UTF8]&#123;ctex&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CV</category>
+        <category>Latex</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+        <tag>CV</tag>
+        <tag>Overleaf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>读书笔记 | 快速阅读术</title>
     <url>/posts/e2aac7d3/</url>
     <content><![CDATA[<ul>
