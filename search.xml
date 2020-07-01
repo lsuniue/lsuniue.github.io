@@ -10,8 +10,7 @@
 </ul>
 <a id="more"></a>
 <hr>
-<p>已调整格式：</p>
-<ul>
+<h2 id="已调整格式："><a href="#已调整格式：" class="headerlink" title="已调整格式："></a>已调整格式：</h2><ul>
 <li>英文封面中的“By”改为小写“by”</li>
 <li>图目录 / 表目录名称修改</li>
 <li>添加目录部分图表标题前的“图”字与“表”字</li>
@@ -20,8 +19,7 @@
 <li><p>删去了参考文献中作者名字之间的空格</p>
 </li>
 </ul>
-<p>可手动调整格式：</p>
-<p>标题默认分级从1开始，让小标题从(1)开始：</p>
+<h2 id="可手动调整格式："><a href="#可手动调整格式：" class="headerlink" title="可手动调整格式："></a>可手动调整格式：</h2><p>标题默认分级从1开始，让小标题从(1)开始：</p>
 <p>在\begin{enumerate}下方加入一行 <code>\renewcommand{\labelenumi}{(\theenumi)}</code>：</p>
 <p>原标题使用：(标题从1, 2, 3开始)</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">item</span></span> your text</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br></pre></td></tr></table></figure>
@@ -46,7 +44,7 @@
 </ul>
 <a id="more"></a>
 <hr>
-<p><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@?x-oss-process=style/moon" width="821" height="531" "name" align="center"><font face="Times New Roman"><strong>name</strong></font><br></div><br>访问网址 <a href="https://www.overleaf.com/" target="_blank" rel="noopener">https://www.overleaf.com/</a></p>
+<p>访问网址 <a href="https://www.overleaf.com/" target="_blank" rel="noopener">https://www.overleaf.com/</a></p>
 <p>注册账号并登录</p>
 <p>在 Templates 输入 resume 并搜索</p>
 <p>下载喜欢的模板</p>
