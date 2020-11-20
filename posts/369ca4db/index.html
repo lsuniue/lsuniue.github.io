@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/xiaomai/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/xiaomai/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/xiaomai/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon/xiaomai/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/images/favicon/xiaomai/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/xiaomai/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"always","offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: 'WTDIMV3YGV',
+      apiKey: 'ba861ea5c4d982731bc8ed92b3bec5c3',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="windows ftp服务器 内网穿透 Pubyun Nat123">
+<meta name="keywords" content="ftp,win10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows10 下搭建 ftp 服务器并映射到外网">
+<meta property="og:url" content="https://langiue.cn/posts/369ca4db/index.html">
+<meta property="og:site_name" content="Isaiah">
+<meta property="og:description" content="windows ftp服务器 内网穿透 Pubyun Nat123">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon">
+<meta property="og:updated_time" content="2020-11-20T09:25:31.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows10 下搭建 ftp 服务器并映射到外网">
+<meta name="twitter:description" content="windows ftp服务器 内网穿透 Pubyun Nat123">
+<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon">
+
+<link rel="canonical" href="https://langiue.cn/posts/369ca4db/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Windows10 下搭建 ftp 服务器并映射到外网 | Isaiah</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034341-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-94034341-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="top-scroll-bar"></div>
+<div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Isaiah</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Just Jump!</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-top">
+
+    <a href="/top/" rel="section"><i class="fa fa-fw fa-signal"></i>top</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/369ca4db/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+      <meta itemprop="name" content="Isaiah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Isaiah">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows10 下搭建 ftp 服务器并映射到外网
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-20 10:17:22 / 修改时间：17:25:31" itemprop="dateCreated datePublished" datetime="2020-11-20T10:17:22+08:00">2020-11-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ftp/" itemprop="url" rel="index">
+                    <span itemprop="name">ftp</span>
+                  </a>
+                </span>
+                  >
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ftp/win10/" itemprop="url" rel="index">
+                    <span itemprop="name">win10</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>windows</li>
+<li>ftp服务器</li>
+<li>内网穿透<ul>
+<li>Pubyun</li>
+<li>Nat123</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<hr>
+<h2 id="FTP的搭建"><a href="#FTP的搭建" class="headerlink" title="FTP的搭建"></a>FTP的搭建</h2><h3 id="启动IIS服务"><a href="#启动IIS服务" class="headerlink" title="启动IIS服务"></a>启动IIS服务</h3><p>控制面板-&gt;程序-&gt;启用或关闭Windows功能</p>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h3 id="搭建ftp"><a href="#搭建ftp" class="headerlink" title="搭建ftp"></a>搭建ftp</h3><h4 id="打开ISS"><a href="#打开ISS" class="headerlink" title="打开ISS"></a>打开ISS</h4><p>搜索-&gt;ISS，打开ISS管理器</p>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon" align="center"><br></div>
+
+<h4 id="添加FTP站点"><a href="#添加FTP站点" class="headerlink" title="添加FTP站点"></a>添加FTP站点</h4><p>右键网站-&gt;添加FTP站点</p>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align="center"><br></div>
+
+<h4 id="绑定和SSL设置"><a href="#绑定和SSL设置" class="headerlink" title="绑定和SSL设置"></a>绑定和SSL设置</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h4 id="身份证授权信息"><a href="#身份证授权信息" class="headerlink" title="身份证授权信息"></a>身份证授权信息</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h3 id="添加用户和组"><a href="#添加用户和组" class="headerlink" title="添加用户和组"></a>添加用户和组</h3><ul>
+<li><p>win10 家庭版</p>
+<p>无用户和组功能，升级为专业版方法如下：</p>
+</li>
+</ul>
+<p>右键此电脑—更改产品秘钥—输入</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">J7QT3<span class="number">-3</span>GCPG<span class="number">-9</span>GVWT-CH2XR-GMRJM</span><br><span class="line"><span class="number">4</span>N7JM-CV98F-WY9XX<span class="number">-9</span>D8CF<span class="number">-369</span>TT </span><br><span class="line">FMPND-XFTD4<span class="number">-67</span>FJC-HDR8C<span class="number">-3</span>YH26 </span><br><span class="line">TFP9Y-VCY3P-VVH3T<span class="number">-8</span>XXCC-MF4YK</span><br></pre></td></tr></table></figure>
+<p>升级完成后使用激活工具激活。</p>
+<ul>
+<li>win10 专业版</li>
+</ul>
+<p>计算机—&gt;管理—&gt;本地用户和组</p>
+<h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h4 id="设置用户授权规则"><a href="#设置用户授权规则" class="headerlink" title="设置用户授权规则"></a>设置用户授权规则</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h2 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h2><h3 id="允许ftp通过防火墙"><a href="#允许ftp通过防火墙" class="headerlink" title="允许ftp通过防火墙"></a>允许ftp通过防火墙</h3><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h3 id="防火墙允许其他应用"><a href="#防火墙允许其他应用" class="headerlink" title="防火墙允许其他应用"></a>防火墙允许其他应用</h3><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<p>设置完成后可以浏览器输入<a href="ftp://ip访问文件了" target="_blank" rel="noopener">ftp://ip访问文件了</a></p>
+<h2 id="FTP客户端-IIS7服务器管理工具"><a href="#FTP客户端-IIS7服务器管理工具" class="headerlink" title="FTP客户端-IIS7服务器管理工具"></a><a href="http://fwqglgj.iis7.net/nrong/sfbz/" target="_blank" rel="noopener">FTP客户端-IIS7服务器管理工具</a></h2><p>FTP客户端，它支持批量管理ftp站点。<strong>定时上传和定时下载</strong>，定时备份，且操作简洁。同时iis7服务器管理工具还是vnc客户端。并且支持批量管理管理windows及linux服务器、vps。</p>
+<h2 id="内网ip映射为公网"><a href="#内网ip映射为公网" class="headerlink" title="内网ip映射为公网"></a>内网ip映射为公网</h2><h3 id="Pubyun（手机热点测试失败）"><a href="#Pubyun（手机热点测试失败）" class="headerlink" title="Pubyun（手机热点测试失败）"></a><a href="http://www.pubyun.com/p/carg/" target="_blank" rel="noopener">Pubyun</a>（手机热点测试失败）</h3><h4 id="注册公云账号"><a href="#注册公云账号" class="headerlink" title="注册公云账号"></a><a href="http://www.pubyun.com/accounts/signup/" target="_blank" rel="noopener">注册公云账号</a></h4><h4 id="实名认证"><a href="#实名认证" class="headerlink" title="实名认证"></a>实名认证</h4><h4 id="购买套餐"><a href="#购买套餐" class="headerlink" title="购买套餐"></a>购买套餐</h4><p>购买免费版的内网域名服务套餐</p>
+<h4 id="域名创建和配置"><a href="#域名创建和配置" class="headerlink" title="域名创建和配置"></a>域名创建和配置</h4><p>创建域名和映射并配置到本地</p>
+<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon" align="center"><br></div>
+
+<h4 id="浏览器测试"><a href="#浏览器测试" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp://外网域名访问ftp</p>
+<h3 id="Nat123（手机热点测试失败）"><a href="#Nat123（手机热点测试失败）" class="headerlink" title="Nat123（手机热点测试失败）"></a><a href="http://www.nat123.com/Pages_2_32.jsp" target="_blank" rel="noopener">Nat123</a>（手机热点测试失败）</h3><h4 id="设置映射"><a href="#设置映射" class="headerlink" title="设置映射"></a>设置映射</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+<h4 id="设置访问者"><a href="#设置访问者" class="headerlink" title="设置访问者"></a>设置访问者</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon" align="center"><br></div>
+
+
+
+
+<h4 id="浏览器测试-1"><a href="#浏览器测试-1" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp://外网域名访问ftp</p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+      <div>
+    
+    	<div style="text-align:center;color:#555;font-size:15px;">-------------文章结束啦 ฅ●ω●ฅ 感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Isaiah
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://langiue.cn/posts/369ca4db/" title="Windows10 下搭建 ftp 服务器并映射到外网">https://langiue.cn/posts/369ca4db/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ftp/" rel="tag"># ftp</a>
+              <a href="/tags/win10/" rel="tag"># win10</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;来评分吧&lt;)</div>
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/6528e87/" rel="next" title="7-3 TEX Live 安装与正反向搜索配置">
+                  7-3 TEX Live 安装与正反向搜索配置 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP的搭建"><span class="nav-number">1.</span> <span class="nav-text">FTP的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动IIS服务"><span class="nav-number">1.1.</span> <span class="nav-text">启动IIS服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建ftp"><span class="nav-number">1.2.</span> <span class="nav-text">搭建ftp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开ISS"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开ISS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加FTP站点"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加FTP站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定和SSL设置"><span class="nav-number">1.2.3.</span> <span class="nav-text">绑定和SSL设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#身份证授权信息"><span class="nav-number">1.2.4.</span> <span class="nav-text">身份证授权信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户和组"><span class="nav-number">1.3.</span> <span class="nav-text">添加用户和组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建用户"><span class="nav-number">1.3.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置用户授权规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">设置用户授权规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置防火墙"><span class="nav-number">2.</span> <span class="nav-text">设置防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#允许ftp通过防火墙"><span class="nav-number">2.1.</span> <span class="nav-text">允许ftp通过防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙允许其他应用"><span class="nav-number">2.2.</span> <span class="nav-text">防火墙允许其他应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP客户端-IIS7服务器管理工具"><span class="nav-number">3.</span> <span class="nav-text">FTP客户端-IIS7服务器管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内网ip映射为公网"><span class="nav-number">4.</span> <span class="nav-text">内网ip映射为公网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pubyun（手机热点测试失败）"><span class="nav-number">4.1.</span> <span class="nav-text">Pubyun（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册公云账号"><span class="nav-number">4.1.1.</span> <span class="nav-text">注册公云账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实名认证"><span class="nav-number">4.1.2.</span> <span class="nav-text">实名认证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购买套餐"><span class="nav-number">4.1.3.</span> <span class="nav-text">购买套餐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名创建和配置"><span class="nav-number">4.1.4.</span> <span class="nav-text">域名创建和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">4.1.5.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nat123（手机热点测试失败）"><span class="nav-number">4.2.</span> <span class="nav-text">Nat123（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置映射"><span class="nav-number">4.2.1.</span> <span class="nav-text">设置映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置访问者"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置访问者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<a href="/">
+  <img class="site-author-image" itemprop="image" alt="Isaiah"
+    src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+    </a>
+  <p class="site-author-name" itemprop="name">Isaiah</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/FirstPotato/" title="GitHub &rarr; https://github.com/FirstPotato/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lsun@iue.ac.cn" title="E-Mail &rarr; mailto:lsun@iue.ac.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/lsun05" title="Weibo &rarr; http://weibo.com/lsun05" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lsuniue" title="Twitter &rarr; https://twitter.com/lsuniue" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#/user/home?id=560574858" title="https://music.163.com/#/user/home?id=560574858" rel="noopener" target="_blank">😆 网易云音乐 😆</a>
+        </li>
+    </ul>
+  </div>
+
+          <div id="aplayer" class="aplayer"></div>
+<script src="/js/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>
+          <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/20/2017 11:37:06");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+      </div>
+
+    </div>
+
+
+
+  </aside> 
+  <div id="sidebar-dimmer"></div>
+ 
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">闽ICP备19021397号 </a>
+      <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/beian/beian_logo.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null" rel="noopener" target="_blank">. </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Isaiah</span>
+</div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58cff09189eee97f" async="async"></script>
+  </div>
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <script>
+    var _mtac = {};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "https://pingjs.qq.com/h5/stats.js";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500419570");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 21479,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/custom/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/custom/crash_cheat.js"></script>
+
+</body>
+</html>
