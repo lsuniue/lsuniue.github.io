@@ -133,13 +133,10 @@
 <a id="more"></a>
 <hr>
 <p><a href="https://www.snickeen.com/2019/07/01/LaTeX-install/" target="_blank" rel="noopener">LaTex安装参考教程</a></p>
-<p>下载<a href="https://www.sumatrapdfreader.org/free-pdf-reader.html" target="_blank" rel="noopener"><strong>Sumatra PDF</strong></a></p>
-<p>TeX Live 在 Sublime Text 中运行参考博文 <a href="https://blog.hcl.moe/archives/1737" target="_blank" rel="noopener">link</a></p>
-<p>打开 SumatraPDF，进入设置-&gt;选项-&gt;设置反向搜索命令行</p>
-<p>“C:\Program Files\Microsoft VS Code\Code.exe” “C:\Program Files\Microsoft VS Code\resources\app\out\cli.js” -g “%f”:”%l”</p>
+<h2 id="下载Sumatra-PDF"><a href="#下载Sumatra-PDF" class="headerlink" title="下载Sumatra PDF"></a>下载<a href="https://www.sumatrapdfreader.org/free-pdf-reader.html" target="_blank" rel="noopener"><strong>Sumatra PDF</strong></a></h2><p>TeX Live 在 Sublime Text 中运行参考博文 <a href="https://blog.hcl.moe/archives/1737" target="_blank" rel="noopener">link</a></p>
+<p>打开 SumatraPDF，进入设置-&gt;选项-&gt;设置反向搜索命令行<br><figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">"C:<span class="symbol">\P</span>rogram Files<span class="symbol">\M</span>icrosoft VS Code<span class="symbol">\C</span>ode.exe" “C:<span class="symbol">\P</span>rogram Files<span class="symbol">\M</span>icrosoft VS Code<span class="symbol">\r</span>esources<span class="symbol">\a</span>pp<span class="symbol">\o</span>ut<span class="symbol">\c</span>li.js” -g “<span class="variable">%f”:”%</span>l”</span><br></pre></td></tr></table></figure></p>
 <p>参考<a href="https://www.latexstudio.net/archives/12260.html" target="_blank" rel="noopener">如何配置Visual Studio Code作为LaTeX编辑器</a></p>
-<p>安装</p>
-<ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
 <li><p>TeX Live</p>
 </li>
 <li><p>Visual Studio Code</p>
@@ -149,40 +146,14 @@
 <li><p>SumatraPDF 阅读器（可选，用于预览 PDF）</p>
 </li>
 </ul>
-<p>添加两个环境变量（Path）</p>
-<p>D:\Program\texlive\2019\bin\win32 | C:\texlive\2019\bin\win32</p>
-<p>C:\Program Files\SumatraPDF </p>
-<p>软件根目录说明</p>
-<p>C:/Program Files/Microsoft VS Code 我的Code.exe位置</p>
-<p>C:/Users/chany/.vscode | C:/Users/sunla/.vscode 我的扩展安装位置</p>
-<p>将SumatraPDF.exe复制到C:/Users/sunla/.vscode/</p>
-<p>设置正向搜索</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 设置预览方式</span><br><span class="line">&quot;latex-workshop.view.pdf.viewer&quot;:&quot;external&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.ref.viewer&quot;:&quot;external&quot;,</span><br><span class="line">// 设置外部PDF预览器</span><br><span class="line">&quot;latex-workshop.view.pdf.external.viewer.command&quot;: &quot;C:/Users/sunla/.vscode/SumatraPDF.exe&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.external.viewer.args&quot;: [</span><br><span class="line">    &quot;%PDF%&quot;</span><br><span class="line">],</span><br><span class="line">// 配置Syntex的正向搜索(这是官网的)</span><br><span class="line">&quot;latex-workshop.view.pdf.external.synctex.command&quot;: &quot;C:/Users/sunla/.vscode/SumatraPDF.exe&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.external.synctex.args&quot;: [</span><br><span class="line">    &quot;-forward-search&quot;,</span><br><span class="line">    &quot;%TEX%&quot;,</span><br><span class="line">    &quot;%LINE%&quot;,</span><br><span class="line">    &quot;-reuse-instance&quot;,</span><br><span class="line">    &quot;-inverse-search&quot;,</span><br><span class="line">    &quot;C:/Program Files/Microsoft VS Code/Code.exe C:/Program Files/Microsoft VS Code/resources/app/out/cli.js -r -g %f:%l&quot;,</span><br><span class="line">    &quot;%PDF%&quot;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
-<p>反向搜索</p>
-<p>打开SumatraPDF，在设置中填入如下代码：</p>
+<h2 id="添加两个环境变量（Path）"><a href="#添加两个环境变量（Path）" class="headerlink" title="添加两个环境变量（Path）"></a>添加两个环境变量（Path）</h2><figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">D:<span class="symbol">\P</span>rogram<span class="symbol">\t</span>exlive<span class="symbol">\2</span>019<span class="symbol">\b</span>in<span class="symbol">\w</span>in32 | C:<span class="symbol">\t</span>exlive<span class="symbol">\2</span>019<span class="symbol">\b</span>in<span class="symbol">\w</span>in32</span><br><span class="line"></span><br><span class="line">C:<span class="symbol">\P</span>rogram Files<span class="symbol">\S</span>umatraPDF</span><br></pre></td></tr></table></figure>
+<h2 id="软件根目录说明"><a href="#软件根目录说明" class="headerlink" title="软件根目录说明"></a>软件根目录说明</h2><p><code>C:/Program Files/Microsoft VS Code</code> 我的Code.exe位置</p>
+<p><code>C:/Users/chany/.vscode | C:/Users/sunla/.vscode</code> 我的扩展安装位置</p>
+<p>将<code>SumatraPDF.exe</code>复制到<code>C:/Users/sunla/.vscode/</code></p>
+<h2 id="设置正向搜索"><a href="#设置正向搜索" class="headerlink" title="设置正向搜索"></a>设置正向搜索</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 设置预览方式</span><br><span class="line">&quot;latex-workshop.view.pdf.viewer&quot;:&quot;external&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.ref.viewer&quot;:&quot;external&quot;,</span><br><span class="line">// 设置外部PDF预览器</span><br><span class="line">&quot;latex-workshop.view.pdf.external.viewer.command&quot;: &quot;C:/Users/sunla/.vscode/SumatraPDF.exe&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.external.viewer.args&quot;: [</span><br><span class="line">    &quot;%PDF%&quot;</span><br><span class="line">],</span><br><span class="line">// 配置Syntex的正向搜索(这是官网的)</span><br><span class="line">&quot;latex-workshop.view.pdf.external.synctex.command&quot;: &quot;C:/Users/sunla/.vscode/SumatraPDF.exe&quot;,</span><br><span class="line">&quot;latex-workshop.view.pdf.external.synctex.args&quot;: [</span><br><span class="line">    &quot;-forward-search&quot;,</span><br><span class="line">    &quot;%TEX%&quot;,</span><br><span class="line">    &quot;%LINE%&quot;,</span><br><span class="line">    &quot;-reuse-instance&quot;,</span><br><span class="line">    &quot;-inverse-search&quot;,</span><br><span class="line">    &quot;C:/Program Files/Microsoft VS Code/Code.exe C:/Program Files/Microsoft VS Code/resources/app/out/cli.js -r -g %f:%l&quot;,</span><br><span class="line">    &quot;%PDF%&quot;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<h2 id="反向搜索"><a href="#反向搜索" class="headerlink" title="反向搜索"></a>反向搜索</h2><p>打开SumatraPDF，在设置中填入如下代码：</p>
 <figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">"C:<span class="symbol">\P</span>rogram Files<span class="symbol">\M</span>icrosoft VS Code<span class="symbol">\C</span>ode.exe" "C:<span class="symbol">\P</span>rogram Files<span class="symbol">\M</span>icrosoft VS Code<span class="symbol">\r</span>esources<span class="symbol">\a</span>pp<span class="symbol">\o</span>ut<span class="symbol">\c</span>li.js" -r -g "<span class="variable">%f:%</span>l"</span><br></pre></td></tr></table></figure>
-<h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><p>{</p>
-<p>// 设置预览方式</p>
-<p>“latex-workshop.view.pdf.viewer”:”external”,</p>
-<p>“latex-workshop.view.pdf.ref.viewer”:”external”,</p>
-<p>// 设置外部PDF预览器</p>
-<p>“latex-workshop.view.pdf.external.viewer.command”: “C:/Users/sunla/.vscode/SumatraPDF.exe”,</p>
-<p>“latex-workshop.view.pdf.external.viewer.args”: [</p>
-<p>  “%PDF%”</p>
-<p>],</p>
-<p>// 配置Syntex的正向搜索(这是官网的)</p>
-<p>“latex-workshop.view.pdf.external.synctex.command”: “C:/Users/sunla/.vscode/SumatraPDF.exe”,</p>
-<p>“latex-workshop.view.pdf.external.synctex.args”: [</p>
-<p>  “-forward-search”,</p>
-<p>  “%TEX%”,</p>
-<p>  “%LINE%”,</p>
-<p>  “-reuse-instance”,</p>
-<p>  “-inverse-search”,</p>
-<p>  “C:/Program Files/Microsoft VS Code/Code.exe C:/Program Files/Microsoft VS Code/resources/app/out/cli.js -r -g %f:%l”,</p>
-<p>  “%PDF%”</p>
-<p>],</p>
-<p>}</p>
-]]></content>
+<h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">// 设置预览方式</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.viewer"</span>:<span class="string">"external"</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.ref.viewer"</span>:<span class="string">"external"</span>,</span><br><span class="line"></span><br><span class="line">// 设置外部PDF预览器</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.external.viewer.command"</span>: <span class="string">"C:/Users/sunla/.vscode/SumatraPDF.exe"</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.external.viewer.args"</span>: [</span><br><span class="line"></span><br><span class="line">  <span class="string">"%PDF%"</span></span><br><span class="line"></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 配置Syntex的正向搜索(这是官网的)</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.external.synctex.command"</span>: <span class="string">"C:/Users/sunla/.vscode/SumatraPDF.exe"</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">"latex-workshop.view.pdf.external.synctex.args"</span>: [</span><br><span class="line"></span><br><span class="line">  <span class="string">"-forward-search"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"%TEX%"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"%LINE%"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"-reuse-instance"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"-inverse-search"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"C:/Program Files/Microsoft VS Code/Code.exe C:/Program Files/Microsoft VS Code/resources/app/out/cli.js -r -g %f:%l"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"%PDF%"</span></span><br><span class="line"></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Latex</category>
         <category>TEX Live</category>
@@ -365,7 +336,7 @@
 <a id="more"></a>
 <hr>
 <h2 id="1-matplotlib-pyplot-绘图显示中文："><a href="#1-matplotlib-pyplot-绘图显示中文：" class="headerlink" title="1. matplotlib pyplot 绘图显示中文："></a>1. matplotlib pyplot 绘图显示中文：</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">import matplotlib<span class="selector-class">.pyplot</span> as plt</span><br><span class="line">plt<span class="selector-class">.rcParams</span>[<span class="string">'font.sans-serif'</span>]=[<span class="string">'SimHei'</span>] #用来正常显示中文标签</span><br><span class="line">plt<span class="selector-class">.rcParams</span>[<span class="string">'axes.unicode_minus'</span>]=False #用来正常显示负号</span><br></pre></td></tr></table></figure>
-<h2 id="2-juypter-读取中文编码的文件乱码"><a href="#2-juypter-读取中文编码的文件乱码" class="headerlink" title="2. juypter 读取中文编码的文件乱码"></a>2. juypter 读取中文编码的文件乱码</h2><p>在读取中文文件时，出现错误<strong>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xc0 in position 0: invalid start byte</strong></p>
+<h2 id="2-juypter-读取中文编码的文件乱码"><a href="#2-juypter-读取中文编码的文件乱码" class="headerlink" title="2. juypter 读取中文编码的文件乱码"></a>2. juypter 读取中文编码的文件乱码</h2><p>在读取中文文件时，出现错误<code>UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xc0 in position 0: invalid start byte</code></p>
 <p>在读取函数中添加<code>encoding = &quot;GBK&quot;</code>,例：<br><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">pd</span><span class="selector-class">.read_csv</span>(<span class="string">"your_file_path"</span>, encoding = <span class="string">"GBK"</span>)</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <categories>
@@ -386,18 +357,21 @@
 </ul>
 <a id="more"></a>
 <hr>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>在Git Bash窗口输入<br>‘’’<br>$ cd your-hexo-site<br>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>‘’’</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>在Git Bash窗口输入<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">cd</span> your-hexo-site</span><br><span class="line">$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>用python打开本地站点目录下的<code>_config.yml</code>文件，找到<code>theme</code>字段，并将其值更改为<code>next</code></p>
-<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是<code>hexo s --debug</code>。当命令行输出中提示出：<br>‘’’<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop.<br>‘’’<br>此时即可使用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，检查站点是否正确运行。</p>
-<h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><h3 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是<code>hexo s --debug</code>。当命令行输出中提示出：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://localhost:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.</span><br></pre></td></tr></table></figure></p>
+<p>此时即可使用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，检查站点是否正确运行。</p>
+<h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><h4 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h4><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
 <ul>
 <li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
 <li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>依次打开<code>站点文件夹/themes/next/ _config.yml</code>文件(可用python)，你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<blockquote>
-<p>Example 选择 Pisces Scheme<br><br>‘’’</p>
-</blockquote>
-#scheme: Muse<br>#scheme: Mist<br>scheme: Pisces<br>‘’’<h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3>编辑<code>站点配置文件</code>， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用<code>简体中文</code>，配置如下：<br>‘’’<br>language: zh-Hans<br>‘’’<h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3>编辑<code>主题配置</code>文件，修改以下内容：</li>
-<li>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。<br><code>菜单示例配</code><br>‘’’<br>menu:<br>home: /<br>archives: /archives<br>#about: /about<br>#categories: /categories<br>tags: /tags<br>#commonweal: /404.html<br>‘’’</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>依次打开<code>站点文件夹/themes/next/ _config.yml</code>文件(可用python)，你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<br>Example 选择 Pisces Scheme<br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#scheme</span>: Muse</span><br><span class="line"><span class="selector-id">#scheme</span>: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h4><p>编辑<code>站点配置文件</code>， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用<code>简体中文</code>，配置如下：<br><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">language:</span> <span class="built_in">zh</span>-Hans</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h4><p>编辑<code>主题配置</code>文件，修改以下内容：</p>
+<ul>
+<li>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。<br><code>菜单示例配</code><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">menu</span>:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  <span class="selector-id">#about</span>: /about</span><br><span class="line">  <span class="selector-id">#categories</span>: /categories</span><br><span class="line">  tags: /tags</span><br><span class="line">  <span class="selector-id">#commonweal</span>: /<span class="number">404</span>.html</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
       <categories>

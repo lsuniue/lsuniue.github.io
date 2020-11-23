@@ -61,7 +61,7 @@
 <meta property="og:site_name" content="Isaiah">
 <meta property="og:description" content="Get Start Next">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-07T15:14:03.694Z">
+<meta property="og:updated_time" content="2020-11-23T10:03:15.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Introduction to install theme of NexT">
 <meta name="twitter:description" content="Get Start Next">
@@ -268,10 +268,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-07 22:59:58 / 修改时间：23:14:03" itemprop="dateCreated datePublished" datetime="2019-11-07T22:59:58+08:00">2019-11-07</time>
+              <time title="创建时间：2019-11-07 22:59:58" itemprop="dateCreated datePublished" datetime="2019-11-07T22:59:58+08:00">2019-11-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-23 18:03:15" itemprop="dateModified" datetime="2020-11-23T18:03:15+08:00">2020-11-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -314,18 +320,21 @@
 </ul>
 <a id="more"></a>
 <hr>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>在Git Bash窗口输入<br>‘’’<br>$ cd your-hexo-site<br>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>‘’’</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>在Git Bash窗口输入<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">cd</span> your-hexo-site</span><br><span class="line">$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>用python打开本地站点目录下的<code>_config.yml</code>文件，找到<code>theme</code>字段，并将其值更改为<code>next</code></p>
-<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是<code>hexo s --debug</code>。当命令行输出中提示出：<br>‘’’<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>. Press Ctrl+C to stop.<br>‘’’<br>此时即可使用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，检查站点是否正确运行。</p>
-<h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><h3 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是<code>hexo s --debug</code>。当命令行输出中提示出：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://localhost:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.</span><br></pre></td></tr></table></figure></p>
+<p>此时即可使用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，检查站点是否正确运行。</p>
+<h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><h4 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h4><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
 <ul>
 <li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
 <li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>依次打开<code>站点文件夹/themes/next/ _config.yml</code>文件(可用python)，你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<blockquote>
-<p>Example 选择 Pisces Scheme<br><br>‘’’</p>
-</blockquote>
-#scheme: Muse<br>#scheme: Mist<br>scheme: Pisces<br>‘’’<h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3>编辑<code>站点配置文件</code>， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用<code>简体中文</code>，配置如下：<br>‘’’<br>language: zh-Hans<br>‘’’<h3 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h3>编辑<code>主题配置</code>文件，修改以下内容：</li>
-<li>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。<br><code>菜单示例配</code><br>‘’’<br>menu:<br>home: /<br>archives: /archives<br>#about: /about<br>#categories: /categories<br>tags: /tags<br>#commonweal: /404.html<br>‘’’</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>依次打开<code>站点文件夹/themes/next/ _config.yml</code>文件(可用python)，你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<br>Example 选择 Pisces Scheme<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#scheme</span>: Muse</span><br><span class="line"><span class="selector-id">#scheme</span>: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h4><p>编辑<code>站点配置文件</code>， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用<code>简体中文</code>，配置如下：<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">language:</span> <span class="built_in">zh</span>-Hans</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h4><p>编辑<code>主题配置</code>文件，修改以下内容：</p>
+<ul>
+<li>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。<br><code>菜单示例配</code><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">menu</span>:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  <span class="selector-id">#about</span>: /about</span><br><span class="line">  <span class="selector-id">#categories</span>: /categories</span><br><span class="line">  tags: /tags</span><br><span class="line">  <span class="selector-id">#commonweal</span>: /<span class="number">404</span>.html</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
@@ -449,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载主题"><span class="nav-number">1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题"><span class="nav-number">3.</span> <span class="nav-text">验证主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设定"><span class="nav-number"></span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择-Scheme"><span class="nav-number">1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置语言"><span class="nav-number">2.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">3.</span> <span class="nav-text">设置菜单</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载主题"><span class="nav-number">1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题"><span class="nav-number">3.</span> <span class="nav-text">验证主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题设定"><span class="nav-number">4.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择-Scheme"><span class="nav-number">4.1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置语言"><span class="nav-number">4.2.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置菜单"><span class="nav-number">4.3.</span> <span class="nav-text">设置菜单</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -594,6 +603,95 @@ show_date_time();
 
 
       </div>
+
+    <!-- password 2020-11-23 -->
+    <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    //暂时储存文章中的内容
+    var div = $('.post-body');
+    //暂时储存目录的内容
+    //var toc=$('.post-toc')
+    
+    function password() {
+        if(''){
+            //将文章内容删除
+            div.remove();
+            //将目录删除
+            //toc.remove();
+            //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+            //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+            //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+            $('.post-header').after(
+            '<span class="description" value="请输入密码，然后按 Enter 键阅读" style="font-style: oblique;font-weight: bold;border: none;display: block;'+
+            'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 40px;resize:none ">'+
+            '<i class="fa fa-heartbeat" id="myheartbeat"></i>'+
+            '请输入密码，然后按 Enter 键阅读' +
+            '<i class="fa fa-heartbeat" id="myheartbeat"></i>'+
+            '</span>' +
+            '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+            '<input class="password"  type="password" autocomplete="new-password" autofocus="autofocus" value="" style="border-radius: 5px;height: 30px;border: none;display: block;border-bottom: 1px solid #ccc;' +
+            'margin: 0 auto;outline: none;width:95%"/>' +
+            '</div>')
+            //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+            document.onclick = function (event) {
+                var e = event || window.event;
+                var elem = e.srcElement || e.target;
+
+                while (elem) {
+                    if (elem != document) {
+                        if (elem.className == "password") {
+                            //$(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+                            return;
+                        }
+                        elem = elem.parentNode;
+                    } else {
+                        //$(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+                        return;
+                    }
+                }
+            }
+            //绑定enter键按下后离开的事件
+            $(document).keyup(function(event){
+                if(event.keyCode ==13&&$('.password').length>0){
+                    //console.log($('.password').val())
+                    //console.log('')
+                    if ($('.password').val() == '') {
+                        //恢复文章内容
+                        (div).appendTo($(".post-header"))
+                        //恢复目录
+                        //toc.appendTo($(".sidebar-inner"))
+
+                        //删除本页面的输入密码组件
+                        $(".description").remove();
+                        $(".qiang").remove();
+                        $(".password").remove();
+
+                        //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+                        //图片懒加载，没有加入此功能的这个函数需要去掉
+                        $('img').lazyload({
+                            placeholder: '/images/loading.gif',
+                            effect: 'fadeIn',
+                            threshold : 100,
+                            failure_limit : 20,
+                            skip_invisible : false
+                        });
+                        //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+                        $(".post-block").css({opacity:1});
+                        $(".post-header").css({opacity:1});
+                        $(".post-body").css({opacity:1});
+                        $(".pagination").css({opacity:1});
+                    }else {
+                        alert("对不起，密码输入错误。")
+                    }
+                }
+                //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+            });
+        }
+    }
+    password();
+</script>
+
+
     </main>
 
     <footer class="footer">
