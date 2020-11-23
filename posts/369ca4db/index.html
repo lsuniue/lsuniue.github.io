@@ -73,7 +73,7 @@
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon">
 <meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon">
-<meta property="og:updated_time" content="2020-11-20T09:25:31.993Z">
+<meta property="og:updated_time" content="2020-11-23T08:08:56.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10 下搭建 ftp 服务器并映射到外网">
 <meta name="twitter:description" content="windows ftp服务器 内网穿透 Pubyun Nat123">
@@ -281,10 +281,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-20 10:17:22 / 修改时间：17:25:31" itemprop="dateCreated datePublished" datetime="2020-11-20T10:17:22+08:00">2020-11-20</time>
+              <time title="创建时间：2020-11-20 10:17:22" itemprop="dateCreated datePublished" datetime="2020-11-20T10:17:22+08:00">2020-11-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-23 16:08:56" itemprop="dateModified" datetime="2020-11-23T16:08:56+08:00">2020-11-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -388,6 +394,49 @@
 
 
 <h4 id="浏览器测试-1"><a href="#浏览器测试-1" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp://外网域名访问ftp</p>
+<h2 id="FTP-管理工具"><a href="#FTP-管理工具" class="headerlink" title="FTP 管理工具"></a><a href="https://www.filezilla.cn/" target="_blank" rel="noopener">FTP 管理工具</a></h2><ul>
+<li>易于使用</li>
+</ul>
+<p><strong>FileZilla</strong>比其他任何一款FTP软件都要简单</p>
+<ul>
+<li>多协议支持</li>
+</ul>
+<p><strong>FileZilla</strong>支持<strong>FTP</strong>、<strong>FTPS</strong>、<strong>SFTP</strong>等文件传输协议</p>
+<ul>
+<li>多种语言</li>
+</ul>
+<p><strong>FileZilla</strong>支持<strong>多国语言</strong>，完美支持简体中文</p>
+<ul>
+<li>多标签界面</li>
+</ul>
+<p><strong>FileZilla</strong>支持建立多个标签同时工作</p>
+<ul>
+<li>远程查找文件</li>
+</ul>
+<p><strong>FileZilla</strong>支持远程查找文件功能</p>
+<ul>
+<li>站点管理器</li>
+</ul>
+<p><strong>FileZilla</strong>自带功能强大的<strong>站点管理</strong>和<strong>传输队列管理</strong></p>
+<h2 id="公司局域网限制访问ftp"><a href="#公司局域网限制访问ftp" class="headerlink" title="公司局域网限制访问ftp"></a>公司局域网限制访问ftp</h2><p>控制面板&gt;系统和安全&gt;Windows Defender 防火墙&gt;高级设置</p>
+<ul>
+<li><p>入站规则&gt;新建规则&gt;端口&gt;下一步&gt;TCP&gt;所有本地端口&gt;允许连接&gt;下一步&gt;名称输入”new_in_ftp”&gt;完成</p>
+</li>
+<li><p>出站规则&gt;新建规则&gt;端口&gt;下一步&gt;TCP&gt;所有远程端口&gt;允许连接&gt;下一步&gt;名称输入”new_out_ftp”&gt;完成</p>
+</li>
+</ul>
+<p>浏览器输入<a href="ftp://ip地址访问ftp" target="_blank" rel="noopener">ftp://ip地址访问ftp</a></p>
+<h2 id="bug-提示"><a href="#bug-提示" class="headerlink" title="bug 提示"></a>bug 提示</h2><h3 id="FTP复制文件错误451"><a href="#FTP复制文件错误451" class="headerlink" title="FTP复制文件错误451"></a>FTP复制文件错误451</h3><ul>
+<li><code>451 No mapping for the Unicode character</code></li>
+</ul>
+<ol>
+<li><p>打开 IIS 的 FTP 设置界面，选择“高级设置”</p>
+</li>
+<li><p>将“允许UTF8”从 “True” 改为 “False”</p>
+</li>
+<li><p>重新启动服务器</p>
+</li>
+</ol>
 
     </div>
 
@@ -507,7 +556,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP的搭建"><span class="nav-number">1.</span> <span class="nav-text">FTP的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动IIS服务"><span class="nav-number">1.1.</span> <span class="nav-text">启动IIS服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建ftp"><span class="nav-number">1.2.</span> <span class="nav-text">搭建ftp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开ISS"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开ISS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加FTP站点"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加FTP站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定和SSL设置"><span class="nav-number">1.2.3.</span> <span class="nav-text">绑定和SSL设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#身份证授权信息"><span class="nav-number">1.2.4.</span> <span class="nav-text">身份证授权信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户和组"><span class="nav-number">1.3.</span> <span class="nav-text">添加用户和组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建用户"><span class="nav-number">1.3.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置用户授权规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">设置用户授权规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置防火墙"><span class="nav-number">2.</span> <span class="nav-text">设置防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#允许ftp通过防火墙"><span class="nav-number">2.1.</span> <span class="nav-text">允许ftp通过防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙允许其他应用"><span class="nav-number">2.2.</span> <span class="nav-text">防火墙允许其他应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP客户端-IIS7服务器管理工具"><span class="nav-number">3.</span> <span class="nav-text">FTP客户端-IIS7服务器管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内网ip映射为公网"><span class="nav-number">4.</span> <span class="nav-text">内网ip映射为公网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pubyun（手机热点测试失败）"><span class="nav-number">4.1.</span> <span class="nav-text">Pubyun（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册公云账号"><span class="nav-number">4.1.1.</span> <span class="nav-text">注册公云账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实名认证"><span class="nav-number">4.1.2.</span> <span class="nav-text">实名认证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购买套餐"><span class="nav-number">4.1.3.</span> <span class="nav-text">购买套餐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名创建和配置"><span class="nav-number">4.1.4.</span> <span class="nav-text">域名创建和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">4.1.5.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nat123（手机热点测试失败）"><span class="nav-number">4.2.</span> <span class="nav-text">Nat123（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置映射"><span class="nav-number">4.2.1.</span> <span class="nav-text">设置映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置访问者"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置访问者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP的搭建"><span class="nav-number">1.</span> <span class="nav-text">FTP的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动IIS服务"><span class="nav-number">1.1.</span> <span class="nav-text">启动IIS服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建ftp"><span class="nav-number">1.2.</span> <span class="nav-text">搭建ftp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开ISS"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开ISS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加FTP站点"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加FTP站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定和SSL设置"><span class="nav-number">1.2.3.</span> <span class="nav-text">绑定和SSL设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#身份证授权信息"><span class="nav-number">1.2.4.</span> <span class="nav-text">身份证授权信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户和组"><span class="nav-number">1.3.</span> <span class="nav-text">添加用户和组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建用户"><span class="nav-number">1.3.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置用户授权规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">设置用户授权规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置防火墙"><span class="nav-number">2.</span> <span class="nav-text">设置防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#允许ftp通过防火墙"><span class="nav-number">2.1.</span> <span class="nav-text">允许ftp通过防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙允许其他应用"><span class="nav-number">2.2.</span> <span class="nav-text">防火墙允许其他应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP客户端-IIS7服务器管理工具"><span class="nav-number">3.</span> <span class="nav-text">FTP客户端-IIS7服务器管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内网ip映射为公网"><span class="nav-number">4.</span> <span class="nav-text">内网ip映射为公网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pubyun（手机热点测试失败）"><span class="nav-number">4.1.</span> <span class="nav-text">Pubyun（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册公云账号"><span class="nav-number">4.1.1.</span> <span class="nav-text">注册公云账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实名认证"><span class="nav-number">4.1.2.</span> <span class="nav-text">实名认证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购买套餐"><span class="nav-number">4.1.3.</span> <span class="nav-text">购买套餐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名创建和配置"><span class="nav-number">4.1.4.</span> <span class="nav-text">域名创建和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">4.1.5.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nat123（手机热点测试失败）"><span class="nav-number">4.2.</span> <span class="nav-text">Nat123（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置映射"><span class="nav-number">4.2.1.</span> <span class="nav-text">设置映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置访问者"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置访问者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP-管理工具"><span class="nav-number">5.</span> <span class="nav-text">FTP 管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公司局域网限制访问ftp"><span class="nav-number">6.</span> <span class="nav-text">公司局域网限制访问ftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-提示"><span class="nav-number">7.</span> <span class="nav-text">bug 提示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FTP复制文件错误451"><span class="nav-number">7.1.</span> <span class="nav-text">FTP复制文件错误451</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
