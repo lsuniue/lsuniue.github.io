@@ -78,7 +78,7 @@
   <title>标签: Impact Factors | Isaiah</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034341-1"></script>
-    <script>
+    <script pjax>
       var host = window.location.hostname;
       if (host !== "localhost" || !true) {
         window.dataLayer = window.dataLayer || [];
@@ -89,7 +89,7 @@
     </script>
 
 
-  <script>
+  <script pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -572,7 +572,7 @@ show_date_time();
 </div>
         
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -601,7 +601,7 @@ show_date_time();
 
 
 
-  <script>
+  <script pjax>
     var _mtac = {};
     (function() {
       var mta = document.createElement("script");
@@ -621,6 +621,7 @@ show_date_time();
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
@@ -628,11 +629,68 @@ show_date_time();
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
 <script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
 
 
 
   
-  <script>
+  <script pjax>
     (function(){
       var bp = document.createElement('script');
       var curProtocol = window.location.protocol.split(':')[0];
@@ -646,7 +704,7 @@ show_date_time();
 
 
 
-  <script>
+  <script pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -680,6 +738,7 @@ show_date_time();
 
 
 
+    <div id="pjax">
 
   
 
@@ -687,6 +746,7 @@ show_date_time();
 
   
 
+    </div>
 
   <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/custom/love.js"></script>
