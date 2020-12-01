@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2020-11-30T01:29:24.513Z</updated>
+  <updated>2020-12-01T06:49:03.209Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>修复 Win10 桌面重复生成debug.log文件</title>
+    <link href="https://langiue.cn/posts/f7c18012/"/>
+    <id>https://langiue.cn/posts/f7c18012/</id>
+    <published>2020-12-01T05:20:52.000Z</published>
+    <updated>2020-12-01T06:49:03.209Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><kbd>Win</kbd>+<kbd>R</kbd></li><li><code>CrashPad</code>文件夹</li></ul><a id="more"></a><hr><ul><li><p>按<kbd>Win</kbd>+<kbd>R</kbd>打开Windows运行。</p></li><li><p>如果你使用Edge，输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%localappdata%/Microsoft/Edge<span class="built_in">/User </span>Data/Crashpad</span><br></pre></td></tr></table></figure></li><li><p>如果你使用Chrome，输入</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%localappdata%/Google/Chrome<span class="built_in">/User </span>Data/Crashpad</span><br></pre></td></tr></table></figure></li><li><p>删除CrashPad文件夹内的所有文件和文件夹。</p></li><li><p>重新启动Windows。</p></li></ul><p>参考<a href="https://www.ithome.com/0/514/408.htm" target="_blank" rel="noopener">文章</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Win&lt;/kbd&gt;+&lt;kbd&gt;R&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CrashPad&lt;/code&gt;文件夹&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/win10/Windows-10-Bugs.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="Win10" scheme="https://langiue.cn/categories/Win10/"/>
+    
+      <category term="bug" scheme="https://langiue.cn/categories/Win10/bug/"/>
+    
+    
+      <category term="bug" scheme="https://langiue.cn/tags/bug/"/>
+    
+      <category term="Win10" scheme="https://langiue.cn/tags/Win10/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Win10 隐藏管理员账户或普通账户</title>
     <link href="https://langiue.cn/posts/76388dea/"/>
     <id>https://langiue.cn/posts/76388dea/</id>
-    <published>2020-11-28T02:19:57.000Z</published>
-    <updated>2020-11-30T01:29:24.513Z</updated>
+    <published>2020-11-28T03:39:57.000Z</published>
+    <updated>2020-12-01T06:48:42.474Z</updated>
     
     <content type="html"><![CDATA[<ul><li>Win10</li><li>隐藏管理员账户</li><li>隐藏普通账户</li></ul><a id="more"></a><hr><h3 id="确认隐藏账户名"><a href="#确认隐藏账户名" class="headerlink" title="确认隐藏账户名"></a>确认隐藏账户名</h3><ul><li>方法1 开始—账户头像—查看显示的带隐藏账户名</li><li>方法2 <kbd>Win</kbd> + <kbd>R</kbd> 输入<code>netplwiz</code>并回车;双击需要隐藏的账号,进入账户属性页面确认真正的用户名</li></ul><h3 id="编辑注册表"><a href="#编辑注册表" class="headerlink" title="编辑注册表"></a>编辑注册表</h3><p><kbd>Win</kbd> + <kbd>R</kbd> 输入<code>regedit</code>回车打开注册表编辑器, 搜索</p><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE<span class="symbol">\S</span>OFTWARE<span class="symbol">\M</span>icrosoft<span class="symbol">\W</span>indows NT<span class="symbol">\C</span>urrentVersion<span class="symbol">\W</span>inlogon</span><br></pre></td></tr></table></figure><h3 id="新建UserList"><a href="#新建UserList" class="headerlink" title="新建UserList"></a>新建<code>UserList</code></h3><ul><li><p>隐藏管理员账户</p><p>在<code>Winlogon</code>单击右键新建“项”，命名为<code>UserList</code>;</p></li><li><p>隐藏普通账户</p><p>在<code>Winlogon</code>单击右键新建“项”，命名为<code>SpecialAccounts</code>;</p><p>在<code>SpecialAccounts</code>单击右键新建“项”，命名为<code>UserList</code></p></li></ul><h3 id="新建DWORD-32位"><a href="#新建DWORD-32位" class="headerlink" title="新建DWORD(32位)"></a>新建<code>DWORD(32位)</code></h3><p>在<code>UserList</code>单击右键新建DWORD(32位)值，命名为第一步中记录的账户全名(或本地账户名称)，数值数据保持默认的0;</p><h3 id="验证隐藏效果"><a href="#验证隐藏效果" class="headerlink" title="验证隐藏效果"></a>验证隐藏效果</h3><p><kbd>Win</kbd> + <kbd>L</kbd> 锁定屏幕在登录，验证账户是否隐藏</p><h3 id="恢复隐藏账户"><a href="#恢复隐藏账户" class="headerlink" title="恢复隐藏账户"></a>恢复隐藏账户</h3><p>在注册表删除如下项目</p><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE<span class="symbol">\S</span>OFTWARE<span class="symbol">\M</span>icrosoft<span class="symbol">\W</span>indows NT<span class="symbol">\C</span>urrentVersion<span class="symbol">\W</span>inlogon<span class="symbol">\U</span>serList</span><br><span class="line">或者</span><br><span class="line">HKEY_LOCAL_MACHINE<span class="symbol">\S</span>OFTWARE<span class="symbol">\M</span>icrosoft<span class="symbol">\W</span>indows NT<span class="symbol">\C</span>urrentVersion<span class="symbol">\W</span>inlogon<span class="symbol">\S</span>pecialAccounts<span class="symbol">\U</span>serList</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -212,9 +244,9 @@
       <category term="Latex" scheme="https://langiue.cn/categories/IUE/Latex/"/>
     
     
-      <category term="Latex" scheme="https://langiue.cn/tags/Latex/"/>
-    
       <category term="IUE" scheme="https://langiue.cn/tags/IUE/"/>
+    
+      <category term="Latex" scheme="https://langiue.cn/tags/Latex/"/>
     
   </entry>
   
@@ -244,9 +276,9 @@
       <category term="Latex" scheme="https://langiue.cn/categories/CV/Latex/"/>
     
     
-      <category term="CV" scheme="https://langiue.cn/tags/CV/"/>
-    
       <category term="Latex" scheme="https://langiue.cn/tags/Latex/"/>
+    
+      <category term="CV" scheme="https://langiue.cn/tags/CV/"/>
     
       <category term="Overleaf" scheme="https://langiue.cn/tags/Overleaf/"/>
     

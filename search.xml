@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>修复 Win10 桌面重复生成debug.log文件</title>
+    <url>/posts/f7c18012/</url>
+    <content><![CDATA[<ul>
+<li><kbd>Win</kbd>+<kbd>R</kbd></li>
+<li><code>CrashPad</code>文件夹</li>
+</ul>
+<a id="more"></a>
+<hr>
+<ul>
+<li><p>按<kbd>Win</kbd>+<kbd>R</kbd>打开Windows运行。</p>
+</li>
+<li><p>如果你使用Edge，输入</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">%localappdata%/Microsoft/Edge<span class="built_in">/User </span>Data/Crashpad</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果你使用Chrome，输入</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">%localappdata%/Google/Chrome<span class="built_in">/User </span>Data/Crashpad</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除CrashPad文件夹内的所有文件和文件夹。</p>
+</li>
+<li><p>重新启动Windows。</p>
+</li>
+</ul>
+<p>参考<a href="https://www.ithome.com/0/514/408.htm" target="_blank" rel="noopener">文章</a></p>
+]]></content>
+      <categories>
+        <category>Win10</category>
+        <category>bug</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+        <tag>Win10</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win10 隐藏管理员账户或普通账户</title>
     <url>/posts/76388dea/</url>
     <content><![CDATA[<ul>
@@ -321,8 +355,8 @@
         <category>Latex</category>
       </categories>
       <tags>
-        <tag>Latex</tag>
         <tag>IUE</tag>
+        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -350,8 +384,8 @@
         <category>Latex</category>
       </categories>
       <tags>
-        <tag>CV</tag>
         <tag>Latex</tag>
+        <tag>CV</tag>
         <tag>Overleaf</tag>
       </tags>
   </entry>
