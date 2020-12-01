@@ -53,15 +53,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Isaiah">
-<meta property="og:url" content="https://langiue.cn/tags/Markdown/index.html">
+  <meta name="description" content="hexo next pjax 实现页面跳转刷新后音乐不间断播放">
+<meta name="keywords" content="hexo,next,pjax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo next pjax实现音乐全局播放">
+<meta property="og:url" content="https://langiue.cn/posts/cba5eed1/index.html">
 <meta property="og:site_name" content="Isaiah">
+<meta property="og:description" content="hexo next pjax 实现页面跳转刷新后音乐不间断播放">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-12-01T07:26:06.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Isaiah">
+<meta name="twitter:title" content="hexo next pjax实现音乐全局播放">
+<meta name="twitter:description" content="hexo next pjax 实现页面跳转刷新后音乐不间断播放">
 
-<link rel="canonical" href="https://langiue.cn/tags/Markdown/">
+<link rel="canonical" href="https://langiue.cn/posts/cba5eed1/">
 
 
 <script id="page-configurations">
@@ -69,13 +74,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: Markdown | Isaiah</title>
+  <title>hexo next pjax实现音乐全局播放 | Isaiah</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034341-1"></script>
     <script pjax>
@@ -238,50 +243,196 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Markdown
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/cba5eed1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+      <meta itemprop="name" content="Isaiah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Isaiah">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo next pjax实现音乐全局播放
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-09 15:15:17" itemprop="dateCreated datePublished" datetime="2020-09-09T15:15:17+08:00">2020-09-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-01 15:26:06" itemprop="dateModified" datetime="2020-12-01T15:26:06+08:00">2020-12-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+                  >
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/next/" itemprop="url" rel="index">
+                    <span itemprop="name">next</span>
+                  </a>
+                </span>
+                  >
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/next/pjax/" itemprop="url" rel="index">
+                    <span itemprop="name">pjax</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <ul>
+<li>hexo next</li>
+<li>pjax 实现页面跳转刷新后音乐不间断播放</li>
+</ul>
+<a id="more"></a>
+<hr>
+<ul>
+<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
+<li>在’<head><meta name="generator" content="Hexo 3.9.0">‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</head></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-07T22:58:02+08:00"
-              content="2019-11-07">
-          11-07
-        </time>
+    <div>
+      
+      <div>
+    
+    	<div style="text-align:center;color:#555;font-size:15px;">-------------文章结束啦 ฅ●ω●ฅ 感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/fedb1f39/" itemprop="url">
-            <span itemprop="name">Markdown editing grammar</span>
-          </a>
-      </h2>
+  </div>
+</div>
 
-    </header>
-  </article>
+        
 
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Isaiah
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://langiue.cn/posts/cba5eed1/" title="hexo next pjax实现音乐全局播放">https://langiue.cn/posts/cba5eed1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+              <a href="/tags/pjax/" rel="tag"># pjax</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;来评分吧&lt;)</div>
+      <div id="wpac-rating"></div>
     </div>
   </div>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/369ca4db/" rel="prev" title="Windows10 下搭建 ftp 服务器并映射到外网">
+                  <i class="fa fa-chevron-left"></i> Windows10 下搭建 ftp 服务器并映射到外网
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/a366d578/" rel="next" title="Win10 uninstall software">
+                  Win10 uninstall software <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>

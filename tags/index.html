@@ -129,6 +129,8 @@
   </style>
 </noscript>
 
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -263,10 +265,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              目前共计 46 个标签
+              目前共计 49 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/Arcgis/" style="font-size: 12px; color: #ccc">Arcgis</a> <a href="/tags/Buddhism/" style="font-size: 12px; color: #ccc">Buddhism</a> <a href="/tags/CV/" style="font-size: 12px; color: #ccc">CV</a> <a href="/tags/Crawler/" style="font-size: 12px; color: #ccc">Crawler</a> <a href="/tags/Emment/" style="font-size: 12px; color: #ccc">Emment</a> <a href="/tags/Essay/" style="font-size: 12px; color: #ccc">Essay</a> <a href="/tags/Front-end/" style="font-size: 12px; color: #ccc">Front-end</a> <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/Github/" style="font-size: 12px; color: #ccc">Github</a> <a href="/tags/Hello/" style="font-size: 12px; color: #ccc">Hello</a> <a href="/tags/Hexo/" style="font-size: 15.6px; color: #a7a7a7">Hexo</a> <a href="/tags/IDM/" style="font-size: 12px; color: #ccc">IDM</a> <a href="/tags/IUE/" style="font-size: 12px; color: #ccc">IUE</a> <a href="/tags/Impact-Factors/" style="font-size: 12px; color: #ccc">Impact Factors</a> <a href="/tags/Java-Web/" style="font-size: 12px; color: #ccc">Java Web</a> <a href="/tags/Latex/" style="font-size: 19.2px; color: #818181">Latex</a> <a href="/tags/Life/" style="font-size: 12px; color: #ccc">Life</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/MarkdownPreview/" style="font-size: 12px; color: #ccc">MarkdownPreview</a> <a href="/tags/Moran/" style="font-size: 12px; color: #ccc">Moran</a> <a href="/tags/Next/" style="font-size: 15.6px; color: #a7a7a7">Next</a> <a href="/tags/Overleaf/" style="font-size: 12px; color: #ccc">Overleaf</a> <a href="/tags/Philosophy/" style="font-size: 19.2px; color: #818181">Philosophy</a> <a href="/tags/Python/" style="font-size: 15.6px; color: #a7a7a7">Python</a> <a href="/tags/RStudio/" style="font-size: 26.4px; color: #363636">RStudio</a> <a href="/tags/Reading-Notes/" style="font-size: 22.8px; color: #5c5c5c">Reading Notes</a> <a href="/tags/Remote-Sensing/" style="font-size: 12px; color: #ccc">Remote Sensing</a> <a href="/tags/Selenium/" style="font-size: 12px; color: #ccc">Selenium</a> <a href="/tags/Spatial-Analysis/" style="font-size: 30px; color: #111">Spatial Analysis</a> <a href="/tags/Sublime/" style="font-size: 12px; color: #ccc">Sublime</a> <a href="/tags/TEX-Live/" style="font-size: 12px; color: #ccc">TEX Live</a> <a href="/tags/Tips/" style="font-size: 12px; color: #ccc">Tips</a> <a href="/tags/W3C/" style="font-size: 12px; color: #ccc">W3C</a> <a href="/tags/Win10/" style="font-size: 22.8px; color: #5c5c5c">Win10</a> <a href="/tags/bug/" style="font-size: 15.6px; color: #a7a7a7">bug</a> <a href="/tags/ftp/" style="font-size: 12px; color: #ccc">ftp</a> <a href="/tags/ggmap/" style="font-size: 12px; color: #ccc">ggmap</a> <a href="/tags/ggplot2/" style="font-size: 12px; color: #ccc">ggplot2</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a> <a href="/tags/readOGR/" style="font-size: 12px; color: #ccc">readOGR</a> <a href="/tags/sapply/" style="font-size: 12px; color: #ccc">sapply</a> <a href="/tags/tmap/" style="font-size: 12px; color: #ccc">tmap</a> <a href="/tags/uninstall/" style="font-size: 12px; color: #ccc">uninstall</a> <a href="/tags/装机/" style="font-size: 12px; color: #ccc">装机</a> <a href="/tags/隐藏普通账户/" style="font-size: 12px; color: #ccc">隐藏普通账户</a> <a href="/tags/隐藏管理员/" style="font-size: 12px; color: #ccc">隐藏管理员</a>
+              <a href="/tags/Arcgis/" style="font-size: 12px; color: #ccc">Arcgis</a> <a href="/tags/Buddhism/" style="font-size: 12px; color: #ccc">Buddhism</a> <a href="/tags/CV/" style="font-size: 12px; color: #ccc">CV</a> <a href="/tags/Crawler/" style="font-size: 12px; color: #ccc">Crawler</a> <a href="/tags/Emment/" style="font-size: 12px; color: #ccc">Emment</a> <a href="/tags/Essay/" style="font-size: 12px; color: #ccc">Essay</a> <a href="/tags/Front-end/" style="font-size: 12px; color: #ccc">Front-end</a> <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/Github/" style="font-size: 12px; color: #ccc">Github</a> <a href="/tags/Hello/" style="font-size: 12px; color: #ccc">Hello</a> <a href="/tags/Hexo/" style="font-size: 15.6px; color: #a7a7a7">Hexo</a> <a href="/tags/IDM/" style="font-size: 12px; color: #ccc">IDM</a> <a href="/tags/IUE/" style="font-size: 12px; color: #ccc">IUE</a> <a href="/tags/Impact-Factors/" style="font-size: 12px; color: #ccc">Impact Factors</a> <a href="/tags/Java-Web/" style="font-size: 12px; color: #ccc">Java Web</a> <a href="/tags/Latex/" style="font-size: 19.2px; color: #818181">Latex</a> <a href="/tags/Life/" style="font-size: 12px; color: #ccc">Life</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/MarkdownPreview/" style="font-size: 12px; color: #ccc">MarkdownPreview</a> <a href="/tags/Moran/" style="font-size: 12px; color: #ccc">Moran</a> <a href="/tags/Next/" style="font-size: 15.6px; color: #a7a7a7">Next</a> <a href="/tags/Overleaf/" style="font-size: 12px; color: #ccc">Overleaf</a> <a href="/tags/Philosophy/" style="font-size: 19.2px; color: #818181">Philosophy</a> <a href="/tags/Python/" style="font-size: 15.6px; color: #a7a7a7">Python</a> <a href="/tags/RStudio/" style="font-size: 26.4px; color: #363636">RStudio</a> <a href="/tags/Reading-Notes/" style="font-size: 22.8px; color: #5c5c5c">Reading Notes</a> <a href="/tags/Remote-Sensing/" style="font-size: 12px; color: #ccc">Remote Sensing</a> <a href="/tags/Selenium/" style="font-size: 12px; color: #ccc">Selenium</a> <a href="/tags/Spatial-Analysis/" style="font-size: 30px; color: #111">Spatial Analysis</a> <a href="/tags/Sublime/" style="font-size: 12px; color: #ccc">Sublime</a> <a href="/tags/TEX-Live/" style="font-size: 12px; color: #ccc">TEX Live</a> <a href="/tags/Tips/" style="font-size: 12px; color: #ccc">Tips</a> <a href="/tags/W3C/" style="font-size: 12px; color: #ccc">W3C</a> <a href="/tags/Win10/" style="font-size: 22.8px; color: #5c5c5c">Win10</a> <a href="/tags/bug/" style="font-size: 15.6px; color: #a7a7a7">bug</a> <a href="/tags/ftp/" style="font-size: 12px; color: #ccc">ftp</a> <a href="/tags/ggmap/" style="font-size: 12px; color: #ccc">ggmap</a> <a href="/tags/ggplot2/" style="font-size: 12px; color: #ccc">ggplot2</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/next/" style="font-size: 12px; color: #ccc">next</a> <a href="/tags/pjax/" style="font-size: 12px; color: #ccc">pjax</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a> <a href="/tags/readOGR/" style="font-size: 12px; color: #ccc">readOGR</a> <a href="/tags/sapply/" style="font-size: 12px; color: #ccc">sapply</a> <a href="/tags/tmap/" style="font-size: 12px; color: #ccc">tmap</a> <a href="/tags/uninstall/" style="font-size: 12px; color: #ccc">uninstall</a> <a href="/tags/装机/" style="font-size: 12px; color: #ccc">装机</a> <a href="/tags/隐藏普通账户/" style="font-size: 12px; color: #ccc">隐藏普通账户</a> <a href="/tags/隐藏管理员/" style="font-size: 12px; color: #ccc">隐藏管理员</a>
             </div>
           </div>
         
@@ -326,20 +328,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

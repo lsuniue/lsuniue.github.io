@@ -55,13 +55,13 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Isaiah">
-<meta property="og:url" content="https://langiue.cn/categories/Hexo/index.html">
+<meta property="og:url" content="https://langiue.cn/categories/hexo/index.html">
 <meta property="og:site_name" content="Isaiah">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Isaiah">
 
-<link rel="canonical" href="https://langiue.cn/categories/Hexo/">
+<link rel="canonical" href="https://langiue.cn/categories/hexo/">
 
 
 <script id="page-configurations">
@@ -75,7 +75,7 @@
   };
 </script>
 
-  <title>分类: Hexo | Isaiah</title>
+  <title>分类: hexo | Isaiah</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034341-1"></script>
     <script pjax>
@@ -127,6 +127,8 @@
   </style>
 </noscript>
 
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -242,14 +244,14 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h1 class="collection-header">Hexo
+        <h1 class="collection-header">hexo
           <small>分类</small>
         </h1>
       </div>
 
       
     <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+      <h1 class="collection-header">2020</h1>
     </div>
 
   <article itemscope itemtype="http://schema.org/Article">
@@ -257,35 +259,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2019-11-07T22:59:58+08:00"
-              content="2019-11-07">
-          11-07
+              datetime="2020-09-09T15:15:17+08:00"
+              content="2020-09-09">
+          09-09
         </time>
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/posts/aaad910/" itemprop="url">
-            <span itemprop="name">Introduction to install theme of NexT</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-26T14:41:03+08:00"
-              content="2019-10-26">
-          10-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/dd26104d/" itemprop="url">
-            <span itemprop="name">那些年，爬过的坑 | Next 5.1.0 升级 7.4.2</span>
+          <a class="post-title-link" href="/posts/cba5eed1/" itemprop="url">
+            <span itemprop="name">hexo next pjax实现音乐全局播放</span>
           </a>
       </h2>
 
@@ -345,20 +327,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -738,6 +720,45 @@ window.addEventListener('pjax:success', () => {
       WIDGETPACK_LOADED = true;
       var mc = document.createElement('script');
       mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/custom/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/custom/crash_cheat.js"></script>
+
+</body>
+</html>
+ext/javascript';
       mc.async = true;
       mc.src = '//embed.widgetpack.com/widget.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);

@@ -121,6 +121,42 @@
   </entry>
   
   <entry>
+    <title>hexo next pjax实现音乐全局播放</title>
+    <link href="https://langiue.cn/posts/cba5eed1/"/>
+    <id>https://langiue.cn/posts/cba5eed1/</id>
+    <published>2020-09-09T07:15:17.000Z</published>
+    <updated>2020-12-01T07:26:06.404Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>hexo next</li><li>pjax 实现页面跳转刷新后音乐不间断播放</li></ul><a id="more"></a><hr><ul><li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li><li>在’<head><meta name="generator" content="Hexo 3.9.0">‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</head></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure><ul><li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Easily enable fast Ajax navigation on your website.</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-pjax</span></span><br><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;hexo next&lt;/li&gt;
+&lt;li&gt;pjax 实现页面跳转刷新后音乐不间断播放&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Hexo/150055379787948900_66.png?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="hexo" scheme="https://langiue.cn/categories/hexo/"/>
+    
+      <category term="next" scheme="https://langiue.cn/categories/hexo/next/"/>
+    
+      <category term="pjax" scheme="https://langiue.cn/categories/hexo/next/pjax/"/>
+    
+    
+      <category term="hexo" scheme="https://langiue.cn/tags/hexo/"/>
+    
+      <category term="next" scheme="https://langiue.cn/tags/next/"/>
+    
+      <category term="pjax" scheme="https://langiue.cn/tags/pjax/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Win10 uninstall software</title>
     <link href="https://langiue.cn/posts/a366d578/"/>
     <id>https://langiue.cn/posts/a366d578/</id>
