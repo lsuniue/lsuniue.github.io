@@ -78,7 +78,7 @@
     <title>Windows10 下搭建 ftp 服务器并映射到外网</title>
     <url>/posts/369ca4db/</url>
     <content><![CDATA[<ul>
-<li>windows</li>
+<li>Windows10</li>
 <li>ftp服务器</li>
 <li>内网穿透<ul>
 <li>Pubyun</li>
@@ -178,18 +178,18 @@
 ]]></content>
       <categories>
         <category>ftp</category>
-        <category>win10</category>
+        <category>Win10</category>
       </categories>
       <tags>
         <tag>ftp</tag>
-        <tag>win10</tag>
+        <tag>Win10</tag>
       </tags>
   </entry>
   <entry>
-    <title>7-1-2 win10 uninstall software</title>
+    <title>Win10 uninstall software</title>
     <url>/posts/a366d578/</url>
     <content><![CDATA[<ul>
-<li>win10 软件</li>
+<li>Win10 软件</li>
 <li>强力卸载</li>
 </ul>
 <a id="more"></a>
@@ -221,16 +221,16 @@
 <p><strong>QXA</strong></p>
 ]]></content>
       <categories>
-        <category>win10</category>
+        <category>Win10</category>
         <category>uninstall</category>
       </categories>
       <tags>
-        <tag>win10</tag>
+        <tag>Win10</tag>
         <tag>uninstall</tag>
       </tags>
   </entry>
   <entry>
-    <title>7-3 TEX Live 安装与正反向搜索配置</title>
+    <title>TEX Live 安装与正反向搜索配置</title>
     <url>/posts/6528e87/</url>
     <content><![CDATA[<ul>
 <li>TEX Live</li>
@@ -270,7 +270,7 @@
       </tags>
   </entry>
   <entry>
-    <title>win10 常用软件链接汇总</title>
+    <title>Win10 常用软件链接汇总</title>
     <url>/posts/8c2f229a/</url>
     <content><![CDATA[<ul>
 <li>Win10</li>
@@ -355,8 +355,8 @@
         <category>Latex</category>
       </categories>
       <tags>
-        <tag>IUE</tag>
         <tag>Latex</tag>
+        <tag>IUE</tag>
       </tags>
   </entry>
   <entry>
@@ -384,8 +384,8 @@
         <category>Latex</category>
       </categories>
       <tags>
-        <tag>Latex</tag>
         <tag>CV</tag>
+        <tag>Latex</tag>
         <tag>Overleaf</tag>
       </tags>
   </entry>
