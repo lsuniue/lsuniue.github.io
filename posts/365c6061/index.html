@@ -525,7 +525,7 @@
         </li>
       </ul>
 
-      <!--noindex-->
+      <!--noindex--> <!--告诉搜索引擎不允许抓取这个页面-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建空间数据"><span class="nav-number">1.</span> <span class="nav-text">创建空间数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建矢量对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建矢量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据帧对象"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据帧对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建空间点对象"><span class="nav-number">1.3.</span> <span class="nav-text">创建空间点对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加数据"><span class="nav-number">1.4.</span> <span class="nav-text">增加数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影：设置和转换空间参考系"><span class="nav-number">2.</span> <span class="nav-text">投影：设置和转换空间参考系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置CRS"><span class="nav-number">2.1.</span> <span class="nav-text">设置CRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换坐标系"><span class="nav-number">2.2.</span> <span class="nav-text">转换坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存坐标系"><span class="nav-number">2.3.</span> <span class="nav-text">保存坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除中间对象"><span class="nav-number">2.4.</span> <span class="nav-text">移除中间对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性连接"><span class="nav-number">3.</span> <span class="nav-text">属性连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取矢量数据"><span class="nav-number">3.1.</span> <span class="nav-text">读取矢量数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-theft"><span class="nav-number">3.2.</span> <span class="nav-text">select theft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregate"><span class="nav-number">3.3.</span> <span class="nav-text">aggregate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级查询-in"><span class="nav-number">3.4.</span> <span class="nav-text">高级查询 %in%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接空间数据和非空间数据"><span class="nav-number">3.5.</span> <span class="nav-text">连接空间数据和非空间数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速专题地图"><span class="nav-number">3.6.</span> <span class="nav-text">快速专题地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmap"><span class="nav-number">3.7.</span> <span class="nav-text">tmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#剪切和空间连接"><span class="nav-number">4.</span> <span class="nav-text">剪切和空间连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bbox"><span class="nav-number">4.1.</span> <span class="nav-text">bbox()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数据"><span class="nav-number">4.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重新投影"><span class="nav-number">4.3.</span> <span class="nav-text">重新投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切"><span class="nav-number">4.4.</span> <span class="nav-text">剪切</span></a></li></ol></li></ol></div>
       </div>
@@ -545,20 +545,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -592,6 +592,47 @@
     </ul>
   </div>
 
+          <!--12-1 取消侧边栏音乐 12-1<div id="aplayer" class="aplayer"></div>
+<script src="/js/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>-->
           <div id="aplayer" class="aplayer"></div>
 <script src="/js/custom/APlayer.min.js"></script>
 <script type="text/javascript">
@@ -620,6 +661,16 @@ var ap = new APlayer({
       author: 'Medina',
       url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
       pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
     }]
   });
 </script>
@@ -650,6 +701,7 @@ return i;
 }
 show_date_time();
 </script>
+        
       </div>
 
     </div>

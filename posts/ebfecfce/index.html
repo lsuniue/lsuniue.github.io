@@ -464,7 +464,7 @@
         </li>
       </ul>
 
-      <!--noindex-->
+      <!--noindex--> <!--告诉搜索引擎不允许抓取这个页面-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python窗口"><span class="nav-number">1.</span> <span class="nav-text">Python窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enter-multiple-commands"><span class="nav-number">1.1.</span> <span class="nav-text">Enter multiple commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">1.2.</span> <span class="nav-text">Path</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行工具"><span class="nav-number">2.</span> <span class="nav-text">执行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跳过可选参数"><span class="nav-number">2.1.</span> <span class="nav-text">跳过可选参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多值参数"><span class="nav-number">2.2.</span> <span class="nav-text">多值参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置环境变量"><span class="nav-number">3.</span> <span class="nav-text">设置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Path-Default-environment"><span class="nav-number">3.1.</span> <span class="nav-text">Path Default environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-new-environment"><span class="nav-number">3.2.</span> <span class="nav-text">Set new environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-new-environment"><span class="nav-number">3.3.</span> <span class="nav-text">Check new environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Restore-the-default-environment"><span class="nav-number">3.4.</span> <span class="nav-text">Restore the default environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output-all-the-environment"><span class="nav-number">3.5.</span> <span class="nav-text">Output all the environment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建工作流"><span class="nav-number">4.</span> <span class="nav-text">创建工作流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-functions"><span class="nav-number">4.1.</span> <span class="nav-text">Create functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可返回字段名称"><span class="nav-number">4.2.</span> <span class="nav-text">可返回字段名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建自定义脚本工具"><span class="nav-number">4.3.</span> <span class="nav-text">创建自定义脚本工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义工具箱"><span class="nav-number">5.</span> <span class="nav-text">自定义工具箱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用ImportToolbox函数"><span class="nav-number">5.1.</span> <span class="nav-text">调用ImportToolbox函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置临时别名"><span class="nav-number">5.2.</span> <span class="nav-text">设置临时别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义窗口"><span class="nav-number">6.</span> <span class="nav-text">自定义窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预加载Python工具"><span class="nav-number">6.1.</span> <span class="nav-text">预加载Python工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PYTHONSTARTUP"><span class="nav-number">6.2.</span> <span class="nav-text">PYTHONSTARTUP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例文件"><span class="nav-number">6.3.</span> <span class="nav-text">示例文件</span></a></li></ol></li></ol></div>
       </div>
@@ -484,20 +484,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">49</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -531,6 +531,47 @@
     </ul>
   </div>
 
+          <!--12-1 取消侧边栏音乐 12-1<div id="aplayer" class="aplayer"></div>
+<script src="/js/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>-->
           <div id="aplayer" class="aplayer"></div>
 <script src="/js/custom/APlayer.min.js"></script>
 <script type="text/javascript">
@@ -559,6 +600,16 @@ var ap = new APlayer({
       author: 'Medina',
       url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
       pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
     }]
   });
 </script>
@@ -589,6 +640,7 @@ return i;
 }
 show_date_time();
 </script>
+        
       </div>
 
     </div>

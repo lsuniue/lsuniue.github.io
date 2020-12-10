@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>pyc 反编译为 py 文件</title>
+    <url>/posts/7846f4cc/</url>
+    <content><![CDATA[<ul>
+<li>uncompyle6</li>
+<li>pyc</li>
+<li>py</li>
+</ul>
+<p><strong>py</strong>文件被误删，通过Anacanda下的<strong>pyc</strong>文件<strong>反编译</strong>出py文件</p>
+<a id="more"></a>
+<hr>
+<h2 id="安装-uncompyle6"><a href="#安装-uncompyle6" class="headerlink" title="安装 uncompyle6"></a>安装 uncompyle6</h2><p><kbd>Win</kbd> + <kbd>R</kbd> 输入 <code>cmd</code>, <kbd>Enter</kbd>打开命令行，执行以下以下命令：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install</span> uncompyle6</span><br></pre></td></tr></table></figure>
+<h2 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h2><p>在命令行切换到包含目标pyc文件的文件夹下，执行以下任一命令之一：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">uncompyle6</span> <span class="selector-tag">-o</span> . <span class="selector-tag">test0</span><span class="selector-class">.pyc</span></span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">uncompyle6</span> <span class="selector-tag">test0</span><span class="selector-class">.pyc</span> &gt; <span class="selector-tag">test0</span><span class="selector-class">.py</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>pyc</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>pyc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复 Win10 桌面重复生成debug.log文件</title>
     <url>/posts/f7c18012/</url>
     <content><![CDATA[<ul>
@@ -181,8 +208,8 @@
         <category>Win10</category>
       </categories>
       <tags>
-        <tag>ftp</tag>
         <tag>Win10</tag>
+        <tag>ftp</tag>
       </tags>
   </entry>
   <entry>

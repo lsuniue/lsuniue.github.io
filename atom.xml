@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2020-12-01T06:49:03.209Z</updated>
+  <updated>2020-12-10T08:01:13.789Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pyc 反编译为 py 文件</title>
+    <link href="https://langiue.cn/posts/7846f4cc/"/>
+    <id>https://langiue.cn/posts/7846f4cc/</id>
+    <published>2020-12-10T07:35:24.000Z</published>
+    <updated>2020-12-10T08:01:13.789Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>uncompyle6</li><li>pyc</li><li>py</li></ul><p><strong>py</strong>文件被误删，通过Anacanda下的<strong>pyc</strong>文件<strong>反编译</strong>出py文件</p><a id="more"></a><hr><h2 id="安装-uncompyle6"><a href="#安装-uncompyle6" class="headerlink" title="安装 uncompyle6"></a>安装 uncompyle6</h2><p><kbd>Win</kbd> + <kbd>R</kbd> 输入 <code>cmd</code>, <kbd>Enter</kbd>打开命令行，执行以下以下命令：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> uncompyle6</span><br></pre></td></tr></table></figure><h2 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h2><p>在命令行切换到包含目标pyc文件的文件夹下，执行以下任一命令之一：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">uncompyle6</span> <span class="selector-tag">-o</span> . <span class="selector-tag">test0</span><span class="selector-class">.pyc</span></span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">uncompyle6</span> <span class="selector-tag">test0</span><span class="selector-class">.pyc</span> &gt; <span class="selector-tag">test0</span><span class="selector-class">.py</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;uncompyle6&lt;/li&gt;
+&lt;li&gt;pyc&lt;/li&gt;
+&lt;li&gt;py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;py&lt;/strong&gt;文件被误删，通过Anacanda下的&lt;strong&gt;pyc&lt;/strong&gt;文件&lt;strong&gt;反编译&lt;/strong&gt;出py文件&lt;/p&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/v2-caf96a1af1aee3acc0f066b8761b27d5_1440w.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="python" scheme="https://langiue.cn/categories/python/"/>
+    
+      <category term="pyc" scheme="https://langiue.cn/categories/python/pyc/"/>
+    
+    
+      <category term="python" scheme="https://langiue.cn/tags/python/"/>
+    
+      <category term="pyc" scheme="https://langiue.cn/tags/pyc/"/>
+    
+  </entry>
   
   <entry>
     <title>修复 Win10 桌面重复生成debug.log文件</title>
@@ -114,9 +148,9 @@
       <category term="Win10" scheme="https://langiue.cn/categories/ftp/Win10/"/>
     
     
-      <category term="ftp" scheme="https://langiue.cn/tags/ftp/"/>
-    
       <category term="Win10" scheme="https://langiue.cn/tags/Win10/"/>
+    
+      <category term="ftp" scheme="https://langiue.cn/tags/ftp/"/>
     
   </entry>
   
