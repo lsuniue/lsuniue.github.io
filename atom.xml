@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2020-12-10T08:01:13.789Z</updated>
+  <updated>2020-12-26T07:52:08.819Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -15,6 +15,102 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Python 快速遍历Excel的多个sheet</title>
+    <link href="https://langiue.cn/posts/5fbc4a11/"/>
+    <id>https://langiue.cn/posts/5fbc4a11/</id>
+    <published>2020-12-26T07:37:42.000Z</published>
+    <updated>2020-12-26T07:52:08.819Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Python</li><li>遍历快速遍历Excel的sheet</li></ul><a id="more"></a><hr><h3 id="创建-Excel-文件"><a href="#创建-Excel-文件" class="headerlink" title="创建 Excel 文件"></a>创建 Excel 文件</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"><span class="keyword">data</span>0 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">'b'</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]&#125;)</span><br><span class="line"><span class="keyword">data</span>1 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>], <span class="string">'c'</span>: [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>]&#125;)</span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">data</span>0.to_excel(writer, sheet_name=<span class="string">'sheet0'</span>)</span><br><span class="line"><span class="keyword">data</span>1.to_excel(writer, sheet_name=<span class="string">'sheet1'</span>)</span><br><span class="line">writer.save()</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure><h3 id="合并Excel文件不同sheet下的字段"><a href="#合并Excel文件不同sheet下的字段" class="headerlink" title="合并Excel文件不同sheet下的字段"></a>合并Excel文件不同sheet下的字段</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">f = pd.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line">sheet_names = f.sheet_names</span><br><span class="line">merge = []</span><br><span class="line"><span class="built_in">io</span> = pd.<span class="built_in">io</span>.excel.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sheet_names:</span><br><span class="line">    d =pd.read_excel(<span class="built_in">io</span>, sheet_name=i)</span><br><span class="line">    merge.append(d<span class="string">[['a']]</span>)</span><br><span class="line"><span class="built_in">io</span>.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">data = pd.<span class="built_in">concat</span>(merge,axis=<span class="number">1</span>) # 沿X轴方向合并</span><br><span class="line">data.to_csv(<span class="string">'merge_sheet.csv'</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;遍历快速遍历Excel的sheet&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/excel%2520python%2520and%2520pandas.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="Python" scheme="https://langiue.cn/categories/Python/"/>
+    
+      <category term="Excel" scheme="https://langiue.cn/categories/Python/Excel/"/>
+    
+    
+      <category term="Python" scheme="https://langiue.cn/tags/Python/"/>
+    
+      <category term="Excel" scheme="https://langiue.cn/tags/Excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工具书代码整理</title>
+    <link href="https://langiue.cn/posts/527ffd1b/"/>
+    <id>https://langiue.cn/posts/527ffd1b/</id>
+    <published>2020-12-25T06:38:06.000Z</published>
+    <updated>2020-12-25T10:27:09.550Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li></li><li></li></ul><a id="more"></a><hr><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" width="821" height="531" "name" align="center"> <br></div><p><a href="http://www.ituring.com.cn/book/1921" target="_blank" rel="noopener">深度学习入门</a>: 基于Python 的理论与实现</p><p><a href="http://horstmann.com/corejava" target="_blank" rel="noopener">Java核心技术 卷I (第11版) + JavaFX: GUI工具包</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="资料分享" scheme="https://langiue.cn/categories/%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="书籍代码" scheme="https://langiue.cn/categories/%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E4%B9%A6%E7%B1%8D%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="资料分享" scheme="https://langiue.cn/tags/%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="书籍代码" scheme="https://langiue.cn/tags/%E4%B9%A6%E7%B1%8D%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Machine Learning</title>
+    <link href="https://langiue.cn/posts/c5317df1/"/>
+    <id>https://langiue.cn/posts/c5317df1/</id>
+    <published>2020-12-25T06:31:22.000Z</published>
+    <updated>2020-12-25T10:27:12.578Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Machine Learning 介绍</li><li>XGBoost</li></ul><a id="more"></a><hr><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@?x-oss-process=style/moon" width="821" height="531" "name" align="center">  <font face="Times New Roman"><strong>name</strong></font><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;Machine Learning 介绍&lt;/li&gt;
+&lt;li&gt;XGBoost&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Machine%2520Learning/machine-learning.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="Machine Learning" scheme="https://langiue.cn/categories/Machine-Learning/"/>
+    
+      <category term="原理" scheme="https://langiue.cn/categories/Machine-Learning/%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://langiue.cn/tags/Machine-Learning/"/>
+    
+      <category term="XGBoost" scheme="https://langiue.cn/tags/XGBoost/"/>
+    
+  </entry>
   
   <entry>
     <title>pyc 反编译为 py 文件</title>
