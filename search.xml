@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Upgrade Anacanda</title>
+    <url>/posts/54e94d6f/</url>
+    <content><![CDATA[<ul>
+<li><strong>Conda</strong> 命令</li>
+<li>官网下载</li>
+<li>归档安装包</li>
+</ul>
+<a id="more"></a>
+<hr>
+<div align="center"><br>&lt;img src=”<a href="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/Anaconda2.png?x-oss-process=style/moon&quot;" target="_blank" rel="noopener">https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/Anaconda2.png?x-oss-process=style/moon&quot;</a> width = “821” height = “531” <br></div>
+
+<h2 id="方法一：命令行更新"><a href="#方法一：命令行更新" class="headerlink" title="方法一：命令行更新"></a>方法一：命令行更新</h2><p>通过命令行更新，速度较慢</p>
+<h3 id="打开-Anaconda-Powershell-Prompt"><a href="#打开-Anaconda-Powershell-Prompt" class="headerlink" title="打开 Anaconda Powershell Prompt"></a>打开 Anaconda Powershell Prompt</h3><p>打开 <code>Anacanda</code> —&gt; <code>Anaconda Powershell Prompt (Anaconda 3)</code></p>
+<h3 id="更新-conda"><a href="#更新-conda" class="headerlink" title="更新 conda"></a>更新 conda</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda update conda</span></span><br></pre></td></tr></table></figure>
+<h3 id="更新-anaconda"><a href="#更新-anaconda" class="headerlink" title="更新 anaconda"></a>更新 anaconda</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda update anaconda</span></span><br></pre></td></tr></table></figure>
+<h3 id="更新-spyder"><a href="#更新-spyder" class="headerlink" title="更新 spyder"></a>更新 spyder</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">conda update spyder</span></span><br></pre></td></tr></table></figure>
+<h1 id="方法二：直接下载安装包"><a href="#方法二：直接下载安装包" class="headerlink" title="方法二：直接下载安装包"></a>方法二：直接下载安装包</h1><ul>
+<li>打开<a href="https://www.anaconda.com/products/individual" target="_blank" rel="noopener">官网地址</a>，点击下载按钮</li>
+<li>打开安装包<a href="https://repo.anaconda.com/archive/" target="_blank" rel="noopener">归档地址</a>，选择更改时间最接近当前时间的安装包。<strong>注意：</strong>安装包未按时间排序，最新安装包位置可能混在众多安装包中间。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Anacanda</category>
+        <category>upgrade</category>
+      </categories>
+      <tags>
+        <tag>Anacanda</tag>
+        <tag>upgrade</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Python 快速遍历Excel的多个sheet</title>
     <url>/posts/5fbc4a11/</url>
     <content><![CDATA[<ul>
-<li>Python</li>
-<li>遍历快速遍历Excel的sheet</li>
+<li>史上最快遍历方法</li>
+<li><code>pd.io.excel.ExcelFile()</code> 放在 <strong>for</strong> 循环外部</li>
 </ul>
 <a id="more"></a>
 <hr>
 <h3 id="创建-Excel-文件"><a href="#创建-Excel-文件" class="headerlink" title="创建 Excel 文件"></a>创建 Excel 文件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"><span class="keyword">data</span>0 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">'b'</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]&#125;)</span><br><span class="line"><span class="keyword">data</span>1 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>], <span class="string">'c'</span>: [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>]&#125;)</span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">data</span>0.to_excel(writer, sheet_name=<span class="string">'sheet0'</span>)</span><br><span class="line"><span class="keyword">data</span>1.to_excel(writer, sheet_name=<span class="string">'sheet1'</span>)</span><br><span class="line">writer.save()</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
-<h3 id="合并Excel文件不同sheet下的字段"><a href="#合并Excel文件不同sheet下的字段" class="headerlink" title="合并Excel文件不同sheet下的字段"></a>合并Excel文件不同sheet下的字段</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">f = pd.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line">sheet_names = f.sheet_names</span><br><span class="line">merge = []</span><br><span class="line"><span class="built_in">io</span> = pd.<span class="built_in">io</span>.excel.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sheet_names:</span><br><span class="line">    d =pd.read_excel(<span class="built_in">io</span>, sheet_name=i)</span><br><span class="line">    merge.append(d<span class="string">[['a']]</span>)</span><br><span class="line"><span class="built_in">io</span>.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">data = pd.<span class="built_in">concat</span>(merge,axis=<span class="number">1</span>) # 沿X轴方向合并</span><br><span class="line">data.to_csv(<span class="string">'merge_sheet.csv'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="合并Excel文件不同sheet下的字段"><a href="#合并Excel文件不同sheet下的字段" class="headerlink" title="合并Excel文件不同sheet下的字段"></a>合并Excel文件不同sheet下的字段</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">f = pd.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line">sheet_names = f.sheet_names</span><br><span class="line">merge = []</span><br><span class="line"><span class="built_in">io</span> = pd.<span class="built_in">io</span>.excel.ExcelFile(<span class="string">'name.xlsx'</span>) # 注意，此行不要放在<span class="keyword">for</span>循环内部，否则将会重复读取excel操作(耗时)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sheet_names:</span><br><span class="line">    d =pd.read_excel(<span class="built_in">io</span>, sheet_name=i)</span><br><span class="line">    merge.append(d<span class="string">[['a']]</span>)</span><br><span class="line"><span class="built_in">io</span>.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">data = pd.<span class="built_in">concat</span>(merge,axis=<span class="number">1</span>) # 沿X轴方向合并</span><br><span class="line">data.to_csv(<span class="string">'merge_sheet.csv'</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -25,15 +56,13 @@
     <title>工具书代码整理</title>
     <url>/posts/527ffd1b/</url>
     <content><![CDATA[<ul>
-<li>工具书代码整理</li>
-<li>官网下载地址汇总</li>
+<li><a href="http://www.ituring.com.cn/book/1921" target="_blank" rel="noopener">深度学习入门</a>: 基于Python 的理论与实现</li>
+<li><a href="http://horstmann.com/corejava" target="_blank" rel="noopener">Java核心技术 卷I (第11版) + JavaFX: GUI工具包</a> </li>
+<li>待补充…</li>
 </ul>
 <a id="more"></a>
 <hr>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" width="821" height="531" "name" align="center"> <br></div>
-
-<p><a href="http://www.ituring.com.cn/book/1921" target="_blank" rel="noopener">深度学习入门</a>: 基于Python 的理论与实现</p>
-<p><a href="http://horstmann.com/corejava" target="_blank" rel="noopener">Java核心技术 卷I (第11版) + JavaFX: GUI工具包</a> </p>
+<p><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" width="821" height="531" "name" align="center"> <br></div><br>待持续补充…</p>
 ]]></content>
       <categories>
         <category>资料分享</category>
@@ -49,7 +78,9 @@
     <url>/posts/c5317df1/</url>
     <content><![CDATA[<ul>
 <li>Machine Learning 介绍</li>
+<li>原理介绍</li>
 <li>XGBoost</li>
+<li>待补充内容…</li>
 </ul>
 <a id="more"></a>
 <hr>
@@ -94,7 +125,7 @@
     <title>修复 Win10 桌面重复生成debug.log文件</title>
     <url>/posts/f7c18012/</url>
     <content><![CDATA[<ul>
-<li><kbd>Win</kbd>+<kbd>R</kbd></li>
+<li><kbd>Win</kbd>+<kbd>R</kbd>，运行</li>
 <li><code>CrashPad</code>文件夹</li>
 </ul>
 <a id="more"></a>
@@ -128,9 +159,11 @@
     <title>Win10 隐藏管理员账户或普通账户</title>
     <url>/posts/76388dea/</url>
     <content><![CDATA[<ul>
-<li>Win10</li>
+<li>注册表编辑<ul>
 <li>隐藏管理员账户</li>
 <li>隐藏普通账户</li>
+</ul>
+</li>
 </ul>
 <a id="more"></a>
 <hr>
@@ -168,8 +201,8 @@
     <title>Windows10 下搭建 ftp 服务器并映射到外网</title>
     <url>/posts/369ca4db/</url>
     <content><![CDATA[<ul>
-<li>Windows10</li>
-<li>ftp服务器</li>
+<li>IIS 服务</li>
+<li>FTP 服务器</li>
 <li>内网穿透<ul>
 <li>Pubyun</li>
 <li>Nat123</li>
@@ -310,8 +343,12 @@
     <title>Win10 uninstall software</title>
     <url>/posts/a366d578/</url>
     <content><![CDATA[<ul>
-<li>Win10 软件</li>
-<li>强力卸载</li>
+<li><p><a href="https://link.zhihu.com/?target=https%3A//www.fileshredder.org/" target="_blank" rel="noopener">file shredder</a></p>
+</li>
+<li><p><a href="https://eraser.heidi.ie/" target="_blank" rel="noopener">Eraser</a></p>
+</li>
+<li><p>电脑管家-工具箱-文件粉碎</p>
+</li>
 </ul>
 <a id="more"></a>
 <hr>

@@ -53,18 +53,18 @@
   };
 </script>
 
-  <meta name="description" content="Python 遍历快速遍历Excel的sheet">
+  <meta name="description" content="史上最快遍历方法 pd.io.excel.ExcelFile() 放在 for 循环外部">
 <meta name="keywords" content="Python,Excel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Python 快速遍历Excel的多个sheet">
 <meta property="og:url" content="https://langiue.cn/posts/5fbc4a11/index.html">
 <meta property="og:site_name" content="Isaiah">
-<meta property="og:description" content="Python 遍历快速遍历Excel的sheet">
+<meta property="og:description" content="史上最快遍历方法 pd.io.excel.ExcelFile() 放在 for 循环外部">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-26T07:52:37.051Z">
+<meta property="og:updated_time" content="2021-01-14T04:42:53.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Python 快速遍历Excel的多个sheet">
-<meta name="twitter:description" content="Python 遍历快速遍历Excel的sheet">
+<meta name="twitter:description" content="史上最快遍历方法 pd.io.excel.ExcelFile() 放在 for 循环外部">
 
 <link rel="canonical" href="https://langiue.cn/posts/5fbc4a11/">
 
@@ -270,10 +270,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-26 15:37:42 / 修改时间：15:52:37" itemprop="dateCreated datePublished" datetime="2020-12-26T15:37:42+08:00">2020-12-26</time>
+              <time title="创建时间：2020-12-26 15:37:42" itemprop="dateCreated datePublished" datetime="2020-12-26T15:37:42+08:00">2020-12-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-14 12:42:53" itemprop="dateModified" datetime="2021-01-14T12:42:53+08:00">2021-01-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -311,13 +317,13 @@
 
       
         <ul>
-<li>Python</li>
-<li>遍历快速遍历Excel的sheet</li>
+<li>史上最快遍历方法</li>
+<li><code>pd.io.excel.ExcelFile()</code> 放在 <strong>for</strong> 循环外部</li>
 </ul>
 <a id="more"></a>
 <hr>
 <h3 id="创建-Excel-文件"><a href="#创建-Excel-文件" class="headerlink" title="创建 Excel 文件"></a>创建 Excel 文件</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"><span class="keyword">data</span>0 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="string">'b'</span>: [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]&#125;)</span><br><span class="line"><span class="keyword">data</span>1 = pd.DataFrame(&#123;<span class="string">'a'</span>: [<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>], <span class="string">'c'</span>: [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>]&#125;)</span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">data</span>0.to_excel(writer, sheet_name=<span class="string">'sheet0'</span>)</span><br><span class="line"><span class="keyword">data</span>1.to_excel(writer, sheet_name=<span class="string">'sheet1'</span>)</span><br><span class="line">writer.save()</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
-<h3 id="合并Excel文件不同sheet下的字段"><a href="#合并Excel文件不同sheet下的字段" class="headerlink" title="合并Excel文件不同sheet下的字段"></a>合并Excel文件不同sheet下的字段</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">f = pd.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line">sheet_names = f.sheet_names</span><br><span class="line">merge = []</span><br><span class="line"><span class="built_in">io</span> = pd.<span class="built_in">io</span>.excel.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sheet_names:</span><br><span class="line">    d =pd.read_excel(<span class="built_in">io</span>, sheet_name=i)</span><br><span class="line">    merge.append(d<span class="string">[['a']]</span>)</span><br><span class="line"><span class="built_in">io</span>.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">data = pd.<span class="built_in">concat</span>(merge,axis=<span class="number">1</span>) # 沿X轴方向合并</span><br><span class="line">data.to_csv(<span class="string">'merge_sheet.csv'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="合并Excel文件不同sheet下的字段"><a href="#合并Excel文件不同sheet下的字段" class="headerlink" title="合并Excel文件不同sheet下的字段"></a>合并Excel文件不同sheet下的字段</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">f = pd.ExcelFile(<span class="string">'name.xlsx'</span>)</span><br><span class="line">sheet_names = f.sheet_names</span><br><span class="line">merge = []</span><br><span class="line"><span class="built_in">io</span> = pd.<span class="built_in">io</span>.excel.ExcelFile(<span class="string">'name.xlsx'</span>) # 注意，此行不要放在<span class="keyword">for</span>循环内部，否则将会重复读取excel操作(耗时)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sheet_names:</span><br><span class="line">    d =pd.read_excel(<span class="built_in">io</span>, sheet_name=i)</span><br><span class="line">    merge.append(d<span class="string">[['a']]</span>)</span><br><span class="line"><span class="built_in">io</span>.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">data = pd.<span class="built_in">concat</span>(merge,axis=<span class="number">1</span>) # 沿X轴方向合并</span><br><span class="line">data.to_csv(<span class="string">'merge_sheet.csv'</span>)</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -390,6 +396,9 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/posts/54e94d6f/" rel="prev" title="Upgrade Anacanda">
+                  <i class="fa fa-chevron-left"></i> Upgrade Anacanda
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
@@ -455,20 +464,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -725,7 +734,7 @@ show_date_time();
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="heart">
     <i class="fa fa-heart"></i>
   </span>
