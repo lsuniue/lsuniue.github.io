@@ -53,31 +53,18 @@
   };
 </script>
 
-  <meta name="description" content="IIS 服务 FTP 服务器 内网穿透 Pubyun Nat123">
-<meta name="keywords" content="Win10,ftp">
+  <meta name="description" content="Here&apos;s something encrypted, password is required to continue reading.">
+<meta name="keywords" content="ftp,Win10">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows10 下搭建 ftp 服务器并映射到外网">
 <meta property="og:url" content="https://langiue.cn/posts/369ca4db/index.html">
 <meta property="og:site_name" content="Isaiah">
-<meta property="og:description" content="IIS 服务 FTP 服务器 内网穿透 Pubyun Nat123">
+<meta property="og:description" content="Here&apos;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon">
-<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon">
 <meta property="og:updated_time" content="2021-01-14T04:48:50.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10 下搭建 ftp 服务器并映射到外网">
-<meta name="twitter:description" content="IIS 服务 FTP 服务器 内网穿透 Pubyun Nat123">
-<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon">
+<meta name="twitter:description" content="Here&apos;s something encrypted, password is required to continue reading.">
 
 <link rel="canonical" href="https://langiue.cn/posts/369ca4db/">
 
@@ -329,105 +316,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>IIS 服务</li>
-<li>FTP 服务器</li>
-<li>内网穿透<ul>
-<li>Pubyun</li>
-<li>Nat123</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<hr>
-<h2 id="FTP的搭建"><a href="#FTP的搭建" class="headerlink" title="FTP的搭建"></a>FTP的搭建</h2><h3 id="启动IIS服务"><a href="#启动IIS服务" class="headerlink" title="启动IIS服务"></a>启动IIS服务</h3><p>控制面板-&gt;程序-&gt;启用或关闭Windows功能</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon" align="center"><br></div>
-
-
-<h3 id="搭建ftp"><a href="#搭建ftp" class="headerlink" title="搭建ftp"></a>搭建ftp</h3><h4 id="打开ISS"><a href="#打开ISS" class="headerlink" title="打开ISS"></a>打开ISS</h4><p>搜索-&gt;ISS，打开ISS管理器</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="添加FTP站点"><a href="#添加FTP站点" class="headerlink" title="添加FTP站点"></a>添加FTP站点</h4><p>右键网站-&gt;添加FTP站点</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="绑定和SSL设置"><a href="#绑定和SSL设置" class="headerlink" title="绑定和SSL设置"></a>绑定和SSL设置</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="身份证授权信息"><a href="#身份证授权信息" class="headerlink" title="身份证授权信息"></a>身份证授权信息</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h3 id="添加用户和组"><a href="#添加用户和组" class="headerlink" title="添加用户和组"></a>添加用户和组</h3><ul>
-<li><p>win10 家庭版</p>
-<p>无用户和组功能，升级为专业版方法如下：</p>
-</li>
-</ul>
-<p>右键此电脑—更改产品秘钥—输入</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">J7QT3<span class="number">-3</span>GCPG<span class="number">-9</span>GVWT-CH2XR-GMRJM</span><br><span class="line"><span class="number">4</span>N7JM-CV98F-WY9XX<span class="number">-9</span>D8CF<span class="number">-369</span>TT </span><br><span class="line">FMPND-XFTD4<span class="number">-67</span>FJC-HDR8C<span class="number">-3</span>YH26 </span><br><span class="line">TFP9Y-VCY3P-VVH3T<span class="number">-8</span>XXCC-MF4YK</span><br></pre></td></tr></table></figure>
-<p>升级完成后使用激活工具激活。</p>
-<ul>
-<li>win10 专业版</li>
-</ul>
-<p>计算机—&gt;管理—&gt;本地用户和组</p>
-<h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon" align="center"><br></div>
-
-
-<h4 id="设置用户授权规则"><a href="#设置用户授权规则" class="headerlink" title="设置用户授权规则"></a>设置用户授权规则</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h2 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h2><h3 id="允许ftp通过防火墙"><a href="#允许ftp通过防火墙" class="headerlink" title="允许ftp通过防火墙"></a>允许ftp通过防火墙</h3><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h3 id="防火墙允许其他应用"><a href="#防火墙允许其他应用" class="headerlink" title="防火墙允许其他应用"></a>防火墙允许其他应用</h3><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align="center"><br></div>
-
-<p>设置完成后可以浏览器输入<a href="ftp://ip访问文件了" target="_blank" rel="noopener">ftp://ip访问文件了</a></p>
-<h2 id="FTP客户端-IIS7服务器管理工具"><a href="#FTP客户端-IIS7服务器管理工具" class="headerlink" title="FTP客户端-IIS7服务器管理工具"></a><a href="http://fwqglgj.iis7.net/nrong/sfbz/" target="_blank" rel="noopener">FTP客户端-IIS7服务器管理工具</a></h2><p>FTP客户端，它支持批量管理ftp站点。<strong>定时上传和定时下载</strong>，定时备份，且操作简洁。同时iis7服务器管理工具还是vnc客户端。并且支持批量管理管理windows及linux服务器、vps。</p>
-<h2 id="内网ip映射为公网"><a href="#内网ip映射为公网" class="headerlink" title="内网ip映射为公网"></a>内网ip映射为公网</h2><h3 id="Pubyun（手机热点测试失败）"><a href="#Pubyun（手机热点测试失败）" class="headerlink" title="Pubyun（手机热点测试失败）"></a><a href="http://www.pubyun.com/p/carg/" target="_blank" rel="noopener">Pubyun</a>（手机热点测试失败）</h3><h4 id="注册公云账号"><a href="#注册公云账号" class="headerlink" title="注册公云账号"></a><a href="http://www.pubyun.com/accounts/signup/" target="_blank" rel="noopener">注册公云账号</a></h4><h4 id="实名认证"><a href="#实名认证" class="headerlink" title="实名认证"></a>实名认证</h4><h4 id="购买套餐"><a href="#购买套餐" class="headerlink" title="购买套餐"></a>购买套餐</h4><p>购买免费版的内网域名服务套餐</p>
-<h4 id="域名创建和配置"><a href="#域名创建和配置" class="headerlink" title="域名创建和配置"></a>域名创建和配置</h4><p>创建域名和映射并配置到本地</p>
-<div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="浏览器测试"><a href="#浏览器测试" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp://外网域名访问ftp</p>
-<h3 id="Nat123（手机热点测试失败）"><a href="#Nat123（手机热点测试失败）" class="headerlink" title="Nat123（手机热点测试失败）"></a><a href="http://www.nat123.com/Pages_2_32.jsp" target="_blank" rel="noopener">Nat123</a>（手机热点测试失败）</h3><h4 id="设置映射"><a href="#设置映射" class="headerlink" title="设置映射"></a>设置映射</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="设置访问者"><a href="#设置访问者" class="headerlink" title="设置访问者"></a>设置访问者</h4><div align="center"><br><img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon" align="center"><br></div>
-
-<h4 id="浏览器测试-1"><a href="#浏览器测试-1" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp://外网域名访问ftp</p>
-<h2 id="FTP-管理工具"><a href="#FTP-管理工具" class="headerlink" title="FTP 管理工具"></a><a href="https://www.filezilla.cn/" target="_blank" rel="noopener">FTP 管理工具</a></h2><ul>
-<li>易于使用</li>
-</ul>
-<p><strong>FileZilla</strong>比其他任何一款FTP软件都要简单</p>
-<ul>
-<li>多协议支持</li>
-</ul>
-<p><strong>FileZilla</strong>支持<strong>FTP</strong>、<strong>FTPS</strong>、<strong>SFTP</strong>等文件传输协议</p>
-<ul>
-<li>多种语言</li>
-</ul>
-<p><strong>FileZilla</strong>支持<strong>多国语言</strong>，完美支持简体中文</p>
-<ul>
-<li>多标签界面</li>
-</ul>
-<p><strong>FileZilla</strong>支持建立多个标签同时工作</p>
-<ul>
-<li>远程查找文件</li>
-</ul>
-<p><strong>FileZilla</strong>支持远程查找文件功能</p>
-<ul>
-<li>站点管理器</li>
-</ul>
-<p><strong>FileZilla</strong>自带功能强大的<strong>站点管理</strong>和<strong>传输队列管理</strong></p>
-<h2 id="公司局域网限制访问ftp"><a href="#公司局域网限制访问ftp" class="headerlink" title="公司局域网限制访问ftp"></a>公司局域网限制访问ftp</h2><p>控制面板&gt;系统和安全&gt;Windows Defender 防火墙&gt;高级设置</p>
-<ul>
-<li><p>入站规则&gt;新建规则&gt;端口&gt;下一步&gt;TCP&gt;所有本地端口&gt;允许连接&gt;下一步&gt;名称输入”new_in_ftp”&gt;完成</p>
-</li>
-<li><p>出站规则&gt;新建规则&gt;端口&gt;下一步&gt;TCP&gt;所有远程端口&gt;允许连接&gt;下一步&gt;名称输入”new_out_ftp”&gt;完成</p>
-</li>
-</ul>
-<p>浏览器输入<a href="ftp://ip地址访问ftp" target="_blank" rel="noopener">ftp://ip地址访问ftp</a></p>
-<h2 id="bug-提示"><a href="#bug-提示" class="headerlink" title="bug 提示"></a>bug 提示</h2><h3 id="FTP复制文件错误451"><a href="#FTP复制文件错误451" class="headerlink" title="FTP复制文件错误451"></a>FTP复制文件错误451</h3><ul>
-<li><code>451 No mapping for the Unicode character</code></li>
-</ul>
-<ol>
-<li>打开 IIS 的 FTP 设置界面，选择“高级设置”</li>
-<li>将“允许UTF8”从 “True” 改为 “False”</li>
-<li>重新启动服务器</li>
-</ol>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="65ad44ac10f3a59b8ee8394f34e8892a070361c4b44117b759c68ec59338fe19">757d6246220447313784a310f701cd40f7af60fc2f699b35ba98bce03f58a1fb0b4ad3f88b619adc0d1395ad141333eb98e2e0fa30e5849084b2471f34451be756b2805b194a5d3af74336367df15e484025543bdaca0923fc745b9d71ad85554cabbc366558052a38a2a45bc5ea9bb2f732ce4d153fe11eb722509fb3268f6b06a23fb30caf1dbf90fe3e95a0a663ddb6252640cc9e1624c71077e973a6ba9c4a4cd1924434e3954cb8fca8217e6c291eb0e8748f7f8f97b86116cb19bd7d3186e935a5c8a814f47b982fd943dd3ae1e5ce05722ca0ff6fd37ba4303021519f3e3d1f4ed77cc9ec497e37aa247b42b18ba4ebe4c6fbbefd6890e5a397b4a3cc9b26b3d78c0735d2740791211b2f314b9df0ca4f784eac7296737f6f9022654bd32c9296b77ec43882f2f00ba82b24b689828a22c8a302c1791c764d5e0243240b05f84cd81c64c528db90c8381ff654bbb41c9026254a2461b6d86824ec463e1903d40f53f3333f6abe6a05afad41bed421f1b64d39d68513dd214d8c9b7c22c0913097ad82909e5aa9ecd7863a38eca77e431c5db77b6bc28ed4b2f9448b4203acdb8394f3c562c1a3619b7bc6ba349655b1a0fefcd09cd22af737e289ec486fa9f62e63bc4c878aa5752769079b3dbe8d021eb5ac7aa6572344e37337234ce744c2632573dde2ae87a11b188e10d3dc01083f669536dcfc56efac087400666a4eb6e1cd36c2ed115dfab1e39448b4bba9702e8f5eb2332d23fe5e62b3d2bd51d6f4d4cad9aaa6447be3f413f98f7ebb230e7b1afd9411b30d08dd0f2e8022df6b716318dd907ee9ecc3d0371e3c0dcff991664ff5b5a86dd68b97c2b33aa89f209c2fe876d89044f6c159128277b3caff3bc2a0605a61ea228b5705a162c24756fa96ae4a3eda05c6b14684fb8649a2293970bbb1a44d67047852183878e751c21ba5234e43117c660ec77407a24278d8c48046d22bfa8000b57cf69878dbec943e51ed8fa8a127ea8513bd6e603f88343b68bf6aa6546559392cbe852a8cbd3b8d968785dbd910d08a7f34b77eef43ea9e50b82e33066e811c1ff809738f3706627e7b7c8afe3421581dd60bbaa69b77a21b4112d7038b5594e1ba395fa51983ab6e68f0438e4a92a3b62ba20999a51465a50ad7d67db22e8c1f1a6e26d79b0c19d83e817309e9a0625c4676ebe61eef38f0f25a13f7c58e89bd6defcb3b2d67625ebeddaaedbea0eb39c1298792529336ce5361de997e222807f4271bfe4b43ce39f475da3988b481e9c4d098aae5a0d147a89c8c952449f2ba94f96f774b2ed7bba861955889f25935bed16db6219304c11f7bf775e12fd2dc8b0d1e91c5a612d68faf74c3a9df3f1e3dd8e15d503e77d72b402ca374ad89faff379383c0bad31557ddb789a34f89cdd94046d2396cf54b46b62ce234690f9a10564345383a545d6901af6cb16fb358cb97fecbfb2c9e0c69e5dba9187e16f8d427adac2946e5c1f253337eb8bd992ea578eba19ffd7ed1b73c2e4bf6acf66e37079675b31e08d6137533927a44dba6579df0eb861cac4f84653df5db1262671a35dbc7abb2467c9fcc39aa84391d1f4c7324b435e6111ee703286ffa4b7f431e985841fe13892c0cf2d8297c686330eaf3c20f149bb68a4959f361e632cba826e712e4a42d98139e9a5c63f4dc7f3fc415bd01615d57b0ec38503c2522d5e50d940bfcc410bba1d0353f62685e744099e6ba6908ce90616582e3df3c5e500604a9e17bdf50dfc0a80f3177580b62e39dc63495306ad6e20e22f9bbbecad5ec23d0b258f2657fb7b4e8a519a27c3a4bb6e2d390fb1ad0a57ed48c2f4e786d4bf2ec9e9499ddf5f3f2948b71e586bf2b933ddd11be00d69f27e1e7e9596d9d5bf9f2856fb18cd18957f988bf0b2290376c749d2e89601710830ed44ee575fc6a356b1888b4b1eac2236c744f568807f2c876bd4f9ad2b6002ce4542744f14ad461ef41aa01f64c607ef83f67473bf2c2ed09754d8d2ae580b1c48875f8c80f62020ee899efae69036ce694a083b0629fe99b5dff31e21b63076cc5539c102042da82e2c8889fec4223805bd76c871f5d299b01b8aaf70b5e4b93c74f6af980bb88e0fa042da9034f606c25e20914ac9b01d0743936932479d2b1f17e0921e32b624b95d0d49d7b4d7ede9f6e0908dac034978f44225dddd30c4e15c2562c288b5b8e41d1b4b84eb5db2918a15f32fc3056de4a4b1ae9fc5e95885f898e48e8a52a16533cc9b92617cd944e1b67d731681c719323e59a2d7f55d282e51b8f8712bebc36e839e2d3f1f3b3492b79e00cbf467f90de0e2667ef6045e3b1e6550a429ddc616d82ed2fbe711f1170a9dcf26aef83ff757c5fb2ba467b8fd26a81ddf7a6b8ce1d5be9a7e762e5f6b11fa77754c683131227d81914e5579ea3a799cce929b3f615564f87a02051dc814b64eecc3b5f0d1f63f0cc200c1b7289a1f181fc22f364563591762761342c92064360469694d9595aa6e2d8102550263132fe259f6f0df949818d37ccd5e0ca618bf43abb30fe08f189592690a2d6673d90904dc19a3ec9ffa040edf3e7ea63b48dc801fa990ec4dc3e2c21bbfb6dd070a8991b5d7ab7178c4d6890deaf0b537ef8bdc3e1c2821ac6c60b221b24be2226cd97fc16bed0531a0f4d365f8f913adcb9a5432e97a095c8c80bb364bf9248c7b0eb265435e6f8e73b23d2838b1e3ab94613c3eeeabe4ea686aff0e552ddb945c8c5f61667b8fd7396708bddc49a04b24640069dc66b5db79c3ba8f42c535fe856c890f6dfb66a0b7077be62d71d4a14e8b515bd5dccbc377ba1a0016d49a740f16c2ffbb8c8a44538c30cc5dcb1383df07026d96bc6b698cd020a7d5ad7719d1e87be1c8487a8f11f524fb5c3f137816aecb634c9ca422ad7cfd4ec180fc49b09f12f4cd1408c5e1bf81d659bd10b8b34864381c75710bf99c9c1b7de993c73f83dafffadb08a1b584cdcfc3e35cda53507afa4958d4733cf61870dd57e46aae847f0dd74e3f25846599c97262e982212bdd5a5eda206cc5e7aaf177ecd9fe86cc74d65ba7b1fb3fdcdb333ff72383030465ee3b1e44a21765d6fcf5655a014b79fb113ef321b23c305247554fef0424828d107693788609757236b57fce08c39966f704e180d3b77a0a50ba70300aafe686b6e69bf88a779701045fbf6accbce0d144cecce6fe9f1bc8ecfd22953cdf4160935df5d6dba1acec08f47fe43d7fa63ce7cb94887af03de2b53278d50e4669bee73cb0ad61a906fc0fbc80448d67026cda696222d9a38867c89a7509449576eb7377576a9a8b381285a56cb2a691f3d3a75a6ae3d2b1780e7e8665bb481d62f3794813d1c101caedf7b6c9dac87cc595482c5b630333bec2a73a0189a168582d4ae7d6944a2ec9bbd12ddf773109cb5180e889d2c26968716496aebafe5a0a3c8c60d7cf13eb4d190746fcddc7ce4ad55ef4b80cc6dfab21b6b6cba9f5aa6e1fd7c7fa99b127b640a31f682af17e2634d596f4ce42a84a0d85f28e0832cefd131c06dd0b67a093e83cb17b014798d449e679f6a3edaca09a674ab00de54f536338a2ec7e0874e43647e414503007c7794ee6a1aad9e41285ede15b0633924dfc389346f741177f12cbb752199d6842bcce0ecaac6c786f359f9460f369e69d8b77e7c29cb65c60907bc65d76430405ab79107ff67bc97cadc0b9b112f7799403864c46f9f56a319fa87e0f696870e994df5bbf854dd6b6077098bc63309f9e857e36b823cd37ffe188457bf08a18c5149eed433892ab1b4668b8a590ec55716351fa05b1554178646e32309eb6c6334b47fc56c3f528495f50d3b85fc5a32c66af42e95619e5b113abf60235669e28cc64dda1bfb900be7df303e5a6f5910d7a99effd26265e4c3e7e064086f5799283740dd9cd6c2faa138c722e2c9975e93c6c8d9b5c16f7b3fe1aced1e456d735e256d64f8822a04c6410637f1fd0692325536bf79e436c47448a542f17a2ca0296b38c1b01862bac05c6192e325f6862f315407901643086f8dd0979348ab852acc40ce46e01426c143651f167e535d70314d2583f3e26a322e294bb737ae8bf8e0f4900c05bd22ed1110d0e2b3ed721138630c594e30849ded19403de8f212bc75e9e34d73226f112a12431cfe77a885780b77bf0f4dc8c8378444971390ad93d1d086a9c409529ffb3cf05e59b9bf59b9782f430c44142ee16c49822500462b8e50b02feb0ffea53be652b3ae147054cdcedfbd9c273727ef41286a59a8ebb1f501fd1a8cab4d72ec0eecec03ff2abc3405b3f3cc4bf968ff643006746ad3c7445624e45fce6569ace14d04651b2b37ace358e56c1ea75028ec882a76ad59feb5634ed994661b3c2478b26318d54b817f323d96cc827f14075c169ba7974ef377f980da5b46ea8024b6097da0043dbfe4f02bff86c405700b7d616189b29e6afcc17a85406fb1f5d9ffb2a203364d4668889dce97cd93364d04307f36f9b6f5ab605e34bea30c9283f04aaaf7650d8c218f6e3d6db33a175357228ff3516fe695a9e61b39a69740427838dd8f24da7d99f87b997a0c4df6851533d25d1ae0c492be945c5dab5dcdaefd017d1c2e515b424371648541d03bb5581d8dd6e2007b23086c497c0126ccdc089bb2927c781242ae3f23dc226a7ffa810ba4172bc37ce98166f9917b95d2298e25dc363fefa29ab0aabadeaa7b91f470c3e210ae6e05af56edb5982205d4bc3eaca5ecd33f67d9ffde4f5b7ed1d66072d6e370cebc53725102233bd798dedbfde8df88210dc078426f2c3f1d725a44f91770bd027cfeb8ffcfb07a0c37af1b72cb852d27a2a2e877523f9faab0c024b11a34a609d7f03f520e085205fdb8dfdaa08b40c3c49119a93341818e0aead2f2bd6a112958de1f8e84cf6911d0a41173f7c3e0ef82baccf3abf00b6a8f44d45eb3bc0eec19c5c11b069734c7f40ded9ba386b8d6e742889677e6860da5c2fbd7811d1c9bb338e1b71e74acef44a0314b5685b51232941ef020781991ec895fb65bf923e76f5c2152fd1dafe23c26b4e40c74102f25cd41823589939579fa5a873e4e46a966b37593474f8610b9cbfe6f89543a5563709601c1856f95cf40bef8e05fc8f52772e8cf328d12dec57d2d51aa03885e20408337998fe23ae7ff2f1ebdd83a7e0f62c9a3d57d39d00d4c05ff6e3230ccd8076f8dc2d8da2c2837ebff5250e7a41df898b37dcff70bcd4a3a628109443ceab1184a5075bf8dd07ec6c1206cab9123933fceaafadbb9700d6209ab34941696aee0576fae3ef26550378f7dccd4f91d91300fad4baf0be357f9f7097d2a7daed303a87e8f1a741c7db0562180fa5d92cbf9264fbcf20187edb70312cffc5a5cae2594ded06b2262fbe6530bd79ef376f16a036156ee2616b550bbf78d96fdf9d575cbb78ec855ad370528b6dd1888894972e61ad183a6e8e35fbcf440c2c501fd038bfe1054fae05e484ec7b63a5d02b5f9ee7a50f380ca8d4f77e4b59ff620b7ca72c3222ea7b990a2c56f7f7d745b262d177990e416369f39927c31ed2344e7799c24c9d94b70fcff6efa6c09fd6cb47b77514e8727f1c073093c3da882be3838b3ed702cc008e7c3488643ca7e576db95ccecbe1cd89e0f413e9478ffc7f6a22d6f469bae89199a7e88e5eb49dfe07c2fee6e7c52a3c6e45e5c8d29b619e55303b53b814834c8cb8c1d32900cb305e98dc35314a3b6897c18852f32389976cc34fd94798c4d0151edfcb2455f84a4b335fa03f385d98d9780ccaab456169072b8c5d49d2dc03892c52a995f3546042aaff67a2cf74f12cae55f52111873b472cbfdd5390e0793c00704ed1faff26eb56d3e50ed2b4fb42795391971f1a65f97a2e4c07ea7cdb6d1c18efea3668b8dfaa75e96455b8adb9303b9a3b4900019db36df29d5ce7248e13b509e38a3840530d7c876cc6553b19132b586d648c404a77cbbdd1507b6ced194b85ea54ea63ac62fbb10a0688a240ce67d60f27c3e0fd2d3117edf9e00766f0a38b23abf344c406bebae065e5a95cf66171ab3a07af0e46cee99e35e2a872344e708bea395423ddecf4f11f2dc3af92c09afcebfff97b9294d918b8c1a973a66caf92741b67289dcf4a132e61b8c950566af6e6dd4148dbd16ec000931aabcce4fb21d45c02a25f9df981d563c0903203e02f2d3a7b6681fda01ec0f867c8c54743670c0e7e06f066b558170029442672eba42db88ae68d84aaca359ac48fb25071aed4843c4322f0c0755d0a7f5cbafde7a9e4d87af4927237d8b51e7d3eb8c77b4719348e7141669d75e351f1681429bc6aa80f919c8c3ef5ed15879a5b1b9cb2381d311f438765d734784c713daba797bab7eb184526b6e3e841fee9105d28415c60f7b49607e98f6005e043a64dc6bb4f0941c65c34bc024ba5eb2aa647f6d21cc7abd8a1630270de594ec6f2304590698a9305030a6ffe6be9dad37ea0abc50481bacbacd6e7cb7af07bc8b0d31a7305d1e9e9879df6ad782db33d7c55b574825dfcc457a4cb98c0a12d4f2c5dfa5633b9d8224553da1145862809f62af423143c584c4308fbbbbe49da6f6dc9d45ce6330d10786478979079b7f25c695ed7de4933d5feb16abc3934a13ebc58c7c6e41bff5bd94519d7a798fe792eba56c33a5ba0d9df6c2fa1b5eb8207898952ec80a5004c063f286b2a219db5003f6a7c770b6da24fad191a38fbc59f9f328cbadcfb34d6feb6dab16917b4df9eb65ff5200f589208fde76034eea45a05074ebabb3c4b90bae2692e26f44644dbc81346c98efbab76f8ed99e6a4f1d37dfb8ae45728333b19652a014e6ea3b7857bed76da17c804a30ea1debe9de616725a00ca8eea76e106c0eba611fc388c8f6bc107118eb173616362d776e7fd371cb79d42bfbfb099e21045b7d18037a009277e1ffa104edaa4808e583b4352e49c2b74a5f2af7e10644534e3afd1ac6781fee4fe555fe7128c1d6a5f7f16600e6a1de13c6887bc4b8574fbf0232ea80a3ec00dc5fb0537127f96beb7bc0ceee6e248f4af47ac665aea12053d6a1fb20053a6fe70a4a274ff76abfe3242ef1a4ff3653fc4817799bb64af03570ae962cce6e77f878d5792fba02e85899a4ad1297a6759b898b45c7e00e0571ff30210c874fd3481b1f59d59370a4ee3c371aed1c40823ecca0c0d818235bd1cb8270f7a845fc31160359fbbcd1e593e5f6e40732d1a1e667bde4eba9edd027d58c68c589176dccddf9cecce941c7b87c8ad965563ccb5235235bbe770c80caf2b8ef2bc6836015d9788df64fa15c1832543e6333142406f00edd4efeb1c265f343eeb630f9998bc8b8cbf4d7924adce70839418a6a676a301fafae9efc7ae68698889484def71568d677888d1316e02d8a81800eb1e2b904676a9ab8a4cfbd21b4a74a69c77245d9df6a2487ea5661d7415ace50baad81b4cac39a6541833aa2aad86e915a9bb930b3fdf5058806c4d42e1caba9fb68fae96de3b3560f6ee71e73f99d44caee5cf28e0e1dc8be04bc19a212e0be7e46c950b5cdef5ba1d78db0a9b9a0f6fdc60f4fc7c195a53cc50859556716ca67c71a71d52beba3681362a156b4e073891ac78e5f2ff68b5bfa61e959fdc489d15c7cd2af4d98f110e131382fcd9cc6a3dc217212a8d972c7ce751f3f80ff3e17c377187e149ab80632df7ae4054f5f5784712e33a0103d6681b7bc829d489d80d55d53da43a1b99f3e10e89abb9e380c5f8e8fefe7cbf359f53d1c4138ae03566acd0d1a8570d5fd8cd117348bc8a5ffe624526e9dd7b49de2327b49bc7b8ccda1ab275b0a0b26f5e3dab65e67a53797da49f48e9ef344968650f890ea433b8e346a7356f4218193c2d40acd9a6a62b17fea65938a02fdc5ffb37d4656f193052578ef702b6e36df395e961ba933763d59c911be5bf1c4d6ec97277a5e22c5319207d3a9543a4b529114f16e6ad992d4ea70c1caf6d76e6c649f767207f84e18136789ab3b892dd7f46763c41d3c6f1800de67c1f4c3fafbce7d0a42c44d25f8a4d22694e638455fdaba61205c130ce15940c486d63e4e69c4bba8857a33930c4fedf0b94d45e028c19c0d5317c42e6ee9bb84fe92199df27ea7d56bc4846cd2d4e0aa71d89b7a9d77cc651d287b8432dac8e31c8f69a62d4f40d3fd69f830b01f8d81bbd736619cf139850d8e105f53257a29434674d79bdb47245b6ee1ce19467ad0d4ec66fd0bf2de7155b682f1a88db2775f46f75ca926e4b674b76e684907882c491cc985b28c19604ec9081e6234eca5d54d8701ba35fe6e00d98650aca4120e6b7f196d2daaf1104d619f9ac8f2c2d91e9441bbfb7ba8cf8bb1851f1344223441d94614b1ed7d6196fdb708c541b824abf6c83681bd196a0c7fafffa08a9cde035f9be7f0d65180fb899f1b82f71ae4f02dc09a2c651e0eb78ece93f0ade0a5cf06972bf3dfaf0afaa6ebce479e77fda29eaeef46ffab61318bb56f7ccc1423dd3f4e3055190ea461165d091b64124793dc4140fb20ceba0c7004c80073bad0984cbdee805a6b9e7b0154a0f1b4ccc1b4544064425c35ac190199c83ef3e80c15a15c1ce648c2873084e36014b81385affd346ee53b191d9b05fa64a1874367372e9dfc000bd5f50bdf4e1a6edc765be45b5ae3a1ce8b26539f95f216c6097fe6cd5533d308498872dd3fbcc09f2cf815a2b6f3bcbd054b4b1e2b6310ca56087b7f91b3b763f3dee32b170bc529f68d7b7506f9e613f01dc9ac0d212bf0881d0c9fc5657ec7a73357e325e17d75dba0475deef4112dcad0c860783ecb16117ff28c588085c8feab96b4151d6480525557251a9f6aa350802f6e360d264984eff6191455892ceb29dda41d85c3d2bb587acb8a5d6460f823f01780be66d74542605793cf41e941e16a647ddad1e82211f1cad29c9290c72d72de4d252b88331428b6dc1598ff5504f5ae71136bf8d7301ab535ba2f40f4204c7b4feac48cf9c36f7ec5d5458b7b916002019c8912ad78b89e9bf797fbe5d3bc7178ce242bc93303822f50fd84c42a5a8b4cd55ecf6ea92bf93f01fad0dc2ef7245c72622127283594a31a592ed365c667edbf4fe79d44c8c6bd92ccf1337ffc76559b955693ee1f6f50e1d2366e45a7dc43421d6bcc10050559b13f1a6766d9bfd10fab7998998416c32d249685ac6241118aff19f3063427deddb092bb8401f62d797e8989d7914a2a4ebff0debaca6473eb817a4dc6e38013c5ed0ebdcd3f3bd60e625688501876e634dba2d54ab72c21521360c38e56832682c9bec347123bb5f9720678e21ed5b69ea73c449967a34728e3f9b052385f53b519ae6987e384b14aa39acf7b51eb952e5bb43403c7e0fe3d85e5e29987d54402885362321f33efe00adc6d454ae57d051c6ea9f21bc1a4c38c3cef933d94784b56336a9733e51d0eb1adfadba33ffdf461dd134f2f958145f77018c11df848d6cc97e0dd0fb62e18286b4fc28ba3644a75bd001327df26feb8de89a647aff59401db14ff1af4eca6c6e1199c46bd3e5e2d592a9720833d4189028f7e2921bc023d0aadef8650aa3ccb536d2399414c0c1ebd92f3eabde63a976bb2cfa304375734f51f5d636f0b4b2939c61c0b57031b8703e827e9b7536484eecac8f40a6918cbcc2bfd08ebfb01296e1fef8fbabddfd388ff73c3b74a1916cce3459890b7f4163a66d2daec6d481e063a0193eb42e2b6a4c47fa2b3983ce0c5c76ad9e7f59d439bd7b703c888783e83711c9240afc97f9d250f472d4c0edde1feef47538ee4811d0e1929e25a03e378fae59343e17993969ee072694365bb1fe331d014c7e0d61bb58a6a5ef3a5440f05204f602a3cda952807982c98c45cbc8deaa2e64782e22f100538e0512654967f60ee95ff17cec01dceb50581ca8c80b653e808d51f54897a237f09b3175a5092fa9bf743fb660d00a34f8655f1fc64fb7512cff365a191d863061f2fd5dee9a3a1f34d02c536100c6a6d4e7baa89a0feaa246a276f4f54b111fa59fca106848b513eda51ae7308d99c792b0da70dbbb7fa10358f668d9179adbe302a243f61d8bea40d2322938c127966351eee7350721779f82a53eb130025860c88fe908955aa82b8e62f9a48693db7b848838565a809d5c624b6851a571e232774ab0fe7dd07e4e543fec07e8d9454e8467be7410767395c390e2f363dd475c9a6914419a4b691e28aa513a55d1be652e92c89fe1e221d5048e52e18ebe8758742e12a26651af72a8def2a9d3336033b7c83a9f25a22ecf5219cfcaaf0f0c979af2596a4a6953a166c2e3245aa3e3731f0dbe4a6997565998c1e6ee796e0667c1da7d7bee4be0592da1f446d5621c7f79de01f7faa695f5745247c345023740e5dfef19436df4a8b1c35f3e4e9cb1831c98a7fb30387a1adc6276e80d0056bfbf241becda473faf2441e505a5779dd0c17e46951cef4e12607b29a809d9f7c3e89ae11b12bc90a3774d46ce4025ad48fdaa9fe7243d063458b5c947e3a4766be654854f4178cab58291759c58101ae41f283e5c646af76c28cf6144be1589aa58e525cd3beb2e277cf4020de2016ee4db31fbadd3d6e9396df8db6276dadb9c4640465b8a835255dba5fd57012fa84861c007744dd4502cb60a59fbd51584adef57d00c8e2feb2428c14cfd5e2401f0c3ef011743f6a886c8f614c363a1b1d94cd4fa02ca26c4cb5b4230054b508e92c55da36e4ed03e790199298f2643ea3b786368dfbc0106ef2722cd5f17bbe605286636f9c59857076d9622fff11b5b1c364d99982031abe9f0a3a6d59f74e29766b8e601ae7f248c3966152cc7d36b173168adb07292540e9ec19dd1201d541fba96734149ef932b54e041f5be229adc99d5d4de486a7b1049915655474805877f5e56f8475cd389ffd3bf04c7990ebf713b91844320d6f667209160f13e9a950a7cedb6895613cda34d3c36a6c49cf3b996766acd78529e4856a661d7c2412cbf628380171b4eb26ed1ead735a1944b6a05ecfe39d292313f41b8eeb987f6fb44a69f71e57c350e4433e1d9c9ce4626ab726449cd665bdd07a7f441cf480b7eefba579a72ac65a89a36c47417a0fc7c9bfd3f5660d2f710f22d97f561c1a73a19acccf7e544931aaff6c12dababc8a42245d660b2c4dbf0cc29308826ad84e5d5790a71dfbfcb18cba4c507898b8694712c287b940f37ea952211f379a834a5cf9517eeaad4917665998c670c1143b34e64ea7c131f67f0880a6e7eb398a19c4503be4719c89e98e880b69beebf335322965d1f00319a8e8e9fd4ce8836c768ffc09796ba5b26c870747c59419efb24401a3e3de7480fa20846ee4ee3fc4cfad6890767289cd688717fbc22f26b85b3f58963b2860dcae05f81d1f762ee097a5c05a2774ebf0edd92e482b7d0b6ea353ccb8411993a05a0e9829f10ad71cf6390461f848706961d5a4058fb9ee0651f3bb4166d81e9c3b1aaa67cf683b8c23e59a6cd3b56365f4cdbc078a8b10db114347f6c7782422c6751c6292c8cdcee687fc5098caecb9067ae4622c2a11a0b741cc5de034db1ac45834980c96e176e0510b236486f4ee3e7f7c96d2d9d27fc1628657ee3c04c6ef200b0f4644e9fdfbe5a19099c7a755c3262f78a1be69b59cf7927c0c52b2f836029cd03cf242409f935ca25fd554e540a129c346a65678d9f10802132deef12df900a94c8aa68e83cd35e8fbcb01e659ad0d4632a295f828bb062077e6334d3ec3002b4a08b509c44d21aeafd8286c5969cc643df280d1f7c6da0b1020820c0d0b76764a9002d93349b51edd44d9d16e1c4bbdcb72e89c4cf16d1fda40222cfb2ccd0c4f854ec625756fde9c694122f89b05f559b293f990bfeaf832cc53bc66c609b23b314ec4c423cdb980b721ac71f7c0bea1567cc1d4f9c74ebd0611727b7398cd8c59b1ace0a2f14a38a3207de5d0105d671d614a6f9fb656dbe8928c8df3139dff129385c1e86f9f121b14b700a1d13eb2da5e1eadd2e7deb7553fef38b3b9cd863cde3e44be3fbf0043131ca4626aac83d7468f8c88bf6d3457a4ead4bfd8428bfb6ca9f7aef47a09540f8766b0b04377b12c81329069206de4063b87f73f303dcf37781b95f5840da1afcb3cdc4c486200e34f51be9ea7b93a79b66ad9ea3007bf7f7dafd90e888722f7d25fabae273234e5f7276ce9c7a16c8b13c27d029beadab17d23463719def26803817c14425308ca3e7400146008e29b8e5ccdd44d8cdae697ff581c4e8492d314fa20572a87f674292a2364d28967df2765d2c42fdd2c97685766ba12f405ff07550d7a8efcf11d362eddac445d2560b52bc116e93f79be7f8704c10d4a5a4f48e7cbbd4c551f98f764669e0c0a0909452f6239a8067b905f2b7c3941f7abf82e42c087a4b65390d0d8d263b0df659a56a8b61afb0fd7dd98b5a01ee18238249621ea0abd7a822852222d6c8ef0c240ce46490ec07047c6375558eefd0b9587c193f96cf2ac472ea2124e0394a7b02ebcbc036ed7f02bcef994b7586405e13303c6072c8635599d534dced080a1d243a3532ba7c7e9133508c820cf636598b3aa8b2c16c9d48eb0a974b9427d0d995097084867bb00138b0192acb77b6409987d53d53225c885d03c8d463f40300c388feae7a6b8d43d0e6e15f3a6a984e3fdc43631dfad265a4f649d4f38bf3213fd302ce651df7c58c50bec8b9b428a2906edc29b46865cc1ee3c0db2a500b052da00ed12991aee97d8fb08c4961dc551e1d428212e3f62677f97ab47c1fd0021644ef781aab3037a0450be349ab1860baba64edd11eca927e0824efb6cfac2be29cc69c8b9ef156357931e703d5a5cf6cf92d6ccf7273a236f30091197f3fce9aeda7721767cb2a2314034120d04f2c9146ccda25967573684348dfc11106f1efb73c6c3702e0ace006712fc25591ee41ddc2ac81af86e31d030403a275e22c6e6551fc50ccfaf70bd064caa290e297c7e111f86349353c43e93914935b5b66cecb3e660ac171b1c81a2d5f66c9993abef5ec2a20a9bb3a83cd53dec3e431f498bbb127fc725d2cc230d5559aa2506d67fba9801c217160dfcf9e71b2f41b7ae8bf63f4954bf83737c8f718cb722c31bac21908eb009950ecd44f20ede1c6d2949d569d231bd9e79ed89add40c80d2dc6219bd68af72eefb2eb9a2d9ded78510fb46a0f17185425c7022628436e0f50bd16c4639c82a0e81861172beb83e7f67aa1222c181ce8d7cb05cfa6f95937c47e1f5e6a0405139d8bb9e44f32d2aee5da823dc71a1ccfd582026ab9654cd6a497d2b578a28d273612cbfd7ad2ad21f926e6dec5db52df84626b07c9b26cd909e86e55c7c2212364c3f659bfb99b8353ee86f9ef75027e56cd39c274ab7a03da4efec39b9827e370cf8f93bf7c7db100c95eb8b4cd891ce4b29a741469d134c451225545314c44fd56b8f5fff6bdf29e5da85a0ddf00ae4b559a7b086b18f6735b08dd28938f6da737830fe1e180ef60b3e6f7d7e7cf78435e0f40730795d339115c0cbf76c38535b44c4e68984407e560d9f73b1908401a9eea13edfc1dc4a4c8c74259a010ce31ec6cfeaa918202dfff7359b945603f0c1c41af00edec17b18427520a17ebe5fd7b4f3d84720a4ef4b413dbac3b22eec495c0496ca6a2b2c44b56a0efeb77bccbb538eacd50e08c64ebf4f9867f2b5b85637922810c399e8b7b622be57c27000c00f10c449320767ef4ea27169888fb4cd0271746a925cc2c08d28e953ab41a9a9d0f355f0fe6af95ce31e2ce8096794a7e04f805b02458fea604a7dedd725c3ca21a2f9938ea9d42109bb4f1c4759bdaa8c48d9c0ef03b376ff51e8d14e1c16e7021295e6e0ac702601c6193b34c3c0c0ce9568f70c2bb629ece1d3edcb4f40c4e8c9a118f62897477969585bb711eda6481dfc7c890779fd866e75cc4c009635a36dc43b7f55616b6a9188de4f3e5692c05eb97332006ebc672e20fd41f614718e65795dbc3e5031bfbb776cc3a112dfc2ef828bc24abbda4ec248b5a822c0bb0d239fbac3e11d195be3ff7bd0165f4bc64da29b4977b36d504dcc05504b2b6ef2ced0a6d2be9658881cbe7e47f6b928c6b3f261285ea935ca969a7e3239c90af9fb0601e3ec9d1008b57117e9dcb9f58d51efb60d42e3716eeb83cc9349dd3080ac29df1b4cbe7a79784f765a02fdb777eafb4bf39dd7b5e52e3256113937743f2b2933bf42f6c7df885796745adef9cd22218e0ebc961630f7a68e76681294699d571df08374f3124af733ae019af7326f470ad8b405b53d8a6c51ec3c760f45d47650b3651ac1d4c20ad34c5c9478e68acf2bdd0a264003538d09cf7c2ce8a398fddf0445295fab452d3d8bc97f628117aa6e5616c75a9b8f70d98cb387c3f390191dcf09218bfdb91cbf3fdf06d9a855ed2a2e5296dec6ca77173a8f48a982492c3fbaa637870d3fe733713bf10ef5caca7402b4d0a26c5151688e4f4bb789b4d97e0358fd886571f7a705e3fd1441e0b52a01d53a25a0415b839282f6ee30057d9971217134d274eb6dd9f6b02fe9c5c35353840f6ba2118df6b022b7a9ad051da</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -484,8 +384,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Win10/" rel="tag"># Win10</a>
               <a href="/tags/ftp/" rel="tag"># ftp</a>
+              <a href="/tags/Win10/" rel="tag"># Win10</a>
           </div>
 
         
@@ -508,8 +408,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/posts/cba5eed1/" rel="next" title="hexo next pjax实现音乐全局播放">
-                  hexo next pjax实现音乐全局播放 <i class="fa fa-chevron-right"></i>
+                <a href="/posts/1ec1a7b2/" rel="next" title="实用资料官方链接">
+                  实用资料官方链接 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -549,7 +449,6 @@
 
       <!--noindex--> <!--告诉搜索引擎不允许抓取这个页面-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP的搭建"><span class="nav-number">1.</span> <span class="nav-text">FTP的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动IIS服务"><span class="nav-number">1.1.</span> <span class="nav-text">启动IIS服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建ftp"><span class="nav-number">1.2.</span> <span class="nav-text">搭建ftp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开ISS"><span class="nav-number">1.2.1.</span> <span class="nav-text">打开ISS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加FTP站点"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加FTP站点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定和SSL设置"><span class="nav-number">1.2.3.</span> <span class="nav-text">绑定和SSL设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#身份证授权信息"><span class="nav-number">1.2.4.</span> <span class="nav-text">身份证授权信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户和组"><span class="nav-number">1.3.</span> <span class="nav-text">添加用户和组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建用户"><span class="nav-number">1.3.1.</span> <span class="nav-text">新建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置用户授权规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">设置用户授权规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置防火墙"><span class="nav-number">2.</span> <span class="nav-text">设置防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#允许ftp通过防火墙"><span class="nav-number">2.1.</span> <span class="nav-text">允许ftp通过防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙允许其他应用"><span class="nav-number">2.2.</span> <span class="nav-text">防火墙允许其他应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP客户端-IIS7服务器管理工具"><span class="nav-number">3.</span> <span class="nav-text">FTP客户端-IIS7服务器管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内网ip映射为公网"><span class="nav-number">4.</span> <span class="nav-text">内网ip映射为公网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pubyun（手机热点测试失败）"><span class="nav-number">4.1.</span> <span class="nav-text">Pubyun（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册公云账号"><span class="nav-number">4.1.1.</span> <span class="nav-text">注册公云账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实名认证"><span class="nav-number">4.1.2.</span> <span class="nav-text">实名认证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#购买套餐"><span class="nav-number">4.1.3.</span> <span class="nav-text">购买套餐</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名创建和配置"><span class="nav-number">4.1.4.</span> <span class="nav-text">域名创建和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试"><span class="nav-number">4.1.5.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nat123（手机热点测试失败）"><span class="nav-number">4.2.</span> <span class="nav-text">Nat123（手机热点测试失败）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置映射"><span class="nav-number">4.2.1.</span> <span class="nav-text">设置映射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置访问者"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置访问者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器测试-1"><span class="nav-number">4.2.3.</span> <span class="nav-text">浏览器测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP-管理工具"><span class="nav-number">5.</span> <span class="nav-text">FTP 管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公司局域网限制访问ftp"><span class="nav-number">6.</span> <span class="nav-text">公司局域网限制访问ftp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug-提示"><span class="nav-number">7.</span> <span class="nav-text">bug 提示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FTP复制文件错误451"><span class="nav-number">7.1.</span> <span class="nav-text">FTP复制文件错误451</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -567,20 +466,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">63</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -738,91 +637,7 @@ show_date_time();
       </div>
 
     <!-- password 2020-11-23 -->
-    <script src="https://cdn.staticfile.org/jquery/3.1.1/jquery.min.js"></script>
-<script>
-    //暂时储存文章中的内容
-    var div = $('.post-body');
-    //暂时储存目录的内容
-    //var toc=$('.post-toc')
-    
-    function password() {
-        if('abc123'){
-            //将文章内容删除
-            div.remove();
-            //将目录删除
-            //toc.remove();
-            //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
-            //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
-            //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
-            $('.post-header').after(
-            '<span class="description" value="请输入密码，然后按 Enter 键阅读" style="font-style: oblique;font-weight: bold;border: none;display: block;'+
-            'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 40px;resize:none ">'+
-            '<i class="fa fa-heartbeat" id="myheartbeat"></i>'+
-            '请输入密码，然后按 Enter 键阅读' +
-            '<i class="fa fa-heartbeat" id="myheartbeat"></i>'+
-            '</span>' +
-            '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
-            '<input class="password"  type="password" autocomplete="new-password" autofocus="autofocus" value="" style="border-radius: 5px;height: 30px;border: none;display: block;border-bottom: 1px solid #ccc;' +
-            'margin: 0 auto;outline: none;width:95%"/>' +
-            '</div>')
-            //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
-            document.onclick = function (event) {
-                var e = event || window.event;
-                var elem = e.srcElement || e.target;
-
-                while (elem) {
-                    if (elem != document) {
-                        if (elem.className == "password") {
-                            //$(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
-                            return;
-                        }
-                        elem = elem.parentNode;
-                    } else {
-                        //$(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
-                        return;
-                    }
-                }
-            }
-            //绑定enter键按下后离开的事件
-            $(document).keyup(function(event){
-                if(event.keyCode ==13&&$('.password').length>0){
-                    //console.log($('.password').val())
-                    //console.log('abc123')
-                    if ($('.password').val() == 'abc123') {
-                        //恢复文章内容
-                        (div).appendTo($(".post-header"))
-                        //恢复目录
-                        //toc.appendTo($(".sidebar-inner"))
-
-                        //删除本页面的输入密码组件
-                        $(".description").remove();
-                        $(".qiang").remove();
-                        $(".password").remove();
-
-                        //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
-                        //图片懒加载，没有加入此功能的这个函数需要去掉
-                        $('img').lazyload({
-                            placeholder: '/images/loading.gif',
-                            effect: 'fadeIn',
-                            threshold : 100,
-                            failure_limit : 20,
-                            skip_invisible : false
-                        });
-                        //pjax后出现文章不显示，没有pjax的下面四行需要去掉
-                        $(".post-block").css({opacity:1});
-                        $(".post-header").css({opacity:1});
-                        $(".post-body").css({opacity:1});
-                        $(".pagination").css({opacity:1});
-                    }else {
-                        alert("对不起，密码输入错误。")
-                    }
-                }
-                //将document的keyup移除，防止在pjax的情况下会重复绑定事件
-            });
-        }
-    }
-    password();
-</script>
+    <!--  -->
 
 
     </main>

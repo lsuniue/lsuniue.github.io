@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/xiaomai/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/xiaomai/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/xiaomai/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/favicon/xiaomai/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/images/favicon/xiaomai/manifest.json">
+  <meta name="msapplication-config" content="/images/favicon/xiaomai/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"right","display":"always","offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: 'WTDIMV3YGV',
+      apiKey: 'ba861ea5c4d982731bc8ed92b3bec5c3',
+      indexName: 'indexName',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="QQ  网易云  MySQL  GMIP  QGIS …">
+<meta name="keywords" content="Ubuntu,Software">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 18.04 装机软件">
+<meta property="og:url" content="https://langiue.cn/posts/58cb065a/index.html">
+<meta property="og:site_name" content="Isaiah">
+<meta property="og:description" content="QQ  网易云  MySQL  GMIP  QGIS …">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-02-19T07:45:19.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 18.04 装机软件">
+<meta name="twitter:description" content="QQ  网易云  MySQL  GMIP  QGIS …">
+
+<link rel="canonical" href="https://langiue.cn/posts/58cb065a/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Ubuntu 18.04 装机软件 | Isaiah</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034341-1"></script>
+    <script pjax>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-94034341-1');
+      }
+    </script>
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="top-scroll-bar"></div>
+<div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Isaiah</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Just Jump!</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-top">
+
+    <a href="/top/" rel="section"><i class="fa fa-fw fa-signal"></i>top</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/58cb065a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+      <meta itemprop="name" content="Isaiah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Isaiah">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 18.04 装机软件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-22 09:23:58" itemprop="dateCreated datePublished" datetime="2020-09-22T09:23:58+08:00">2020-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-19 15:45:19" itemprop="dateModified" datetime="2021-02-19T15:45:19+08:00">2021-02-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+                  >
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Software/" itemprop="url" rel="index">
+                    <span itemprop="name">Software</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li><p>QQ</p>
+</li>
+<li><p>网易云</p>
+</li>
+<li><p>MySQL</p>
+</li>
+<li><p>GMIP</p>
+</li>
+<li><p>QGIS</p>
+<p>…</p>
+</li>
+</ul>
+<a id="more"></a>
+<hr>
+<p><a href="https://blog.csdn.net/weixin_32087115/article/details/85261860?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control" target="_blank" rel="noopener">企业微信</a></p>
+<p><a href="https://www.cnblogs.com/dunitian/p/9124806.html" target="_blank" rel="noopener">微信</a></p>
+<h2 id="QQ"><a href="#QQ" class="headerlink" title="QQ"></a><a href="https://im.qq.com/linuxqq/download.html" target="_blank" rel="noopener">QQ</a></h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> libgtk2.<span class="number">0</span>-<span class="number">0</span> <span class="comment"># Ubuntu</span></span><br><span class="line">sudo yum <span class="keyword">install</span> gtk2.x86_64 <span class="comment"># centos</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装deb文件"><a href="#安装deb文件" class="headerlink" title="安装deb文件"></a>安装deb文件</h3><p>双击安装或以下命令安装</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">dpkg</span> <span class="selector-tag">-i</span> <span class="selector-tag">linuxqq_1</span><span class="selector-class">.0</span><span class="selector-class">.1-b1-100_armhf</span><span class="selector-class">.deb</span></span><br></pre></td></tr></table></figure>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo rpm -e linuxqq</span></span><br><span class="line"><span class="attribute">sudo dpkg -r linuxqq</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://y.qq.com/download/download.html" target="_blank" rel="noopener">QQ音乐</a></p>
+<p><a href="https://music.163.com/#/download" target="_blank" rel="noopener">网易云</a></p>
+<h2 id="破解软件网站"><a href="#破解软件网站" class="headerlink" title="破解软件网站"></a><a href="https://www.digit77.com/macapps/database-utilities/navicat-premium.html#download-explan" target="_blank" rel="noopener">破解软件网站</a></h2><h2 id="Pychrome"><a href="#Pychrome" class="headerlink" title="Pychrome"></a>Pychrome</h2><p>sudo snap install [pycharm-professional|pycharm-community] –classic</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap <span class="keyword">install</span> pycharm-professional <span class="comment">--classic</span></span><br><span class="line">sudo snap <span class="keyword">install</span> [pycharm-community] <span class="comment">--classic</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://www.wuaisite.com/post-116.html" target="_blank" rel="noopener">激活码分享网址</a></p>
+<h2 id="软件安装到一半重装"><a href="#软件安装到一半重装" class="headerlink" title="软件安装到一半重装"></a>软件安装到一半重装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --reinstall name</span><br></pre></td></tr></table></figure>
+<h2 id="安装Google-Pinyin"><a href="#安装Google-Pinyin" class="headerlink" title="安装Google Pinyin"></a><a href="https://www.jianshu.com/p/180cd9634b4a" target="_blank" rel="noopener">安装Google Pinyin</a></h2><p>调整输入法框大小</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/usr/</span>share<span class="regexp">/fcitx/</span>skin<span class="regexp">/default/</span></span><br><span class="line">sudo vim fcitx_skin.conf</span><br></pre></td></tr></table></figure>
+<p>fontsize 15<br>mennu size 15</p>
+<h2 id="Synaptic"><a href="#Synaptic" class="headerlink" title="Synaptic"></a>Synaptic</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install synaptic</span><br></pre></td></tr></table></figure>
+<h2 id="Lantern"><a href="#Lantern" class="headerlink" title="Lantern"></a><a href="https://github.com/getlantern/lantern" target="_blank" rel="noopener">Lantern</a></h2><h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a><a href="https://www.typora.io/#linux" target="_blank" rel="noopener">Typora</a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> or run:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> add Typora<span class="string">'s repository</span></span></span><br><span class="line"></span><br><span class="line">sudo add-apt-repository 'deb https://typora.io/linux ./'</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> install typora</span></span><br><span class="line"></span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<h2 id="Pandoc"><a href="#Pandoc" class="headerlink" title="Pandoc"></a><a href="https://github.com/jgm/pandoc/releases/tag/2.9.2" target="_blank" rel="noopener">Pandoc</a></h2><p>Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.</p>
+<h2 id="mathpix-snipping-Tool"><a href="#mathpix-snipping-Tool" class="headerlink" title="mathpix snipping Tool"></a><a href="https://mathpix.com/" target="_blank" rel="noopener">mathpix snipping Tool</a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></table></figure>
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a><a href="https://cloud.r-project.org/" target="_blank" rel="noopener">R</a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install r-base</span><br><span class="line">sudo apt-get install r-base-dev</span><br></pre></td></tr></table></figure>
+<h2 id="update-R-packages"><a href="#update-R-packages" class="headerlink" title="update R packages:"></a>update R packages:</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="RStudio"><a href="#RStudio" class="headerlink" title="RStudio"></a><a href="https://rstudio.com/products/rstudio/download/#download" target="_blank" rel="noopener">RStudio</a></h2><h2 id="Anaconda-3"><a href="#Anaconda-3" class="headerlink" title="Anaconda 3"></a><a href="https://www.anaconda.com/products/individual" target="_blank" rel="noopener">Anaconda 3</a></h2><p>download <a href="https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh" target="_blank" rel="noopener">64-Bit (x86) Installer (522 MB)</a></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> Downloads</span><br><span class="line">bash Anaconda3-`Press <span class="keyword">Tab</span>`</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jianshu.com/p/9a0172ae005f" target="_blank" rel="noopener">Python,Anaconda简介安装使用教程</a></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">创建新环境</span><br><span class="line">如果要安装指定的版本号，则只需要在包名后面以=和版本号的形式执行。如：conda <span class="built_in">create</span> <span class="comment">--name python2 python=2.7，即创建一个名为“python2”的环境，环境中安装版本为2.7的python。</span></span><br><span class="line"></span><br><span class="line">如果要在新创建的环境中创建多个包，则直接在后以空格隔开，添加多个包名即可。如：conda <span class="built_in">create</span> -n python3 python=<span class="number">3.5</span> numpy pandas，即创建一个名为“python3”的环境，环境中安装版本为<span class="number">3.5</span>的python，同时也安装了numpy和pandas。</span><br><span class="line"><span class="comment">--name同样可以替换为-n。</span></span><br><span class="line"></span><br><span class="line">显示已创建环境</span><br><span class="line"></span><br><span class="line">conda info <span class="comment">--envs</span></span><br><span class="line">或</span><br><span class="line">conda info -e</span><br><span class="line">或</span><br><span class="line">conda envlist</span><br><span class="line"></span><br><span class="line">复制环境</span><br><span class="line">conda <span class="built_in">create</span> <span class="comment">--name--clone</span></span><br><span class="line">conda <span class="built_in">create</span> <span class="comment">--name py2 --clone python2，即为克隆名为“python2”的环境，克隆后的新环境名为“py2”。此时，环境中将同时存在“python2”和“py2”环境，且两个环境的配置相同。</span></span><br><span class="line"></span><br><span class="line">删除环境</span><br><span class="line">conda <span class="built_in">remove</span> <span class="comment">--name--all</span></span><br></pre></td></tr></table></figure>
+<h2 id="Shutter"><a href="#Shutter" class="headerlink" title="Shutter"></a><a href="https://shutter-project.org/" target="_blank" rel="noopener">Shutter</a></h2><p>截图与快捷编辑软件</p>
+<p>Shutter is a feature-rich screenshot program for Linux based operating systems such as Ubuntu. You can take a screenshot of a specific area, window, your whole screen, or even of a website – apply different effects to it, draw on it to highlight points, and then upload to an image hosting site, all within one window. Shutter is free, <a href="http://www.opensource.org/docs/definition.php" target="_blank" rel="noopener">open-source</a>, and licensed under <a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GPL v3</a>.</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt install shutter</span><br></pre></td></tr></table></figure>
+<h2 id="GMIP"><a href="#GMIP" class="headerlink" title="GMIP"></a><a href="https://www.gimp.org/" target="_blank" rel="noopener">GMIP</a></h2><p>This is the official website of the GNU Image Manipulation Program (GIMP).</p>
+<p>GIMP is a cross-platform image editor available for GNU/Linux, OS X, Windows and more operating systems. It is <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noopener">free software</a>, you can change its <a href="https://git.gnome.org/browse/gimp" target="_blank" rel="noopener">source code</a> and <a href="https://www.gnu.org/licenses/quick-guide-gplv3.en.html" target="_blank" rel="noopener">distribute</a> your changes.</p>
+<p>Whether you are a graphic designer, photographer, illustrator, or scientist, GIMP provides you with sophisticated tools to get your job done. You can further enhance your productivity with GIMP thanks to many customization options and 3rd party plugins.</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install gimp</span><br></pre></td></tr></table></figure>
+<p>安装插件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> gimp-<span class="keyword">plugin</span>-registry gimp-<span class="keyword">data</span>-extras</span><br></pre></td></tr></table></figure>
+<h2 id="indicator-stickynotes"><a href="#indicator-stickynotes" class="headerlink" title="indicator-stickynotes"></a><a href="https://launchpad.net/indicator-stickynotes/" target="_blank" rel="noopener">indicator-stickynotes</a></h2><p>桌面便签工具，入门级，功能简单</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:umang/indicator-stickynotes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install indicator-stickynotes</span><br></pre></td></tr></table></figure>
+<h2 id="QGIS"><a href="#QGIS" class="headerlink" title="QGIS"></a><a href="https://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu" target="_blank" rel="noopener">QGIS</a></h2><h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a><a href="https://code.visualstudio.com/Download#" target="_blank" rel="noopener">VS Code</a></h2><h2 id="向日葵"><a href="#向日葵" class="headerlink" title="向日葵"></a><a href="https://sunlogin.oray.com/download/" target="_blank" rel="noopener">向日葵</a></h2><ul>
+<li>卸载向日葵</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -l <span class="string">| grep sunlogin</span></span><br><span class="line">sudo dpkg -r sunloginclient</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a><a href="https://www.cnblogs.com/opsprobe/p/9126864.html" target="_blank" rel="noopener">MySQL</a></h2><h2 id="calibre"><a href="#calibre" class="headerlink" title="calibre"></a>calibre</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install calibre</span><br></pre></td></tr></table></figure>
+<p>将<code>.desktop</code>启动程序添加到<code>calibre</code>的内置电子书阅读器中：</p>
+<ol>
+<li><p>在<code>~/.local/share/applications</code>中创建一个新的<code>.desktop</code>文件：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit ~<span class="regexp">/.local/</span>share<span class="regexp">/applications/</span>calibre-ebook-viewer.desktop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将以下段落复制并粘贴到文件中：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env xdg-open</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Desktop Entry]</span></span><br><span class="line"><span class="attr">Version</span>=<span class="number">1.0</span></span><br><span class="line"><span class="attr">Type</span>=Application</span><br><span class="line"><span class="attr">Terminal</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">Icon</span>=calibre</span><br><span class="line"><span class="attr">Exec</span>=ebook-viewer</span><br><span class="line"><span class="attr">Name</span>=Calibre Ebook Viewer</span><br><span class="line"><span class="attr">Comment</span>=Display .epub files and other ebook formats</span><br><span class="line"><span class="attr">MimeType</span>=application/x-mobipocket-ebook<span class="comment">;application/epub+zip;</span></span><br><span class="line"><span class="attr">StartupWMClass</span>=calibre-ebook-viewer</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存文件。您现在应该可以从短划线和右键单击”Open with”菜单启动Calibre的内置电子书阅读器。</p>
+</li>
+</ol>
+<h2 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a><a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15" target="_blank" rel="noopener">SQL Server</a></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"</span><br><span class="line"></span><br><span class="line">sudo apt-get <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> -y mssql-<span class="keyword">server</span></span><br><span class="line"></span><br><span class="line">sudo /opt/mssql/<span class="keyword">bin</span>/mssql-conf setup</span><br><span class="line"></span><br><span class="line">systemctl <span class="keyword">status</span> mssql-<span class="keyword">server</span> <span class="comment">--no-pager</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">If</span> you plan <span class="keyword">to</span> <span class="keyword">connect</span> remotely, you might also need <span class="keyword">to</span> <span class="keyword">open</span> the <span class="keyword">SQL</span> <span class="keyword">Server</span> TCP port (<span class="keyword">default</span> <span class="number">1433</span>) <span class="keyword">on</span> your firewall.</span><br><span class="line"></span><br><span class="line">主机 | 端口</span><br><span class="line">localhost</span><br><span class="line"><span class="number">1433</span></span><br><span class="line">用户名 | 密码</span><br><span class="line">sa</span><br><span class="line">Aasdf1234</span><br></pre></td></tr></table></figure>
+<h2 id="配置和安装-SQL-Server"><a href="#配置和安装-SQL-Server" class="headerlink" title="配置和安装 SQL Server"></a><a href="https://blog.csdn.net/li528405176/article/details/83414061" target="_blank" rel="noopener">配置和安装 SQL Server</a></h2><h2 id="Tweak"><a href="#Tweak" class="headerlink" title="Tweak"></a>Tweak</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+<h2 id="Navicat-备用地址"><a href="#Navicat-备用地址" class="headerlink" title="Navicat 备用地址"></a><a href="https://gitee.com/kaleozhou/navicat" target="_blank" rel="noopener">Navicat</a> <a href="https://www.kaleozhou.top/topics/125/activation-of-navicat15-premium-under-ubuntu-1804" target="_blank" rel="noopener">备用地址</a></h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -o loop navicat15-premium-cs<span class="selector-class">.AppImage</span> navicat15</span><br><span class="line">sudo mount -o remount,rw navicat15-premium-cs<span class="selector-class">.AppImage</span> navicat15</span><br><span class="line"></span><br><span class="line">./appimagetool-x86_64<span class="selector-class">.AppImage</span> navicat15 navicat15-premium-cs-pathed.AppImage</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.digit77.com/macapps/database-utilities/navicat-premium.html" target="_blank" rel="noopener">破解版下载地址</a></p>
+<h2 id="Workbench"><a href="#Workbench" class="headerlink" title="Workbench"></a><a href="https://dev.mysql.com/downloads/workbench/" target="_blank" rel="noopener">Workbench</a></h2><h2 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a><a href="http://pan.baidu.com/download" target="_blank" rel="noopener">百度网盘</a></h2><h2 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a><a href="https://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="noopener">搜狗输入法</a></h2><h2 id="Citrix-Receiver"><a href="#Citrix-Receiver" class="headerlink" title="Citrix Receiver"></a>Citrix Receiver</h2><ul>
+<li><p>访问<a href="https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html" target="_blank" rel="noopener">下载地址</a></p>
+</li>
+<li><p>选择 Debian Packages</p>
+</li>
+<li><p>下载deb安装包</p>
+</li>
+<li><p>下载完毕后双击安装</p>
+</li>
+</ul>
+<h1 id="安装-Python-库"><a href="#安装-Python-库" class="headerlink" title="安装 Python 库"></a>安装 Python 库</h1><h2 id="安装Open-CV"><a href="#安装Open-CV" class="headerlink" title="安装Open CV"></a>安装<a href="https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html" target="_blank" rel="noopener">Open CV</a></h2><h2 id="GeoPandas"><a href="#GeoPandas" class="headerlink" title="GeoPandas"></a><a href="https://geopandas.org/" target="_blank" rel="noopener">GeoPandas</a></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create -n geo_env</span><br><span class="line">conda activate geo_env</span><br><span class="line">conda<span class="built_in"> config </span>--env --<span class="builtin-name">add</span> channels conda-forge</span><br><span class="line">conda<span class="built_in"> config </span>--env --<span class="builtin-name">set</span> channel_priority strict</span><br><span class="line">conda install <span class="attribute">python</span>=3 geopandas</span><br></pre></td></tr></table></figure>
+<h2 id="jupyter-切换-conda-虚拟环境"><a href="#jupyter-切换-conda-虚拟环境" class="headerlink" title="jupyter 切换 conda 虚拟环境"></a>jupyter 切换 conda 虚拟环境</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda env list <span class="comment"># 列出虚拟环境</span></span><br><span class="line">conda activate 环境name</span><br><span class="line">conda deactivate</span><br><span class="line">conda <span class="keyword">install </span>ipykernel</span><br><span class="line">python -m ipykernel <span class="keyword">install </span>--name <span class="keyword">adda</span></span><br><span class="line"><span class="keyword">或者</span></span><br><span class="line"><span class="keyword">python </span>-m ipykernel <span class="keyword">install </span>--user --name geo_env --<span class="keyword">display-name </span><span class="string">"Python geo_env"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Conda环境"><a href="#Conda环境" class="headerlink" title="Conda环境"></a>Conda环境</h2><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n <span class="params">&lt;env_name&gt;</span> python=<span class="number">3.6</span> <span class="meta"># 新建环境</span></span><br><span class="line">conda activate <span class="params">&lt;env_name&gt;</span>             <span class="meta"># 激活环境</span></span><br><span class="line">conda deactivate <span class="params">&lt;env_name&gt;</span>           <span class="meta"># 推出</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+      <div>
+    
+    	<div style="text-align:center;color:#555;font-size:15px;">-------------文章结束啦 ฅ●ω●ฅ 感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E5%BE%AE%E4%BF%A1%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/%E6%94%B6%E6%AC%BE/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.svg" alt="Isaiah 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Isaiah
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://langiue.cn/posts/58cb065a/" title="Ubuntu 18.04 装机软件">https://langiue.cn/posts/58cb065a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+              <a href="/tags/Software/" rel="tag"># Software</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;来评分吧&lt;)</div>
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/7cfe8b95/" rel="prev" title="Ubuntu 18.04常用问题汇总">
+                  <i class="fa fa-chevron-left"></i> Ubuntu 18.04常用问题汇总
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/7ac0a8fe/" rel="next" title="Ubuntu 18.04 分区大小与常用Shell命令">
+                  Ubuntu 18.04 分区大小与常用Shell命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex--> <!--告诉搜索引擎不允许抓取这个页面-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#QQ"><span class="nav-number">1.</span> <span class="nav-text">QQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装deb文件"><span class="nav-number">1.2.</span> <span class="nav-text">安装deb文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载"><span class="nav-number">1.3.</span> <span class="nav-text">卸载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解软件网站"><span class="nav-number">2.</span> <span class="nav-text">破解软件网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pychrome"><span class="nav-number">3.</span> <span class="nav-text">Pychrome</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装到一半重装"><span class="nav-number">4.</span> <span class="nav-text">软件安装到一半重装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Google-Pinyin"><span class="nav-number">5.</span> <span class="nav-text">安装Google Pinyin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synaptic"><span class="nav-number">6.</span> <span class="nav-text">Synaptic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lantern"><span class="nav-number">7.</span> <span class="nav-text">Lantern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typora"><span class="nav-number">8.</span> <span class="nav-text">Typora</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pandoc"><span class="nav-number">9.</span> <span class="nav-text">Pandoc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathpix-snipping-Tool"><span class="nav-number">10.</span> <span class="nav-text">mathpix snipping Tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R"><span class="nav-number">11.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update-R-packages"><span class="nav-number">12.</span> <span class="nav-text">update R packages:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RStudio"><span class="nav-number">13.</span> <span class="nav-text">RStudio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda-3"><span class="nav-number">14.</span> <span class="nav-text">Anaconda 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shutter"><span class="nav-number">15.</span> <span class="nav-text">Shutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GMIP"><span class="nav-number">16.</span> <span class="nav-text">GMIP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indicator-stickynotes"><span class="nav-number">17.</span> <span class="nav-text">indicator-stickynotes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QGIS"><span class="nav-number">18.</span> <span class="nav-text">QGIS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code"><span class="nav-number">19.</span> <span class="nav-text">VS Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向日葵"><span class="nav-number">20.</span> <span class="nav-text">向日葵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">21.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calibre"><span class="nav-number">22.</span> <span class="nav-text">calibre</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-Server"><span class="nav-number">23.</span> <span class="nav-text">SQL Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置和安装-SQL-Server"><span class="nav-number">24.</span> <span class="nav-text">配置和安装 SQL Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tweak"><span class="nav-number">25.</span> <span class="nav-text">Tweak</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Navicat-备用地址"><span class="nav-number">26.</span> <span class="nav-text">Navicat 备用地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Workbench"><span class="nav-number">27.</span> <span class="nav-text">Workbench</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度网盘"><span class="nav-number">28.</span> <span class="nav-text">百度网盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜狗输入法"><span class="nav-number">29.</span> <span class="nav-text">搜狗输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Citrix-Receiver"><span class="nav-number">30.</span> <span class="nav-text">Citrix Receiver</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Python-库"><span class="nav-number"></span> <span class="nav-text">安装 Python 库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Open-CV"><span class="nav-number">1.</span> <span class="nav-text">安装Open CV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GeoPandas"><span class="nav-number">2.</span> <span class="nav-text">GeoPandas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jupyter-切换-conda-虚拟环境"><span class="nav-number">3.</span> <span class="nav-text">jupyter 切换 conda 虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conda环境"><span class="nav-number">4.</span> <span class="nav-text">Conda环境</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<a href="/">
+  <img class="site-author-image" itemprop="image" alt="Isaiah"
+    src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/head-sculpture/meng2.png">
+    </a>
+  <p class="site-author-name" itemprop="name">Isaiah</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/FirstPotato/" title="GitHub &rarr; https://github.com/FirstPotato/" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lsuniue@gmail.com" title="E-Mail &rarr; mailto:lsuniue@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/lsun05" title="Weibo &rarr; http://weibo.com/lsun05" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/lsuniue" title="Twitter &rarr; https://twitter.com/lsuniue" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://music.163.com/#/user/home?id=560574858" title="https://music.163.com/#/user/home?id=560574858" rel="noopener" target="_blank">😆 网易云音乐 😆</a>
+        </li>
+    </ul>
+  </div>
+
+          <!--12-1 取消侧边栏音乐 12-1<div id="aplayer" class="aplayer"></div>
+<script src="/js/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>-->
+          <div id="aplayer" class="aplayer"></div>
+<script src="/js/custom/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),
+    narrow: false,
+    autoplay: false,
+    showlrc: 0,
+    mutex: true,
+    theme: '#e6d0b2',
+    mode: 'random',
+    preload: 'metadata',
+    listmaxheight: '513px',
+    music: [{
+      title: 'Life is A Struggle',
+      author: '宋岳庭',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Life%27s%20A%20Struggle.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/Life%27s%20A%20Struggle.jpg',
+    },{
+      title: '最美的期待',
+      author: '周笔畅',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E5%91%A8%E7%AC%94%E7%95%85-%E6%9C%80%E7%BE%8E%E7%9A%84%E6%9C%9F%E5%BE%85.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2034.JPG',
+    },{
+      title: 'Vi To',
+      author: 'Medina',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/Medina%20-%20Vi%20To.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2027.JPG',
+    },{
+      title: 'I Don\'t Know',
+      author: '王诗安',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/%E7%8E%8B%E8%AF%97%E5%AE%89%20-%20I%20Don%27t%20Know%20.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2033.JPG',
+    },{
+      title: 'それがあなたの幸せとしても',
+      author: 'rairu',
+      url: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/rairu%20-%20%E3%81%9D%E3%82%8C%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E5%B9%B8%E3%81%9B%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82.mp3',
+      pic: 'https://isaiah.oss-cn-hongkong.aliyuncs.com/audio/pic/picIMG_2029.JPG',
+    }]
+  });
+</script>
+          <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/20/2017 11:37:06");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        
+      </div>
+
+    </div>
+
+
+
+  </aside> 
+  <div id="sidebar-dimmer"></div>
+ 
+
+
+      </div>
+
+    <!-- password 2020-11-23 -->
+    <!--  -->
+
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">闽ICP备19021397号 </a>
+      <img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/beian/beian_logo.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null" rel="noopener" target="_blank">. </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Isaiah</span>
+</div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58cff09189eee97f" async="async"></script>
+  </div>
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div>
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <script pjax>
+    var _mtac = {};
+    (function() {
+      var mta = document.createElement("script");
+      mta.src = "https://pingjs.qq.com/h5/stats.js";
+      mta.setAttribute("name", "MTAH5");
+      mta.setAttribute("sid", "500419570");
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(mta, s);
+    })();
+  </script>
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+  <script pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 21479,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+  
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/custom/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/custom/crash_cheat.js"></script>
+
+</body>
+</html>
