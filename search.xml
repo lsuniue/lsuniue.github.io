@@ -250,7 +250,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu 18.04常用问题汇总</title>
+    <title>Ubuntu 18.04 使用一年来遇到问题汇总与解决方法</title>
     <url>/posts/7cfe8b95/</url>
     <content><![CDATA[<ul>
 <li>开机启动项</li>
@@ -427,7 +427,8 @@
 </table>
 <p>将<code>sans-serif</code>、<code>serif</code>、<code>monospace</code>三个family的字体优先顺序按<code>SC TC HK JP KR</code>调整</p>
 <p><code>reboot</code>重启电脑，异常字体显示正常</p>
-<h2 id="Chrome字体调整"><a href="#Chrome字体调整" class="headerlink" title="Chrome字体调整"></a>Chrome字体调整</h2><figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">最小字体 <span class="number">20</span></span><br><span class="line">最大字体 <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<h2 id="Chrome字体溢出省略号修复"><a href="#Chrome字体溢出省略号修复" class="headerlink" title="Chrome字体溢出省略号修复"></a>Chrome字体溢出省略号修复</h2><p>设置—搜索栏—搜索 <strong>font size</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Font size</span></span><br><span class="line">Medium</span><br><span class="line"><span class="comment"># Customize fonts</span></span><br><span class="line">Font size: 16</span><br><span class="line">Minimum font size: 13</span><br><span class="line"><span class="comment"># Page zoom</span></span><br><span class="line">100%</span><br></pre></td></tr></table></figure>
 <h2 id="解决Unable-to-fetch-some-archives-maybe-run-apt-get-update-or-try-with-–fix-missing"><a href="#解决Unable-to-fetch-some-archives-maybe-run-apt-get-update-or-try-with-–fix-missing" class="headerlink" title="解决Unable to fetch some archives, maybe run apt-get update or try with –fix-missing?"></a>解决Unable to fetch some archives, maybe run apt-get update or try with –fix-missing?</h2><p>第一种：</p>
 <figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/resolv.conf </span><br><span class="line"># 添加</span><br><span class="line">nameserver <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span></span><br></pre></td></tr></table></figure>
 <p>第二种：</p>
