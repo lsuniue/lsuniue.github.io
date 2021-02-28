@@ -473,20 +473,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">65</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -520,19 +520,22 @@
     </ul>
   </div>
 
-          <!--12-1 取消侧边栏音乐 12-1<div id="aplayer" class="aplayer"></div>
-<script src="/js/custom/APlayer.min.js"></script>
+          <!--12-1 取消侧边栏音乐 12-1<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<div id="aplayer" class="aplayer"></div>
 <script type="text/javascript">
 var ap = new APlayer({
     element: document.getElementById('aplayer'),
-    narrow: false,
-    autoplay: false,
-    showlrc: 0,
-    mutex: true,
-    theme: '#e6d0b2',
-    mode: 'random',
-    preload: 'metadata',
-    listmaxheight: '513px',
+    "narrow": false,                          // （可选）播放器袖珍风格
+    "autoplay": false,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能
+    "mode": "random",                         // （可选）曲目循环类型，有 'random'（随机播放）, 'single' (单曲播放), 'circulation' (循环播放), 'order' (列表播放)， 默认：'circulation' 
+    "showlrc": 0,                             // （可选）歌词显示配置项，可选项有：0,1,2,3
+    "mutex": true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
+    "theme": "#e6d0b2",	                      // （可选）播放器风格色彩设置，默认：#b7daff
+    "preload": "metadata",                    // （可选）音乐文件预载入模式，可选项： 'none' 'metadata' 'auto', 默认: 'auto'
+    "listmaxheight": "513px",                 // (可选) 该播放列表的最大长度
     music: [{
       title: 'Life is A Struggle',
       author: '宋岳庭',
@@ -561,19 +564,22 @@ var ap = new APlayer({
     }]
   });
 </script>-->
-          <div id="aplayer" class="aplayer"></div>
-<script src="/js/custom/APlayer.min.js"></script>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<div id="aplayer" class="aplayer"></div>
 <script type="text/javascript">
 var ap = new APlayer({
     element: document.getElementById('aplayer'),
-    narrow: false,
-    autoplay: false,
-    showlrc: 0,
-    mutex: true,
-    theme: '#e6d0b2',
-    mode: 'random',
-    preload: 'metadata',
-    listmaxheight: '513px',
+    "narrow": false,                          // （可选）播放器袖珍风格
+    "autoplay": false,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能
+    "mode": "random",                         // （可选）曲目循环类型，有 'random'（随机播放）, 'single' (单曲播放), 'circulation' (循环播放), 'order' (列表播放)， 默认：'circulation' 
+    "showlrc": 0,                             // （可选）歌词显示配置项，可选项有：0,1,2,3
+    "mutex": true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
+    "theme": "#e6d0b2",	                      // （可选）播放器风格色彩设置，默认：#b7daff
+    "preload": "metadata",                    // （可选）音乐文件预载入模式，可选项： 'none' 'metadata' 'auto', 默认: 'auto'
+    "listmaxheight": "513px",                 // (可选) 该播放列表的最大长度
     music: [{
       title: 'Life is A Struggle',
       author: '宋岳庭',
