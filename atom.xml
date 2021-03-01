@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://langiue.cn/"/>
-  <updated>2021-02-28T10:26:12.224Z</updated>
+  <updated>2021-03-01T08:37:48.897Z</updated>
   <id>https://langiue.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于 JavaScript 对空气质量数据进行交互地图可视化</title>
+    <link href="https://langiue.cn/posts/eeac93b9/"/>
+    <id>https://langiue.cn/posts/eeac93b9/</id>
+    <published>2021-03-01T05:31:22.000Z</published>
+    <updated>2021-03-01T08:37:48.897Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>JavaScript</li><li>数据可视化</li><li>plotly</li><li>…</li></ul><a id="more"></a><hr><iframe id="iframe_01" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t1.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe><iframe id="iframe_02" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t12.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe><iframe id="iframe_03" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z2.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe><iframe id="iframe_04" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z3.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;数据可视化&lt;/li&gt;
+&lt;li&gt;plotly&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    <content src="https://langiue.cn/https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Machine%2520Learning/machine-learning.jpg?x-oss-process=style/moon" type="image" />
+    
+    
+      <category term="data visualization" scheme="https://langiue.cn/categories/data-visualization/"/>
+    
+      <category term="JavaScript" scheme="https://langiue.cn/categories/data-visualization/JavaScript/"/>
+    
+    
+      <category term="data visualization" scheme="https://langiue.cn/tags/data-visualization/"/>
+    
+      <category term="JavaScript" scheme="https://langiue.cn/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu basic 常用快捷键与自定义环境变量</title>
@@ -202,7 +236,7 @@
     <link href="https://langiue.cn/posts/c5317df1/"/>
     <id>https://langiue.cn/posts/c5317df1/</id>
     <published>2020-12-25T06:31:22.000Z</published>
-    <updated>2021-01-14T04:51:09.980Z</updated>
+    <updated>2021-03-01T06:29:06.446Z</updated>
     
     <content type="html"><![CDATA[<ul><li>Machine Learning 介绍</li><li>原理介绍</li><li>XGBoost</li><li>待补充内容…</li></ul><a id="more"></a><hr>]]></content>
     

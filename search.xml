@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于 JavaScript 对空气质量数据进行交互地图可视化</title>
+    <url>/posts/eeac93b9/</url>
+    <content><![CDATA[<ul>
+<li>JavaScript</li>
+<li>数据可视化</li>
+<li>plotly</li>
+<li>…</li>
+</ul>
+<a id="more"></a>
+<hr>
+<iframe id="iframe_01" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t1.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe>
+
+
+<iframe id="iframe_02" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_t12.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe>
+
+
+<iframe id="iframe_03" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z2.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe>
+
+
+<iframe id="iframe_04" src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/html/2017-J3-AQI/2017_AQI_plot_z3.html" onload="adjustIframe();" frameborder="0" scrolling="auto"></iframe>
+]]></content>
+      <categories>
+        <category>data visualization</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>data visualization</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ubuntu basic 常用快捷键与自定义环境变量</title>
     <url>/posts/16c755b6/</url>
     <content><![CDATA[<ul>
