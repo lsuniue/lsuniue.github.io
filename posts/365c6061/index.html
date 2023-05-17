@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结&#x2F;剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating and Manipulating Spatial Data">
+<meta property="og:url" content="https://langiue.cn/posts/365c6061/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结&#x2F;剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon">
+<meta property="article:published_time" content="2017-03-30T03:09:02.000Z">
+<meta property="article:modified_time" content="2019-10-27T02:38:30.775Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="Spatial Analysis">
+<meta property="article:tag" content="RStudio">
+<meta property="article:tag" content="readOGR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/365c6061/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/365c6061/","path":"posts/365c6061/","title":"Creating and Manipulating Spatial Data"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Creating and Manipulating Spatial Data | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">创建空间数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%9F%A2%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.1.</span> <span class="nav-text">创建矢量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%B8%A7%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">创建数据帧对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%A9%BA%E9%97%B4%E7%82%B9%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.</span> <span class="nav-text">创建空间点对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="nav-number">1.4.</span> <span class="nav-text">增加数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%92%8C%E8%BD%AC%E6%8D%A2%E7%A9%BA%E9%97%B4%E5%8F%82%E8%80%83%E7%B3%BB"><span class="nav-number">2.</span> <span class="nav-text">投影：设置和转换空间参考系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AECRS"><span class="nav-number">2.1.</span> <span class="nav-text">设置CRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">2.2.</span> <span class="nav-text">转换坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">2.3.</span> <span class="nav-text">保存坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E4%B8%AD%E9%97%B4%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.4.</span> <span class="nav-text">移除中间对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">属性连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text">读取矢量数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-theft"><span class="nav-number">3.2.</span> <span class="nav-text">select theft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aggregate"><span class="nav-number">3.3.</span> <span class="nav-text">aggregate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2-in"><span class="nav-number">3.4.</span> <span class="nav-text">高级查询 %in%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E5%92%8C%E9%9D%9E%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE"><span class="nav-number">3.5.</span> <span class="nav-text">连接空间数据和非空间数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%93%E9%A2%98%E5%9C%B0%E5%9B%BE"><span class="nav-number">3.6.</span> <span class="nav-text">快速专题地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmap"><span class="nav-number">3.7.</span> <span class="nav-text">tmap</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%AA%E5%88%87%E5%92%8C%E7%A9%BA%E9%97%B4%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">剪切和空间连接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bbox"><span class="nav-number">4.1.</span> <span class="nav-text">bbox()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">4.2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%8A%95%E5%BD%B1"><span class="nav-number">4.3.</span> <span class="nav-text">重新投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%AA%E5%88%87"><span class="nav-number">4.4.</span> <span class="nav-text">剪切</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/365c6061/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Creating and Manipulating Spatial Data | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Creating and Manipulating Spatial Data
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-03-30 11:09:02" itemprop="dateCreated datePublished" datetime="2017-03-30T11:09:02+08:00">2017-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-10-27 10:38:30" itemprop="dateModified" datetime="2019-10-27T10:38:30+08:00">2019-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Spatial-Analysis/" itemprop="url" rel="index"><span itemprop="name">Spatial Analysis</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Spatial-Analysis/RStudio/" itemprop="url" rel="index"><span itemprop="name">RStudio</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。<br>复制、联结&#x2F;剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。<br>首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。</p>
+<ul>
+<li>创建空间数据</li>
+<li>设置空间参考系</li>
+<li>属性连接</li>
+<li>剪切和空间连接</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h1 id="创建空间数据"><a href="#创建空间数据" class="headerlink" title="创建空间数据"></a>创建空间数据</h1><h2 id="创建矢量对象"><a href="#创建矢量对象" class="headerlink" title="创建矢量对象"></a>创建矢量对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec &lt;- vector(&quot;numeric&quot;, 3)</span><br><span class="line">class(vec)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.第一个参数：数据类型；第二个参数：数据长度<br>2.返回数据类型</p>
+</blockquote>
+<h2 id="创建数据帧对象"><a href="#创建数据帧对象" class="headerlink" title="创建数据帧对象"></a>创建数据帧对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df &lt;- data.frame(x = 1:3, y = c(1/2, 2/3, 3/4))</span><br><span class="line">class(df)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Data Frame: 相当于R中的Excel表<br>以上均为非空间数据</p>
+</blockquote>
+<h2 id="创建空间点对象"><a href="#创建空间点对象" class="headerlink" title="创建空间点对象"></a>创建空间点对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sp1 &lt;- SpatialPoints(coords = df) # input：a numeric matrix or data.frame</span><br><span class="line">class(sp1)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>SpatialPoints():来自SP安装包，输入必须为<code>数值矩阵</code>或<code>数据帧</code>。</p>
+</blockquote>
+<h2 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spdf &lt;- SpatialPointsDataFrame(sp1, data = df)  # adding data from df</span><br><span class="line">class(spdf)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.将<code>非空间数据</code>(df)增加到<code>空间点对象</code>(sp1)中，并命名为spdf</p>
+</blockquote>
+<p>在现实情况下，与上面创建的空间对象不同，您的空间数据将从外部创建的文件读取，例如，使用readOGR()。大多数空间数据都带有关联的CRS。</p>
+<h1 id="投影：设置和转换空间参考系"><a href="#投影：设置和转换空间参考系" class="headerlink" title="投影：设置和转换空间参考系"></a>投影：设置和转换空间参考系</h1><p>每个空间对象都应有一个坐标参考系<abbr title="Coordinate Reference System">CRS</abbr>。<br>比较常见的：<abbr title="World Geodetic System 1984">WGS84</abbr>，是为GPS全球定位系统使用而建立的坐标系统。</p>
+<h2 id="设置CRS"><a href="#设置CRS" class="headerlink" title="设置CRS"></a>设置CRS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proj4string(lnd) &lt;- NA_character_ # remove CRS information from lnd</span><br><span class="line">proj4string(lnd) &lt;- CRS(&quot;+init=epsg:27700&quot;) # assign a new CRS</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从lnd中移除坐标系<br>设置新的坐标系（此坐标系为已知坐标系）</p>
+</blockquote>
+<h2 id="转换坐标系"><a href="#转换坐标系" class="headerlink" title="转换坐标系"></a>转换坐标系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)</span><br><span class="line">EPSG &lt;- make_EPSG() # create data frame of available EPSG codes</span><br><span class="line">EPSG[grepl(&quot;WGS 84$&quot;, EPSG$note), ] # search for WGS 84 code</span><br><span class="line">lnd84 &lt;- spTransform(lnd, CRS(&quot;+init=epsg:4326&quot;)) # reproject</span><br></pre></td></tr></table></figure>
+<h2 id="保存坐标系"><a href="#保存坐标系" class="headerlink" title="保存坐标系"></a>保存坐标系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">saveRDS(object = lnd84, file = &quot;data/lnd84.Rds&quot;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>saveRDS():第一个参数：对象名称；第二个参数：对象存储位置。</p>
+</blockquote>
+<h2 id="移除中间对象"><a href="#移除中间对象" class="headerlink" title="移除中间对象"></a>移除中间对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm(lnd84) # remove the lnd object</span><br><span class="line"># we will load it back in later with readRDS(file = &quot;data/lnd84.Rds&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="属性连接"><a href="#属性连接" class="headerlink" title="属性连接"></a>属性连接</h1><h2 id="读取矢量数据"><a href="#读取矢量数据" class="headerlink" title="读取矢量数据"></a>读取矢量数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal) # ensure rgdal is loaded</span><br><span class="line"># Create new object called &quot;lnd&quot; from &quot;london_sport&quot; shapefile</span><br><span class="line">lnd &lt;- readOGR(dsn = &quot;data&quot;, &quot;london_sport&quot;)</span><br><span class="line">plot(lnd) # plot the lnd object (not shown)</span><br><span class="line">nrow(lnd) # return the number of rows (not shown)</span><br></pre></td></tr></table></figure>
+
+<h2 id="select-theft"><a href="#select-theft" class="headerlink" title="select theft"></a>select theft</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crime_data &lt;- read.csv(&quot;data/mps-recordedcrime-borough.csv&quot;,stringsAsFactors = FALSE)</span><br><span class="line">head(crime_data$CrimeType)</span><br><span class="line">crime_theft &lt;- crime_data[crime_data$CrimeType == &quot;Theft &amp; Handling&quot;, ]</span><br><span class="line">head(crime_theft, 2)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>.CSV</code>格式的数据在R中读取后是数据帧格式</p>
+</blockquote>
+<h2 id="aggregate"><a href="#aggregate" class="headerlink" title="aggregate"></a>aggregate</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crime_ag &lt;- aggregate(CrimeCount ~ Borough, data = crime_theft, sum)</span><br><span class="line">head(crime_ag, 2)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>aggregate()三个参数:汇总规则，数据帧名称，函数<br>The <code>~</code> symbol means “by”: 按区名(Borough)汇总CrimeCount变量</p>
+</blockquote>
+<h2 id="高级查询-in"><a href="#高级查询-in" class="headerlink" title="高级查询 %in%"></a>高级查询 %in%</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lnd$name %in% crime_ag$Borough</span><br><span class="line">lnd$name[!lnd$name %in% crime_ag$Borough]</span><br><span class="line">crime_ag$Borough[!crime_ag$Borough%in% lnd$name]</span><br><span class="line">crime_ag[crime_ag$Borough == &quot;NULL&quot;,]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>a %in% b</code>: 返回一串逻辑布尔值：若a1在b1中，返回TRUE；反之，返回False。以此类推…<br><code>a[!a %in% b]</code>: 返回属于a但不属于b的具体值。</p>
+</blockquote>
+<h2 id="连接空间数据和非空间数据"><a href="#连接空间数据和非空间数据" class="headerlink" title="连接空间数据和非空间数据"></a>连接空间数据和非空间数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(dplyr)</span><br><span class="line">lnd@data &lt;- left_join(lnd@data, crime_ag, by = c(&#x27;name&#x27; = &#x27;Borough&#x27;))</span><br><span class="line">lnd$CrimeCount</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>left_join():返回x中的所有行和x与y的所有列<br>属于x不属于y的行 返回NA</p>
+</blockquote>
+<h2 id="快速专题地图"><a href="#快速专题地图" class="headerlink" title="快速专题地图"></a>快速专题地图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(tmap)</span><br><span class="line">qtm(lnd, &quot;CrimeCount&quot;) # input:shape object</span><br><span class="line">lnd$Thefts  &lt;- lnd$CrimeCount / 10000</span><br><span class="line">qtm(lnd, &quot;Thefts&quot;,style = &quot;bw&quot;)</span><br><span class="line">qtm(lnd, &quot;Thefts&quot;,format = &quot;World&quot;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>qtm():</code>第一个参数输入为shape object, 包括：<br>SpatialPolygons(DataFrame)<br>SpatialPoints(DataFrame)<br>SpatialLines(DataFrame)<br>SpatialGrid(DataFrame)<br>SpatialPixels(DataFrame)<br>RasterLayer, RasterStack, or RasterBrick<br>第二个参数输入为：填充颜色<br>结果如图7所示。</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon" alt="Figure7-Number of thefts per borough">
+
+<h2 id="tmap"><a href="#tmap" class="headerlink" title="tmap"></a>tmap</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">library(tmap)</span><br><span class="line">lnd_wgs = spTransform(lnd, CRS(&quot;+init=epsg:4326&quot;))</span><br><span class="line">osm_tiles = tmaptools::read_osm(bbox(lnd_wgs))</span><br><span class="line">lnd_wgs$Thefts &lt;- lnd$CrimeCount / 10000 </span><br><span class="line">tm_shape(osm_tiles) +</span><br><span class="line">  tm_raster() +</span><br><span class="line">  tm_shape(lnd_wgs) +</span><br><span class="line">  tm_fill(&quot;Thefts&quot;, fill.title = &quot;Thefts\n(10000)&quot;, scale = 0.8, alpha = 0.5) +</span><br><span class="line">  tm_layout(legend.position = c(0.89,0.02))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><abbr title="Read Open Street Map data"><strong>read_osm()</strong></abbr>读取开放的街道地图数据。1.读取OSM文件返回栅格数据。2.查询矢量化的OSM数据返回为空间多边形、线或点。</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon" alt="Figure8-London’s thefts in 2001">
+
+<h1 id="剪切和空间连接"><a href="#剪切和空间连接" class="headerlink" title="剪切和空间连接"></a>剪切和空间连接</h1><p>除了属性（例如通过自治市镇名称）连接，还可以在R中进行空间连接，以伦敦自治市交通基础设施点为例。</p>
+<h2 id="bbox"><a href="#bbox" class="headerlink" title="bbox()"></a>bbox()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(1,1,1,2,2,2,3,3,3)</span><br><span class="line">y &lt;- c(1,2,3,1,2,3,1,2,3)</span><br><span class="line">xy &lt;- cbind(x,y)</span><br><span class="line">S &lt;- SpatialPoints(xy)</span><br><span class="line">S@coords</span><br><span class="line">bbox(S)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>bbox():从空间数据中检索空间边界框</p>
+</blockquote>
+<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)</span><br><span class="line">stations &lt;- readOGR(dsn = &quot;data&quot;, layer = &quot;lnd-stns&quot;)</span><br><span class="line"># stations = read_shape(&quot;data/lnd-stns.shp&quot;) # from tmap</span><br><span class="line">proj4string(stations) # this is the full geographical detail.</span><br><span class="line">proj4string(lnd) # what&#x27;s the coordinate reference system (CRS)</span><br><span class="line">bbox(stations)</span><br><span class="line">bbox(lnd)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.读取车站数据<br>4.5. proj4string()的结果表明：车站的坐标参考系与lnd不同，因此需要转换坐标系。<br>6.7. bbox():返回空间数据的空间边界框，即经纬度的最大值与最小值。</p>
+</blockquote>
+<h2 id="重新投影"><a href="#重新投影" class="headerlink" title="重新投影"></a>重新投影</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stations &lt;- spTransform(stations, CRS(proj4string(lnd)))</span><br><span class="line">plot(lnd) # plot London </span><br><span class="line">points(stations) # overlay the station points</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>车站的空间范围大于lnd，因此需要剪切。</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon" alt="Figure9-Sampling and plotting stations">
+
+<h2 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stations11 &lt;- stations[lnd, ] </span><br><span class="line">plot(lnd)</span><br><span class="line">points(stations11)</span><br><span class="line"># save(lnd, file=&quot;data/lnd.RData&quot;)</span><br><span class="line"># save(stations, file=&quot;data/stations.RData&quot;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.选取lnd内部的车站空间点数据<br>2.绘图<br>3.4.保存数据<br>除了<code>[]</code>方法外，还有sp:over和gIntersects方法实现剪切。</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon" alt="Figure10-The clipped stations dataset">
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spatial-Analysis/" rel="tag"># Spatial Analysis</a>
+              <a href="/tags/RStudio/" rel="tag"># RStudio</a>
+              <a href="/tags/readOGR/" rel="tag"># readOGR</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/3b068d95/" rel="prev" title="Spatial data in R">
+                  <i class="fa fa-chevron-left"></i> Spatial data in R
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/1fdf3f4a/" rel="next" title="Spatial Visualization with tmap">
+                  Spatial Visualization with tmap <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

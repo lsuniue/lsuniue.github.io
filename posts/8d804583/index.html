@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="常用工具和库简要介绍 Python基本概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础(一)">
+<meta property="og:url" content="https://langiue.cn/posts/8d804583/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="常用工具和库简要介绍 Python基本概念">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-24T15:30:20.000Z">
+<meta property="article:modified_time" content="2019-10-17T08:38:27.958Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/8d804583/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/8d804583/","path":"posts/8d804583/","title":"Python基础(一)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python基础(一) | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%92%8C%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">科学计算常用工具和库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">Python基本概念与操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="nav-number">2.2.</span> <span class="nav-text">变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E6%96%9C%E6%9D%A0-lt-kbd"><span class="nav-number">2.3.1.</span> <span class="nav-text">反斜杠 &lt;&#x2F;kbd&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%89%87"><span class="nav-number">2.3.2.</span> <span class="nav-text">分片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9"><span class="nav-number">2.3.3.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">2.3.4.</span> <span class="nav-text">格式化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96"><span class="nav-number">2.4.1.</span> <span class="nav-text">eval - 字符串转化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ord-chr"><span class="nav-number">2.4.2.</span> <span class="nav-text">ord, chr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range"><span class="nav-number">2.4.3.</span> <span class="nav-text">range</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97"><span class="nav-number">2.5.</span> <span class="nav-text">内置模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Random"><span class="nav-number">2.5.1.</span> <span class="nav-text">Random</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%85%B8"><span class="nav-number">2.6.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.6.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.6.2.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-del-pop"><span class="nav-number">2.6.3.</span> <span class="nav-text">删除 del,pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update"><span class="nav-number">2.6.4.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9"><span class="nav-number">2.6.5.</span> <span class="nav-text">帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.7.</span> <span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.7.1.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#While%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.7.2.</span> <span class="nav-text">While语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.7.3.</span> <span class="nav-text">for语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break-continue"><span class="nav-number">2.7.4.</span> <span class="nav-text">break&#x2F;continue</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structures"><span class="nav-number">3.</span> <span class="nav-text">Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Methods"><span class="nav-number">3.1.</span> <span class="nav-text">List Methods</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/8d804583/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python基础(一) | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python基础(一)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-04-24 23:30:20" itemprop="dateCreated datePublished" datetime="2018-04-24T23:30:20+08:00">2018-04-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-10-17 16:38:27" itemprop="dateModified" datetime="2019-10-17T16:38:27+08:00">2019-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/Basic/" itemprop="url" rel="index"><span itemprop="name">Basic</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><ul>
+<li>常用工具和库简要介绍</li>
+<li>Python基本概念</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h2 id="科学计算常用工具和库"><a href="#科学计算常用工具和库" class="headerlink" title="科学计算常用工具和库"></a>科学计算常用工具和库</h2><ul>
+<li>NumPy-数学计算基础库：N维数组、线性代数计算、傅立叶变换、随机数等。</li>
+<li>SciPy-数值计算库：线性代数、拟合与优化、插值、数值积分、稀疏矩阵、图像处理、统计等。</li>
+<li>SymPy-符号运算</li>
+<li>Pandas-数据分析库：数据导入、整理、处理、分析等。</li>
+<li>Matplotlib-绘图库：绘制二维图形和图表。</li>
+<li>scikit-learn: Machine Learning in Python</li>
+<li>Beautiful soup：爬虫工具</li>
+<li>nltk：Natural Language Toolkit</li>
+<li>Chaco-交互式图表</li>
+<li>TVTK-数据的三维可视化</li>
+<li>Mayavi-更方便的可视化</li>
+<li>VPython-制作3D演示动画</li>
+<li>OpenCV-图像处理和计算机视觉</li>
+<li>Cython-Python转C的编译器：编写高效运算扩展库的首选工具</li>
+<li>BioPython-生物科学</li>
+</ul>
+<h2 id="Python基本概念与操作"><a href="#Python基本概念与操作" class="headerlink" title="Python基本概念与操作"></a>Python基本概念与操作</h2><h3 id="数"><a href="#数" class="headerlink" title="数"></a>数</h3><ul>
+<li>整数（int)： 32位, 2  &gt;&gt;&gt; type(2)</li>
+<li>长整数(long)： 无限精度, 3L  &gt;&gt;&gt; type(3L)</li>
+<li>浮点数： 52.3E-4，E标记表示10的幂。</li>
+<li>复数： (-5+4j)和(2.3-4.6j)。</li>
+</ul>
+<h3 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h3><p>a,b,c&#x3D;1,2,3<br>a&#x3D;[1,2,3];b,c,d&#x3D;a<br>a&#x3D;(1,2,3);b,c,d&#x3D;a</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li><h4 id="反斜杠-lt-kbd"><a href="#反斜杠-lt-kbd" class="headerlink" title="反斜杠 &lt;/kbd>"></a>反斜杠 <kbd>&lt;/kbd></h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &#x27;12345\</span><br><span class="line">... 67890&#x27;</span><br><span class="line">&gt;&gt;&gt; print a</span><br><span class="line">1234567890</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = &#x27;abcdefghijklmnop&#x27;</span><br><span class="line">&gt;&gt;&gt; s[1:10:2]</span><br><span class="line">&#x27;bdfhj&#x27;</span><br><span class="line">&gt;&gt;&gt; s[::2]</span><br><span class="line">&#x27;acegikmo&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; s[0] = &#x27;x&#x27;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;interactive input&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: &#x27;str&#x27; object does not support item assignment</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; s = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; s = s + &#x27;SPAM&#x27;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#x27;spamSPAM&#x27;</span><br><span class="line">&gt;&gt;&gt; s = s[:4] + &#x27;OK!&#x27; + s[-1]</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#x27;spamOK!M&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h4></li>
+</ul>
+<p>1、在%操作符左侧放置一个需要进行格式化的字符串，这个字符串带有一个或多个嵌入的转换目标，都以%开头，如%d、%f等<br>2、在%操作符右侧放置一个对象（或多个，在括号内），这些对象会被插入到左侧格式化字符串的转换目标的位置上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; bookcount = 10</span><br><span class="line">&gt;&gt;&gt; &quot;there are %d books&quot;%bookcount</span><br><span class="line">&#x27;there are 10 books‘</span><br><span class="line"></span><br><span class="line">&quot;That is %d %s bird!&quot; % (1, &#x27;dead&#x27;)</span><br><span class="line">&#x27;That is 1 dead bird!&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><ul>
+<li><h4 id="eval-字符串转化"><a href="#eval-字符串转化" class="headerlink" title="eval - 字符串转化"></a>eval - 字符串转化</h4></li>
+</ul>
+<p>将字符串str当成有效的表达式来求值并返回计算结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">eval(&#x27;12&#x27;)</span><br><span class="line"># 12</span><br><span class="line">eval(&#x27;12 + 3&#x27;)</span><br><span class="line"># 15</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="ord-chr"><a href="#ord-chr" class="headerlink" title="ord, chr"></a>ord, chr</h4></li>
+</ul>
+<p>ord函数: 将单个字符转换为对应的ASCII数值（整数）。<br>chr函数: 可以将一个整数转换为对应的字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ord(&#x27;a&#x27;)</span><br><span class="line"># 97</span><br><span class="line">chr(97)</span><br><span class="line"># &#x27;a&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="range"><a href="#range" class="headerlink" title="range"></a>range</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; range(5)</span><br><span class="line">[0, 1, 2, 3, 4]</span><br><span class="line">&gt;&gt;&gt; range(0, 15, 5)</span><br><span class="line">[0, 5, 10]</span><br></pre></td></tr></table></figure>
+
+<h3 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h3><ul>
+<li><h4 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line">&gt;&gt;&gt; random.random()</span><br><span class="line">0.33452758558893336</span><br><span class="line">&gt;&gt;&gt; random.randint(1, 10)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; random.choice([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;])</span><br><span class="line">&#x27;c&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><ul>
+<li><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; tel = &#123;&#x27;jack&#x27;:4098, &#x27;shy&#x27;:4139&#125;</span><br><span class="line">&gt;&gt;&gt; tel[&#x27;gree&#x27;] = 4127</span><br><span class="line">&gt;&gt;&gt; tel</span><br><span class="line">&#123;&#x27;gree&#x27;: 4127, &#x27;jack&#x27;: 4098, &#x27;shy&#x27;: 4139&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; tel[&#x27;jack&#x27;]</span><br><span class="line">4098</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="删除-del-pop"><a href="#删除-del-pop" class="headerlink" title="删除 del,pop"></a>删除 del,pop</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; del tel[&#x27;shy&#x27;]</span><br><span class="line">&gt;&gt;&gt; tel</span><br><span class="line">&#123;&#x27;gree&#x27;: 4127, &#x27;jack&#x27;: 4098&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; tel = &#123;&#x27;gree&#x27;: 5127, &#x27;irv&#x27;: 4127, &#x27;jack&#x27;: 4098, &#x27;pang&#x27;: 6008&#125;</span><br><span class="line">&gt;&gt;&gt; tel.pop(&#x27;gree&#x27;)</span><br><span class="line">5127</span><br><span class="line">&gt;&gt;&gt; tel</span><br><span class="line">&#123;&#x27;irv&#x27;: 4127, &#x27;jack&#x27;: 4098, &#x27;pang&#x27;: 6008&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="update"><a href="#update" class="headerlink" title="update"></a>update</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; tel</span><br><span class="line">&#123;&#x27;gree&#x27;: 4127, &#x27;irv&#x27;: 4127, &#x27;jack&#x27;: 4098&#125;</span><br><span class="line">&gt;&gt;&gt; tel1 = &#123;&#x27;gree&#x27;:5127, &#x27;pang&#x27;:6008&#125;</span><br><span class="line">&gt;&gt;&gt; tel.update(tel1)</span><br><span class="line">&gt;&gt;&gt; tel</span><br><span class="line">&#123;&#x27;gree&#x27;: 5127, &#x27;irv&#x27;: 4127, &#x27;jack&#x27;: 4098, &#x27;pang&#x27;: 6008&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help(dict)</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><ul>
+<li>基础结构</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if &lt;test1&gt;:</span><br><span class="line">    &lt;statements1&gt;</span><br><span class="line">elif &lt;test2&gt;:</span><br><span class="line">    &lt;statements2&gt;</span><br><span class="line">else:</span><br><span class="line">    &lt;statements3&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例1</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">number = 23</span><br><span class="line">guess = int(raw_input(&#x27;Enter an integer : &#x27;))</span><br><span class="line">if guess == number:</span><br><span class="line">    print &#x27;Congratulations, you guessed it.&#x27; # New block starts here</span><br><span class="line">    print &quot;(but you do not win any prizes!)&quot; # New block ends here</span><br><span class="line">elif guess &lt; number:</span><br><span class="line">    print &#x27;No, it is a little higher than that&#x27; # Another block</span><br><span class="line">    # You can do whatever you want in a block ...</span><br><span class="line">else:</span><br><span class="line">    print &#x27;No, it is a little lower than that&#x27;</span><br><span class="line">    # you must have guess &gt; number to reach here</span><br><span class="line">print &#x27;Done&#x27;</span><br><span class="line"># This last statement is always executed, after the if statement is executed</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if choice == &#x27;spam&#x27;:</span><br><span class="line">    print 1.25</span><br><span class="line">elif choice == &#x27;ham&#x27;:</span><br><span class="line">    print 1.99</span><br><span class="line">elif choice == &#x27;eggs&#x27;:</span><br><span class="line">    print 0.99</span><br><span class="line">elif choice == &#x27;bacon&#x27;:</span><br><span class="line">    print 1.10</span><br><span class="line">else:</span><br><span class="line">    print &#x27;bad choice&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字典简化if语句</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">choice = &#x27;ham&#x27;</span><br><span class="line">dic =  &#123;&#x27;spam&#x27;: 1.25,</span><br><span class="line">        &#x27;ham&#x27;: 1.99,</span><br><span class="line">        &#x27;eggs&#x27;: 0.99,</span><br><span class="line">        &#x27;bacon&#x27;: 1.10&#125;</span><br><span class="line">print dic[choice]</span><br></pre></td></tr></table></figure>
+
+<h4 id="While语句"><a href="#While语句" class="headerlink" title="While语句"></a>While语句</h4><ul>
+<li>基础结构</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while &lt;test&gt;:       #Loop test</span><br><span class="line">    &lt;statements1&gt;   #Loop body</span><br><span class="line">else:           #Optional else</span><br><span class="line">    &lt;statements2&gt;   #Run if didn&#x27;t exit loop with break</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例1</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">b = 10</span><br><span class="line">while a&lt;b:</span><br><span class="line">    print a</span><br><span class="line">    a = a + 1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">number = 23</span><br><span class="line">running = True</span><br><span class="line">while running:</span><br><span class="line">    guess = int(raw_input(&#x27;Enter an integer : &#x27;))</span><br><span class="line">    if guess == number:</span><br><span class="line">        print &#x27;Congratulations, you guessed it.&#x27;</span><br><span class="line">        running = False # this causes the while loop to stop</span><br><span class="line">    elif guess &lt; number:</span><br><span class="line">        print &#x27;No, it is a little lower than that&#x27;</span><br><span class="line">    else:</span><br><span class="line">        print &#x27;No, it is a little higher than that&#x27;</span><br><span class="line">else:</span><br><span class="line">    print &#x27;The while loop is over.&#x27;</span><br><span class="line">    # Do anything else you want to do here</span><br><span class="line">print &#x27;Done&#x27;</span><br></pre></td></tr></table></figure>
+
+<h4 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h4><ul>
+<li>基本结构1</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for &lt;target&gt; in &lt;object&gt;:#Assign object items to target</span><br><span class="line">    &lt;statements&gt;    #Repeated loop body:use target</span><br><span class="line">else:</span><br><span class="line">    &lt;statements&gt;    #If we didn&#x27;t hit a &#x27;break&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基本结构2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">for &lt;target&gt; in &lt;object&gt;:#Assign object items to target</span><br><span class="line">    &lt;statements&gt;    #Repeated loop body:use target</span><br><span class="line">    if &lt;test&gt;: break #Exit loop now, skip else</span><br><span class="line">    if &lt;test&gt;: continue #Go to top of loop now</span><br><span class="line">else:</span><br><span class="line">    &lt;statements&gt;    #If we didn&#x27;t hit a &#x27;break&#x27;</span><br><span class="line">for &lt;target&gt; in &lt;object&gt;:#Assign object items to target</span><br><span class="line">    &lt;statements&gt;    #Repeated loop body:use target</span><br><span class="line">    if &lt;test&gt;: break #Exit loop now, skip else</span><br><span class="line">    if &lt;test&gt;: continue #Go to top of loop now</span><br><span class="line">else:</span><br><span class="line">    &lt;statements&gt;    #If we didn&#x27;t hit a &#x27;break&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例1</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def text_create():</span><br><span class="line">    path = &#x27;E:/python/&#x27;</span><br><span class="line">    for text_name in range(1,11): </span><br><span class="line">        with open (path + str(text_name) + &#x27;.txt&#x27;,&#x27;w&#x27;) as text:</span><br><span class="line">        text.write(str(text_name+9))</span><br><span class="line">        text.close()</span><br><span class="line">    print(&#x27;Done‘)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>例2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file = open(&#x27;E:/python/1.txt&#x27;)</span><br><span class="line">try:</span><br><span class="line">    data = file.read()</span><br><span class="line">finally:</span><br><span class="line">    file.close()</span><br><span class="line">print data</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(&#x27;E:/python/1.txt&#x27;) as file:</span><br><span class="line">    data = file.read()</span><br><span class="line">print data</span><br></pre></td></tr></table></figure>
+
+<h4 id="break-continue"><a href="#break-continue" class="headerlink" title="break/continue"></a>break/continue</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    s = raw_input(&#x27;Enter something : &#x27;)</span><br><span class="line">    if s == &#x27;quit&#x27;:</span><br><span class="line">        break</span><br><span class="line">    if len(s) &lt; 3:</span><br><span class="line">        print &#x27;Input is of sufficient length&#x27;</span><br><span class="line">        continue</span><br><span class="line">    # Do other kinds of processing here...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="List-Methods"><a href="#List-Methods" class="headerlink" title="List Methods"></a>List Methods</h3><p>list.<strong>append(x)</strong><br>  Add an item to the end of the list; equivalent to a[len(a):] = [x].</p>
+<p>list.<strong>extend(L)</strong><br>  Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.</p>
+<p>list.<strong>insert(i, x)</strong><br>  Insert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).</p>
+<p>list.<strong>remove(x)</strong><br>  Remove the first item from the list whose value is x. It is an error if there is no such item.</p>
+<p>list.<strong>pop([i])</strong><br>  Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)</p>
+<p>list.<strong>index(x)</strong><br>  Return the index in the list of the first item whose value is x. It is an error if there is no such item.</p>
+<p>list.<strong>count(x)</strong><br>  Return the number of times x appears in the list.</p>
+<p>list.<strong>sort(cmp=None, key=None, reverse=False)</strong><br>  Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).</p>
+<p>list.<strong>reverse()</strong><br>  Reverse the elements of the list, in place.</p>
+<p>An example that uses most of the list methods:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [66.25, 333, 333, 1, 1234.5]</span><br><span class="line">&gt;&gt;&gt; print a.count(333), a.count(66.25), a.count(&#x27;x&#x27;)</span><br><span class="line">2 1 0</span><br><span class="line">&gt;&gt;&gt; a.insert(2, -1)</span><br><span class="line">&gt;&gt;&gt; a.append(333)</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[66.25, 333, -1, 333, 1, 1234.5, 333]</span><br><span class="line">&gt;&gt;&gt; a.index(333)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; a.remove(333)</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[66.25, -1, 333, 1, 1234.5, 333]</span><br><span class="line">&gt;&gt;&gt; a.reverse()</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[333, 1234.5, 1, 333, -1, 66.25]</span><br><span class="line">&gt;&gt;&gt; a.sort()</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[-1, 1, 66.25, 333, 333, 1234.5]</span><br><span class="line">&gt;&gt;&gt; a.pop()</span><br><span class="line">1234.5</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[-1, 1, 66.25, 333, 333]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/1689a8fa/" rel="prev" title="Java Web Learning Notes">
+                  <i class="fa fa-chevron-left"></i> Java Web Learning Notes
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/ac540072/" rel="next" title="Selenium, Chromedriver Installation">
+                  Selenium, Chromedriver Installation <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

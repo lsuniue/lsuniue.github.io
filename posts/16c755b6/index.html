@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="常用快捷键  Super :  Ctrl + Alt + T Super + Tab 或 Alt + Tab …    环境变量  软链接 .bashrc &amp; alias">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu basic 常用快捷键与自定义环境变量">
+<meta property="og:url" content="https://langiue.cn/posts/16c755b6/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="常用快捷键  Super :  Ctrl + Alt + T Super + Tab 或 Alt + Tab …    环境变量  软链接 .bashrc &amp; alias">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-28T10:11:35.000Z">
+<meta property="article:modified_time" content="2021-02-28T10:26:12.224Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="快捷键">
+<meta property="article:tag" content="环境变量">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/16c755b6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/16c755b6/","path":"posts/16c755b6/","title":"ubuntu basic 常用快捷键与自定义环境变量"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ubuntu basic 常用快捷键与自定义环境变量 | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">设置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.</span> <span class="nav-text">基于软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Ealias"><span class="nav-number">2.2.</span> <span class="nav-text">基于alias</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/16c755b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ubuntu basic 常用快捷键与自定义环境变量 | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu basic 常用快捷键与自定义环境变量
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-02-28 18:11:35 / 修改时间：18:26:12" itemprop="dateCreated datePublished" datetime="2021-02-28T18:11:35+08:00">2021-02-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ubuntu/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><ul>
+<li><p>常用快捷键</p>
+<ul>
+<li><p><kbd>Super</kbd> : </p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></p>
+<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd></p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p>环境变量</p>
+<ul>
+<li>软链接</li>
+<li>.bashrc &amp; alias</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><p><kbd>Super</kbd> 键: 键盘上带有 Windows 图标的键</p>
+<p><kbd>Super</kbd>: 打开活动程序菜单</p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>: 打开命令行终端</p>
+<p><kbd>Super</kbd> + <kbd>L</kbd>: 锁定屏幕</p>
+<p><kbd>Super</kbd> + <kbd>D</kbd>: 显示桌面，<strong>重按</strong>返回原来窗口</p>
+<p><kbd>Super</kbd> + <kbd>A</kbd>: 显示应用程序菜单，同鼠标单击屏幕左下角九个点</p>
+<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd>: 在运行的应用程序间切换Super+箭头：移动窗口位置</p>
+<p><kbd>Super</kbd> + <strong>箭头</strong>: 移动窗口位置 </p>
+<ul>
+<li><p><kbd>Super</kbd> + <strong>左箭头</strong>: 应用程序窗口贴合屏幕的左边缘</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>右箭头</strong>: 应用程序窗口贴合屏幕的右边缘</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>上箭头</strong>: 应用程序窗口最大化</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>下箭头</strong>: 应用程序窗口恢复至正常大小</p>
+</li>
+</ul>
+<p><kbd>Super</kbd> + <kbd>M</kbd>: 打开通知栏，<strong>重按</strong>关闭</p>
+<p><kbd>Super</kbd> + <kbd>Space</kbd>: 切换输入法</p>
+<p><kbd>Alt</kbd> + <kbd>F2</kbd>: 运行控制台</p>
+<p><kbd>Ctrl</kbd> + <kbd>Q</kbd> 或 <kbd>Ctrl</kbd> + <kbd>W</kbd>: 关闭应用程序窗口</p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <strong>箭头</strong>: 切换工作区</p>
+<ul>
+<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 上箭头: 上移工作区</p>
+</li>
+<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 下箭头: 下移工作区</p>
+</li>
+</ul>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd>: 注销</p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><h4 id="基于软链接"><a href="#基于软链接" class="headerlink" title="基于软链接"></a>基于软链接</h4><p>环境变量的添加路径有两种：</p>
+<p><strong>第一种：</strong>添加到系统自带环境变量路径：<code>/usr/bin</code>，若用户自定义变量添加到该目录，系统升级后会被重置导致用户自定义变量丢失。</p>
+<p><strong>第二种：</strong>添加到用户自定义环境变量路径：<code>/usr/local/bin</code>，用户自定义环境变量路径。系统升级后会保留该路径下的环境变量。</p>
+<p>因此自定义环境变量一定要添加到<code>/usr/local/bin</code>下，防止系统升级丢失。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通过软链接配置环境变量</span><br><span class="line">sudo ln -s Software_startup_path /usr/local/bin/An_abbreviated_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="基于alias"><a href="#基于alias" class="headerlink" title="基于alias"></a>基于alias</h4><p>以linux下阿里云OSS工具为例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/ossutil</span><br><span class="line">sudo mv yourpath/ossutil64 /usr/local/ossutil</span><br><span class="line"></span><br><span class="line"># 方法一：</span><br><span class="line">vim ~/.bashrc</span><br><span class="line"># 复制下行内容到 .bashrc</span><br><span class="line">alias ossutil64=&#x27;/usr/local/ossutil/ossutil64&#x27; </span><br><span class="line">source ~/.bashrc</span><br><span class="line"># 测试环境变量</span><br><span class="line">ossutil64</span><br></pre></td></tr></table></figure>
+
+<p>通过软链接设置ossutil环境变量的方式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#方法二：设置软链接</span><br><span class="line">sudo ln -s /usr/local/ossutil/ossutil64 /usr/local/bin/oss</span><br><span class="line"># 测试环境变量</span><br><span class="line">oss</span><br><span class="line"># 删除软链接</span><br><span class="line">sudo rm -rf /usr/local/bin/oss</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+              <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="tag"># 快捷键</a>
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" rel="tag"># 环境变量</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/6f259eb9/" rel="prev" title="将Hexo 从Win10 迁移至Ubuntu1804">
+                  <i class="fa fa-chevron-left"></i> 将Hexo 从Win10 迁移至Ubuntu1804
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/eeac93b9/" rel="next" title="基于 JavaScript 对空气质量数据进行交互地图可视化">
+                  基于 JavaScript 对空气质量数据进行交互地图可视化 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

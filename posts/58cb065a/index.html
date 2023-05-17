@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="QQ 网易云 MySQL GMIP QGIS…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 18.04 装机软件">
+<meta property="og:url" content="https://langiue.cn/posts/58cb065a/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="QQ 网易云 MySQL GMIP QGIS…">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-22T01:23:58.000Z">
+<meta property="article:modified_time" content="2021-03-12T08:05:08.763Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Software">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/58cb065a/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/58cb065a/","path":"posts/58cb065a/","title":"Ubuntu 18.04 装机软件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ubuntu 18.04 装机软件 | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Notepad"><span class="nav-number">1.</span> <span class="nav-text">Notepad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thunderbird"><span class="nav-number">2.</span> <span class="nav-text">Thunderbird</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepin-1"><span class="nav-number">3.</span> <span class="nav-text">deepin 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepin-2"><span class="nav-number">4.</span> <span class="nav-text">deepin 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deepin-deb%E5%9C%B0%E5%9D%80"><span class="nav-number">5.</span> <span class="nav-text">deepin deb地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A11"><span class="nav-number">6.</span> <span class="nav-text">企业微信1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A12"><span class="nav-number">7.</span> <span class="nav-text">企业微信2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1"><span class="nav-number">8.</span> <span class="nav-text">微信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QQ"><span class="nav-number">9.</span> <span class="nav-text">QQ</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">9.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDdeb%E6%96%87%E4%BB%B6"><span class="nav-number">9.2.</span> <span class="nav-text">下载deb文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85deb%E6%96%87%E4%BB%B6"><span class="nav-number">9.3.</span> <span class="nav-text">安装deb文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD"><span class="nav-number">9.4.</span> <span class="nav-text">卸载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QQ-%E7%BC%A9%E6%94%BE%E8%B0%83%E6%95%B4"><span class="nav-number">10.</span> <span class="nav-text">QQ 缩放调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QQ%E9%9F%B3%E4%B9%90"><span class="nav-number">11.</span> <span class="nav-text">QQ音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E6%98%93%E4%BA%91"><span class="nav-number">12.</span> <span class="nav-text">网易云</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%B4%E8%A7%A3%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%AB%99"><span class="nav-number">13.</span> <span class="nav-text">破解软件网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pychrome"><span class="nav-number">14.</span> <span class="nav-text">Pychrome</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%88%B0%E4%B8%80%E5%8D%8A%E9%87%8D%E8%A3%85"><span class="nav-number">15.</span> <span class="nav-text">软件安装到一半重装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Google-Pinyin"><span class="nav-number">16.</span> <span class="nav-text">安装Google Pinyin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Synaptic"><span class="nav-number">17.</span> <span class="nav-text">Synaptic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lantern"><span class="nav-number">18.</span> <span class="nav-text">Lantern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Typora"><span class="nav-number">19.</span> <span class="nav-text">Typora</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pandoc"><span class="nav-number">20.</span> <span class="nav-text">Pandoc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathpix-snipping-Tool"><span class="nav-number">21.</span> <span class="nav-text">mathpix snipping Tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R"><span class="nav-number">22.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update-R-packages"><span class="nav-number">23.</span> <span class="nav-text">update R packages:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RStudio"><span class="nav-number">24.</span> <span class="nav-text">RStudio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anaconda-3"><span class="nav-number">25.</span> <span class="nav-text">Anaconda 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shutter"><span class="nav-number">26.</span> <span class="nav-text">Shutter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GMIP"><span class="nav-number">27.</span> <span class="nav-text">GMIP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indicator-stickynotes"><span class="nav-number">28.</span> <span class="nav-text">indicator-stickynotes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QGIS"><span class="nav-number">29.</span> <span class="nav-text">QGIS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VS-Code"><span class="nav-number">30.</span> <span class="nav-text">VS Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E6%97%A5%E8%91%B5"><span class="nav-number">31.</span> <span class="nav-text">向日葵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">32.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#calibre"><span class="nav-number">33.</span> <span class="nav-text">calibre</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Server"><span class="nav-number">34.</span> <span class="nav-text">SQL Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%92%8C%E5%AE%89%E8%A3%85-SQL-Server"><span class="nav-number">35.</span> <span class="nav-text">配置和安装 SQL Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tweak"><span class="nav-number">36.</span> <span class="nav-text">Tweak</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Navicat-%E5%A4%87%E7%94%A8%E5%9C%B0%E5%9D%80"><span class="nav-number">37.</span> <span class="nav-text">Navicat 备用地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Workbench"><span class="nav-number">38.</span> <span class="nav-text">Workbench</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98"><span class="nav-number">39.</span> <span class="nav-text">百度网盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-number">40.</span> <span class="nav-text">搜狗输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Citrix-Receiver"><span class="nav-number">41.</span> <span class="nav-text">Citrix Receiver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Python-%E5%BA%93"><span class="nav-number">42.</span> <span class="nav-text">安装 Python 库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Open-CV"><span class="nav-number">43.</span> <span class="nav-text">安装Open CV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GeoPandas"><span class="nav-number">44.</span> <span class="nav-text">GeoPandas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-%E5%88%87%E6%8D%A2-conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-number">45.</span> <span class="nav-text">jupyter 切换 conda 虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conda%E7%8E%AF%E5%A2%83"><span class="nav-number">46.</span> <span class="nav-text">Conda环境</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/58cb065a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Ubuntu 18.04 装机软件 | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 18.04 装机软件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-22 09:23:58" itemprop="dateCreated datePublished" datetime="2020-09-22T09:23:58+08:00">2020-09-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-03-12 16:05:08" itemprop="dateModified" datetime="2021-03-12T16:05:08+08:00">2021-03-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ubuntu/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><ul>
+<li>QQ</li>
+<li>网易云</li>
+<li>MySQL</li>
+<li>GMIP</li>
+<li>QGIS<br>…</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad"></a><a target="_blank" rel="noopener" href="https://notepad-plus-plus.org/">Notepad</a></h3><h3 id="Thunderbird"><a href="#Thunderbird" class="headerlink" title="Thunderbird"></a><a target="_blank" rel="noopener" href="https://www.thunderbird.net/zh-cn">Thunderbird</a></h3><p>Graphical email clients on Linux.</p>
+<h3 id="deepin-1"><a href="#deepin-1" class="headerlink" title="deepin 1"></a><a target="_blank" rel="noopener" href="https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu">deepin 1</a></h3><h3 id="deepin-2"><a href="#deepin-2" class="headerlink" title="deepin 2"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/donglynn/article/details/51376688?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.control">deepin 2</a></h3><h3 id="deepin-deb地址"><a href="#deepin-deb地址" class="headerlink" title="deepin deb地址"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44823747/article/details/105509479?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&spm=1001.2101.3001.4242">deepin deb地址</a></h3><h3 id="企业微信1"><a href="#企业微信1" class="headerlink" title="企业微信1"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_32087115/article/details/85261860?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control">企业微信1</a></h3><h3 id="企业微信2"><a href="#企业微信2" class="headerlink" title="企业微信2"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45501561/article/details/111535051">企业微信2</a></h3><h3 id="微信"><a href="#微信" class="headerlink" title="微信"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/dunitian/p/9124806.html">微信</a></h3><h3 id="QQ"><a href="#QQ" class="headerlink" title="QQ"></a><a target="_blank" rel="noopener" href="https://im.qq.com/linuxqq/download.html">QQ</a></h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libgtk2.0-0 # Ubuntu</span><br><span class="line">sudo yum install gtk2.x86_64 # centos</span><br></pre></td></tr></table></figure>
+<h4 id="下载deb文件"><a href="#下载deb文件" class="headerlink" title="下载deb文件"></a>下载deb文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://down.qq.com/qqweb/LinuxQQ/linuxqq_2.0.0-b2-1084_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装deb文件"><a href="#安装deb文件" class="headerlink" title="安装deb文件"></a>安装deb文件</h4><p>双击安装或以下命令安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i linuxqq_1.0.1-b1-100_armhf.deb</span><br></pre></td></tr></table></figure>
+
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -e linuxqq</span><br><span class="line">sudo dpkg -r linuxqq</span><br></pre></td></tr></table></figure>
+
+<h3 id="QQ-缩放调整"><a href="#QQ-缩放调整" class="headerlink" title="QQ 缩放调整"></a>QQ 缩放调整</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/share/applications/qq.desktop</span><br><span class="line"></span><br><span class="line">Exec=/usr/local/bin/qq 末尾加入下行内容</span><br><span class="line">--force-device-scale-factor=2 %U</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="QQ音乐"><a href="#QQ音乐" class="headerlink" title="QQ音乐"></a><a target="_blank" rel="noopener" href="https://y.qq.com/download/download.html">QQ音乐</a></h3><h3 id="网易云"><a href="#网易云" class="headerlink" title="网易云"></a><a target="_blank" rel="noopener" href="https://music.163.com/#/download">网易云</a></h3><h3 id="破解软件网站"><a href="#破解软件网站" class="headerlink" title="破解软件网站"></a><a target="_blank" rel="noopener" href="https://www.digit77.com/macapps/database-utilities/navicat-premium.html#download-explan">破解软件网站</a></h3><h3 id="Pychrome"><a href="#Pychrome" class="headerlink" title="Pychrome"></a>Pychrome</h3><p>sudo snap install [pycharm-professional|pycharm-community] –classic</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install pycharm-professional --classic</span><br><span class="line">sudo snap install [pycharm-community] --classic</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.wuaisite.com/post-116.html">激活码分享网址</a></p>
+<h3 id="软件安装到一半重装"><a href="#软件安装到一半重装" class="headerlink" title="软件安装到一半重装"></a>软件安装到一半重装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --reinstall name</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Google-Pinyin"><a href="#安装Google-Pinyin" class="headerlink" title="安装Google Pinyin"></a><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/180cd9634b4a">安装Google Pinyin</a></h3><p>调整输入法框大小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/fcitx/skin/default/</span><br><span class="line">sudo vim fcitx_skin.conf</span><br></pre></td></tr></table></figure>
+<p>fontsize 15<br>mennu size 15</p>
+<h3 id="Synaptic"><a href="#Synaptic" class="headerlink" title="Synaptic"></a>Synaptic</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install synaptic</span><br></pre></td></tr></table></figure>
+
+<h3 id="Lantern"><a href="#Lantern" class="headerlink" title="Lantern"></a><a target="_blank" rel="noopener" href="https://github.com/getlantern/lantern">Lantern</a></h3><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a><a target="_blank" rel="noopener" href="https://www.typora.io/#linux">Typora</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">or run:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE</span></span><br><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">add Typora<span class="string">&#x27;s repository</span></span></span><br><span class="line">sudo add-apt-repository &#x27;deb https://typora.io/linux ./&#x27;</span><br><span class="line">sudo apt-get update</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">install typora</span></span></span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pandoc"><a href="#Pandoc" class="headerlink" title="Pandoc"></a><a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/releases/tag/2.9.2">Pandoc</a></h3><p>Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.</p>
+<h3 id="mathpix-snipping-Tool"><a href="#mathpix-snipping-Tool" class="headerlink" title="mathpix snipping Tool"></a><a target="_blank" rel="noopener" href="https://mathpix.com/">mathpix snipping Tool</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></table></figure>
+
+<h3 id="R"><a href="#R" class="headerlink" title="R"></a><a target="_blank" rel="noopener" href="https://cloud.r-project.org/">R</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install r-base</span><br><span class="line">sudo apt-get install r-base-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="update-R-packages"><a href="#update-R-packages" class="headerlink" title="update R packages:"></a>update R packages:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="RStudio"><a href="#RStudio" class="headerlink" title="RStudio"></a><a target="_blank" rel="noopener" href="https://rstudio.com/products/rstudio/download/#download">RStudio</a></h3><h3 id="Anaconda-3"><a href="#Anaconda-3" class="headerlink" title="Anaconda 3"></a><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">Anaconda 3</a></h3><p>download <a target="_blank" rel="noopener" href="https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh">64-Bit (x86) Installer (522 MB)</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Downloads</span><br><span class="line">bash Anaconda3-`Press Tab`</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9a0172ae005f">Anaconda简介安装使用教程</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新环境</span></span><br><span class="line">如果要安装指定的版本号，则只需要在包名后面以=和版本号的形式执行。如：conda create --name python2 python=2.7，即创建一个名为“python2”的环境，环境中安装版本为2.7的python。</span><br><span class="line"></span><br><span class="line">如果要在新创建的环境中创建多个包，则直接在后以空格隔开，添加多个包名即可。如：conda create -n python3 python=3.5 numpy pandas，即创建一个名为“python3”的环境，环境中安装版本为3.5的python，同时也安装了numpy和pandas。</span><br><span class="line">--name同样可以替换为-n。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3个方法显示已创建环境</span></span><br><span class="line">conda info --envs</span><br><span class="line">conda info -e</span><br><span class="line">conda envlist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制环境</span></span><br><span class="line">conda create --name--clone</span><br><span class="line">conda create --name py2 --<span class="built_in">clone</span> python2，即为克隆名为“python2”的环境，克隆后的新环境名为“py2”。此时，环境中将同时存在“python2”和“py2”环境，且两个环境的配置相同。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove --name--all</span><br></pre></td></tr></table></figure>
+
+<h3 id="Shutter"><a href="#Shutter" class="headerlink" title="Shutter"></a><a target="_blank" rel="noopener" href="https://shutter-project.org/">Shutter</a></h3><p>一款截图与快捷编辑软件，官网说明：<br>Shutter is a feature-rich screenshot program for Linux based operating systems such as Ubuntu. You can take a screenshot of a specific area, window, your whole screen, or even of a website – apply different effects to it, draw on it to highlight points, and then upload to an image hosting site, all within one window. Shutter is free, <a target="_blank" rel="noopener" href="http://www.opensource.org/docs/definition.php">open-source</a>, and licensed under <a target="_blank" rel="noopener" href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install shutter</span><br></pre></td></tr></table></figure>
+
+<h3 id="GMIP"><a href="#GMIP" class="headerlink" title="GMIP"></a><a target="_blank" rel="noopener" href="https://www.gimp.org/">GMIP</a></h3><p>This is the official website of the GNU Image Manipulation Program (GIMP).<br>GIMP is a cross-platform image editor available for GNU&#x2F;Linux, OS X, Windows and more operating systems. It is <a target="_blank" rel="noopener" href="https://www.gnu.org/philosophy/free-sw.html">free software</a>, you can change its <a target="_blank" rel="noopener" href="https://git.gnome.org/browse/gimp">source code</a> and <a target="_blank" rel="noopener" href="https://www.gnu.org/licenses/quick-guide-gplv3.en.html">distribute</a> your changes.<br>Whether you are a graphic designer, photographer, illustrator, or scientist, GIMP provides you with sophisticated tools to get your job done. You can further enhance your productivity with GIMP thanks to many customization options and 3rd party plugins.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gimp</span><br></pre></td></tr></table></figure>
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gimp-plugin-registry gimp-data-extras</span><br></pre></td></tr></table></figure>
+
+<h3 id="indicator-stickynotes"><a href="#indicator-stickynotes" class="headerlink" title="indicator-stickynotes"></a><a target="_blank" rel="noopener" href="https://launchpad.net/indicator-stickynotes/">indicator-stickynotes</a></h3><p>桌面便签工具，入门级，功能简单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:umang/indicator-stickynotes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install indicator-stickynotes</span><br></pre></td></tr></table></figure>
+
+<h3 id="QGIS"><a href="#QGIS" class="headerlink" title="QGIS"></a><a target="_blank" rel="noopener" href="https://qgis.org/en/site/forusers/alldownloads.html#debian-ubuntu">QGIS</a></h3><h3 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download#">VS Code</a></h3><h3 id="向日葵"><a href="#向日葵" class="headerlink" title="向日葵"></a><a target="_blank" rel="noopener" href="https://sunlogin.oray.com/download/">向日葵</a></h3><ul>
+<li>卸载向日葵</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -l | grep sunlogin</span><br><span class="line">sudo dpkg -r sunloginclient</span><br></pre></td></tr></table></figure>
+
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/opsprobe/p/9126864.html">MySQL</a></h3><h3 id="calibre"><a href="#calibre" class="headerlink" title="calibre"></a>calibre</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install calibre</span><br></pre></td></tr></table></figure>
+
+<p>将<code>.desktop</code>启动程序添加到<code>calibre</code>的内置电子书阅读器中：</p>
+<ol>
+<li><p>在<code>~/.local/share/applications</code>中创建一个新的<code>.desktop</code>文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gedit ~/.local/share/applications/calibre-ebook-viewer.desktop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将以下段落复制并粘贴到文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env xdg-open</span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Terminal=false</span><br><span class="line">Icon=calibre</span><br><span class="line">Exec=ebook-viewer</span><br><span class="line">Name=Calibre Ebook Viewer</span><br><span class="line">Comment=Display .epub files and other ebook formats</span><br><span class="line">MimeType=application/x-mobipocket-ebook;application/epub+zip;</span><br><span class="line">StartupWMClass=calibre-ebook-viewer</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存文件。您现在应该可以从短划线和右键单击”Open with”菜单启动Calibre的内置电子书阅读器。</p>
+</li>
+</ol>
+<h3 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15">SQL Server</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -</span><br><span class="line">sudo add-apt-repository &quot;$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)&quot;</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y mssql-server</span><br><span class="line">sudo /opt/mssql/bin/mssql-conf setup</span><br><span class="line">systemctl status mssql-server --no-pager</span><br><span class="line">If you plan to connect remotely, you might also need to open the SQL Server TCP port (default 1433) on your firewall.</span><br><span class="line">主机:localhost</span><br><span class="line">端口:1433</span><br><span class="line">用户名 : sa</span><br><span class="line">密码 : ********</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置和安装-SQL-Server"><a href="#配置和安装-SQL-Server" class="headerlink" title="配置和安装 SQL Server"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/li528405176/article/details/83414061">配置和安装 SQL Server</a></h3><h3 id="Tweak"><a href="#Tweak" class="headerlink" title="Tweak"></a>Tweak</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+
+<h3 id="Navicat-备用地址"><a href="#Navicat-备用地址" class="headerlink" title="Navicat 备用地址"></a><a target="_blank" rel="noopener" href="https://gitee.com/kaleozhou/navicat">Navicat</a> <a target="_blank" rel="noopener" href="https://www.kaleozhou.top/topics/125/activation-of-navicat15-premium-under-ubuntu-1804">备用地址</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -o loop navicat15-premium-cs.AppImage navicat15</span><br><span class="line">sudo mount -o remount,rw navicat15-premium-cs.AppImage navicat15</span><br><span class="line">./appimagetool-x86_64.AppImage navicat15 navicat15-premium-cs-pathed.AppImage</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.digit77.com/macapps/database-utilities/navicat-premium.html">破解版下载地址</a></p>
+<h3 id="Workbench"><a href="#Workbench" class="headerlink" title="Workbench"></a><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/workbench/">Workbench</a></h3><h3 id="百度网盘"><a href="#百度网盘" class="headerlink" title="百度网盘"></a><a target="_blank" rel="noopener" href="http://pan.baidu.com/download">百度网盘</a></h3><h3 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a><a target="_blank" rel="noopener" href="https://pinyin.sogou.com/linux/?r=pinyin">搜狗输入法</a></h3><h3 id="Citrix-Receiver"><a href="#Citrix-Receiver" class="headerlink" title="Citrix Receiver"></a>Citrix Receiver</h3><ul>
+<li>访问<a target="_blank" rel="noopener" href="https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html">下载地址</a></li>
+<li>选择 Debian Packages</li>
+<li>下载deb安装包</li>
+<li>下载完毕后双击安装</li>
+</ul>
+<h3 id="安装-Python-库"><a href="#安装-Python-库" class="headerlink" title="安装 Python 库"></a>安装 Python 库</h3><h3 id="安装Open-CV"><a href="#安装Open-CV" class="headerlink" title="安装Open CV"></a>安装<a target="_blank" rel="noopener" href="https://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html">Open CV</a></h3><h3 id="GeoPandas"><a href="#GeoPandas" class="headerlink" title="GeoPandas"></a><a target="_blank" rel="noopener" href="https://geopandas.org/">GeoPandas</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create -n geo_env</span><br><span class="line">conda activate geo_env</span><br><span class="line">conda config --env --add channels conda-forge</span><br><span class="line">conda config --env --set channel_priority strict</span><br><span class="line">conda install python=3 geopandas</span><br></pre></td></tr></table></figure>
+
+<h3 id="jupyter-切换-conda-虚拟环境"><a href="#jupyter-切换-conda-虚拟环境" class="headerlink" title="jupyter 切换 conda 虚拟环境"></a>jupyter 切换 conda 虚拟环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">conda env list # 列出虚拟环境</span><br><span class="line">conda activate 环境name</span><br><span class="line">conda deactivate</span><br><span class="line">conda install ipykernel</span><br><span class="line">python -m ipykernel install --name adda</span><br><span class="line">或者</span><br><span class="line">python -m ipykernel install --user --name geo_env --display-name &quot;Python geo_env&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Conda环境"><a href="#Conda环境" class="headerlink" title="Conda环境"></a>Conda环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n &lt;env_name&gt; python=3.6 # 新建环境</span><br><span class="line">conda activate &lt;env_name&gt;             # 激活环境</span><br><span class="line">conda deactivate &lt;env_name&gt;           # 推出</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+              <a href="/tags/Software/" rel="tag"># Software</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/7ac0a8fe/" rel="prev" title="Ubuntu 18.04 分区大小与常用Shell命令">
+                  <i class="fa fa-chevron-left"></i> Ubuntu 18.04 分区大小与常用Shell命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/7cfe8b95/" rel="next" title="Ubuntu 18.04 使用一年来遇到问题汇总与解决方法">
+                  Ubuntu 18.04 使用一年来遇到问题汇总与解决方法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

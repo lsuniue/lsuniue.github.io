@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="空间自相关是空间统计学中的一个重要概念。它允许空间插值；但它使统计测试复杂化。其计算和属性经常被误解。 自相关（无论空间还是不空间）是附近观测之间的相似度（相关性）的度量。  莫兰指数 蒙特卡罗模拟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spatial autocorrelation">
+<meta property="og:url" content="https://langiue.cn/posts/5f35651b/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="空间自相关是空间统计学中的一个重要概念。它允许空间插值；但它使统计测试复杂化。其计算和属性经常被误解。 自相关（无论空间还是不空间）是附近观测之间的相似度（相关性）的度量。  莫兰指数 蒙特卡罗模拟">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/20-ACF.png?x-oss-process=style/moon">
+<meta property="og:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/21-moran-plot.png?x-oss-process=style/moon">
+<meta property="article:published_time" content="2017-04-06T07:19:34.000Z">
+<meta property="article:modified_time" content="2019-10-27T02:42:58.612Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="Spatial Analysis">
+<meta property="article:tag" content="RStudio">
+<meta property="article:tag" content="Moran">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/20-ACF.png?x-oss-process=style/moon">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/5f35651b/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/5f35651b/","path":"posts/5f35651b/","title":"Spatial autocorrelation"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Spatial autocorrelation | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E7%9B%B8%E5%85%B3"><span class="nav-number">1.</span> <span class="nav-text">自相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">时间自相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%B7%E6%9C%AC%E8%A7%82%E5%AF%9F%E5%80%BC"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建样本观察值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%87%AA%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.2.</span> <span class="nav-text">初步自相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E8%87%AA%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.3.</span> <span class="nav-text">排序自相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#acf%E5%9B%BE"><span class="nav-number">1.1.4.</span> <span class="nav-text">acf图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">空间自相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%98%E5%9B%BE"><span class="nav-number">1.2.2.</span> <span class="nav-text">绘图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E9%82%BB%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="nav-number">2.</span> <span class="nav-text">相邻多边形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E9%82%BB%E6%8E%A5"><span class="nav-number">2.1.</span> <span class="nav-text">计算邻接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E9%82%BB%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">绘制邻接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%9D%83%E9%87%8D%E7%9F%A9%E9%98%B5"><span class="nav-number">2.3.</span> <span class="nav-text">空间权重矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%AB%E5%85%B0%E6%8C%87%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">莫兰指数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E8%AE%A1%E7%AE%97"><span class="nav-number">3.1.</span> <span class="nav-text">手动计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97n-yi-yabr"><span class="nav-number">3.1.1.</span> <span class="nav-text">计算n yi yabr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97-yi-ybar-yj-ybar"><span class="nav-number">3.1.2.</span> <span class="nav-text">计算(yi-ybar)*(yj-ybar)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E7%9F%A9%E9%98%B5%E2%80%99yiyj%E2%80%99"><span class="nav-number">3.1.3.</span> <span class="nav-text">建立矩阵’yiyj’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97wij-yi-ybar-yj-ybar"><span class="nav-number">3.1.4.</span> <span class="nav-text">计算wij * (yi-ybar)*(yj-ybar)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%92%8C"><span class="nav-number">3.1.5.</span> <span class="nav-text">求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A4%E4%BB%A5%E6%9D%83%E9%87%8D%E5%92%8C"><span class="nav-number">3.1.6.</span> <span class="nav-text">除以权重和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97y%E7%9A%84%E9%80%86%E6%96%B9%E5%B7%AE"><span class="nav-number">3.1.7.</span> <span class="nav-text">计算y的逆方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%AB%E5%85%B0%E6%8C%87%E6%95%B0%E7%BB%93%E6%9E%9C"><span class="nav-number">3.1.8.</span> <span class="nav-text">莫兰指数结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%AB%E5%85%B0%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">莫兰函数计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%AB%E5%85%B0%E6%A3%80%E9%AA%8C"><span class="nav-number">3.3.</span> <span class="nav-text">莫兰检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E9%80%BB%E8%BE%91%E5%92%8C%E5%81%87%E5%AE%9A"><span class="nav-number">3.3.1.</span> <span class="nav-text">基于线性回归的逻辑和假定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%A8%A1%E6%8B%9F"><span class="nav-number">3.3.2.</span> <span class="nav-text">蒙特卡罗模拟</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/5f35651b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Spatial autocorrelation | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spatial autocorrelation
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-04-06 15:19:34" itemprop="dateCreated datePublished" datetime="2017-04-06T15:19:34+08:00">2017-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-10-27 10:42:58" itemprop="dateModified" datetime="2019-10-27T10:42:58+08:00">2019-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Spatial-Analysis/" itemprop="url" rel="index"><span itemprop="name">Spatial Analysis</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Spatial-Analysis/RStudio/" itemprop="url" rel="index"><span itemprop="name">RStudio</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Spatial-Analysis/RStudio/Autocorrelation/" itemprop="url" rel="index"><span itemprop="name">Autocorrelation</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>空间自相关是空间统计学中的一个重要概念。它允许空间插值；但它使统计测试复杂化。其计算和属性经常被误解。 自相关（无论空间还是不空间）是附近观测之间的相似度（相关性）的度量。</p>
+<ul>
+<li>莫兰指数</li>
+<li>蒙特卡罗模拟</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h1 id="自相关"><a href="#自相关" class="headerlink" title="自相关"></a>自相关</h1><h2 id="时间自相关"><a href="#时间自相关" class="headerlink" title="时间自相关"></a>时间自相关</h2><p>如果你随着时间的推移衡量关于同一个对象的一些特征，例如一个人的重量或财富，那么在时间上彼此接近的两个观察值很可能是相似的。<br>例如，您的体重从50公斤增加到80公斤。不太可能某天是60公斤，下一天50公斤，之后变成80公斤。相反，它可能逐渐上升，偶尔逐渐减弱，甚至反向。<br>您的银行帐户也是如此，但也可能有明显的每月趋势。为了测量随时间变化的关联程度，我们可以计算每次观察与下一次观察的相关性。</p>
+<h3 id="创建样本观察值"><a href="#创建样本观察值" class="headerlink" title="创建样本观察值"></a>创建样本观察值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.seed(0)</span><br><span class="line">d &lt;- sample(100, 10)</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.set.seed设置随机种子<br>2.sample(100, 10):从1到100中不放回地随机抽取10个数。</p>
+</blockquote>
+<h3 id="初步自相关"><a href="#初步自相关" class="headerlink" title="初步自相关"></a>初步自相关</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &lt;- d[-length(d)]</span><br><span class="line">b &lt;- d[-1]</span><br><span class="line">plot(a, b, xlab=&#x27;t&#x27;, ylab=&#x27;t-1&#x27;)</span><br><span class="line">cor(a, b)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>d[-length(d)]舍去最后一个元素<br>d[-1]舍去第一个元素</p>
+</blockquote>
+<h3 id="排序自相关"><a href="#排序自相关" class="headerlink" title="排序自相关"></a>排序自相关</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d &lt;- sort(d)</span><br><span class="line">d</span><br><span class="line">a &lt;- d[-length(d)]</span><br><span class="line">b &lt;- d[-1]</span><br><span class="line">plot(a, b, xlab=&#x27;t&#x27;, ylab=&#x27;t-1&#x27;)</span><br><span class="line">cor(a, b)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>sort:排序函数</p>
+</blockquote>
+<h3 id="acf图"><a href="#acf图" class="headerlink" title="acf图"></a>acf图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acf(d)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>多阶滞后自相关图</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/20-ACF.png?x-oss-process=style/moon" alt="Figure20-ACF">
+
+<h2 id="空间自相关"><a href="#空间自相关" class="headerlink" title="空间自相关"></a>空间自相关</h2><p>空间自相关的概念是时间自相关的延伸。时间是一维的，只有朝着一个方向前进。空间对象具有（至少）二维和复杂形状，并且可能不明确如何确定什么是“近”。<br>空间自相关的度量描述了观察值彼此空间位置（无论是点，区域还是栅格单元）的相似程度。 所以我们需要两件事情：观察和位置。<br>变量中的空间自相关可以是外生的（其由另一空间自相关变量，例如降雨引起）或内生（由内部过程引起，例如疾病的传播）。<br>描述空间自相关的常用统计量是莫兰指数，我们将在后面详细讨论。 其他统计量包括包括Geary’s C，对于二进制数据，连接计数索引(join-count index)。半变差函数(semi-variogram)也表示数据集中的空间自相关量（参见插值一章）。</p>
+<h3 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(raster)</span><br><span class="line">p &lt;- shapefile(system.file(&quot;external/lux.shp&quot;, package=&quot;raster&quot;))</span><br><span class="line">p &lt;- p[p$NAME_1==&quot;Diekirch&quot;, ]</span><br><span class="line">p$value &lt;- c(10, 6, 4, 11, 6)</span><br><span class="line">data.frame(p)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.system.file:获取已注册安装包中的数据文件路径,本地文件夹不用此步。<br>2.shapefile:raster包中读取矢量数据的函数,也可以用readOGR<br>5.查看数据属性表</p>
+</blockquote>
+<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">par(mai=c(0,0,0,0))</span><br><span class="line"># par(mai=c(1.02,0.82,0.82,0.42))</span><br><span class="line">plot(p, col=2:6)</span><br><span class="line">xy &lt;- coordinates(p)</span><br><span class="line">points(xy, cex=6, pch=20, col=&#x27;white&#x27;)</span><br><span class="line">text(p, &#x27;ID_2&#x27;, cex=1.5)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.mai：图边距 c(bottom, left, top, right)<br>3.col&#x3D;2:6,颜色2-6<br>4-5.coordinates(p):求p的质心位置<br>5.points()画点<br>6.text():添加文本</p>
+</blockquote>
+<h1 id="相邻多边形"><a href="#相邻多边形" class="headerlink" title="相邻多边形"></a>相邻多边形</h1><h2 id="计算邻接"><a href="#计算邻接" class="headerlink" title="计算邻接"></a>计算邻接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(spdep)</span><br><span class="line">w &lt;- poly2nb(p, row.names=p$Id)</span><br><span class="line">class(w)</span><br><span class="line">summary(w)</span><br><span class="line">str(w)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.poly2nb:根据连续边界的区域构建邻居列表<br>3.邻居列表的类别: nb<br>4-5.查看邻接结构</p>
+</blockquote>
+<h2 id="绘制邻接"><a href="#绘制邻接" class="headerlink" title="绘制邻接"></a>绘制邻接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plot(p, col=&#x27;gray&#x27;, border=&#x27;blue&#x27;, lwd=2)</span><br><span class="line">plot(w, xy, col=&#x27;red&#x27;, lwd=2, add=TRUE)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>6.绘制底图<br>7.在图上画出邻接</p>
+</blockquote>
+<h2 id="空间权重矩阵"><a href="#空间权重矩阵" class="headerlink" title="空间权重矩阵"></a>空间权重矩阵</h2><p>空间权重矩阵反映观测值之间的地理关系的强度。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wm &lt;- nb2mat(w, style=&#x27;B&#x27;)</span><br><span class="line">wm</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>nb2mat:将邻居列表w转换为<code>二进制矩阵</code></p>
+</blockquote>
+<h1 id="莫兰指数"><a href="#莫兰指数" class="headerlink" title="莫兰指数"></a>莫兰指数</h1><p>不仅是相关系数的扩展版本，重要的是增加了空间权重矩阵。</p>
+<h2 id="手动计算"><a href="#手动计算" class="headerlink" title="手动计算"></a>手动计算</h2><h3 id="计算n-yi-yabr"><a href="#计算n-yi-yabr" class="headerlink" title="计算n yi yabr"></a>计算n yi yabr</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n &lt;- length(p)</span><br><span class="line">y &lt;- p$value</span><br><span class="line">ybar &lt;- mean(y)</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算-yi-ybar-yj-ybar"><a href="#计算-yi-ybar-yj-ybar" class="headerlink" title="计算(yi-ybar)*(yj-ybar)"></a>计算(yi-ybar)*(yj-ybar)</h3><ul>
+<li>方法一</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dy &lt;- y - ybar</span><br><span class="line">g &lt;- expand.grid(dy, dy)</span><br><span class="line">yiyj &lt;- g[,1] * g[,2]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>1.计算差值<br>2.生成nrow(dy)<em>nrow(dy)行，两列。第一列，dy个dy；第二列dy个dy[1],y个dy[2],…<br>3.计算yi</em>yj</p>
+</blockquote>
+<ul>
+<li>方法二</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rep(1:4, 2)</span><br><span class="line">rep(1:4, each = 2)       # not the same.</span><br><span class="line">rep(1:4, c(2,2,2,2))     # same as second.</span><br><span class="line">yi &lt;- rep(dy, each=n)</span><br><span class="line">yj &lt;- rep(dy)</span><br><span class="line">yiyj &lt;- yi * yj</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>1.rep(1:4, 2) <code>1 2 3 4 1 2 3 4</code><br>2.rep(1:4, each &#x3D; 2) <code>1 1 2 2 3 3 4 4</code><br>3.rep(1:4, c(2,2,2,2)) <code>1 1 2 2 3 3 4 4</code></p>
+</blockquote>
+<h3 id="建立矩阵’yiyj’"><a href="#建立矩阵’yiyj’" class="headerlink" title="建立矩阵’yiyj’"></a>建立矩阵’yiyj’</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm &lt;- matrix(yiyj, ncol=n)</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算wij-yi-ybar-yj-ybar"><a href="#计算wij-yi-ybar-yj-ybar" class="headerlink" title="计算wij * (yi-ybar)*(yj-ybar)"></a>计算wij * (yi-ybar)*(yj-ybar)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pmw &lt;- pm * wm</span><br><span class="line">pmw</span><br></pre></td></tr></table></figure>
+
+<h3 id="求和"><a href="#求和" class="headerlink" title="求和"></a>求和</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spmw &lt;- sum(pmw) </span><br><span class="line">spmw</span><br></pre></td></tr></table></figure>
+
+<h3 id="除以权重和"><a href="#除以权重和" class="headerlink" title="除以权重和"></a>除以权重和</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">smw &lt;- sum(wm)</span><br><span class="line">sw  &lt;- spmw / smw</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算y的逆方差"><a href="#计算y的逆方差" class="headerlink" title="计算y的逆方差"></a>计算y的逆方差</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vr &lt;- n / sum(dy^2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="莫兰指数结果"><a href="#莫兰指数结果" class="headerlink" title="莫兰指数结果"></a>莫兰指数结果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MI &lt;- vr * sw</span><br><span class="line">MI</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这是估计莫兰指数期望的简单方法，即不存在空间自相关时(数据时空间随机的)的莫兰指数。</p>
+</blockquote>
+<h2 id="莫兰函数计算"><a href="#莫兰函数计算" class="headerlink" title="莫兰函数计算"></a>莫兰函数计算</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ww &lt;-  nb2listw(w, style=&#x27;B&#x27;)</span><br><span class="line">ww</span><br><span class="line">moran(p$value, ww, n=length(ww$neighbours), S0=Szero(ww))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.nb2listw:向邻居列表中增加一个权重列表. style&#x3D;’B’代表二进制.<br>3.第一个参数:数据；第二个参数:权重；第三个参数:区域数量；第四个参数：Szero(ww)全局权重总和:权重不为1的个数。</p>
+</blockquote>
+<h2 id="莫兰检验"><a href="#莫兰检验" class="headerlink" title="莫兰检验"></a>莫兰检验</h2><h3 id="基于线性回归的逻辑和假定"><a href="#基于线性回归的逻辑和假定" class="headerlink" title="基于线性回归的逻辑和假定"></a>基于线性回归的逻辑和假定</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moran.test(p$value, ww, randomisation=FALSE)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数: 数据  权重   随机假设：FALSE</p>
+</blockquote>
+<h3 id="蒙特卡罗模拟"><a href="#蒙特卡罗模拟" class="headerlink" title="蒙特卡罗模拟"></a>蒙特卡罗模拟</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">moran.mc(p$value, ww, nsim=99)</span><br><span class="line">rwm &lt;- mat2listw(wm, style=&#x27;W&#x27;)</span><br><span class="line">moran.plot(y, rwm)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>模拟次数为99<br>style&#x3D;’W’: 行标准化<br>绘图,如图21所示：</p>
+</blockquote>
+<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/21-moran-plot.png?x-oss-process=style/moon" alt="Figure21-Moran Plot">
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spatial-Analysis/" rel="tag"># Spatial Analysis</a>
+              <a href="/tags/RStudio/" rel="tag"># RStudio</a>
+              <a href="/tags/Moran/" rel="tag"># Moran</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/bc13a62d/" rel="prev" title="Spatial Visualization with ggplot2">
+                  <i class="fa fa-chevron-left"></i> Spatial Visualization with ggplot2
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/7e5510ac/" rel="next" title="“猫”随想">
+                  “猫”随想 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

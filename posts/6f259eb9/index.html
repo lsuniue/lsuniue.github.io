@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="nodejs  npm Git Hexo nodejs 版本管理 n coding.net">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将Hexo 从Win10 迁移至Ubuntu1804">
+<meta property="og:url" content="https://langiue.cn/posts/6f259eb9/index.html">
+<meta property="og:site_name" content="Sun">
+<meta property="og:description" content="nodejs  npm Git Hexo nodejs 版本管理 n coding.net">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-25T03:19:13.000Z">
+<meta property="article:modified_time" content="2021-02-25T07:34:16.753Z">
+<meta property="article:author" content="Sun Lang">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="ubuntu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://langiue.cn/posts/6f259eb9/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://langiue.cn/posts/6f259eb9/","path":"posts/6f259eb9/","title":"将Hexo 从Win10 迁移至Ubuntu1804"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>将Hexo 从Win10 迁移至Ubuntu1804 | Sun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sun</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">不要问我太阳有多高</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-number">1.</span> <span class="nav-text">安装Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs14-15-5"><span class="nav-number">1.1.</span> <span class="nav-text">nodejs14.15.5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs-12-18-3"><span class="nav-number">1.2.</span> <span class="nav-text">nodejs 12.18.3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85npm"><span class="nav-number">2.</span> <span class="nav-text">安装npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">3.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH%E8%BF%9E%E6%8E%A5Github"><span class="nav-number">4.</span> <span class="nav-text">SSH连接Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">5.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E5%8D%B8%E8%BD%BD%E6%A8%A1%E5%9D%97"><span class="nav-number">6.</span> <span class="nav-text">npm 卸载模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%A5%E9%94%99-hexo-command-not-found"><span class="nav-number">7.</span> <span class="nav-text">报错: hexo command not found</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-s-%E6%8A%A5%E9%94%99"><span class="nav-number">8.</span> <span class="nav-text">hexo s 报错</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951-%E5%BE%85%E6%B5%8B%E8%AF%95"><span class="nav-number">8.1.</span> <span class="nav-text">解决方法1 待测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952"><span class="nav-number">8.2.</span> <span class="nav-text">解决方法2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nodejs%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">9.</span> <span class="nav-text">Nodejs版本管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97n"><span class="nav-number">9.1.</span> <span class="nav-text">安装node版本管理模块n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="nav-number">9.2.</span> <span class="nav-text">安装多个版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npx"><span class="nav-number">10.</span> <span class="nav-text">npx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2node%E7%89%88%E6%9C%AC"><span class="nav-number">10.1.</span> <span class="nav-text">切换node版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8CGitHub-%E6%BA%90%E7%A0%81"><span class="nav-number">10.2.</span> <span class="nav-text">执行GitHub 源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">10.3.</span> <span class="nav-text">开启一个静态服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="nav-number">11.</span> <span class="nav-text">git config 常用配置选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">11.1.</span> <span class="nav-text">查看用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-config-e-%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">11.2.</span> <span class="nav-text">git config -e 编辑配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-config-%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE"><span class="nav-number">11.3.</span> <span class="nav-text">git config 添加配置项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEcoding-net"><span class="nav-number">12.</span> <span class="nav-text">设置coding.net</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5%E5%86%85%E5%AE%B9"><span class="nav-number">12.1.</span> <span class="nav-text">复制公钥内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%85%AC%E9%92%A5"><span class="nav-number">12.2.</span> <span class="nav-text">部署公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%88%E4%BA%88%E6%9D%83%E9%99%90"><span class="nav-number">12.3.</span> <span class="nav-text">授予权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E9%93%BE%E6%8E%A5"><span class="nav-number">12.4.</span> <span class="nav-text">测试链接</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Lang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">75</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://langiue.cn/posts/6f259eb9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Lang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="将Hexo 从Win10 迁移至Ubuntu1804 | Sun">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          将Hexo 从Win10 迁移至Ubuntu1804
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-02-25 11:19:13 / 修改时间：15:34:16" itemprop="dateCreated datePublished" datetime="2021-02-25T11:19:13+08:00">2021-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/%E7%B3%BB%E7%BB%9F%E8%BF%81%E7%A7%BB/" itemprop="url" rel="index"><span itemprop="name">系统迁移</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><ul>
+<li>nodejs </li>
+<li>npm</li>
+<li>Git</li>
+<li>Hexo</li>
+<li>nodejs 版本管理 n</li>
+<li><a target="_blank" rel="noopener" href="https://.coding.net/">coding.net</a></li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></h2><h3 id="nodejs14-15-5"><a href="#nodejs14-15-5" class="headerlink" title="nodejs14.15.5"></a><code>nodejs14.15.5</code></h3><p>下面是安装<code>nodejs14.15.5</code>方法，后面<code>hexo s</code>会报错，为了去除报错又通过<a href="#jump_n">nodejs管理工具n</a>降级成了<code>nodejs 12.18.3</code>,此步建议直接安装稳定版本：<code>nodejs 12.18.3</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line">wget -P Downloads https://nodejs.org/dist/v14.15.5/node-v14.15.5-linux-x64.tar.xz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf node-v14.15.5-linux-x64.tar.xz</span><br><span class="line"><span class="comment"># 创建nodejs安装目录</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> /usr/local/nodejs</span><br><span class="line"><span class="comment"># 解压的文件移动到安装目录</span></span><br><span class="line">sudo <span class="built_in">mv</span> node-v14.15.5-linux-x64 /usr/local/nodejs</span><br><span class="line"><span class="comment"># 通过软链接配置环境变量</span></span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/nodejs/node-v14.15.5-linux-x64/bin/node /usr/local/bin/node</span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/nodejs/node-v14.15.5-linux-x64/bin/npm /usr/local/bin/npm</span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/nodejs/node-v14.15.5-linux-x64/bin/npx /usr/local/bin/npx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"><span class="comment"># 更新npm到最新版</span></span><br><span class="line">npm install npm@latest -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="nodejs-12-18-3"><a href="#nodejs-12-18-3" class="headerlink" title="nodejs 12.18.3"></a><code>nodejs 12.18.3</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 下载</span><br><span class="line">wget -P Downloads https://mirrors.nju.edu.cn/nodejs/v12.18.3/node-v12.18.3-linux-x64.tar.xz</span><br><span class="line"></span><br><span class="line"># 解压</span><br><span class="line">tar -zxvf node-v12.18.3-linux-x64.tar.xz</span><br><span class="line"># 创建nodejs安装目录</span><br><span class="line">sudo mkdir /usr/local/nodejs</span><br><span class="line"># 解压的文件移动到安装目录</span><br><span class="line">sudo mv node-v12.18.3-linux-x64 /usr/local/nodejs</span><br><span class="line"># 通过软链接配置环境变量</span><br><span class="line">sudo ln -s /usr/local/nodejs/node-v12.18.3-linux-x64/bin/node /usr/local/bin/node</span><br><span class="line">sudo ln -s /usr/local/nodejs/node-v12.18.3-linux-x64/bin/npm /usr/local/bin/npm</span><br><span class="line">sudo ln -s /usr/local/nodejs/node-v12.18.3-linux-x64/bin/npx /usr/local/bin/npx</span><br><span class="line"></span><br><span class="line"># 查看版本</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"># 更新npm到最新版</span><br><span class="line">npm install npm@latest -g</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+
+<h2 id="SSH连接Github"><a href="#SSH连接Github" class="headerlink" title="SSH连接Github"></a><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh">SSH连接Github</a></h2><p>访问上方标题超链接</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43350051/article/details/104882494">Hexo</a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"># npm install hexo-deployer-git</span><br><span class="line"># npm install hexo-server --save</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-卸载模块"><a href="#npm-卸载模块" class="headerlink" title="npm 卸载模块"></a><del>npm 卸载模块</del></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g hexo-cli</span><br><span class="line">npm uninstall hexo hexo-deployer-git hexo-server</span><br></pre></td></tr></table></figure>
+
+<h2 id="报错-hexo-command-not-found"><a href="#报错-hexo-command-not-found" class="headerlink" title="报错: hexo command not found"></a>报错: <code>hexo command not found</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找到node_modules位置</span></span><br><span class="line">npm root -g</span><br><span class="line"><span class="comment"># 创建环境变量</span></span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/nodejs/node-v14.15.5-linux-x64/lib/node_modules/hexo-cli/bin/hexo /usr/local/bin/hexo</span><br><span class="line"><span class="comment"># 验证是否安装成功</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="hexo-s-报错"><a href="#hexo-s-报错" class="headerlink" title="hexo s 报错"></a><code>hexo s</code> 报错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:11984) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方法1-待测试"><a href="#解决方法1-待测试" class="headerlink" title="解决方法1 待测试"></a><del>解决方法1</del> 待测试</h3><p>寻找报错原因</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --trace-warnings queue.js </span><br></pre></td></tr></table></figure>
+
+<p>找到报错的Object路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.lineno = null;</span><br><span class="line">exports.column = null;</span><br><span class="line">exports.filename = null;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h3><p><strong>（：！亲测可行！：）</strong></p>
+<p>原因：nodejs为v14.15.5, 替换nodejs版本为12.18.3, 重新 <code>hexo s</code> 报错消失</p>
+<h2 id="Nodejs版本管理"><a href="#Nodejs版本管理" class="headerlink" title="Nodejs版本管理"></a>Nodejs版本管理</h2><h3 id="安装node版本管理模块n"><a href="#安装node版本管理模块n" class="headerlink" title="安装node版本管理模块n"></a><span id="jump_n">安装node版本管理模块n</span></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br><span class="line"><span class="comment"># 软链接设置环境变量</span></span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/nodejs/node-v14.15.5-linux-x64/bin/n /usr/local/bin/n</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装多个版本"><a href="#安装多个版本" class="headerlink" title="安装多个版本"></a>安装多个版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 稳定版</span></span><br><span class="line">sudo n stable</span><br><span class="line"><span class="comment"># 最新版</span></span><br><span class="line">sudo n latest</span><br><span class="line"><span class="comment"># 安装指定版本</span></span><br><span class="line">sudo n 12.18.3</span><br><span class="line"><span class="comment"># 查看版本列表</span></span><br><span class="line">n</span><br><span class="line"><span class="comment"># 切换版本</span></span><br><span class="line">n 14.16.0</span><br><span class="line"><span class="comment"># 删除版本</span></span><br><span class="line">sudo n <span class="built_in">rm</span> 版本号</span><br></pre></td></tr></table></figure>
+
+<h2 id="npx"><a href="#npx" class="headerlink" title="npx"></a><del>npx</del></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx -p node@&lt;version&gt; node -v 可以使用指定版本的node运行命令</span><br><span class="line">npx -p node@12 node -v </span><br></pre></td></tr></table></figure>
+
+<h3 id="切换node版本"><a href="#切换node版本" class="headerlink" title="切换node版本"></a><del>切换node版本</del></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx node@14.16.0 -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行GitHub-源码"><a href="#执行GitHub-源码" class="headerlink" title="执行GitHub 源码"></a><del>执行GitHub 源码</del></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx github:piuccio/cowsay</span><br></pre></td></tr></table></figure>
+
+<p>远程代码必须是一个模块，即必须包含package.json和入口脚本</p>
+<h3 id="开启一个静态服务器"><a href="#开启一个静态服务器" class="headerlink" title="开启一个静态服务器"></a><del>开启一个静态服务器</del></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx http-server    <span class="comment">#默认返回根目录下index.html</span></span><br><span class="line">npx http-server -p 3000  <span class="comment">#指定端口</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="git-config-常用配置选项"><a href="#git-config-常用配置选项" class="headerlink" title="git config 常用配置选项"></a>git config 常用配置选项</h2><h3 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global -l # 查看用户配置，如果有的话</span><br><span class="line">git config --system -l # 查看系统配置,如果有的话</span><br><span class="line">git config -l # 查看所有的配置信息</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-config-e-编辑配置文件"><a href="#git-config-e-编辑配置文件" class="headerlink" title="git config -e 编辑配置文件"></a>git config -e 编辑配置文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --local -e 编辑仓库级别配置文件</span><br><span class="line">git config --global -e 编辑用户级别配置文件</span><br><span class="line">git config --system -e 编辑系统级别配置文件</span><br></pre></td></tr></table></figure>
+
+<p>**优先级: **<code>local &gt; global &gt; system</code></p>
+<h3 id="git-config-添加配置项目"><a href="#git-config-添加配置项目" class="headerlink" title="git config 添加配置项目"></a>git config 添加配置项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;input your name&quot;</span><br><span class="line">git config --global user.email &quot;input your email&quot;</span><br><span class="line"></span><br><span class="line">git config --global -l</span><br><span class="line"></span><br><span class="line">git config --global unset user.name</span><br><span class="line">git config --global unset user.email</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置coding-net"><a href="#设置coding-net" class="headerlink" title="设置coding.net"></a>设置<a target="_blank" rel="noopener" href="https://coding.net/">coding.net</a></h2><p>SSH 协议的 Git 仓库地址示例如下所示：</p>
+<figure class="highlight plaintext"><figcaption><span>协议的 Git 仓库地址示例如下图所示：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copygit@e.coding.net:team-name/project-name.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="复制公钥内容"><a href="#复制公钥内容" class="headerlink" title="复制公钥内容"></a>复制公钥内容</h3><p>在终端输入 <code>open ~/.ssh</code>，用文本编辑器打开 <code>id_deploy.pub</code> 文件（此处部署公钥名称为 <code>id_deploy.pub</code>，您在生成部署公钥的时候完全可以自定义名称），复制全部内容。</p>
+<p>或者直接使用github生成的id_rsa.pub公钥</p>
+<h3 id="部署公钥"><a href="#部署公钥" class="headerlink" title="部署公钥"></a>部署公钥</h3><p>登录CODING，进入目标项目，点击【代码仓库】-&gt; 【仓库设置】-&gt; 【部署公钥】-&gt;【新建部署公钥】。</p>
+<h3 id="授予权限"><a href="#授予权限" class="headerlink" title="授予权限"></a>授予权限</h3><p>部署公钥默认拥有该项目的只读权限，如果需要获取推送权限，请勾选部署公钥设置里的【授予推送权限】。</p>
+<h3 id="测试链接"><a href="#测试链接" class="headerlink" title="测试链接"></a>测试链接</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@e.coding.net</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/54e94d6f/" rel="prev" title="Upgrade Anacanda">
+                  <i class="fa fa-chevron-left"></i> Upgrade Anacanda
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/16c755b6/" rel="next" title="ubuntu basic 常用快捷键与自定义环境变量">
+                  ubuntu basic 常用快捷键与自定义环境变量 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Lang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
