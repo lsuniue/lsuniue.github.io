@@ -605,30 +605,6 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
-    <title>Summary of Chinese bug in python</title>
-    <url>/posts/906db47e/</url>
-    <content><![CDATA[<ul>
-<li>python</li>
-<li>bug</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<h2 id="1-matplotlib-pyplot-绘图显示中文："><a href="#1-matplotlib-pyplot-绘图显示中文：" class="headerlink" title="1. matplotlib pyplot 绘图显示中文："></a>1. matplotlib pyplot 绘图显示中文：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;] #用来正常显示中文标签</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False #用来正常显示负号</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-juypter-读取中文编码的文件乱码"><a href="#2-juypter-读取中文编码的文件乱码" class="headerlink" title="2. juypter 读取中文编码的文件乱码"></a>2. juypter 读取中文编码的文件乱码</h2><p>在读取中文文件时，出现错误<code>UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xc0 in position 0: invalid start byte</code></p>
-<p>在读取函数中添加<code>encoding = &quot;GBK&quot;</code>,例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pd.read_csv(&quot;your_file_path&quot;, encoding = &quot;GBK&quot;)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>python</category>
-        <category>bug</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>工具书代码整理</title>
     <url>/posts/527ffd1b/</url>
     <content><![CDATA[<ul>
@@ -650,6 +626,30 @@ $ hexo init blog
       <tags>
         <tag>资料分享</tag>
         <tag>书籍代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Summary of Chinese bug in python</title>
+    <url>/posts/906db47e/</url>
+    <content><![CDATA[<ul>
+<li>python</li>
+<li>bug</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h2 id="1-matplotlib-pyplot-绘图显示中文："><a href="#1-matplotlib-pyplot-绘图显示中文：" class="headerlink" title="1. matplotlib pyplot 绘图显示中文："></a>1. matplotlib pyplot 绘图显示中文：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;]=[&#x27;SimHei&#x27;] #用来正常显示中文标签</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;]=False #用来正常显示负号</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-juypter-读取中文编码的文件乱码"><a href="#2-juypter-读取中文编码的文件乱码" class="headerlink" title="2. juypter 读取中文编码的文件乱码"></a>2. juypter 读取中文编码的文件乱码</h2><p>在读取中文文件时，出现错误<code>UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode byte 0xc0 in position 0: invalid start byte</code></p>
+<p>在读取函数中添加<code>encoding = &quot;GBK&quot;</code>,例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pd.read_csv(&quot;your_file_path&quot;, encoding = &quot;GBK&quot;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+        <category>bug</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
