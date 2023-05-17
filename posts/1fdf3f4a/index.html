@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="tmap的创建克服了基本图形和ggmap的一些限制。vignette函数可以访问tmap的简明介绍。  tmap简介 并排地图 构建底图 其他功能">
 <meta property="og:type" content="article">
@@ -51,6 +51,8 @@
 <title>Spatial Visualization with tmap | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -237,6 +239,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -263,9 +272,9 @@
 <h1 id="并排地图"><a href="#并排地图" class="headerlink" title="并排地图"></a>并排地图</h1><h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)</span><br><span class="line">readOGR(&quot;data&quot;,&quot;london_sport&quot;)</span><br></pre></td></tr></table></figure>
 <h2 id="快速专题绘图"><a href="#快速专题绘图" class="headerlink" title="快速专题绘图"></a>快速专题绘图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qtm(shp = lnd, fill = &quot;Partic_Per&quot;, fill.palette = &quot;-Blues&quot;)</span><br><span class="line">qtm(shp = lnd, fill = &quot;Pop_2001&quot;, fill.palette = &quot;-Blues&quot;)</span><br></pre></td></tr></table></figure>
 
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/11-sport.png?x-oss-process=style/moon" alt="Figure11-Sports Participation">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/11-sport.png?x-oss-process=style/moon" alt="Figure11-Sports Participation">
 
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/12-population.png?x-oss-process=style/moon" alt="Figure12-population">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/12-population.png?x-oss-process=style/moon" alt="Figure12-population">
 
 <blockquote>
 <p>1.第一个参数：矢量文件名称；fill：填充变量的名称；fill.palette：调色板颜色。<br>2.第二幅图不同的原因是，”Pop_2001”为因子型变量，只有数值型变量才有区间。</p>
@@ -280,14 +289,14 @@
 <blockquote>
 <p>fill：两个填充变量；对应ncol &#x3D; 2<br>结果如图13所示</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/13-dobule.png?x-oss-process=style/moon" alt="Figure13">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/13-dobule.png?x-oss-process=style/moon" alt="Figure13">
 
 <h1 id="tm-facets"><a href="#tm-facets" class="headerlink" title="tm_facets"></a>tm_facets</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tm_shape(lnd) +</span><br><span class="line">  tm_fill(&quot;Pop_2001&quot;, thres.poly = 0) +</span><br><span class="line">  tm_facets(&quot;name&quot;, free.coords = TRUE, drop.units = TRUE)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>所有 <strong>qtm</strong> 函数创建的地图均可以通过 <strong>tm_shape</strong> + <strong>tm_fill</strong>或别的 <strong>tm_</strong> 类型的函数创建。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/14-tm_facets.png?x-oss-process=style/moon" alt="Figure14-Make maps use tm_facets">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/14-tm_facets.png?x-oss-process=style/moon" alt="Figure14-Make maps use tm_facets">
 
 <h1 id="构建底图"><a href="#构建底图" class="headerlink" title="构建底图"></a>构建底图</h1><p>采用<strong>tmaptools</strong>安装包的<strong>read_osm</strong>函数</p>
 <h2 id="转换坐标系"><a href="#转换坐标系" class="headerlink" title="转换坐标系"></a>转换坐标系</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lnd_wgs = spTransform(lnd, CRS(&quot;+init=epsg:4326&quot;))</span><br></pre></td></tr></table></figure>
@@ -298,7 +307,7 @@
 </blockquote>
 <h2 id="绘制底图"><a href="#绘制底图" class="headerlink" title="绘制底图"></a>绘制底图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tm_shape(osm_tiles) + tm_raster() + tm_shape(lnd_wgs) +</span><br><span class="line">  tm_fill(&quot;Pop_2001&quot;, fill.title = &quot;Population, 2001&quot;, scale = 0.8, alpha = 0.5) +</span><br><span class="line">  tm_layout(legend.position = c(0.82,0.02))</span><br></pre></td></tr></table></figure>
 
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/15-basemap.png?x-oss-process=style/moon" alt="Figure15-London's population in 2001">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/15-basemap.png?x-oss-process=style/moon" alt="Figure15-London's population in 2001">
 
 <h1 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?tmap</span><br></pre></td></tr></table></figure>
 <p>在tmap中还有许多其他直观和强大的功能，可以通过 <strong>?tmap</strong> 自己探索。</p>
@@ -374,6 +383,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -397,6 +424,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -406,6 +434,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

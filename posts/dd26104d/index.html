@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="Hexo 升级 Next升级7.4.2  手贱，点了升级！浪费了一天半的时间，将近30个小时。网上没有Next7.4.2的升级文档，参考两篇大佬的文章（文末有链接）自己动手整理了这篇升级教程，供手残党参考。">
 <meta property="og:type" content="article">
@@ -47,6 +47,8 @@
 <title>那些年，爬过的坑 | Next 5.1.0 升级 7.4.2 | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -229,6 +231,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -278,7 +287,7 @@ $ hexo init blog
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="侧边栏加入aplayer音乐播放器和时间"><a href="#侧边栏加入aplayer音乐播放器和时间" class="headerlink" title="侧边栏加入aplayer音乐播放器和时间"></a>侧边栏加入aplayer音乐<strong>播放器</strong>和<strong>时间</strong></h2><p>打开 <code>\themes\next\source\js\custom\</code><br>替换 <code>APlayer.min.js</code><br>打开　<code>\themes\next\layout\_custom\</code><br>替换  <code>sidebar-aplayer.swig</code>和<code>sidebar-time.swig</code><br>打开　<code>\themes\next\layout\_macro\sidebar.swig</code><br>查找  <code>next_inject</code></p>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/introduction/20191025171502.png?x-oss-process=style/moon">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/introduction/20191025171502.png?x-oss-process=style/moon">
 
 <p>在上图位置插入如下代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &#x27;../_custom/sidebar-aplayer.swig&#x27; %&#125;</span><br><span class="line">&#123;% include &#x27;../_custom/sidebar-time.swig&#x27; %&#125; </span><br></pre></td></tr></table></figure>
@@ -288,7 +297,7 @@ $ hexo init blog
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&quot;&gt;</span><br><span class="line">	&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div id=&quot;aplayer&quot; class=&quot;aplayer&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">var ap = new APlayer(&#123;</span><br><span class="line">    element: document.getElementById(&#x27;aplayer&#x27;),</span><br><span class="line">    &quot;narrow&quot;: false,                          // （可选）播放器袖珍风格</span><br><span class="line">    &quot;autoplay&quot;: false,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能</span><br><span class="line">    &quot;mode&quot;: &quot;random&quot;,                         // （可选）曲目循环类型，有 &#x27;random&#x27;（随机播放）, &#x27;single&#x27; (单曲播放), &#x27;circulation&#x27; (循环播放), &#x27;order&#x27; (列表播放)， 默认：&#x27;circulation&#x27; </span><br><span class="line">    &quot;showlrc&quot;: 0,                             // （可选）歌词显示配置项，可选项有：0,1,2,3</span><br><span class="line">    &quot;mutex&quot;: true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</span><br><span class="line">    &quot;theme&quot;: &quot;#e6d0b2&quot;,	                      // （可选）播放器风格色彩设置，默认：#b7daff</span><br><span class="line">    &quot;preload&quot;: &quot;metadata&quot;,                    // （可选）音乐文件预载入模式，可选项： &#x27;none&#x27; &#x27;metadata&#x27; &#x27;auto&#x27;, 默认: &#x27;auto&#x27;</span><br><span class="line">    &quot;listmaxheight&quot;: &quot;513px&quot;,                 // (可选) 该播放列表的最大长度</span><br><span class="line">    music: [&#123;</span><br><span class="line">      title: &#x27;song name&#x27;,</span><br><span class="line">      author: &#x27;people name&#x27;,</span><br><span class="line">      url: &#x27;url&#x27;,</span><br><span class="line">      pic: &#x27;https://url.jpg&#x27;,</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <p><code>hexo s</code> 预览效果如下：</p>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/hexo/aplayer_demo.png?x-oss-process=style/moon">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/hexo/aplayer_demo.png?x-oss-process=style/moon">
 
 
 
@@ -406,6 +415,24 @@ $ hexo init blog
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -429,6 +456,7 @@ $ hexo init blog
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -438,6 +466,7 @@ $ hexo init blog
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

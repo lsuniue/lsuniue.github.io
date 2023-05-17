@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="开机启动项 挂载目录 远程配置 中文字体 开机后左上角光标闪烁">
 <meta property="og:type" content="article">
@@ -47,6 +47,8 @@
 <title>Ubuntu 18.04 使用一年来遇到问题汇总与解决方法 | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -229,6 +231,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -382,12 +391,12 @@
 <h3 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h3><p><code>reboot</code>重启系统</p>
 <h3 id="Tweaks-设置中文字体"><a href="#Tweaks-设置中文字体" class="headerlink" title="Tweaks 设置中文字体"></a>Tweaks 设置中文字体</h3><p>打开Tweaks—&gt;Fonts 选择合适的中文字体并设置大小，下图仅供参考</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Linux/My_Tweaks_Fonts_Setting.png?x-oss-process=style/moon" align=center /> </a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Linux/My_Tweaks_Fonts_Setting.png?x-oss-process=style/moon" align=center /> </a>
 </div>
 
 <h2 id="修复中文字体显示异常"><a href="#修复中文字体显示异常" class="headerlink" title="修复中文字体显示异常"></a>修复中文字体显示异常</h2><p><code>将 门 复</code>  等字显示异常</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Linux/font_incompatible.png?x-oss-process=style/moon" align=center /> </a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Linux/font_incompatible.png?x-oss-process=style/moon" align=center /> </a>
 </div>
 
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>Ubuntu 系统默认将系统汉字识别为日本语言，修改配置文件<code>/etc/fonts/conf.avail/64-language-selector-prefer.conf </code>字体的优先级顺序可以修复此问题</p>
@@ -545,6 +554,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -568,6 +595,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -577,6 +605,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

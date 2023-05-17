@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="ggplot2的精髓在于图层叠加，并且它的默认参数可以实现良好的可视化效果。ggmap是基于ggplot2包的图形语法。  散点图 ggplot ggmap">
 <meta property="og:type" content="article">
@@ -49,6 +49,8 @@
 <title>Spatial Visualization with ggplot2 | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -235,6 +237,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -265,7 +274,7 @@
 <blockquote>
 <p>1.<strong>geom_point</strong>内部的**aes():**点的<code>颜色</code>、<code>大小</code>参数<br>2.**geom_text:**第一个参数:点的<code>大小</code>；第二个参数点标签的<code>内容</code></p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@uploads/R-Spatial-Analysis/16-ggplot-for-text.png?x-oss-process=style/moon" alt="Figure16-ggplot for text">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@uploads/R-Spatial-Analysis/16-ggplot-for-text.png?x-oss-process=style/moon" alt="Figure16-ggplot for text">
 
 <h1 id="ggmap"><a href="#ggmap" class="headerlink" title="ggmap"></a>ggmap</h1><p><strong>ggmap</strong>是<strong>ggplot2</strong>在空间数据可视化上的应用。<strong>ggmap</strong>不能直接识别空间数据，需要用<strong>fortify()<strong>函数将空间数据转换为</strong>data.frame</strong>格式。</p>
 <h2 id="转化data-frame"><a href="#转化data-frame" class="headerlink" title="转化data.frame"></a>转化<strong>data.frame</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(rgeos)</span><br><span class="line">lnd_f &lt;- fortify(lnd) # maptools/rgeos</span><br></pre></td></tr></table></figure>
@@ -288,7 +297,7 @@
 <blockquote>
 <p>1.lnd_f:data.frame; aes: X轴经度，Y轴纬度，Partic_per必须为data.frame:lnd_f中的变量<br>2.空间数据作图常用参数：geom_polygon()绘制多边形<br>3.X轴标题，Y轴标题<br>4.图例标题<br>5.图表总标题<br>6.作图，有默认颜色，如图17所示<br>7.作图，指定颜色：低为”白色”，高为”黑色”，如图18所示</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/18-Greyscale-map.png?x-oss-process=style/moon" alt="Figure18-Greyscale map">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/18-Greyscale-map.png?x-oss-process=style/moon" alt="Figure18-Greyscale map">
 
 
 
@@ -373,6 +382,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -396,6 +423,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -405,6 +433,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

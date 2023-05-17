@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="空间自相关是空间统计学中的一个重要概念。它允许空间插值；但它使统计测试复杂化。其计算和属性经常被误解。 自相关（无论空间还是不空间）是附近观测之间的相似度（相关性）的度量。  莫兰指数 蒙特卡罗模拟">
 <meta property="og:type" content="article">
@@ -48,6 +48,8 @@
 <title>Spatial autocorrelation | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -234,6 +236,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -267,7 +276,7 @@
 <blockquote>
 <p>多阶滞后自相关图</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/20-ACF.png?x-oss-process=style/moon" alt="Figure20-ACF">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/20-ACF.png?x-oss-process=style/moon" alt="Figure20-ACF">
 
 <h2 id="空间自相关"><a href="#空间自相关" class="headerlink" title="空间自相关"></a>空间自相关</h2><p>空间自相关的概念是时间自相关的延伸。时间是一维的，只有朝着一个方向前进。空间对象具有（至少）二维和复杂形状，并且可能不明确如何确定什么是“近”。<br>空间自相关的度量描述了观察值彼此空间位置（无论是点，区域还是栅格单元）的相似程度。 所以我们需要两件事情：观察和位置。<br>变量中的空间自相关可以是外生的（其由另一空间自相关变量，例如降雨引起）或内生（由内部过程引起，例如疾病的传播）。<br>描述空间自相关的常用统计量是莫兰指数，我们将在后面详细讨论。 其他统计量包括包括Geary’s C，对于二进制数据，连接计数索引(join-count index)。半变差函数(semi-variogram)也表示数据集中的空间自相关量（参见插值一章）。</p>
 <h3 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(raster)</span><br><span class="line">p &lt;- shapefile(system.file(&quot;external/lux.shp&quot;, package=&quot;raster&quot;))</span><br><span class="line">p &lt;- p[p$NAME_1==&quot;Diekirch&quot;, ]</span><br><span class="line">p$value &lt;- c(10, 6, 4, 11, 6)</span><br><span class="line">data.frame(p)</span><br></pre></td></tr></table></figure>
@@ -338,7 +347,7 @@
 <blockquote>
 <p>模拟次数为99<br>style&#x3D;’W’: 行标准化<br>绘图,如图21所示：</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/21-moran-plot.png?x-oss-process=style/moon" alt="Figure21-Moran Plot">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/21-moran-plot.png?x-oss-process=style/moon" alt="Figure21-Moran Plot">
 
 
 
@@ -422,6 +431,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -445,6 +472,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -454,6 +482,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

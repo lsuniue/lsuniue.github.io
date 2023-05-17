@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="数据结构 基础作图 构建缓冲区 象限分颜色表示">
 <meta property="og:type" content="article">
@@ -51,6 +51,8 @@
 <title>Spatial data in R | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -237,6 +239,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -257,7 +266,7 @@
 <h1 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h1><p>第一部分我们已经看了R的语法并安装了必要的包，我们可以开始查看一些真实的空间数据。</p>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>本教程的数据下载链接：<a target="_blank" rel="noopener" href="https://github.com/Robinlovelace/Creating-maps-in-R">Spatial data</a>，打开链接后，依次点击右手边的<kbd>Clone or download</kbd>、<kbd>Download ZIP</kbd>，下载完成后解压即可。</p>
 <h2 id="项目文件"><a href="#项目文件" class="headerlink" title="项目文件"></a>项目文件</h2><p>在RStudio中的所有操作建议在项目文件中进行，刚才下载的文件里已经包含了本教程的下载文件。打开步骤：<br>打开RStudio，依次点击左上角的File -&gt; Open File…，找到上一步下载并解压后的文件夹，双击打开Creating-maps-in-R.Rproj项目文件。如图2所示：</p>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/2-RStudio-project-002.jpg?x-oss-process=style/moon" alt="图2-用RStudio环境打开项目文件">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/2-RStudio-project-002.jpg?x-oss-process=style/moon" alt="图2-用RStudio环境打开项目文件">
 
 <h2 id="数据加载"><a href="#数据加载" class="headerlink" title="数据加载"></a>数据加载</h2><p>数据加载之前最好通过其他软件如<a target="_blank" rel="noopener" href="http://www.libreoffice.org/download/download/">LibreOffice</a>(免费的办公软件)预览一下数据结构。然后在RStudio输入以下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(rgdal)  # load package ：Geospatial Data Abstraction Library</span><br><span class="line">lnd &lt;- readOGR(dsn = &quot;data&quot;, layer = &quot;london_sport&quot;) # read data</span><br></pre></td></tr></table></figure>
@@ -288,7 +297,7 @@
 <blockquote>
 <p>col &#x3D; “lightgrey”: 浅灰色<br>col &#x3D; “turquoise”: 绿宝石色<br>add &#x3D; TRUE: 在底图**<code>plot(lnd, col = &quot;lightgrey&quot;)</code>**上增加新的图层</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/3-areas-of-high-sports-participation-003.png?x-oss-process=style/moon" alt="图3-伦敦市运动参与率较高区域">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/3-areas-of-high-sports-participation-003.png?x-oss-process=style/moon" alt="图3-伦敦市运动参与率较高区域">
 
 <h1 id="构建缓冲区"><a href="#构建缓冲区" class="headerlink" title="构建缓冲区"></a>构建缓冲区</h1><p>选择地理中心位于伦敦内部地理中心10公里内的所有区域</p>
 <h2 id="质心和缓冲区"><a href="#质心和缓冲区" class="headerlink" title="质心和缓冲区"></a>质心和缓冲区</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">library(rgeos)  # Geometry Engine - Open Source (GEOS) </span><br><span class="line">plot(lnd, col = &quot;grey&quot;)</span><br><span class="line">cent_lnd &lt;- gCentroid(lnd[lnd$name == &quot;City of London&quot;,]) </span><br><span class="line">points(cent_lnd, cex = 3)</span><br><span class="line">lnd_buffer &lt;- gBuffer(spgeom = cent_lnd, width = 10000) </span><br></pre></td></tr></table></figure>
@@ -307,14 +316,14 @@
 <blockquote>
 <p>结果如图4所示：</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/4-set-10km-buffer-004.png?x-oss-process=style/moon" alt="图4-建立10km的缓冲区">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/4-set-10km-buffer-004.png?x-oss-process=style/moon" alt="图4-建立10km的缓冲区">
 
 <h1 id="象限分颜色表示"><a href="#象限分颜色表示" class="headerlink" title="象限分颜色表示"></a>象限分颜色表示</h1><h2 id="获取经纬度"><a href="#获取经纬度" class="headerlink" title="获取经纬度"></a>获取经纬度</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lng &lt;- coordinates(gCentroid(lnd))[[1]]</span><br><span class="line">lat &lt;- coordinates(gCentroid(lnd))[[2]]</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>coordinates(lnd): 返回两列数：第一列**<code>经度</code><strong>，第二列</strong><code>纬度</code>**。<br>2.lng: 获取经度<br>3.lat: 获取纬度<br>这个教程来自github上的一个开源项目，原项目的经纬度写反了，我发现了这个错误。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/5-my-first-pull-005.png?x-oss-process=style/moon" alt="Figure5-My first pull request">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/5-my-first-pull-005.png?x-oss-process=style/moon" alt="Figure5-My first pull request">
 
 <h2 id="方向布尔值-TRUE-x2F-FALSE"><a href="#方向布尔值-TRUE-x2F-FALSE" class="headerlink" title="方向布尔值(TRUE&#x2F;FALSE)"></a>方向布尔值(TRUE&#x2F;FALSE)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">east &lt;- sapply(coordinates(lnd)[,1], function(x) x &gt; lng)</span><br><span class="line">west &lt;- sapply(coordinates(lnd)[,1], function(x) x &lt; lng)</span><br><span class="line">north &lt;- sapply(coordinates(lnd)[,2], function(x) x &gt; lat)</span><br><span class="line">south &lt;- sapply(coordinates(lnd)[,2], function(x) x &lt; lat)</span><br></pre></td></tr></table></figure>
 
@@ -330,7 +339,7 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">london = gUnaryUnion(lnd) # rgeos</span><br><span class="line">plot(london)</span><br></pre></td></tr></table></figure>
 <p>参考结果如图6所示：</p>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/6-quads-006.png?x-oss-process=style/moon" alt="图6-参考结果图">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/6-quads-006.png?x-oss-process=style/moon" alt="图6-参考结果图">
 
 
 
@@ -411,6 +420,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -434,6 +461,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -443,6 +471,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

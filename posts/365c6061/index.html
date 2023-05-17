@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="除了可视化和访问之外，GIS还必须能够创建和修改空间数据。 R的空间包为处理和创建空间数据提供了非常广泛和强大的功能套件。复制、联结&#x2F;剪裁是GIS的基础操作，因此在本节中我们将探讨如何在R中进行这些操作。首先，我们将非空间数据加入到空间数据中，以便映射。 最后，我们将介绍空间连接，从而基于空间位置组合来自两个空间对象的信息。  创建空间数据 设置空间参考系 属性连接 剪切和空间连接">
 <meta property="og:type" content="article">
@@ -50,6 +50,8 @@
 <title>Creating and Manipulating Spatial Data | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -232,6 +234,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -302,14 +311,14 @@
 <blockquote>
 <p><code>qtm():</code>第一个参数输入为shape object, 包括：<br>SpatialPolygons(DataFrame)<br>SpatialPoints(DataFrame)<br>SpatialLines(DataFrame)<br>SpatialGrid(DataFrame)<br>SpatialPixels(DataFrame)<br>RasterLayer, RasterStack, or RasterBrick<br>第二个参数输入为：填充颜色<br>结果如图7所示。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon" alt="Figure7-Number of thefts per borough">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/7-Fig-thefts-per-borough-007.png?x-oss-process=style/moon" alt="Figure7-Number of thefts per borough">
 
 <h2 id="tmap"><a href="#tmap" class="headerlink" title="tmap"></a>tmap</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">library(tmap)</span><br><span class="line">lnd_wgs = spTransform(lnd, CRS(&quot;+init=epsg:4326&quot;))</span><br><span class="line">osm_tiles = tmaptools::read_osm(bbox(lnd_wgs))</span><br><span class="line">lnd_wgs$Thefts &lt;- lnd$CrimeCount / 10000 </span><br><span class="line">tm_shape(osm_tiles) +</span><br><span class="line">  tm_raster() +</span><br><span class="line">  tm_shape(lnd_wgs) +</span><br><span class="line">  tm_fill(&quot;Thefts&quot;, fill.title = &quot;Thefts\n(10000)&quot;, scale = 0.8, alpha = 0.5) +</span><br><span class="line">  tm_layout(legend.position = c(0.89,0.02))</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><abbr title="Read Open Street Map data"><strong>read_osm()</strong></abbr>读取开放的街道地图数据。1.读取OSM文件返回栅格数据。2.查询矢量化的OSM数据返回为空间多边形、线或点。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon" alt="Figure8-London’s thefts in 2001">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/8-Fig-London-thefts-2001-008.png?x-oss-process=style/moon" alt="Figure8-London’s thefts in 2001">
 
 <h1 id="剪切和空间连接"><a href="#剪切和空间连接" class="headerlink" title="剪切和空间连接"></a>剪切和空间连接</h1><p>除了属性（例如通过自治市镇名称）连接，还可以在R中进行空间连接，以伦敦自治市交通基础设施点为例。</p>
 <h2 id="bbox"><a href="#bbox" class="headerlink" title="bbox()"></a>bbox()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(1,1,1,2,2,2,3,3,3)</span><br><span class="line">y &lt;- c(1,2,3,1,2,3,1,2,3)</span><br><span class="line">xy &lt;- cbind(x,y)</span><br><span class="line">S &lt;- SpatialPoints(xy)</span><br><span class="line">S@coords</span><br><span class="line">bbox(S)</span><br></pre></td></tr></table></figure>
@@ -325,13 +334,13 @@
 <blockquote>
 <p>车站的空间范围大于lnd，因此需要剪切。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon" alt="Figure9-Sampling and plotting stations">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/9-Fig-plot-stations-009.png?x-oss-process=style/moon" alt="Figure9-Sampling and plotting stations">
 
 <h2 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stations11 &lt;- stations[lnd, ] </span><br><span class="line">plot(lnd)</span><br><span class="line">points(stations11)</span><br><span class="line"># save(lnd, file=&quot;data/lnd.RData&quot;)</span><br><span class="line"># save(stations, file=&quot;data/stations.RData&quot;)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>1.选取lnd内部的车站空间点数据<br>2.绘图<br>3.4.保存数据<br>除了<code>[]</code>方法外，还有sp:over和gIntersects方法实现剪切。</p>
 </blockquote>
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon" alt="Figure10-The clipped stations dataset">
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/R-Spatial-Analysis/10-Fig-clip-stations-dataset-0010.png?x-oss-process=style/moon" alt="Figure10-The clipped stations dataset">
 
 
 
@@ -408,6 +417,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -431,6 +458,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -440,6 +468,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

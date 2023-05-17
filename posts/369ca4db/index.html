@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"langiue.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="IIS 服务 FTP 服务器 内网穿透 Pubyun Nat123">
 <meta property="og:type" content="article">
@@ -58,6 +58,8 @@
 <title>Windows10 下搭建 ftp 服务器并映射到外网 | Sun</title>
   
 
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?7d9198bcbcabfa6143cd77a7a779b707"></script>
 
 
 
@@ -244,6 +246,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -266,26 +275,26 @@
 <hr>
 <h2 id="FTP的搭建"><a href="#FTP的搭建" class="headerlink" title="FTP的搭建"></a>FTP的搭建</h2><h3 id="启动IIS服务"><a href="#启动IIS服务" class="headerlink" title="启动IIS服务"></a>启动IIS服务</h3><p>控制面板-&gt;程序-&gt;启用或关闭Windows功能</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/1-windows%E5%8A%9F%E8%83%BD.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 
 <h3 id="搭建ftp"><a href="#搭建ftp" class="headerlink" title="搭建ftp"></a>搭建ftp</h3><h4 id="打开ISS"><a href="#打开ISS" class="headerlink" title="打开ISS"></a>打开ISS</h4><p>搜索-&gt;ISS，打开ISS管理器</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/2-ISS.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="添加FTP站点"><a href="#添加FTP站点" class="headerlink" title="添加FTP站点"></a>添加FTP站点</h4><p>右键网站-&gt;添加FTP站点</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/3-%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="绑定和SSL设置"><a href="#绑定和SSL设置" class="headerlink" title="绑定和SSL设置"></a>绑定和SSL设置</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/4-1%20%E7%BB%91%E5%AE%9A%E5%92%8CSSL%E8%AE%BE%E7%BD%AE.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="身份证授权信息"><a href="#身份证授权信息" class="headerlink" title="身份证授权信息"></a>身份证授权信息</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/5-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h3 id="添加用户和组"><a href="#添加用户和组" class="headerlink" title="添加用户和组"></a>添加用户和组</h3><ul>
@@ -302,20 +311,20 @@
 </ul>
 <p>计算机—&gt;管理—&gt;本地用户和组</p>
 <h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon"  align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/6-%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7.png?x-oss-process=style/moon"  align=center /></a>
 </div>
 
 
 <h4 id="设置用户授权规则"><a href="#设置用户授权规则" class="headerlink" title="设置用户授权规则"></a>设置用户授权规则</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/7%20ISS%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7FTP%E6%8E%88%E6%9D%83%E8%A7%84%E5%88%99.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h2 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h2><h3 id="允许ftp通过防火墙"><a href="#允许ftp通过防火墙" class="headerlink" title="允许ftp通过防火墙"></a>允许ftp通过防火墙</h3><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-1%E5%85%81%E8%AE%B8%E7%9A%84%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h3 id="防火墙允许其他应用"><a href="#防火墙允许其他应用" class="headerlink" title="防火墙允许其他应用"></a>防火墙允许其他应用</h3><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/8-2%E6%B7%BB%E5%8A%A0%E9%98%B2%E7%81%AB%E5%A2%99%E5%BA%94%E7%94%A8.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <p>设置完成后可以浏览器输入<a href="ftp://ip访问文件了/">ftp://ip访问文件了</a></p>
@@ -323,16 +332,16 @@
 <h2 id="内网ip映射为公网"><a href="#内网ip映射为公网" class="headerlink" title="内网ip映射为公网"></a>内网ip映射为公网</h2><h3 id="Pubyun（手机热点测试失败）"><a href="#Pubyun（手机热点测试失败）" class="headerlink" title="Pubyun（手机热点测试失败）"></a><a target="_blank" rel="noopener" href="http://www.pubyun.com/p/carg/">Pubyun</a>（手机热点测试失败）</h3><h4 id="注册公云账号"><a href="#注册公云账号" class="headerlink" title="注册公云账号"></a><a target="_blank" rel="noopener" href="http://www.pubyun.com/accounts/signup/">注册公云账号</a></h4><h4 id="实名认证"><a href="#实名认证" class="headerlink" title="实名认证"></a>实名认证</h4><h4 id="购买套餐"><a href="#购买套餐" class="headerlink" title="购买套餐"></a>购买套餐</h4><p>购买免费版的内网域名服务套餐</p>
 <h4 id="域名创建和配置"><a href="#域名创建和配置" class="headerlink" title="域名创建和配置"></a>域名创建和配置</h4><p>创建域名和映射并配置到本地</p>
 <div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/10-pubyun-%E5%88%9B%E5%BB%BA%E5%86%85%E7%BD%91%E5%9F%9F%E5%90%8D.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="浏览器测试"><a href="#浏览器测试" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp:&#x2F;&#x2F;外网域名访问ftp</p>
 <h3 id="Nat123（手机热点测试失败）"><a href="#Nat123（手机热点测试失败）" class="headerlink" title="Nat123（手机热点测试失败）"></a><a target="_blank" rel="noopener" href="http://www.nat123.com/Pages_2_32.jsp">Nat123</a>（手机热点测试失败）</h3><h4 id="设置映射"><a href="#设置映射" class="headerlink" title="设置映射"></a>设置映射</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-nat123%E8%AE%BE%E7%BD%AE%E6%98%A0%E5%B0%84.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="设置访问者"><a href="#设置访问者" class="headerlink" title="设置访问者"></a>设置访问者</h4><div  align="center">    
-<img src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon" align=center /></a>
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/ftp/11-%20nat123%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E8%80%85.png?x-oss-process=style/moon" align=center /></a>
 </div>
 
 <h4 id="浏览器测试-1"><a href="#浏览器测试-1" class="headerlink" title="浏览器测试"></a>浏览器测试</h4><p>浏览器输入ftp:&#x2F;&#x2F;外网域名访问ftp</p>
@@ -448,6 +457,24 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Sun Lang</span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
     </div>
   </footer>
@@ -471,6 +498,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -480,6 +508,7 @@
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
