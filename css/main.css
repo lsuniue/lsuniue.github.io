@@ -1,3 +1,6 @@
+img.img-topic {
+  width: 100%;
+}
 :root {
   --body-bg-color: #fff;
   --content-bg-color: #fff;
@@ -2514,7 +2517,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #3bde8f;
+  background: #ffc72a;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
