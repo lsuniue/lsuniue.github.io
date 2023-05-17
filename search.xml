@@ -605,30 +605,6 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
-    <title>工具书代码整理</title>
-    <url>/posts/527ffd1b/</url>
-    <content><![CDATA[<ul>
-<li><a href="http://www.ituring.com.cn/book/1921">深度学习入门</a>: 基于Python 的理论与实现</li>
-<li><a href="http://horstmann.com/corejava">Java核心技术 卷I (第11版) + JavaFX: GUI工具包</a> </li>
-<li>待补充…</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<div  align="center">    
-<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center /> </a>
-</div>
-待持续补充...]]></content>
-      <categories>
-        <category>资料分享</category>
-        <category>书籍代码</category>
-      </categories>
-      <tags>
-        <tag>资料分享</tag>
-        <tag>书籍代码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Summary of Chinese bug in python</title>
     <url>/posts/906db47e/</url>
     <content><![CDATA[<ul>
@@ -650,6 +626,30 @@ $ hexo init blog
       <tags>
         <tag>python</tag>
         <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工具书代码整理</title>
+    <url>/posts/527ffd1b/</url>
+    <content><![CDATA[<ul>
+<li><a href="http://www.ituring.com.cn/book/1921">深度学习入门</a>: 基于Python 的理论与实现</li>
+<li><a href="http://horstmann.com/corejava">Java核心技术 卷I (第11版) + JavaFX: GUI工具包</a> </li>
+<li>待补充…</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<div  align="center">    
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/code/06043813878.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center /> </a>
+</div>
+待持续补充...]]></content>
+      <categories>
+        <category>资料分享</category>
+        <category>书籍代码</category>
+      </categories>
+      <tags>
+        <tag>资料分享</tag>
+        <tag>书籍代码</tag>
       </tags>
   </entry>
   <entry>
@@ -3469,6 +3469,25 @@ frameborder="0" scrolling="auto"
       <tags>
         <tag>data visualization</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蛤蟆先生去看心理医生</title>
+    <url>/posts/b3c57b13/</url>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title="- "></a>- </h2><span id="more"></span>
+
+<hr>
+<div  align="center">    
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">**name**</font></a>
+</div>
+]]></content>
+      <categories>
+        <category>Reading Notes</category>
+        <category>Psychology</category>
+      </categories>
+      <tags>
+        <tag>Reading Notes</tag>
+        <tag>Psychology</tag>
       </tags>
   </entry>
 </search>
