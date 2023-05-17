@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4a17b156/</url>
-    <content><![CDATA[<p>你好！这是我的第一篇文章。</p>
-<span id="more"></span>
-
-<ul>
-<li>立下flag</li>
-<li>业余爱好</li>
-<li>随便写写</li>
-<li>读书笔记</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>Hello</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Introduction to install theme of NexT</title>
     <url>/posts/aaad910/</url>
     <content><![CDATA[<ul>
@@ -58,6 +38,26 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/4a17b156/</url>
+    <content><![CDATA[<p>你好！这是我的第一篇文章。</p>
+<span id="more"></span>
+
+<ul>
+<li>立下flag</li>
+<li>业余爱好</li>
+<li>随便写写</li>
+<li>读书笔记</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>Hello</tag>
       </tags>
   </entry>
   <entry>
@@ -3159,80 +3159,6 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
-    <title>ubuntu basic 常用快捷键与自定义环境变量</title>
-    <url>/posts/16c755b6/</url>
-    <content><![CDATA[<ul>
-<li><p>常用快捷键</p>
-<ul>
-<li><p><kbd>Super</kbd> : </p>
-<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></p>
-<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd></p>
-<p>…</p>
-</li>
-</ul>
-</li>
-<li><p>环境变量</p>
-<ul>
-<li>软链接</li>
-<li>.bashrc &amp; alias</li>
-</ul>
-</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><p><kbd>Super</kbd> 键: 键盘上带有 Windows 图标的键</p>
-<p><kbd>Super</kbd>: 打开活动程序菜单</p>
-<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>: 打开命令行终端</p>
-<p><kbd>Super</kbd> + <kbd>L</kbd>: 锁定屏幕</p>
-<p><kbd>Super</kbd> + <kbd>D</kbd>: 显示桌面，<strong>重按</strong>返回原来窗口</p>
-<p><kbd>Super</kbd> + <kbd>A</kbd>: 显示应用程序菜单，同鼠标单击屏幕左下角九个点</p>
-<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd>: 在运行的应用程序间切换Super+箭头：移动窗口位置</p>
-<p><kbd>Super</kbd> + <strong>箭头</strong>: 移动窗口位置 </p>
-<ul>
-<li><p><kbd>Super</kbd> + <strong>左箭头</strong>: 应用程序窗口贴合屏幕的左边缘</p>
-</li>
-<li><p><kbd>Super</kbd> + <strong>右箭头</strong>: 应用程序窗口贴合屏幕的右边缘</p>
-</li>
-<li><p><kbd>Super</kbd> + <strong>上箭头</strong>: 应用程序窗口最大化</p>
-</li>
-<li><p><kbd>Super</kbd> + <strong>下箭头</strong>: 应用程序窗口恢复至正常大小</p>
-</li>
-</ul>
-<p><kbd>Super</kbd> + <kbd>M</kbd>: 打开通知栏，<strong>重按</strong>关闭</p>
-<p><kbd>Super</kbd> + <kbd>Space</kbd>: 切换输入法</p>
-<p><kbd>Alt</kbd> + <kbd>F2</kbd>: 运行控制台</p>
-<p><kbd>Ctrl</kbd> + <kbd>Q</kbd> 或 <kbd>Ctrl</kbd> + <kbd>W</kbd>: 关闭应用程序窗口</p>
-<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <strong>箭头</strong>: 切换工作区</p>
-<ul>
-<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 上箭头: 上移工作区</p>
-</li>
-<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 下箭头: 下移工作区</p>
-</li>
-</ul>
-<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd>: 注销</p>
-<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><h4 id="基于软链接"><a href="#基于软链接" class="headerlink" title="基于软链接"></a>基于软链接</h4><p>环境变量的添加路径有两种：</p>
-<p><strong>第一种：</strong>添加到系统自带环境变量路径：<code>/usr/bin</code>，若用户自定义变量添加到该目录，系统升级后会被重置导致用户自定义变量丢失。</p>
-<p><strong>第二种：</strong>添加到用户自定义环境变量路径：<code>/usr/local/bin</code>，用户自定义环境变量路径。系统升级后会保留该路径下的环境变量。</p>
-<p>因此自定义环境变量一定要添加到<code>/usr/local/bin</code>下，防止系统升级丢失。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 通过软链接配置环境变量</span><br><span class="line">sudo ln -s Software_startup_path /usr/local/bin/An_abbreviated_name</span><br></pre></td></tr></table></figure>
-
-<h4 id="基于alias"><a href="#基于alias" class="headerlink" title="基于alias"></a>基于alias</h4><p>以linux下阿里云OSS工具为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir /usr/local/ossutil</span><br><span class="line">sudo mv yourpath/ossutil64 /usr/local/ossutil</span><br><span class="line"></span><br><span class="line"># 方法一：</span><br><span class="line">vim ~/.bashrc</span><br><span class="line"># 复制下行内容到 .bashrc</span><br><span class="line">alias ossutil64=&#x27;/usr/local/ossutil/ossutil64&#x27; </span><br><span class="line">source ~/.bashrc</span><br><span class="line"># 测试环境变量</span><br><span class="line">ossutil64</span><br></pre></td></tr></table></figure>
-
-<p>通过软链接设置ossutil环境变量的方式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#方法二：设置软链接</span><br><span class="line">sudo ln -s /usr/local/ossutil/ossutil64 /usr/local/bin/oss</span><br><span class="line"># 测试环境变量</span><br><span class="line">oss</span><br><span class="line"># 删除软链接</span><br><span class="line">sudo rm -rf /usr/local/bin/oss</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>ubuntu</category>
-        <category>basic</category>
-      </categories>
-      <tags>
-        <tag>ubuntu</tag>
-        <tag>快捷键</tag>
-        <tag>环境变量</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实用资料官方链接</title>
     <url>/posts/1ec1a7b2/</url>
     <content><![CDATA[<ul>
@@ -3469,6 +3395,80 @@ frameborder="0" scrolling="auto"
       <tags>
         <tag>data visualization</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu basic 常用快捷键与自定义环境变量</title>
+    <url>/posts/16c755b6/</url>
+    <content><![CDATA[<ul>
+<li><p>常用快捷键</p>
+<ul>
+<li><p><kbd>Super</kbd> : </p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></p>
+<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd></p>
+<p>…</p>
+</li>
+</ul>
+</li>
+<li><p>环境变量</p>
+<ul>
+<li>软链接</li>
+<li>.bashrc &amp; alias</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><p><kbd>Super</kbd> 键: 键盘上带有 Windows 图标的键</p>
+<p><kbd>Super</kbd>: 打开活动程序菜单</p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>: 打开命令行终端</p>
+<p><kbd>Super</kbd> + <kbd>L</kbd>: 锁定屏幕</p>
+<p><kbd>Super</kbd> + <kbd>D</kbd>: 显示桌面，<strong>重按</strong>返回原来窗口</p>
+<p><kbd>Super</kbd> + <kbd>A</kbd>: 显示应用程序菜单，同鼠标单击屏幕左下角九个点</p>
+<p><kbd>Super</kbd> + <kbd>Tab</kbd> 或 <kbd>Alt</kbd> + <kbd>Tab</kbd>: 在运行的应用程序间切换Super+箭头：移动窗口位置</p>
+<p><kbd>Super</kbd> + <strong>箭头</strong>: 移动窗口位置 </p>
+<ul>
+<li><p><kbd>Super</kbd> + <strong>左箭头</strong>: 应用程序窗口贴合屏幕的左边缘</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>右箭头</strong>: 应用程序窗口贴合屏幕的右边缘</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>上箭头</strong>: 应用程序窗口最大化</p>
+</li>
+<li><p><kbd>Super</kbd> + <strong>下箭头</strong>: 应用程序窗口恢复至正常大小</p>
+</li>
+</ul>
+<p><kbd>Super</kbd> + <kbd>M</kbd>: 打开通知栏，<strong>重按</strong>关闭</p>
+<p><kbd>Super</kbd> + <kbd>Space</kbd>: 切换输入法</p>
+<p><kbd>Alt</kbd> + <kbd>F2</kbd>: 运行控制台</p>
+<p><kbd>Ctrl</kbd> + <kbd>Q</kbd> 或 <kbd>Ctrl</kbd> + <kbd>W</kbd>: 关闭应用程序窗口</p>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <strong>箭头</strong>: 切换工作区</p>
+<ul>
+<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 上箭头: 上移工作区</p>
+</li>
+<li><p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + 下箭头: 下移工作区</p>
+</li>
+</ul>
+<p><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd>: 注销</p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><h4 id="基于软链接"><a href="#基于软链接" class="headerlink" title="基于软链接"></a>基于软链接</h4><p>环境变量的添加路径有两种：</p>
+<p><strong>第一种：</strong>添加到系统自带环境变量路径：<code>/usr/bin</code>，若用户自定义变量添加到该目录，系统升级后会被重置导致用户自定义变量丢失。</p>
+<p><strong>第二种：</strong>添加到用户自定义环境变量路径：<code>/usr/local/bin</code>，用户自定义环境变量路径。系统升级后会保留该路径下的环境变量。</p>
+<p>因此自定义环境变量一定要添加到<code>/usr/local/bin</code>下，防止系统升级丢失。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 通过软链接配置环境变量</span><br><span class="line">sudo ln -s Software_startup_path /usr/local/bin/An_abbreviated_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="基于alias"><a href="#基于alias" class="headerlink" title="基于alias"></a>基于alias</h4><p>以linux下阿里云OSS工具为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mkdir /usr/local/ossutil</span><br><span class="line">sudo mv yourpath/ossutil64 /usr/local/ossutil</span><br><span class="line"></span><br><span class="line"># 方法一：</span><br><span class="line">vim ~/.bashrc</span><br><span class="line"># 复制下行内容到 .bashrc</span><br><span class="line">alias ossutil64=&#x27;/usr/local/ossutil/ossutil64&#x27; </span><br><span class="line">source ~/.bashrc</span><br><span class="line"># 测试环境变量</span><br><span class="line">ossutil64</span><br></pre></td></tr></table></figure>
+
+<p>通过软链接设置ossutil环境变量的方式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#方法二：设置软链接</span><br><span class="line">sudo ln -s /usr/local/ossutil/ossutil64 /usr/local/bin/oss</span><br><span class="line"># 测试环境变量</span><br><span class="line">oss</span><br><span class="line"># 删除软链接</span><br><span class="line">sudo rm -rf /usr/local/bin/oss</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>ubuntu</category>
+        <category>basic</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>快捷键</tag>
+        <tag>环境变量</tag>
       </tags>
   </entry>
 </search>
