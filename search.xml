@@ -3378,38 +3378,6 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
-    <title>Linux date 命令学习</title>
-    <url>/posts/445750b5/</url>
-    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title="- "></a>- </h2><span id="more"></span>
-
-<h3 id="date"><a href="#date" class="headerlink" title="date"></a><a href="http://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation">date</a></h3><p>Usage: date [OPTION]… [+FORMAT]<br>or:  date [-u|–utc|–universal] [MMDDhhmm[[CC]YY][.ss]]</p>
-<p>Display the current time in the given FORMAT, or set the system date.</p>
-<h3 id="参数选项"><a href="#参数选项" class="headerlink" title="参数选项"></a>参数选项</h3><p>Mandatory arguments to long options are mandatory for short options too.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-d, --date=STRING          display time described by STRING, not &#x27;now&#x27;</span><br><span class="line">    --debug                annotate the parsed date,</span><br><span class="line">                            and warn about questionable usage to stderr</span><br><span class="line">-f, --file=DATEFILE        like --date; once for each line of DATEFILE</span><br><span class="line">-I[FMT], --iso-8601[=FMT]  output date/time in ISO 8601 format.</span><br><span class="line">                             FMT=&#x27;date&#x27; for date only (the default),</span><br><span class="line">                             &#x27;hours&#x27;, &#x27;minutes&#x27;, &#x27;seconds&#x27;, or &#x27;ns&#x27;</span><br><span class="line">                             for date and time to the indicated precision.</span><br><span class="line">                             Example: 2006-08-14T02:34:56-06:00</span><br><span class="line">-R, --rfc-email            output date and time in RFC 5322 format.</span><br><span class="line">                             Example: Mon, 14 Aug 2006 02:34:56 -0600</span><br><span class="line">    --rfc-3339=FMT         output date/time in RFC 3339 format.</span><br><span class="line">                             FMT=&#x27;date&#x27;, &#x27;seconds&#x27;, or &#x27;ns&#x27;</span><br><span class="line">                             for date and time to the indicated precision.</span><br><span class="line">                             Example: 2006-08-14 02:34:56-06:00</span><br><span class="line">-r, --reference=FILE       display the last modification time of FILE</span><br><span class="line">-s, --set=STRING           set time described by STRING</span><br><span class="line">-u, --utc, --universal     print or set Coordinated Universal Time (UTC)</span><br><span class="line">    --help     display this help and exit</span><br><span class="line">    --version  output version information and exit</span><br></pre></td></tr></table></figure>
-
-<p>FORMAT controls the output.  Interpreted sequences are:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%   a literal %</span><br><span class="line">%a   locale&#x27;s abbreviated weekday name (e.g., Sun)</span><br><span class="line">%A   locale&#x27;s full weekday name (e.g., Sunday)</span><br><span class="line">%b   locale&#x27;s abbreviated month name (e.g., Jan)</span><br><span class="line">%B   locale&#x27;s full month name (e.g., January)</span><br><span class="line">%c   locale&#x27;s date and time (e.g., Thu Mar  3 23:05:25 2005)</span><br><span class="line">%C   century; like %Y, except omit last two digits (e.g., 20)</span><br><span class="line">%d   day of month (e.g., 01)</span><br><span class="line">%D   date; same as %m/%d/%y</span><br><span class="line">%e   day of month, space padded; same as %_d</span><br><span class="line">%F   full date; same as %Y-%m-%d</span><br><span class="line">%g   last two digits of year of ISO week number (see %G)</span><br><span class="line">%G   year of ISO week number (see %V); normally useful only with %V</span><br><span class="line">%h   same as %b</span><br><span class="line">%H   hour (00..23)</span><br><span class="line">%I   hour (01..12)</span><br><span class="line">%j   day of year (001..366)</span><br><span class="line">%k   hour, space padded ( 0..23); same as %_H</span><br><span class="line">%l   hour, space padded ( 1..12); same as %_I</span><br><span class="line">%m   month (01..12)</span><br><span class="line">%M   minute (00..59)</span><br><span class="line">%n   a newline</span><br><span class="line">%N   nanoseconds (000000000..999999999)</span><br><span class="line">%p   locale&#x27;s equivalent of either AM or PM; blank if not known</span><br><span class="line">%P   like %p, but lower case</span><br><span class="line">%q   quarter of year (1..4)</span><br><span class="line">%r   locale&#x27;s 12-hour clock time (e.g., 11:11:04 PM)</span><br><span class="line">%R   24-hour hour and minute; same as %H:%M</span><br><span class="line">%s   seconds since 1970-01-01 00:00:00 UTC</span><br><span class="line">%S   second (00..60)</span><br><span class="line">%t   a tab</span><br><span class="line">%T   time; same as %H:%M:%S</span><br><span class="line">%u   day of week (1..7); 1 is Monday</span><br><span class="line">%U   week number of year, with Sunday as first day of week (00..53)</span><br><span class="line">%V   ISO week number, with Monday as first day of week (01..53)</span><br><span class="line">%w   day of week (0..6); 0 is Sunday</span><br><span class="line">%W   week number of year, with Monday as first day of week (00..53)</span><br><span class="line">%x   locale&#x27;s date representation (e.g., 12/31/99)</span><br><span class="line">%X   locale&#x27;s time representation (e.g., 23:13:48)</span><br><span class="line">%y   last two digits of year (00..99)</span><br><span class="line">%Y   year</span><br><span class="line">%z   +hhmm numeric time zone (e.g., -0400)</span><br><span class="line">%:z  +hh:mm numeric time zone (e.g., -04:00)</span><br><span class="line">%::z  +hh:mm:ss numeric time zone (e.g., -04:00:00)</span><br><span class="line">%:::z  numeric time zone with : to necessary precision (e.g., -04, +05:30)</span><br><span class="line">%Z   alphabetic time zone abbreviation (e.g., EDT)</span><br></pre></td></tr></table></figure>
-
-<p>By default, date pads numeric fields with zeroes.<br>The following optional flags may follow ‘%’:</p>
-<ul>
-<li>(hyphen) do not pad the field<br>_  (underscore) pad with spaces<br>0  (zero) pad with zeros<br>^  use upper case if possible<br>  #  use opposite case if possible</li>
-</ul>
-<p>After any flags comes an optional field width, as a decimal number;<br>then an optional modifier, which is either<br>E to use the locale’s alternate representations if available, or<br>O to use the locale’s alternate numeric symbols if available.</p>
-<hr>
-<div  align="center">    
-<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/@?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">**name**</font></a>
-</div>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>date</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>date</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Machine Learning</title>
     <url>/posts/c5317df1/</url>
     <content><![CDATA[<ul>
