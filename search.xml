@@ -285,6 +285,61 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
+    <title>Introduction to Use Python in Arcgis</title>
+    <url>/posts/ebfecfce/</url>
+    <content><![CDATA[<ul>
+<li>Python窗口</li>
+<li>执行工具</li>
+<li>设置环境变量</li>
+<li>创建工作流</li>
+<li>自定义工具箱</li>
+<li>自定义窗口</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h2 id="Python窗口"><a href="#Python窗口" class="headerlink" title="Python窗口"></a>Python窗口</h2><h3 id="Enter-multiple-commands"><a href="#Enter-multiple-commands" class="headerlink" title="Enter multiple commands"></a>Enter multiple commands</h3><p>第一行命令输入完成后按住 <kbd>ctrl</kbd> 键并按 <kbd>enter</kbd><br><strong>example:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; x = 1</span><br><span class="line">... y = 2</span><br><span class="line">... print x + y</span><br></pre></td></tr></table></figure>
+<h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>编程语言（如 Python）将反斜线<code>\</code>用作转义字符。例如, <code>\n</code>表示换行符，<code>\t</code> 表示制表符。指定路径时，可使用正斜线<code>(/)</code>代替反斜线。使用两条反斜线（而不是一条）以避免语法错误。也可通过在包含反斜线的字符串前放置字母<strong>r</strong>以便正确解释）来使用字符串文本。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.GetCount_management(&quot;c:/temp/streams.shp&quot;)</span><br><span class="line">arcpy.GetCount_management(&quot;c:\\temp\\streams.shp&quot;)</span><br><span class="line">arcpy.GetCount_management(r&quot;c:\temp\streams.shp&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行工具"><a href="#执行工具" class="headerlink" title="执行工具"></a>执行工具</h2><h3 id="跳过可选参数"><a href="#跳过可选参数" class="headerlink" title="跳过可选参数"></a>跳过可选参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Use empty strings to skip optional parameters</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, &quot;&quot;, &quot;&quot;, 120)</span><br><span class="line"></span><br><span class="line">#Use the # sign to skip optional arguments</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, &quot;#&quot;, &quot;#&quot;, 120)</span><br><span class="line"></span><br><span class="line">#Use the parameter name to bypass unused optional arguments</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, field_length=120)</span><br></pre></td></tr></table></figure>
+
+<h3 id="多值参数"><a href="#多值参数" class="headerlink" title="多值参数"></a>多值参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.DeleteField_management(&quot;c:/base/rivers.shp&quot;, [&quot;Type&quot;, &quot;Turbidity&quot;, &quot;Depth&quot;])</span><br></pre></td></tr></table></figure>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><h3 id="Path-Default-environment"><a href="#Path-Default-environment" class="headerlink" title="Path Default environment"></a>Path Default environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; print arcpy.env.overwriteOutput</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; print arcpy.env.workspace</span><br><span class="line">None</span><br></pre></td></tr></table></figure>
+<h3 id="Set-new-environment"><a href="#Set-new-environment" class="headerlink" title="Set new environment"></a>Set new environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.env.overwriteOutput = False</span><br><span class="line">arcpy.env.workspace = &quot;c:/temp&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="Check-new-environment"><a href="#Check-new-environment" class="headerlink" title="Check new environment"></a>Check new environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; print arcpy.env.overwriteOutput</span><br><span class="line">False</span><br><span class="line">&gt;&gt;&gt; print arcpy.env.workspace</span><br><span class="line">c:/temp</span><br></pre></td></tr></table></figure>
+<h3 id="Restore-the-default-environment"><a href="#Restore-the-default-environment" class="headerlink" title="Restore the default environment"></a>Restore the default environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ResetEnvironments()</span><br></pre></td></tr></table></figure>
+<h3 id="Output-all-the-environment"><a href="#Output-all-the-environment" class="headerlink" title="Output all the environment"></a>Output all the environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; environments = arcpy.ListEnvironments()</span><br><span class="line">... for environment in environments:</span><br><span class="line">...     envSetting = eval(&quot;arcpy.env.&quot; + environment)</span><br><span class="line">...     print &quot;%-30s: %s&quot; % (environment, envSetting)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="创建工作流"><a href="#创建工作流" class="headerlink" title="创建工作流"></a><a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/executing-tools/using-geoprocessing-functions-and-classes.htm">创建工作流</a></h2><h3 id="Create-functions"><a href="#Create-functions" class="headerlink" title="Create functions"></a>Create functions</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def listFieldNames(table, wildcard=None, fieldtype=None):</span><br><span class="line">    fields = arcpy.ListFields(table, wildcard, fieldtype)</span><br><span class="line">    nameList = []</span><br><span class="line">    for field in fields:</span><br><span class="line">        nameList.append(field.name)</span><br><span class="line">    return nameList</span><br></pre></td></tr></table></figure>
+<h3 id="可返回字段名称"><a href="#可返回字段名称" class="headerlink" title="可返回字段名称"></a>可返回字段名称</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fieldNames = listFieldNames(&quot;c:/data/water.gdb/water_pipes&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="创建自定义脚本工具"><a href="#创建自定义脚本工具" class="headerlink" title="创建自定义脚本工具"></a><a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/creating-tools/a-quick-tour-of-creating-script-tools.htm">创建自定义脚本工具</a></h3><h2 id="自定义工具箱"><a href="#自定义工具箱" class="headerlink" title="自定义工具箱"></a>自定义工具箱</h2><h3 id="调用ImportToolbox函数"><a href="#调用ImportToolbox函数" class="headerlink" title="调用ImportToolbox函数"></a>调用<a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/arcpy-functions/importtoolbox.htm">ImportToolbox</a>函数</h3><p>使用 Python 访问自定义工具箱中包含的工具。导入该工具箱后，即能够以 <code>arcpy.&lt;工具名称&gt;_&lt;别名&gt;</code> 形式访问自定义工具。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ImportToolbox(&quot;c:/mytools/geometrytools.tbx&quot;)</span><br><span class="line">arcpy.CreateRegularPolygons_geometry(</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置临时别名"><a href="#设置临时别名" class="headerlink" title="设置临时别名"></a>设置临时别名</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ImportToolbox(&quot;c:/mytools/geometrytools.tbx&quot;, &quot;mytools&quot;)</span><br><span class="line">arcpy.CreateRegularPolygons_mytools(</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义窗口"><a href="#自定义窗口" class="headerlink" title="自定义窗口"></a>自定义窗口</h2><h3 id="预加载Python工具"><a href="#预加载Python工具" class="headerlink" title="预加载Python工具"></a>预加载Python工具</h3><p>Python窗口识别系统环境变量PYTHONSTARTUP,将PYTHONSTARTUP设置为某一Python文件，则打开Python窗口时，Python将自动执行此文件的代码。</p>
+<h3 id="PYTHONSTARTUP"><a href="#PYTHONSTARTUP" class="headerlink" title="PYTHONSTARTUP"></a>PYTHONSTARTUP</h3><blockquote>
+<p>1 右键单击我的电脑，然后单击属性。<br>2 单击高级选项卡，然后单击环境变量。<br>3 在系统变量下，单击新建。<br>4 将PYTHONSTARTUP添加到变量名中。<br>5 将Python文件的路径添加到变量值，然后单击确定。<br>6 单击确定。</p>
+</blockquote>
+<h3 id="示例文件"><a href="#示例文件" class="headerlink" title="示例文件"></a>示例文件</h3><p>打开Python窗口时，将导入arcpy、numpy和time，并将打开overwriteOutput设置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import arcpy  from arcpy</span><br><span class="line">import env import numpy</span><br><span class="line">import time</span><br><span class="line">env.overwriteOutput = True</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Spatial Analysis</category>
+        <category>Arcgis</category>
+      </categories>
+      <tags>
+        <tag>Spatial Analysis</tag>
+        <tag>Arcgis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础(一)</title>
     <url>/posts/8d804583/</url>
     <content><![CDATA[<ul>
@@ -464,61 +519,6 @@ $ hexo init blog
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Introduction to Use Python in Arcgis</title>
-    <url>/posts/ebfecfce/</url>
-    <content><![CDATA[<ul>
-<li>Python窗口</li>
-<li>执行工具</li>
-<li>设置环境变量</li>
-<li>创建工作流</li>
-<li>自定义工具箱</li>
-<li>自定义窗口</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<h2 id="Python窗口"><a href="#Python窗口" class="headerlink" title="Python窗口"></a>Python窗口</h2><h3 id="Enter-multiple-commands"><a href="#Enter-multiple-commands" class="headerlink" title="Enter multiple commands"></a>Enter multiple commands</h3><p>第一行命令输入完成后按住 <kbd>ctrl</kbd> 键并按 <kbd>enter</kbd><br><strong>example:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; x = 1</span><br><span class="line">... y = 2</span><br><span class="line">... print x + y</span><br></pre></td></tr></table></figure>
-<h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>编程语言（如 Python）将反斜线<code>\</code>用作转义字符。例如, <code>\n</code>表示换行符，<code>\t</code> 表示制表符。指定路径时，可使用正斜线<code>(/)</code>代替反斜线。使用两条反斜线（而不是一条）以避免语法错误。也可通过在包含反斜线的字符串前放置字母<strong>r</strong>以便正确解释）来使用字符串文本。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.GetCount_management(&quot;c:/temp/streams.shp&quot;)</span><br><span class="line">arcpy.GetCount_management(&quot;c:\\temp\\streams.shp&quot;)</span><br><span class="line">arcpy.GetCount_management(r&quot;c:\temp\streams.shp&quot;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="执行工具"><a href="#执行工具" class="headerlink" title="执行工具"></a>执行工具</h2><h3 id="跳过可选参数"><a href="#跳过可选参数" class="headerlink" title="跳过可选参数"></a>跳过可选参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#Use empty strings to skip optional parameters</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, &quot;&quot;, &quot;&quot;, 120)</span><br><span class="line"></span><br><span class="line">#Use the # sign to skip optional arguments</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, &quot;#&quot;, &quot;#&quot;, 120)</span><br><span class="line"></span><br><span class="line">#Use the parameter name to bypass unused optional arguments</span><br><span class="line">arcpy.AddField_management(&quot;c:/data/streets.shp&quot;, &quot;Address&quot;, &quot;TEXT&quot;, field_length=120)</span><br></pre></td></tr></table></figure>
-
-<h3 id="多值参数"><a href="#多值参数" class="headerlink" title="多值参数"></a>多值参数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.DeleteField_management(&quot;c:/base/rivers.shp&quot;, [&quot;Type&quot;, &quot;Turbidity&quot;, &quot;Depth&quot;])</span><br></pre></td></tr></table></figure>
-<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><h3 id="Path-Default-environment"><a href="#Path-Default-environment" class="headerlink" title="Path Default environment"></a>Path Default environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; print arcpy.env.overwriteOutput</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; print arcpy.env.workspace</span><br><span class="line">None</span><br></pre></td></tr></table></figure>
-<h3 id="Set-new-environment"><a href="#Set-new-environment" class="headerlink" title="Set new environment"></a>Set new environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.env.overwriteOutput = False</span><br><span class="line">arcpy.env.workspace = &quot;c:/temp&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="Check-new-environment"><a href="#Check-new-environment" class="headerlink" title="Check new environment"></a>Check new environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; print arcpy.env.overwriteOutput</span><br><span class="line">False</span><br><span class="line">&gt;&gt;&gt; print arcpy.env.workspace</span><br><span class="line">c:/temp</span><br></pre></td></tr></table></figure>
-<h3 id="Restore-the-default-environment"><a href="#Restore-the-default-environment" class="headerlink" title="Restore the default environment"></a>Restore the default environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ResetEnvironments()</span><br></pre></td></tr></table></figure>
-<h3 id="Output-all-the-environment"><a href="#Output-all-the-environment" class="headerlink" title="Output all the environment"></a>Output all the environment</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; environments = arcpy.ListEnvironments()</span><br><span class="line">... for environment in environments:</span><br><span class="line">...     envSetting = eval(&quot;arcpy.env.&quot; + environment)</span><br><span class="line">...     print &quot;%-30s: %s&quot; % (environment, envSetting)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="创建工作流"><a href="#创建工作流" class="headerlink" title="创建工作流"></a><a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/executing-tools/using-geoprocessing-functions-and-classes.htm">创建工作流</a></h2><h3 id="Create-functions"><a href="#Create-functions" class="headerlink" title="Create functions"></a>Create functions</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def listFieldNames(table, wildcard=None, fieldtype=None):</span><br><span class="line">    fields = arcpy.ListFields(table, wildcard, fieldtype)</span><br><span class="line">    nameList = []</span><br><span class="line">    for field in fields:</span><br><span class="line">        nameList.append(field.name)</span><br><span class="line">    return nameList</span><br></pre></td></tr></table></figure>
-<h3 id="可返回字段名称"><a href="#可返回字段名称" class="headerlink" title="可返回字段名称"></a>可返回字段名称</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fieldNames = listFieldNames(&quot;c:/data/water.gdb/water_pipes&quot;)</span><br></pre></td></tr></table></figure>
-<h3 id="创建自定义脚本工具"><a href="#创建自定义脚本工具" class="headerlink" title="创建自定义脚本工具"></a><a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/creating-tools/a-quick-tour-of-creating-script-tools.htm">创建自定义脚本工具</a></h3><h2 id="自定义工具箱"><a href="#自定义工具箱" class="headerlink" title="自定义工具箱"></a>自定义工具箱</h2><h3 id="调用ImportToolbox函数"><a href="#调用ImportToolbox函数" class="headerlink" title="调用ImportToolbox函数"></a>调用<a href="http://desktop.arcgis.com/zh-cn/arcmap/10.3/analyze/arcpy-functions/importtoolbox.htm">ImportToolbox</a>函数</h3><p>使用 Python 访问自定义工具箱中包含的工具。导入该工具箱后，即能够以 <code>arcpy.&lt;工具名称&gt;_&lt;别名&gt;</code> 形式访问自定义工具。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ImportToolbox(&quot;c:/mytools/geometrytools.tbx&quot;)</span><br><span class="line">arcpy.CreateRegularPolygons_geometry(</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置临时别名"><a href="#设置临时别名" class="headerlink" title="设置临时别名"></a>设置临时别名</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arcpy.ImportToolbox(&quot;c:/mytools/geometrytools.tbx&quot;, &quot;mytools&quot;)</span><br><span class="line">arcpy.CreateRegularPolygons_mytools(</span><br></pre></td></tr></table></figure>
-
-<h2 id="自定义窗口"><a href="#自定义窗口" class="headerlink" title="自定义窗口"></a>自定义窗口</h2><h3 id="预加载Python工具"><a href="#预加载Python工具" class="headerlink" title="预加载Python工具"></a>预加载Python工具</h3><p>Python窗口识别系统环境变量PYTHONSTARTUP,将PYTHONSTARTUP设置为某一Python文件，则打开Python窗口时，Python将自动执行此文件的代码。</p>
-<h3 id="PYTHONSTARTUP"><a href="#PYTHONSTARTUP" class="headerlink" title="PYTHONSTARTUP"></a>PYTHONSTARTUP</h3><blockquote>
-<p>1 右键单击我的电脑，然后单击属性。<br>2 单击高级选项卡，然后单击环境变量。<br>3 在系统变量下，单击新建。<br>4 将PYTHONSTARTUP添加到变量名中。<br>5 将Python文件的路径添加到变量值，然后单击确定。<br>6 单击确定。</p>
-</blockquote>
-<h3 id="示例文件"><a href="#示例文件" class="headerlink" title="示例文件"></a>示例文件</h3><p>打开Python窗口时，将导入arcpy、numpy和time，并将打开overwriteOutput设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import arcpy  from arcpy</span><br><span class="line">import env import numpy</span><br><span class="line">import time</span><br><span class="line">env.overwriteOutput = True</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Spatial Analysis</category>
-        <category>Arcgis</category>
-      </categories>
-      <tags>
-        <tag>Spatial Analysis</tag>
-        <tag>Arcgis</tag>
       </tags>
   </entry>
   <entry>
@@ -3444,6 +3444,66 @@ frameborder="0" scrolling="auto"
       <tags>
         <tag>data visualization</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>完美世界番外篇[Pro加长版]-01话 梦醒归天庭 讃大结局</title>
+    <url>/posts/aff943fd/</url>
+    <content><![CDATA[<ul>
+<li>石昊梦醒</li>
+<li>回到天庭</li>
+<li>故事纯属虚构，如有雷同，纯属巧合</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p>石昊做了一个梦，梦里出生在一个被称为“归墟星”的星球，这里没有修炼体系，但有一种叫做黑科技的东西。这次，石昊没有出生在石族，而是直接生在一个叫“石村”的地方。梦里石昊父母平平，一路坎坷，终于在一番奇遇（见下方名词解释）下掌握了黑科技下的生存方法，上午在高尔夫球场里做挥杆教练，下午喂十个马场里的马，晚上把一天的喂马照片发给领导。然而此刻，全家人辛苦打工的竟然只有石昊，石昊的父母、七大姑八大姨天天偷偷吃的是天价进口梭子蟹和帝王蟹，澳洲肥牛，地中海淡水虾…，开的是最新款宇宙战舰，驰骋在各个星系。<br>柳神：昊儿，醒醒，该回上界了。<br>石昊：嗯…上界？石昊的元神瞬间归位，一番感应下，神识瞬间探出九天之外，这里竟然无法感应到通往上界的坐标。<br>柳神：你要广交好友，隐藏的老怪物有开启上界特殊通道的传承神器，实在不行就泡他们孙女。<br>石昊：我已经坐了29列18层车厢的绿皮车，所有的乘客都一一加了好友。<br>柳神：这样啊，那你抬头看看上方。<br>石昊：抬头一瞧，一个巨大的手掌覆盖下来，五个巨大的指头依次写着五个大字“昊 天 的 世 界”，这个巨掌越来越近。石昊破口而出，柳狗，我去你大爷的。</p>
+<p>——此刻，九天之外的天庭里<br>石昊：柳神，鬼神他们都不信，这种小说难道会有人信嘛？<br>柳神：不需要他们信，他们爱听鬼故事，下次用Python生成个带色情的肯定效果更好。</p>
+<p>#####名词解释#####</p>
+<p><strong>奇遇：</strong>29岁偶遇燃[烟花]菩萨，获得法号“释珈龘諟”。</p>
+<p><strong>归墟界力量体系：</strong>18岁成年人挥杆具备一马之力，可打出18墟里远。经仪器测量估算，界民力量在成年前呈规律的线性增长，1-18岁每年增加一墟里力量。成年后力量增加系数几乎为0，除非另有特殊奇遇。</p>
+<p><strong>高尔夫球场与马场结构、面积与位置关系：</strong>高尔夫球场直径方圆1800墟里，球场外部设置半椭圆形结界，以防身怀主角光环的天才少年打破结界，打伤球场外围空心圆小半径180000000000000000…墟里的马场（内部根据弯曲的分界线无比随意的划分为10部分）场场场…..里悠闲吃草的五颜六色的骏马们。PS:高尔夫球在归墟界遵循差异化的运动轨迹，马场里除了有骏马外，还有牛、羊、鸡、鸭……大鹅，但马场里除了骏马以外的其他动物均可以免疫高尔夫球运动轨迹造成的攻击。幸运的是高尔夫球场与马场边界的结界十分稳固，几个侏墟纪以来，即使有界民把球打到边界，也未能击碎结界。</p>
+<p><strong>马场外有什么：</strong>马场外是乱魔海，海上海盗猖獗，经常开着双栖车登录不同的马场偷动物。后来高尔夫球场主每年都定期向马场主购买加工过的牛羊鸡鸭肉和可食用草本植物给海盗，并帮海盗发展出了海上生存技能——捕鱼技术，在一定程度上削弱了海盗的打劫意识。</p>
+<p><strong>乱魔海外有什么：</strong>乱魔海外是暗流礁群，暗流礁群的存在严重阻碍了乱魔海海盗向外探索归墟界的其他祥平区域。</p>
+<p><strong>归墟星天上有什么：</strong>天上有一口大铁锅，大铁锅只可以用来炖马场里的大鹅，不能炖其他动物，为什么不能吨其他动物，高尔夫球场主、马场主和海盗首领秘密达成了一个协议约定。</p>
+]]></content>
+      <categories>
+        <category>小说</category>
+        <category>东方玄幻</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>东方玄幻</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>完美世界番外篇-02话 双帝大战 续集</title>
+    <url>/posts/6e369a0e/</url>
+    <content><![CDATA[<ul>
+<li>禾帝飞升</li>
+<li>荒天帝阵亡</li>
+<li>故事纯属虚构，如有雷同，纯属巧合</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p>随着归墟星的自然演化，一株黑色植物历经万千雷劫，终于侥幸涅磐，成功化龙。经过日月精华滋润，与道光元年，飞升成仙，自封”黑禾大帝”。</p>
+<p>传闻的上界竟然空空如也，黑禾大帝就这么一直漫无目的的飞呀飞呀，前方突然惊现一座金碧辉煌的雕刻着九条龙的宏伟宫殿。</p>
+<p>与此同时，大殿内部中央，柳神、石昊、火灵儿、月禅围绕一个四脚矮脚桌子盘腿而做。</p>
+<p>火灵儿：他终于来了。</p>
+<p>月禅：是呀，我们已经等了五个侏墟纪。</p>
+<p>石昊：柳神，你带我的两位娘子先走，且让我来会他一会。</p>
+<p>也罢，柳神、火灵儿、月禅瞬间消失在原地。此时，黑禾大帝手持一把剑身为青色的木剑，剑鞘呈流动的黑色漩涡，吞噬着四周的自然光。黑禾大帝缓缓走进大殿，并逐步向石昊靠近。两人在大殿中央面对面站立，相距18亿墟里。不知过去多少侏墟纪，遥远的光墟纪外传来三个异口同声的声音，你们两个大男人到底在磨叽什么，倒是赶紧打呀。</p>
+<p>终于，两位大帝同时出手，并都拿出了压箱底的招数。黑禾大帝的青木剑自动出鞘向荒天帝斩去，荒天帝不敢托大，打出了鸿萌规则之力。鸿萌规则之力和青木剑均无视对方。最终，青木剑劈中荒天帝，荒天帝一分为二。鸿萌规则之力打中黑禾大帝，黑禾大帝竟抗住了鸿萌规则，且毫发未伤。黑禾大帝想不通，这上界的仙人为何会这么弱，早知道就不该用十分的墟力切磋。黑禾大帝看了眼桌上的长方形立方体，上半部分为白色，刻画着一只小鸡。黑禾大帝揣起这个白鸡，又开始了漫长的独自傲游。</p>
+<p>遥远的光墟纪外，柳神、火灵儿、月禅、石昊全力配合，消灭了一群又一群域外诡异，诡异灵魂全部打入了归墟星轮回。</p>
+]]></content>
+      <categories>
+        <category>小说</category>
+        <category>东方玄幻</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+        <tag>东方玄幻</tag>
       </tags>
   </entry>
   <entry>
