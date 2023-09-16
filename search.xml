@@ -61,6 +61,40 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo next pjax实现音乐全局播放</title>
+    <url>/posts/cba5eed1/</url>
+    <content><![CDATA[<ul>
+<li>hexo next</li>
+<li>pjax 实现页面跳转刷新后音乐不间断播放</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<ul>
+<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
+<li>在’<head>‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-pjax</span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+        <category>next</category>
+        <category>pjax</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+        <tag>pjax</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>那些年，爬过的坑 | Next 5.1.0 升级 7.4.2</title>
     <url>/posts/dd26104d/</url>
     <content><![CDATA[<ul>
@@ -169,40 +203,6 @@ $ hexo init blog
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo next pjax实现音乐全局播放</title>
-    <url>/posts/cba5eed1/</url>
-    <content><![CDATA[<ul>
-<li>hexo next</li>
-<li>pjax 实现页面跳转刷新后音乐不间断播放</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<ul>
-<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
-<li>在’<head>‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-pjax</span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
-
-<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-        <category>next</category>
-        <category>pjax</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>next</tag>
-        <tag>pjax</tag>
       </tags>
   </entry>
   <entry>
@@ -3159,36 +3159,6 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
-    <title>实用资料官方链接</title>
-    <url>/posts/1ec1a7b2/</url>
-    <content><![CDATA[<ul>
-<li><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></li>
-<li><a href="https://geopandas.org/index.html">GeoPandas</a></li>
-<li><a href="https://postgis.net/">PostGIS</a></li>
-<li><a href="https://opencv.org/">OpenCV</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></p>
-<p><a href="https://geopandas.org/index.html">GeoPandas</a></p>
-<p><a href="https://postgis.net/">PostGIS</a></p>
-<p><a href="https://opencv.org/">OpenCV</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import cv2</span><br><span class="line">cv2.imread(&quot;filename&quot;,flags)</span><br><span class="line">IMREAD_UNCHANGED = -1 #不进行转化，比如保存为了16位的图片，读取出来仍然为16位。</span><br><span class="line">IMREAD_GRAYSCALE = 0 #进行转化为灰度图，比如保存为了16位的图片，读取出来为8位，类型为CV_8UC1。</span><br><span class="line">IMREAD_COLOR = 1 #进行转化为RGB三通道图像，图像深度转为8位</span><br><span class="line">IMREAD_ANYDEPTH = 2 #保持图像深度不变，进行转化为灰度图。</span><br><span class="line">IMREAD_ANYCOLOR = 4 #若图像通道数小于等于3，则保持原通道数不变；若通道数大于3则只取取前三个通道。图像深度转为8位</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></p>
-]]></content>
-      <categories>
-        <category>Resources</category>
-        <category>Link</category>
-      </categories>
-      <tags>
-        <tag>Resources</tag>
-        <tag>Link</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ubuntu basic 常用快捷键与自定义环境变量</title>
     <url>/posts/16c755b6/</url>
     <content><![CDATA[<ul>
@@ -3260,6 +3230,36 @@ $ hexo init blog
         <tag>ubuntu</tag>
         <tag>快捷键</tag>
         <tag>环境变量</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用资料官方链接</title>
+    <url>/posts/1ec1a7b2/</url>
+    <content><![CDATA[<ul>
+<li><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></li>
+<li><a href="https://geopandas.org/index.html">GeoPandas</a></li>
+<li><a href="https://postgis.net/">PostGIS</a></li>
+<li><a href="https://opencv.org/">OpenCV</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></p>
+<p><a href="https://geopandas.org/index.html">GeoPandas</a></p>
+<p><a href="https://postgis.net/">PostGIS</a></p>
+<p><a href="https://opencv.org/">OpenCV</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import cv2</span><br><span class="line">cv2.imread(&quot;filename&quot;,flags)</span><br><span class="line">IMREAD_UNCHANGED = -1 #不进行转化，比如保存为了16位的图片，读取出来仍然为16位。</span><br><span class="line">IMREAD_GRAYSCALE = 0 #进行转化为灰度图，比如保存为了16位的图片，读取出来为8位，类型为CV_8UC1。</span><br><span class="line">IMREAD_COLOR = 1 #进行转化为RGB三通道图像，图像深度转为8位</span><br><span class="line">IMREAD_ANYDEPTH = 2 #保持图像深度不变，进行转化为灰度图。</span><br><span class="line">IMREAD_ANYCOLOR = 4 #若图像通道数小于等于3，则保持原通道数不变；若通道数大于3则只取取前三个通道。图像深度转为8位</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></p>
+]]></content>
+      <categories>
+        <category>Resources</category>
+        <category>Link</category>
+      </categories>
+      <tags>
+        <tag>Resources</tag>
+        <tag>Link</tag>
       </tags>
   </entry>
   <entry>
@@ -3444,157 +3444,6 @@ frameborder="0" scrolling="auto"
       <tags>
         <tag>data visualization</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习笔记 | 军队文职思考题-萌鸡小队</title>
-    <url>/posts/c7fe9ba8/</url>
-    <content><![CDATA[<ul>
-<li>观看萌鸡小队第一季 第32话</li>
-<li>并简短分享观后感悟</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<div  align="center">    
-<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji004.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">贪吃兔子的牙又尖又大</font></a>
-</div>
-
-
-<div  align="center">    
-<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji002.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">兔子破坏了游乐园</font></a>
-</div>
-
-
-
-<div  align="center">    
-<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji003.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">把萌鸡巴士弄坏了</font></a>
-</div>
-
-<p>观后感：贪吃的兔子不懂得游乐园的快乐，由于它的贪吃，损坏了游乐园设施，需要赔偿游乐园损失并责令限期恢复原状。以便萌鸡宝宝们能够快乐的成长。</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>军队文职</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>军队文职</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习笔记 | 军队文职思考题-勿往国耻</title>
-    <url>/posts/4d3a10c9/</url>
-    <content><![CDATA[<ul>
-<li>Japan为什么翻译成日本</li>
-<li>铭记历史</li>
-<li>勿忘国耻</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p>Japan翻译为日本，不是音译。</p>
-<p>拆分解读如下：</p>
-<ul>
-<li><p>“日”是个贬义词，表明了民族同胞对侵略我国的日本鬼子的痛恨。</p>
-</li>
-<li><p>“本”是“资本”的抽象缩略词，影射了资本主义对劳动力的剥削。</p>
-</li>
-</ul>
-<p>“日本”一词既表明了反帝国主义的侵略，又表明了反西方资本主义的垄断和剥削。</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>军队文职</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>军队文职</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习笔记 | 军队文职思考题-黑猫警长</title>
-    <url>/posts/99dbe381/</url>
-    <content><![CDATA[<ul>
-<li>为什么是黑猫警长？</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p>反思题：抓老鼠的警长为什么会是黑猫担任？</p>
-<p>思考结果：</p>
-<p>1.白猫在夜晚抓老鼠容易被老鼠发现，难度大。</p>
-<p>2.白猫吃的饱饱的，和老鼠成了朋友。</p>
-<p>3.白猫和老鼠是亲戚。</p>
-<p>4.白猫和老鼠是朋友，经常一块喝酒。</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>军队文职</category>
-      </categories>
-      <tags>
-        <tag>学习笔记</tag>
-        <tag>军队文职</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>完美世界番外篇[Pro加长版]-01话 梦醒归天庭 讃大结局</title>
-    <url>/posts/aff943fd/</url>
-    <content><![CDATA[<ul>
-<li>石昊梦醒</li>
-<li>回到天庭</li>
-<li>故事纯属虚构，如有雷同，纯属巧合</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p>石昊做了一个梦，梦里出生在一个被称为“归墟星”的星球，这里没有修炼体系，但有一种叫做黑科技的东西。这次，石昊没有出生在石族，而是直接生在一个叫“石村”的地方。梦里石昊父母平平，一路坎坷，终于在一番奇遇（见下方名词解释）下掌握了黑科技下的生存方法，上午在高尔夫球场里做挥杆教练，下午喂十个马场里的马，晚上把一天的喂马照片发给领导。然而此刻，全家人辛苦打工的竟然只有石昊，石昊的父母、七大姑八大姨天天偷偷吃的是天价进口梭子蟹和帝王蟹，澳洲肥牛，地中海淡水虾…，开的是最新款宇宙战舰，驰骋在各个星系。<br>柳神：昊儿，醒醒，该回上界了。<br>石昊：嗯…上界？石昊的元神瞬间归位，一番感应下，神识瞬间探出九天之外，这里竟然无法感应到通往上界的坐标。<br>柳神：你要广交好友，隐藏的老怪物有开启上界特殊通道的传承神器，实在不行就泡他们孙女。<br>石昊：我已经坐了29列18层车厢的绿皮车，所有的乘客都一一加了好友。<br>柳神：这样啊，那你抬头看看上方。<br>石昊：抬头一瞧，一个巨大的手掌覆盖下来，五个巨大的指头依次写着五个大字“昊 天 的 世 界”，这个巨掌越来越近。石昊破口而出，柳狗，我去你大爷的。</p>
-<p>——此刻，九天之外的天庭里<br>石昊：柳神，鬼神他们都不信，这种小说难道会有人信嘛？<br>柳神：不需要他们信，他们爱听鬼故事，下次用Python生成个带色情的肯定效果更好。</p>
-<p>#####名词解释#####</p>
-<p><strong>奇遇：</strong>29岁偶遇燃[烟花]菩萨，获得法号“释珈龘諟”。</p>
-<p><strong>归墟界力量体系：</strong>18岁成年人挥杆具备一马之力，可打出18墟里远。经仪器测量估算，界民力量在成年前呈规律的线性增长，1-18岁每年增加一墟里力量。成年后力量增加系数几乎为0，除非另有特殊奇遇。</p>
-<p><strong>高尔夫球场与马场结构、面积与位置关系：</strong>高尔夫球场直径方圆1800墟里，球场外部设置半椭圆形结界，以防身怀主角光环的天才少年打破结界，打伤球场外围空心圆小半径180000000000000000…墟里的马场（内部根据弯曲的分界线无比随意的划分为10部分）场场场…..里悠闲吃草的五颜六色的骏马们。PS:高尔夫球在归墟界遵循差异化的运动轨迹，马场里除了有骏马外，还有牛、羊、鸡、鸭……大鹅，但马场里除了骏马以外的其他动物均可以免疫高尔夫球运动轨迹造成的攻击。幸运的是高尔夫球场与马场边界的结界十分稳固，几个侏墟纪以来，即使有界民把球打到边界，也未能击碎结界。</p>
-<p><strong>马场外有什么：</strong>马场外是乱魔海，海上海盗猖獗，经常开着双栖车登录不同的马场偷动物。后来高尔夫球场主每年都定期向马场主购买加工过的牛羊鸡鸭肉和可食用草本植物给海盗，并帮海盗发展出了海上生存技能——捕鱼技术，在一定程度上削弱了海盗的打劫意识。</p>
-<p><strong>乱魔海外有什么：</strong>乱魔海外是暗流礁群，暗流礁群的存在严重阻碍了乱魔海海盗向外探索归墟界的其他祥平区域。</p>
-<p><strong>归墟星天上有什么：</strong>天上有一口大铁锅，大铁锅只可以用来炖马场里的大鹅，不能炖其他动物，为什么不能吨其他动物，高尔夫球场主、马场主和海盗首领秘密达成了一个协议约定。</p>
-]]></content>
-      <categories>
-        <category>小说</category>
-        <category>东方玄幻</category>
-      </categories>
-      <tags>
-        <tag>小说</tag>
-        <tag>东方玄幻</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>完美世界番外篇-02话 双帝大战 续集</title>
-    <url>/posts/6e369a0e/</url>
-    <content><![CDATA[<ul>
-<li>禾帝飞升</li>
-<li>荒天帝阵亡</li>
-<li>故事纯属虚构，如有雷同，纯属巧合</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p>随着归墟星的自然演化，一株黑色植物历经万千雷劫，终于侥幸涅磐，成功化龙。经过日月精华滋润，与道光元年，飞升成仙，自封”黑禾大帝”。</p>
-<p>传闻的上界竟然空空如也，黑禾大帝就这么一直漫无目的的飞呀飞呀，前方突然惊现一座金碧辉煌的雕刻着九条龙的宏伟宫殿。</p>
-<p>与此同时，大殿内部中央，柳神、石昊、火灵儿、月禅围绕一个四脚矮脚桌子盘腿而做。</p>
-<p>火灵儿：他终于来了。</p>
-<p>月禅：是呀，我们已经等了五个侏墟纪。</p>
-<p>石昊：柳神，你带我的两位娘子先走，且让我来会他一会。</p>
-<p>也罢，柳神、火灵儿、月禅瞬间消失在原地。此时，黑禾大帝手持一把剑身为青色的木剑，剑鞘呈流动的黑色漩涡，吞噬着四周的自然光。黑禾大帝缓缓走进大殿，并逐步向石昊靠近。两人在大殿中央面对面站立，相距18亿墟里。不知过去多少侏墟纪，遥远的光墟纪外传来三个异口同声的声音，你们两个大男人到底在磨叽什么，倒是赶紧打呀。</p>
-<p>终于，两位大帝同时出手，并都拿出了压箱底的招数。黑禾大帝的青木剑自动出鞘向荒天帝斩去，荒天帝不敢托大，打出了鸿萌规则之力。鸿萌规则之力和青木剑均无视对方。最终，青木剑劈中荒天帝，荒天帝一分为二。鸿萌规则之力打中黑禾大帝，黑禾大帝竟抗住了鸿萌规则，且毫发未伤。黑禾大帝想不通，这上界的仙人为何会这么弱，早知道就不该用十分的墟力切磋。黑禾大帝看了眼桌上的长方形立方体，上半部分为白色，刻画着一只小鸡。黑禾大帝揣起这个白鸡，又开始了漫长的独自傲游。</p>
-<p>遥远的光墟纪外，柳神、火灵儿、月禅、石昊全力配合，消灭了一群又一群域外诡异，诡异灵魂全部打入了归墟星轮回。</p>
-]]></content>
-      <categories>
-        <category>小说</category>
-        <category>东方玄幻</category>
-      </categories>
-      <tags>
-        <tag>小说</tag>
-        <tag>东方玄幻</tag>
       </tags>
   </entry>
   <entry>
