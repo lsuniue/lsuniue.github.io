@@ -3159,6 +3159,36 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
+    <title>实用资料官方链接</title>
+    <url>/posts/1ec1a7b2/</url>
+    <content><![CDATA[<ul>
+<li><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></li>
+<li><a href="https://geopandas.org/index.html">GeoPandas</a></li>
+<li><a href="https://postgis.net/">PostGIS</a></li>
+<li><a href="https://opencv.org/">OpenCV</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></p>
+<p><a href="https://geopandas.org/index.html">GeoPandas</a></p>
+<p><a href="https://postgis.net/">PostGIS</a></p>
+<p><a href="https://opencv.org/">OpenCV</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import cv2</span><br><span class="line">cv2.imread(&quot;filename&quot;,flags)</span><br><span class="line">IMREAD_UNCHANGED = -1 #不进行转化，比如保存为了16位的图片，读取出来仍然为16位。</span><br><span class="line">IMREAD_GRAYSCALE = 0 #进行转化为灰度图，比如保存为了16位的图片，读取出来为8位，类型为CV_8UC1。</span><br><span class="line">IMREAD_COLOR = 1 #进行转化为RGB三通道图像，图像深度转为8位</span><br><span class="line">IMREAD_ANYDEPTH = 2 #保持图像深度不变，进行转化为灰度图。</span><br><span class="line">IMREAD_ANYCOLOR = 4 #若图像通道数小于等于3，则保持原通道数不变；若通道数大于3则只取取前三个通道。图像深度转为8位</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></p>
+]]></content>
+      <categories>
+        <category>Resources</category>
+        <category>Link</category>
+      </categories>
+      <tags>
+        <tag>Resources</tag>
+        <tag>Link</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ubuntu basic 常用快捷键与自定义环境变量</title>
     <url>/posts/16c755b6/</url>
     <content><![CDATA[<ul>
@@ -3230,36 +3260,6 @@ $ hexo init blog
         <tag>ubuntu</tag>
         <tag>快捷键</tag>
         <tag>环境变量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实用资料官方链接</title>
-    <url>/posts/1ec1a7b2/</url>
-    <content><![CDATA[<ul>
-<li><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></li>
-<li><a href="https://geopandas.org/index.html">GeoPandas</a></li>
-<li><a href="https://postgis.net/">PostGIS</a></li>
-<li><a href="https://opencv.org/">OpenCV</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<p><a href="https://www.mysqlzh.com/">MySQL 5.1中文文档</a></p>
-<p><a href="https://geopandas.org/index.html">GeoPandas</a></p>
-<p><a href="https://postgis.net/">PostGIS</a></p>
-<p><a href="https://opencv.org/">OpenCV</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import cv2</span><br><span class="line">cv2.imread(&quot;filename&quot;,flags)</span><br><span class="line">IMREAD_UNCHANGED = -1 #不进行转化，比如保存为了16位的图片，读取出来仍然为16位。</span><br><span class="line">IMREAD_GRAYSCALE = 0 #进行转化为灰度图，比如保存为了16位的图片，读取出来为8位，类型为CV_8UC1。</span><br><span class="line">IMREAD_COLOR = 1 #进行转化为RGB三通道图像，图像深度转为8位</span><br><span class="line">IMREAD_ANYDEPTH = 2 #保持图像深度不变，进行转化为灰度图。</span><br><span class="line">IMREAD_ANYCOLOR = 4 #若图像通道数小于等于3，则保持原通道数不变；若通道数大于3则只取取前三个通道。图像深度转为8位</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://zhuanlan.zhihu.com/p/71833109">100个最佳ubuntu应用</a></p>
-]]></content>
-      <categories>
-        <category>Resources</category>
-        <category>Link</category>
-      </categories>
-      <tags>
-        <tag>Resources</tag>
-        <tag>Link</tag>
       </tags>
   </entry>
   <entry>
@@ -3444,6 +3444,97 @@ frameborder="0" scrolling="auto"
       <tags>
         <tag>data visualization</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习笔记 | 军队文职思考题-萌鸡小队</title>
+    <url>/posts/c7fe9ba8/</url>
+    <content><![CDATA[<ul>
+<li>观看萌鸡小队第一季 第32话</li>
+<li>并简短分享观后感悟</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<div  align="center">    
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji004.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">贪吃兔子的牙又尖又大</font></a>
+</div>
+
+
+<div  align="center">    
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji002.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">兔子破坏了游乐园</font></a>
+</div>
+
+
+
+<div  align="center">    
+<img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/Writing/mengji003.jpg?x-oss-process=style/moon" width = "821" height = "531" "name"  align=center />  <font face="Times New Roman">把萌鸡巴士弄坏了</font></a>
+</div>
+
+<p>观后感：贪吃的兔子不懂得游乐园的快乐，由于它的贪吃，损坏了游乐园设施，需要赔偿游乐园损失并责令限期恢复原状。以便萌鸡宝宝们能够快乐的成长。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>军队文职</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>军队文职</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习笔记 | 军队文职思考题-勿往国耻</title>
+    <url>/posts/4d3a10c9/</url>
+    <content><![CDATA[<ul>
+<li>Japan为什么翻译成日本</li>
+<li>铭记历史</li>
+<li>勿忘国耻</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p>Japan翻译为日本，不是音译。</p>
+<p>拆分解读如下：</p>
+<ul>
+<li><p>“日”是个贬义词，表明了民族同胞对侵略我国的日本鬼子的痛恨。</p>
+</li>
+<li><p>“本”是“资本”的抽象缩略词，影射了资本主义对劳动力的剥削。</p>
+</li>
+</ul>
+<p>“日本”一词既表明了反帝国主义的侵略，又表明了反西方资本主义的垄断和剥削。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>军队文职</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>军队文职</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习笔记 | 军队文职思考题-黑猫警长</title>
+    <url>/posts/99dbe381/</url>
+    <content><![CDATA[<ul>
+<li>为什么是黑猫警长？</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<p>反思题：抓老鼠的警长为什么会是黑猫担任？</p>
+<p>思考结果：</p>
+<p>1.白猫在夜晚抓老鼠容易被老鼠发现，难度大。</p>
+<p>2.白猫吃的饱饱的，和老鼠成了朋友。</p>
+<p>3.白猫和老鼠是亲戚。</p>
+<p>4.白猫和老鼠是朋友，经常一块喝酒。</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>军队文职</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>军队文职</tag>
       </tags>
   </entry>
   <entry>
