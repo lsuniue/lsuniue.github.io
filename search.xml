@@ -61,6 +61,40 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo next pjax实现音乐全局播放</title>
+    <url>/posts/cba5eed1/</url>
+    <content><![CDATA[<ul>
+<li>hexo next</li>
+<li>pjax 实现页面跳转刷新后音乐不间断播放</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<ul>
+<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
+<li>在’<head>‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-pjax</span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+        <category>next</category>
+        <category>pjax</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+        <tag>pjax</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>那些年，爬过的坑 | Next 5.1.0 升级 7.4.2</title>
     <url>/posts/dd26104d/</url>
     <content><![CDATA[<ul>
@@ -169,40 +203,6 @@ $ hexo init blog
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo next pjax实现音乐全局播放</title>
-    <url>/posts/cba5eed1/</url>
-    <content><![CDATA[<ul>
-<li>hexo next</li>
-<li>pjax 实现页面跳转刷新后音乐不间断播放</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<ul>
-<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
-<li>在’<head>‘与<code>&lt;\head&gt;</code>之间添加下面代码，并保存。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-pjax</span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
-
-<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-        <category>next</category>
-        <category>pjax</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>next</tag>
-        <tag>pjax</tag>
       </tags>
   </entry>
   <entry>
@@ -810,6 +810,30 @@ $ hexo init blog
       </tags>
   </entry>
   <entry>
+    <title>Software Crack Method</title>
+    <url>/posts/34b26213/</url>
+    <content><![CDATA[<ul>
+<li><abbr title="Internet Download Manager">IDM</abbr> Has been registered with a Fake Serial number - FIXED</li>
+<li>Sublime text3 3176 x64 + 破解补丁</li>
+</ul>
+<span id="more"></span>
+
+<hr>
+<h2 id="IDM-Fake-Serial-number-FIXED"><a href="#IDM-Fake-Serial-number-FIXED" class="headerlink" title="IDM: Fake Serial number - FIXED"></a>IDM: Fake Serial number - FIXED</h2><h3 id="Open-your-IDM-installation-directory"><a href="#Open-your-IDM-installation-directory" class="headerlink" title="Open your IDM installation directory"></a>Open your IDM installation directory</h3><h3 id="Here-look-for-“IDMGrHlp-exe”-file"><a href="#Here-look-for-“IDMGrHlp-exe”-file" class="headerlink" title="Here look for “IDMGrHlp.exe” file"></a>Here look for “IDMGrHlp.exe” file</h3><img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/crack/IDM-crack1.png?x-oss-process=style/moon" alt="">
+
+<h3 id="Then-Search-for-the-file-“idmBroker-exe”"><a href="#Then-Search-for-the-file-“idmBroker-exe”" class="headerlink" title="Then Search for the file “idmBroker.exe”"></a>Then Search for the file “idmBroker.exe”</h3><img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/crack/IDM-crack2.png?x-oss-process=style/moon">
+
+<h3 id="That’s-all-and-you-are-all-done"><a href="#That’s-all-and-you-are-all-done" class="headerlink" title="That’s all and you are all done."></a>That’s all and you are all done.</h3><h2 id="Sublime-text3-3176-x64-破解补丁"><a href="#Sublime-text3-3176-x64-破解补丁" class="headerlink" title="Sublime text3 3176 x64 + 破解补丁"></a>Sublime text3 3176 x64 + 破解补丁</h2><p>百度云网盘地址：链接：<a href="https://pan.baidu.com/s/16hBWkIoAcs4w-ssnn9mEUQ">https://pan.baidu.com/s/16hBWkIoAcs4w-ssnn9mEUQ</a> 密码：t3td</p>
+]]></content>
+      <categories>
+        <category>Crack</category>
+        <category>IDM</category>
+      </categories>
+      <tags>
+        <tag>IDM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TEX Live 安装与正反向搜索配置</title>
     <url>/posts/6528e87/</url>
     <content><![CDATA[<ul>
@@ -846,30 +870,6 @@ $ hexo init blog
       <tags>
         <tag>Latex</tag>
         <tag>TEX Live</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Software Crack Method</title>
-    <url>/posts/34b26213/</url>
-    <content><![CDATA[<ul>
-<li><abbr title="Internet Download Manager">IDM</abbr> Has been registered with a Fake Serial number - FIXED</li>
-<li>Sublime text3 3176 x64 + 破解补丁</li>
-</ul>
-<span id="more"></span>
-
-<hr>
-<h2 id="IDM-Fake-Serial-number-FIXED"><a href="#IDM-Fake-Serial-number-FIXED" class="headerlink" title="IDM: Fake Serial number - FIXED"></a>IDM: Fake Serial number - FIXED</h2><h3 id="Open-your-IDM-installation-directory"><a href="#Open-your-IDM-installation-directory" class="headerlink" title="Open your IDM installation directory"></a>Open your IDM installation directory</h3><h3 id="Here-look-for-“IDMGrHlp-exe”-file"><a href="#Here-look-for-“IDMGrHlp-exe”-file" class="headerlink" title="Here look for “IDMGrHlp.exe” file"></a>Here look for “IDMGrHlp.exe” file</h3><img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/crack/IDM-crack1.png?x-oss-process=style/moon" alt="">
-
-<h3 id="Then-Search-for-the-file-“idmBroker-exe”"><a href="#Then-Search-for-the-file-“idmBroker-exe”" class="headerlink" title="Then Search for the file “idmBroker.exe”"></a>Then Search for the file “idmBroker.exe”</h3><img data-src="https://isaiah.oss-cn-hongkong.aliyuncs.com/images/uploads/post/crack/IDM-crack2.png?x-oss-process=style/moon">
-
-<h3 id="That’s-all-and-you-are-all-done"><a href="#That’s-all-and-you-are-all-done" class="headerlink" title="That’s all and you are all done."></a>That’s all and you are all done.</h3><h2 id="Sublime-text3-3176-x64-破解补丁"><a href="#Sublime-text3-3176-x64-破解补丁" class="headerlink" title="Sublime text3 3176 x64 + 破解补丁"></a>Sublime text3 3176 x64 + 破解补丁</h2><p>百度云网盘地址：链接：<a href="https://pan.baidu.com/s/16hBWkIoAcs4w-ssnn9mEUQ">https://pan.baidu.com/s/16hBWkIoAcs4w-ssnn9mEUQ</a> 密码：t3td</p>
-]]></content>
-      <categories>
-        <category>Crack</category>
-        <category>IDM</category>
-      </categories>
-      <tags>
-        <tag>IDM</tag>
       </tags>
   </entry>
   <entry>
